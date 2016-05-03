@@ -97,8 +97,8 @@
 				<input class="search-bar-input" type="text" name="activities" placeholder="Pesquisar Organizações" />
 			</section>
 			
-			<!-- Options sample -->
-			<section class="sidebar-options hidden-xs">
+			<!-- Options -->
+			<section class="sidebar-listing hidden-xs">
 				<span class="sidebar-title">G.A.S. Porto</span>
 				<ul>
 					<li><a>Estrutura</a></li>
@@ -109,7 +109,7 @@
 				</ul>
 			</section>
 					
-			<!-- Listing sample -->
+			<!-- Groups -->
 			<section class="sidebar-listing hidden-xs">
 				<span class="sidebar-title">Grupos</span>
 				<ul>
@@ -121,7 +121,7 @@
 				</ul>
 			</section>
 			
-			<!-- Authentication sample -->
+			<!-- Authentication -->
 			<section class="hidden-xs">
 				<span class="sidebar-title">autenticação</span>
 				<input class="auth-input" type="text" name="username" placeholder="Utilizador" />
@@ -148,20 +148,21 @@
 		
 			<!-- Organization Section -->
 			<section class="organization-section">
-                <img class="img img-responsive org-img" src="../imgs/gas_porto.png">
-                <section class="info-section">
-                    <h4 class="sidebar-title">Missão</h4>
-                    <p class="big">O G.A.S.Porto tem como missão ser uma Escola de Vida vocacionada para a Ajuda e Desenvolvimento Humano, contribuindo para um mundo melhor, com menos necessidades.</p>
-                </section>
-                <section class="info-section">
-                    <h4 class="sidebar-title">Visão</h4>
-                    <p class="big">Acreditamos num mundo com menos necessidades, menos pobre, mais solidário, igual e justo. Um mundo onde, através de exemplos de entrega e serviço, as pessoas possam ajudar de forma voluntária, contínua e integrada na sociedade.</p>
-                </section>
-                <section class="info-section">
-                    <h4 class="sidebar-title">Valores</h4>
-                    <p class="big">A nossa intervenção é multidisciplinar e desenvolve-se de forma profissional, sustentável e com espírito de equipa. Partindo de competências técnicas, focamo-nos na pessoa e no meio em que esta se insere. Seguimo-nos por valores reconhecidos pelas diversas escolas de pensamento, como essenciais à felicidade do ser humano: paz, liberdade, respeito, abertura, sensibilidade, caridade, alegria, complementados pelo necessário rigor, disciplina e justiça. Somos inspirados pelo exemplo de Jesus Cristo, na sua dedicação aos pobres, combate à injustiça e desigualdade e inspiração altruísta. Partindo da matriz criada na sua fundação em 2002, procuramos crescer e melhorar em comunidade, acumulando saber ao longo das gerações que constituem o grupo, acompanhado de abertura e diálogo às novas gerações.</p>
-                </section>
-            </section>
+				<h3 class="title">Grupo de Ação Social do Porto</h3>
+				<img class="img img-responsive org-img" src="../imgs/gas_porto.png">
+				<section class="info-section">
+						<h4 class="sidebar-title">Missão</h4>
+						<p class="big">O G.A.S.Porto tem como missão ser uma Escola de Vida vocacionada para a Ajuda e Desenvolvimento Humano, contribuindo para um mundo melhor, com menos necessidades.</p>
+				</section>
+				<section class="info-section">
+						<h4 class="sidebar-title">Visão</h4>
+						<p class="big">Acreditamos num mundo com menos necessidades, menos pobre, mais solidário, igual e justo. Um mundo onde, através de exemplos de entrega e serviço, as pessoas possam ajudar de forma voluntária, contínua e integrada na sociedade.</p>
+				</section>
+				<section class="info-section">
+						<h4 class="sidebar-title">Valores</h4>
+						<p class="big">A nossa intervenção é multidisciplinar e desenvolve-se de forma profissional, sustentável e com espírito de equipa. Partindo de competências técnicas, focamo-nos na pessoa e no meio em que esta se insere. Seguimo-nos por valores reconhecidos pelas diversas escolas de pensamento, como essenciais à felicidade do ser humano: paz, liberdade, respeito, abertura, sensibilidade, caridade, alegria, complementados pelo necessário rigor, disciplina e justiça. Somos inspirados pelo exemplo de Jesus Cristo, na sua dedicação aos pobres, combate à injustiça e desigualdade e inspiração altruísta. Partindo da matriz criada na sua fundação em 2002, procuramos crescer e melhorar em comunidade, acumulando saber ao longo das gerações que constituem o grupo, acompanhado de abertura e diálogo às novas gerações.</p>
+				</section>
+      </section>
 	</div>
 	
 	<section class="container" id="main-container-xs">
