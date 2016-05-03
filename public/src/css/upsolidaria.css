@@ -53,6 +53,7 @@ section.sidebar-options > ul {
 	font-size: 10px;
 	padding: 4px;
 	width: 125px;
+	font-weight: 400;
 }
 
 .auth-input {
@@ -254,6 +255,12 @@ p.big {
 .title {
 	margin-top: 30px;
 	font-weight: 900;
+}
+
+/* ABOUT US (QUEM SOMOS) */
+
+.text-section {
+	padding-top: 20px;
 }
 
 /****************************** END OF MAIN BODY ************************************/
@@ -477,7 +484,9 @@ button.navbar-toggle.collapsed:hover {
 ---------------------------------
 */
 
-
+.img-section {
+	margin: 30px 0 20px 0;
+}
 
 .red-text {
 	color: #be1e2d;
