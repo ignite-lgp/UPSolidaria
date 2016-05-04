@@ -288,6 +288,25 @@ p.big {
 	margin-bottom: 10px;
 }
 
+.volunteer-row-xs {
+	max-height: 500px;
+	margin-bottom: 10px;
+}
+
+@media screen and (min-width: 480px) and (max-width: 900px) {
+	.volunteer-row {
+		max-height: 220px;
+	}
+}
+
+.clearfix-small {
+	height: 200px;
+}
+
+.blockfix-small {
+	margin-top: 40px;
+}
+
 .small-info {
 	margin-bottom: 5px;
 }

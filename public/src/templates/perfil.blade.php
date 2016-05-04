@@ -180,11 +180,11 @@
 			
 			<section class="volunteer-basic-info">
 				<div class="row volunteer-row">
-					<div class="col-md-3">
+					<div class="col-md-3 col-sm-6">
 						<img class="img img-responsive volunteer-img" src="../imgs/volunteers/stevejobs.jpg">
 					</div>
 					
-					<div class="col-md-8">
+					<div class="col-md-8 col-sm-6">
 						<h4 class="title-volunteer"><a>Steve Jobs</a></h4>
 						
 						<div class="volunteer-info">
@@ -238,24 +238,41 @@
 					</div>
 				</section>
 				
-				<section class="volunteer-menu">
+				<section class="volunteer-menu visible-md visible-lg">
 					<div class="row volunteer-menu-row">
 						<div class="col-md-3 volunteer-menu-col">
-							<span class="dark-info">Organizações</span>
+							<span class="dark-info"><a>Organizações</a></span>
 						</div>
 						<div class="col-md-3 volunteer-menu-col">
-							<span class="dark-info">Atividades</span>
+							<span class="dark-info"><a>Atividades</a></span>
 						</div>
 						<div class="col-md-3 volunteer-menu-col">
-							<span class="dark-info">Crachás</span>
+							<span class="dark-info"><a>Crachás</a></span>
 						</div>
 						<div class="col-md-3 volunteer-menu-col active">
-							<span class="dark-info">Troféus</span>
+							<span class="dark-info"><a>Troféus</a></span>
 						</div>
 					</div>
 				</section>
 				
-				<section class="volunteer-menu-collectibles">
+				<section class="volunteer-menu visible-sm">
+					<div class="row volunteer-menu-row">
+						<div class="col-sm-6 volunteer-menu-col">
+							<span class="dark-info"><a>Organizações</a></span>
+						</div>
+						<div class="col-sm-6 volunteer-menu-col">
+							<span class="dark-info"><a>Atividades</a></span>
+						</div>
+						<div class="col-sm-6 volunteer-menu-col">
+							<span class="dark-info"><a>Crachás</a></span>
+						</div>
+						<div class="col-sm-6 volunteer-menu-col active">
+							<span class="dark-info"><a>Troféus</a></span>
+						</div>
+					</div>
+				</section>
+				
+				<section class="volunteer-menu-collectibles visible-md visible-lg">
 					<div class="row volunteer-menu-row">
 						<div class="col-md-3 volunteer-menu-col-collectibles">
 							<img class="img img-responsive img-collectible" src="../imgs/trophies/dedication.png">
@@ -303,6 +320,55 @@
 					</div>
 				</section>
 				
+				<section class="volunteer-menu-collectibles visible-sm">
+					<div class="row volunteer-menu-row">
+						<div class="col-sm-6 volunteer-menu-col-collectibles">
+							<img class="img img-responsive img-collectible" src="../imgs/trophies/dedication.png">
+							<div class="trophy">
+								<span class="trophies capital strong">5 troféus</span>
+								<br>
+								<span class="trophies short">Dedicação</span>
+							</div>
+						</div>
+						<div class="col-sm-6 volunteer-menu-col-collectibles">
+							<img class="img img-responsive img-collectible" src="../imgs/trophies/kindness.png">
+							<div class="trophy">
+								<span class="trophies capital strong">8 troféus</span>
+								<br>
+								<span class="trophies short">Simpatia</span>
+							</div>
+						</div>
+						<div class="clearfix visible-sm-block clearfix-small"></div>
+						<div class="col-sm-6 volunteer-menu-col-collectibles">
+							<img class="img img-responsive img-collectible" src="../imgs/trophies/teamwork.png">
+							<div class="trophy">
+								<span class="trophies capital strong">4 troféus</span>
+								<br>
+								<span class="trophies short">Espiírito de Equipa</span>
+							</div>
+						</div>
+						<div class="col-sm-6 volunteer-menu-col-collectibles">
+							<img class="img img-responsive img-collectible" src="../imgs/trophies/creativity.png">
+							<div class="trophy">
+								<span class="trophies capital strong">4 troféus</span>
+								<br>
+								<span class="trophies short">Originalidade</span>
+							</div>
+						</div>
+					</div>
+					
+					<div class="row volunteer-menu-row">
+						<div class="col-sm-6 volunteer-menu-col-collectibles blockfix-small">
+							<img class="img img-responsive img-collectible" src="../imgs/trophies/creativity.png">
+							<div class="trophy">
+								<span class="trophies capital strong">7 troféus</span>
+								<br>
+								<span class="trophies short">Competência</span>
+							</div>
+						</div>
+					</div>
+				</section>
+				
 			</section>
 	</div>
 	
@@ -319,6 +385,125 @@
 			<section class="main-title-section-xs">
 				<h3 class="title">Steve Jobs</h3>
 			</section>
+		</section>
+		
+		<section class="volunteer-basic-info visible-xs">
+			<div class="row volunteer-row-xs">
+				<div class="col-xs-6 col-md-3">
+					<img class="img img-responsive" src="../imgs/volunteers/stevejobs.jpg">
+				</div>
+				
+				<div class="col-md-8">
+					
+					<div class="volunteer-info">
+						<span>Email:</span> 
+						<a class="red-link">stevejobs@apple.com</a>
+					</div>
+					
+					<div class="volunteer-info">
+						<span>Estatuto:</span> 
+						<span>Docente</span>
+					</div>
+					
+					<div class="volunteer-info">
+						<span>Localidade:</span> 
+						<span>Póvoa do Varzim, Portugal</span>
+					</div>
+					
+					<div class="volunteer-info">
+						<span>Distrito:</span> 
+						<span>Porto, Portugal</span>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="visible-xs">
+			
+			<section class="small-info">
+				<span class="dark-info">Nível:</span>
+				<span class="light-red-info">64</span>
+			</section>
+			
+			<section class="small-info">
+				<span class="dark-info">Pontos:</span>
+				<span class="light-red-info">1230</span>
+				<span class="dark-info">/</span>
+				<span class="dark-red-info">1340</span>
+			</section>
+			
+			<section class="medium-info">
+				<span class="medium-dark-info">Disponibilidade</span>
+				<div class="round-rectangle">
+					<span class="green-circle"></span>
+				</div>
+			</section>
+			
+			<section class="volunteer-menu">
+				<div class="row volunteer-menu-row">
+					<div class="col-xs-6 col-md-3 volunteer-menu-col">
+						<span class="dark-info"><a>Organizações</a></span>
+					</div>
+					<div class="col-xs-6 col-md-3 volunteer-menu-col">
+						<span class="dark-info"><a>Atividades</a></span>
+					</div>
+					<div class="clearfix visible-xs-block org-block"></div>
+					<div class="col-xs-6 col-md-3 volunteer-menu-col">
+						<span class="dark-info"><a>Crachás</a></span>
+					</div>
+					<div class="col-xs-6 col-md-3 volunteer-menu-col active">
+						<span class="dark-info"><a>Troféus</a></span>
+					</div>
+				</div>
+			</section>
+			
+			<section class="volunteer-menu-collectibles">
+				<div class="row volunteer-menu-row">
+					<div class="col-xs-6 col-md-3 volunteer-menu-col-collectibles">
+						<img class="img img-responsive img-collectible" src="../imgs/trophies/dedication.png">
+						<div class="trophy">
+							<span class="trophies capital strong">5 troféus</span>
+							<br>
+							<span class="trophies short">Dedicação</span>
+						</div>
+					</div>
+					<div class="col-xs-6 col-md-3 volunteer-menu-col-collectibles">
+						<img class="img img-responsive img-collectible" src="../imgs/trophies/kindness.png">
+						<div class="trophy">
+							<span class="trophies capital strong">8 troféus</span>
+							<br>
+							<span class="trophies short">Simpatia</span>
+						</div>
+					</div>
+					<div class="clearfix visible-xs-block org-block"></div>
+					<div class="col-xs-6 col-md-3 volunteer-menu-col-collectibles">
+						<img class="img img-responsive img-collectible" src="../imgs/trophies/teamwork.png">
+						<div class="trophy">
+							<span class="trophies capital strong">4 troféus</span>
+							<br>
+							<span class="trophies short">Espiírito de Equipa</span>
+						</div>
+					</div>
+					<div class="col-xs-6 col-md-3 volunteer-menu-col-collectibles">
+						<img class="img img-responsive img-collectible" src="../imgs/trophies/creativity.png">
+						<div class="trophy">
+							<span class="trophies capital strong">4 troféus</span>
+							<br>
+							<span class="trophies short">Originalidade</span>
+						</div>
+					</div>
+				</div>
+				
+				<div class="row volunteer-menu-row">
+					<div class="col-xs-6 col-md-3 volunteer-menu-col-collectibles">
+						<img class="img img-responsive img-collectible" src="../imgs/trophies/creativity.png">
+						<div class="trophy">
+							<span class="trophies capital strong">7 troféus</span>
+							<br>
+							<span class="trophies short">Competência</span>
+						</div>
+					</div>
+				</div>
+			</section>		
 		</section>
 	</section>
 	
