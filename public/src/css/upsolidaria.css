@@ -263,6 +263,120 @@ p.big {
 	padding-top: 20px;
 }
 
+/* VOLUNTEER */
+
+.volunteer-basic-info {
+	margin-top: 30px;
+}
+
+.title-volunteer {
+	margin: 0px 0px 20px 0;
+	font-weight: 800;
+}
+
+.volunteer-info {
+	margin-bottom: 10px;
+}
+
+.volunteer-img {
+	min-height: 210px;
+	max-height: 210px;
+}
+
+.volunteer-row {
+	max-height: 220px;
+	margin-bottom: 10px;
+}
+
+.small-info {
+	margin-bottom: 5px;
+}
+
+.dark-info {
+	font-size: 16px;
+	font-weight: 800;
+}
+
+.light-red-info {
+	color: #be1e2d;
+	font-weight: 800;
+}
+
+.dark-red-info {
+	color: #691042;
+	font-weight: 800;
+}
+
+.medium-info {
+	margin: 20px 0px 20px 0;
+}
+
+.medium-dark-info {
+	font-size: 18px;
+	font-weight: 900;
+}
+
+.round-rectangle {
+	width: 50px;
+	height: 23px;
+	margin-left: 20px;
+	border: 1px solid #000000;
+	display: inline-block;
+	vertical-align: bottom;
+	border-radius: 10px;
+}
+
+.green-circle {
+	 float: right;
+	 height: 21px;
+	 width: 21px;
+	 background-color: #3ab54a;
+	 border-radius: 50%;
+	 vertical-align: bottom;
+}
+
+.red-circle {
+	 float: left;
+	 height: 21px;
+	 width: 21px;
+	 background-color: #be1e2d;
+	 border-radius: 50%;
+	 vertical-align: bottom;
+}
+
+.volunteer-menu-row {
+	max-height: 200px;
+}
+
+.volunteer-menu {
+	margin-top: 40px;
+	max-height: 50px;
+}
+
+.volunteer-menu-col {
+	text-align: center;
+	border-bottom: 1px solid #000000;
+	padding-bottom: 5px;
+}
+
+.volunteer-menu-col-collectibles {
+	text-align: center;
+	color: #6c6d70;
+}
+
+.volunteer-menu-collectibles {
+	margin-top: 20px;
+}
+
+.img-collectible {
+	max-height: 100px;
+	margin: 0 auto;
+}
+
+.trophy {
+	margin-top: 20px;
+}
+
 /****************************** END OF MAIN BODY ************************************/
 
 /* LINKS */
@@ -494,6 +608,18 @@ button.navbar-toggle.collapsed:hover {
 
 .red-text {
 	color: #be1e2d;
+}
+
+.capital {
+	text-transform: uppercase;
+}
+
+.strong {
+	font-weight: 800;
+}
+
+.short {
+	font-size: 14px;
 }
 
 .span-view-more {
