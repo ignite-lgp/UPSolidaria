@@ -249,7 +249,7 @@
 						<div class="col-md-3 volunteer-menu-col">
 							<span class="dark-info">Crachás</span>
 						</div>
-						<div class="col-md-3 volunteer-menu-col">
+						<div class="col-md-3 volunteer-menu-col active">
 							<span class="dark-info">Troféus</span>
 						</div>
 					</div>

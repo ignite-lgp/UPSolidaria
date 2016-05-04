@@ -359,6 +359,15 @@ p.big {
 	padding-bottom: 5px;
 }
 
+.volunteer-menu-col.active {
+	background: linear-gradient(to right, #cbcb30 0%, #f5822f 20%, #ed2324 40%, #680924 60%, #691042 80%, #280e13 100%);
+	background-size: 100% 1px;
+	background-repeat: no-repeat;
+	background-position: bottom;
+	margin-top: 1px;
+	border: 0;
+}
+
 .volunteer-menu-col-collectibles {
 	text-align: center;
 	color: #6c6d70;
