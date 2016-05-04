@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Countries;
+use View;
 use Validator;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
@@ -49,24 +52,48 @@ class AuthController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => 'required|max:255',
+            'nome' => 'required|max:255',
+            'nif' => 'required|numeric|min:10000000|max:999999999',
+            'nacionalidade' => 'required',
+            'localidade' => 'required',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
+            'cpassword' => 'required|min:6|confirmed',
         ]);
     }
 
     /**
-     * Create a new user instance after a valid registration.
+     *  Get the registration form.
      *
-     * @param  array  $data
-     * @return User
+     *  @return View with registration form
      */
-    protected function create(array $data)
-    {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
-    }
+     protected function showRegistrationForm(){
+         $countries = Countries::getList();
+
+        return View::make('auth/register')->with('paises',$countries);
+     }
+
+     /**
+      *
+      * Handle registration
+      *
+      */
+      protected function handleRegistration(Request $data){
+
+          // Just need the form data
+          $userInfo = $data->all();
+
+          // Check if valid
+		 $validator = $this->validator($userInfo);
+
+         //var_dump($validator->errors()->all());
+
+         if ($validator->fails()) {
+            return redirect('auth/register')
+                        ->withErrors($validator)
+                        ->withInput();
+        } else {
+			var_dump('success');
+		}
+      }
 }

@@ -11,10 +11,22 @@
 |
 */
 
+/*
+    Routes visible to common users.
+*/
+
 Route::get('/', function () {
-    return view('index');
+  return view('index');
 });
 
-Route::get('/noticias', function(){
-    return view('noticia'); 
+Route::get('/noticias', function () {
+    return view('noticia');
 });
+
+/*
+    Routes related to Auth
+*/
+
+Route::get('/auth/register', 'Auth\AuthController@showRegistrationForm');
+
+Route::post('/auth/register', 'Auth\AuthController@handleRegistration');

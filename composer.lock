@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c284a9c122da36c99a8b6597bdce7aa6",
-    "content-hash": "8b1485987e7c5949da82435d403e52e8",
+    "hash": "b8aa8928722dbffd4c65e8a8e1a76556",
+    "content-hash": "65da7723d08e1b9adcab59f487d51f91",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -308,16 +308,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.2.30",
+            "version": "v5.2.31",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "ecfbbfbf96105439cc9a40bc78277bdb0268e34d"
+                "reference": "2fa2797604bf54b06faf7bb139a9fc0d66826fea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/ecfbbfbf96105439cc9a40bc78277bdb0268e34d",
-                "reference": "ecfbbfbf96105439cc9a40bc78277bdb0268e34d",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/2fa2797604bf54b06faf7bb139a9fc0d66826fea",
+                "reference": "2fa2797604bf54b06faf7bb139a9fc0d66826fea",
                 "shasum": ""
             },
             "require": {
@@ -433,20 +433,74 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-04-19 19:12:18"
+            "time": "2016-04-27 13:02:09"
         },
         {
-            "name": "league/flysystem",
-            "version": "1.0.20",
+            "name": "laravelcollective/html",
+            "version": "v5.2.4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "e87a786e3ae12a25cf78a71bb07b4b384bfaa83a"
+                "url": "https://github.com/LaravelCollective/html.git",
+                "reference": "3a312d39ffe37da0f57b602618b61fd07c1fcec5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/e87a786e3ae12a25cf78a71bb07b4b384bfaa83a",
-                "reference": "e87a786e3ae12a25cf78a71bb07b4b384bfaa83a",
+                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/3a312d39ffe37da0f57b602618b61fd07c1fcec5",
+                "reference": "3a312d39ffe37da0f57b602618b61fd07c1fcec5",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "5.2.*",
+                "illuminate/routing": "5.2.*",
+                "illuminate/session": "5.2.*",
+                "illuminate/support": "5.2.*",
+                "illuminate/view": "5.2.*",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "illuminate/database": "5.2.*",
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Collective\\Html\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                },
+                {
+                    "name": "Adam Engebretson",
+                    "email": "adam@laravelcollective.com"
+                }
+            ],
+            "description": "HTML and Form Builders for the Laravel Framework",
+            "homepage": "http://laravelcollective.com",
+            "time": "2016-01-27 22:29:54"
+        },
+        {
+            "name": "league/flysystem",
+            "version": "1.0.21",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/flysystem.git",
+                "reference": "35a83cf67d80d7040f306c77b0a84b9fbcc4fbfb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/35a83cf67d80d7040f306c77b0a84b9fbcc4fbfb",
+                "reference": "35a83cf67d80d7040f306c77b0a84b9fbcc4fbfb",
                 "shasum": ""
             },
             "require": {
@@ -516,7 +570,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2016-03-14 21:54:11"
+            "time": "2016-04-22 10:56:25"
         },
         {
             "name": "monolog/monolog",
@@ -1730,23 +1784,23 @@
         },
         {
             "name": "vlucas/phpdotenv",
-            "version": "v2.2.0",
+            "version": "v2.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "9caf304153dc2288e4970caec6f1f3b3bc205412"
+                "reference": "63f37b9395e8041cd4313129c08ece896d06ca8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/9caf304153dc2288e4970caec6f1f3b3bc205412",
-                "reference": "9caf304153dc2288e4970caec6f1f3b3bc205412",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/63f37b9395e8041cd4313129c08ece896d06ca8e",
+                "reference": "63f37b9395e8041cd4313129c08ece896d06ca8e",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.9"
             },
             "require-dev": {
-                "phpunit/phpunit": "^4.8|^5.0"
+                "phpunit/phpunit": "^4.8 || ^5.0"
             },
             "type": "library",
             "extra": {
@@ -1761,7 +1815,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "BSD"
+                "BSD-3-Clause-Attribution"
             ],
             "authors": [
                 {
@@ -1771,13 +1825,12 @@
                 }
             ],
             "description": "Loads environment variables from `.env` to `getenv()`, `$_ENV` and `$_SERVER` automagically.",
-            "homepage": "http://github.com/vlucas/phpdotenv",
             "keywords": [
                 "dotenv",
                 "env",
                 "environment"
             ],
-            "time": "2015-12-29 15:10:30"
+            "time": "2016-04-15 10:48:49"
         }
     ],
     "packages-dev": [
@@ -1996,6 +2049,45 @@
                 "testing"
             ],
             "time": "2015-04-02 19:54:00"
+        },
+        {
+            "name": "monarobase/country-list",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Monarobase/country-list.git",
+                "reference": "2df9809dbe7f0f52fdc09bc528363f0ae2252cc6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Monarobase/country-list/zipball/2df9809dbe7f0f52fdc09bc528363f0ae2252cc6",
+                "reference": "2df9809dbe7f0f52fdc09bc528363f0ae2252cc6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "umpirsky/country-list": "1.0.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Monarobase\\CountryList": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jonathan Thuau",
+                    "email": "jonathan@monarobase.net",
+                    "homepage": "http://monarobase.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "List of all countries with names and ISO 3166-1 codes in all languages and data formats for Laravel 4",
+            "time": "2015-05-12 13:41:45"
         },
         {
             "name": "phpdocumentor/reflection-docblock",
@@ -3004,11 +3096,61 @@
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
             "time": "2016-03-04 07:55:57"
+        },
+        {
+            "name": "umpirsky/country-list",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/umpirsky/country-list.git",
+                "reference": "abb111a0fd537455670fa394b3f39eebb0087614"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/umpirsky/country-list/zipball/abb111a0fd537455670fa394b3f39eebb0087614",
+                "reference": "abb111a0fd537455670fa394b3f39eebb0087614",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "doctrine/dbal": "2.*",
+                "symfony/class-loader": "2.1.*",
+                "symfony/console": "2.1.*",
+                "symfony/filesystem": "2.1.*",
+                "symfony/finder": "2.1.*",
+                "symfony/locale": "2.1.*",
+                "symfony/yaml": "2.1.*",
+                "zendframework/zend-db": "2.0.*",
+                "zendframework/zendframework1": "1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Umpirsky\\Country": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Saša Stamenković",
+                    "email": "umpirsky@gmail.com",
+                    "homepage": "http://umpirsky.com"
+                }
+            ],
+            "description": "List of all countries with names and ISO 3166-1 codes in all languages and data formats.",
+            "time": "2012-11-27 09:51:19"
         }
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "monarobase/country-list": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
