@@ -175,6 +175,135 @@
 				<span>/</span>
 				<h4><a class="active">Voluntário</a></h4>
 			</section>
+			
+			<h3 class="title">Voluntário</h3>
+			
+			<section class="volunteer-basic-info">
+				<div class="row volunteer-row">
+					<div class="col-md-3">
+						<img class="img img-responsive volunteer-img" src="../imgs/volunteers/stevejobs.jpg">
+					</div>
+					
+					<div class="col-md-8">
+						<h4 class="title-volunteer"><a>Steve Jobs</a></h4>
+						
+						<div class="volunteer-info">
+							<span>Email:</span> 
+							<a class="red-link">stevejobs@apple.com</a>
+						</div>
+						
+						<div class="volunteer-info">
+							<span>Estatuto:</span> 
+							<span>Docente</span>
+						</div>
+						
+						<div class="volunteer-info">
+							<span>Localidade:</span> 
+							<span>Póvoa do Varzim, Portugal</span>
+						</div>
+						
+						<div class="volunteer-info">
+							<span>Distrito:</span> 
+							<span>Porto, Portugal</span>
+						</div>
+						
+						<div class="volunteer-info">
+							<span>Ano de inscrição no voluntariado:</span> 
+							<span>2010</span>
+						</div>
+						
+						<div class="volunteer-info">
+							<span>Organização acolhedora:</span>
+							<span>G.A.S. Porto</span>
+						</div>
+					</div>
+				</div>
+				
+				<section class="small-info">
+					<span class="dark-info">Nível:</span>
+					<span class="light-red-info">64</span>
+				</section>
+				
+				<section class="small-info">
+					<span class="dark-info">Pontos:</span>
+					<span class="light-red-info">1230</span>
+					<span class="dark-info">/</span>
+					<span class="dark-red-info">1340</span>
+				</section>
+				
+				<section class="medium-info">
+					<span class="medium-dark-info">Disponibilidade</span>
+					<div class="round-rectangle">
+						<span class="green-circle"></span>
+					</div>
+				</section>
+				
+				<section class="volunteer-menu">
+					<div class="row volunteer-menu-row">
+						<div class="col-md-3 volunteer-menu-col">
+							<span class="dark-info">Organizações</span>
+						</div>
+						<div class="col-md-3 volunteer-menu-col">
+							<span class="dark-info">Atividades</span>
+						</div>
+						<div class="col-md-3 volunteer-menu-col">
+							<span class="dark-info">Crachás</span>
+						</div>
+						<div class="col-md-3 volunteer-menu-col">
+							<span class="dark-info">Troféus</span>
+						</div>
+					</div>
+				</section>
+				
+				<section class="volunteer-menu-collectibles">
+					<div class="row volunteer-menu-row">
+						<div class="col-md-3 volunteer-menu-col-collectibles">
+							<img class="img img-responsive img-collectible" src="../imgs/trophies/dedication.png">
+							<div class="trophy">
+								<span class="trophies capital strong">5 troféus</span>
+								<br>
+								<span class="trophies short">Dedicação</span>
+							</div>
+						</div>
+						<div class="col-md-3 volunteer-menu-col-collectibles">
+							<img class="img img-responsive img-collectible" src="../imgs/trophies/kindness.png">
+							<div class="trophy">
+								<span class="trophies capital strong">8 troféus</span>
+								<br>
+								<span class="trophies short">Simpatia</span>
+							</div>
+						</div>
+						<div class="col-md-3 volunteer-menu-col-collectibles">
+							<img class="img img-responsive img-collectible" src="../imgs/trophies/teamwork.png">
+							<div class="trophy">
+								<span class="trophies capital strong">4 troféus</span>
+								<br>
+								<span class="trophies short">Espiírito de Equipa</span>
+							</div>
+						</div>
+						<div class="col-md-3 volunteer-menu-col-collectibles">
+							<img class="img img-responsive img-collectible" src="../imgs/trophies/creativity.png">
+							<div class="trophy">
+								<span class="trophies capital strong">4 troféus</span>
+								<br>
+								<span class="trophies short">Originalidade</span>
+							</div>
+						</div>
+					</div>
+					
+					<div class="row volunteer-menu-row">
+						<div class="col-md-3 volunteer-menu-col-collectibles">
+							<img class="img img-responsive img-collectible" src="../imgs/trophies/creativity.png">
+							<div class="trophy">
+								<span class="trophies capital strong">7 troféus</span>
+								<br>
+								<span class="trophies short">Competência</span>
+							</div>
+						</div>
+					</div>
+				</section>
+				
+			</section>
 	</div>
 	
 	<section class="container" id="main-container-xs">
@@ -188,7 +317,7 @@
 		
 		<section class="main-container-xs visible-xs">
 			<section class="main-title-section-xs">
-				<h3 class="title">Mafalda Lencastre</h3>
+				<h3 class="title">Steve Jobs</h3>
 			</section>
 		</section>
 	</section>
