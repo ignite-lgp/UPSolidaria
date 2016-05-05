@@ -41,7 +41,8 @@ class Database extends Migration
             $table->string('interest')->unique();
         });
 
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('volunteer', function ($table) {
+
             $table->increments('id');
             $table->string('name');
             $table->string('email')->unique();
@@ -63,20 +64,21 @@ class Database extends Migration
             $table->foreign('country')->references('id')->on('country');
             $table->foreign('course')->references('id')->on('course');
             $table->foreign('postal_code')->references('id')->on('postal_code');
-
             $table->rememberToken();
             $table->timestamps();
         });
 
-        /*Schema::create('volunteerinterest', function ($table) {
+        Schema::create('volunteerinterest', function ($table) {
             $table->integer('volunteer')->unsigned();
             $table->integer('interest')->unsigned();
             $table->foreign('volunteer')->references('id')->on('volunteer');
             $table->foreign('interest')->references('id')->on('interest');
-            $table->primary(['volunteer', 'interest']);
-        });*/
 
-        Schema::create('organization', function (Blueprint $table) {
+            $table->primary(['volunteer', 'interest']);
+            
+        }); 
+
+        Schema::create('organization', function ($table) {
             $table->increments('id');
             $table->string('name')->unique();
             $table->string('password');
@@ -97,10 +99,11 @@ class Database extends Migration
             $table->integer('interest')->unsigned();
             $table->foreign('organization')->references('id')->on('organization');
             $table->foreign('interest')->references('id')->on('interest');
-            $table->unique(['organization', 'interest'],'composite_index');
+            
+            $table->primary(['organization', 'interest']);
         });
 
-       /* Schema::create('registration', function ($table) {
+       Schema::create('registration', function ($table) {
             $table->integer('volunteer')->unsigned();
             $table->integer('organization')->unsigned();
             $table->foreign('volunteer')->references('id')->on('volunteer');
@@ -108,8 +111,9 @@ class Database extends Migration
             $table->timestamp('reg_date');
             $table->boolean('banned');
             $table->boolean('active');
-            $table->unique(['volunteer', 'organization'],'composite_index');
-        });*/
+
+            $table->primary(['volunteer', 'organization']);
+        });
 
         Schema::create('group', function (Blueprint $table) {
             $table->increments('id');
@@ -125,17 +129,18 @@ class Database extends Migration
             $table->timestamps();
         });
 
-        /*
+        
         Schema::create('volunteergroup', function ($table) {
             $table->integer('volunteer')->unsigned();
             $table->integer('group')->unsigned();
             $table->foreign('volunteer')->references('id')->on('volunteer');
             $table->foreign('group')->references('id')->on('group');
-            $table->unique(['volunteer', 'group'],'composite_index');
-        });
-        */
 
-        Schema::create('new', function ($table) {
+            $table->primary(['volunteer', 'group']);
+        });
+        
+
+        Schema::create('news', function ($table) {
             $table->increments('id');
             $table->integer('organization')->unsigned();
             $table->foreign('organization')->references('id')->on('organization');
@@ -159,7 +164,7 @@ class Database extends Migration
             $table->text('description');
         });
 
-        /*
+        
         Schema::create('medalattribution', function ($table) {
             $table->integer('volunteer')->unsigned();
             $table->integer('medal')->unsigned();
@@ -168,7 +173,8 @@ class Database extends Migration
             $table->foreign('medal')->references('id')->on('medal');
             $table->foreign('organization')->references('id')->on('organization');
             $table->timestamp('date');
-            $table->unique(['volunteer', 'medal', 'organization'],'composite_index');
+
+            $table->primary(['volunteer', 'medal', 'organization']);
         });
 
         Schema::create('trophyvolunteer', function ($table) {
@@ -177,9 +183,10 @@ class Database extends Migration
             $table->foreign('volunteer')->references('id')->on('volunteer');
             $table->foreign('trophy')->references('id')->on('trophy');
             $table->timestamp('date');
-            $table->unique(['volunteer', 'trophy'],'composite_index');
+
+            $table->primary(['volunteer', 'trophy']);
         });
-        */
+        
 
         // ADMIN TABLE
         
@@ -201,9 +208,22 @@ class Database extends Migration
      */
     public function down()
     {
-        Schema::drop('users');
-        Schema::drop('country');
+        Schema::drop('adminstrator');
+        Schema::drop('trophyvolunteer');
+        Schema::drop('medalattribution');
+        Schema::drop('trophy');
+        Schema::drop('medal');
+        Schema::drop('news');
+        Schema::drop('volunteergroup');
+        Schema::drop('group');
+        Schema::drop('registration');
+        Schema::drop('organizationinterest');
+        Schema::drop('organization');
+        Schema::drop('volunteerinterest');
+        Schema::drop('interest');
+        Schema::drop('postal_code');
         Schema::drop('faculty');
+        Schema::drop('country');
         Schema::drop('course');
     }
 }
