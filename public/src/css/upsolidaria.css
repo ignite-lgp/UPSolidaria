@@ -363,6 +363,99 @@ p.big {
 	 vertical-align: bottom;
 }
 
+.volunteer-current-activities {
+	margin-top: 20px;
+}
+
+.volunteer-current-activities-xs {
+	margin-top: 60px;
+}
+
+.volunteer-current-activities-header {
+	margin-bottom: 20px;
+}
+
+.progress-bar {
+	display: inline-block;
+	margin-left: 20px;
+	width: 200px;
+	height: 20px;
+	border: 1px solid #000000;
+	background: none;
+}
+
+.progress-bar-xs {
+	float: left;
+	width: 100px;
+	height: 20px;
+	border: 1px solid #000000;
+	background: none;
+}
+
+.percentage {
+	display: inline-block;
+	margin-left: 20px;
+}
+
+/* DELETE THIS WHEN LOADING FROM DATABASE IS DONE */
+
+.bar1 {
+	width: 124px;
+	height: 100%;
+	float: left;
+	background: #f4bc1c;
+}
+
+.bar1-xs {
+	width: 62px;
+	height: 100%;
+	float: left;
+	background: #f4bc1c;
+}
+
+.bar2 {
+	width: 100px;
+	height: 100%;
+	float: left;
+	background: #f4bc1c;
+}
+
+.bar2-xs {
+	width: 50px;
+	height: 100%;
+	float: left;
+	background: #f4bc1c;
+}
+
+/* END DELETE */
+
+.volunteer-activity {
+	margin-bottom: 20px;
+}
+
+.volunteer-activity-header {
+	float: left;
+	width: 150px;
+}
+
+.volunteer-activities-history {
+	margin-top: 40px;
+}
+
+.volunteer-activities-history-header {
+	margin-bottom: 20px;
+}
+
+.volunteer-activity-history-header {
+	float: left;
+}
+
+.volunteer-done-activity {
+	height: 40px;
+	margin-bottom: 15px;
+}
+
+
 .volunteer-menu-row {
 	max-height: 200px;
 }
@@ -648,6 +741,14 @@ button.navbar-toggle.collapsed:hover {
 
 .short {
 	font-size: 14px;
+}
+
+.block {
+	display: block;
+}
+
+.grey {
+	color: #6c6d70;
 }
 
 .span-view-more {
