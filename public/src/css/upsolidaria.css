@@ -363,6 +363,47 @@ p.big {
 	 vertical-align: bottom;
 }
 
+.volunteer-organizations {
+	margin-top: 20px;
+}
+
+.volunteer-organizations-xs {
+	margin-top: 60px;
+}
+
+.volunteer-organization {
+	width: 500px;
+	height: 75px;
+	border-bottom: 1px solid #6c6d70;
+	margin-bottom: 20px;
+}
+
+.volunteer-organization-xs {
+	width: 280px;
+	height: 85px;
+	border-bottom: 1px solid #6c6d70;
+	margin-bottom: 20px;
+}
+
+.volunteer-organization-left {
+	float: left;
+	width: 100px;
+}
+
+.volunteer-organization-right {
+	float: left;
+	margin-left: 20px;
+}
+
+.volunteer-organization-right-xs {
+	float: left;
+}
+
+.volunteer-organization-img {
+	max-height: 50px;
+	max-width: 100px;
+}
+
 .volunteer-current-activities {
 	margin-top: 20px;
 }
