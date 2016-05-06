@@ -315,7 +315,7 @@
                     </article>
                     <article class="volunteer-organization">
                         <div class="volunteer-organization-left">
-                            <img class="img img-responsive volunteer-organization-img" src="../imgs/organizations/afs.png">
+                            <img class="img img-responsive volunteer-organization-img" src="../imgs/organizations/moa.png">
                         </div>
                         <div class="volunteer-organization-right">
                             <a class="red-link block">Fundação MOA</a>
@@ -454,7 +454,7 @@
                 </article>
                 <article class="volunteer-organization-xs">
                     <div class="volunteer-organization-left">
-                        <img class="img img-responsive volunteer-organization-img" src="../imgs/organizations/afs.png">
+                        <img class="img img-responsive volunteer-organization-img" src="../imgs/organizations/moa.png">
                     </div>
                     <div class="volunteer-organization-right-xs">
                         <a class="red-link block">Fundação MOA</a>
