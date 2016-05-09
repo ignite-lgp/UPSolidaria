@@ -539,6 +539,16 @@ p.big {
 	margin-top: 20px;
 }
 
+/* CONTACTS */
+
+.contacts > p {
+	margin: 0;
+}
+
+.contacts-section {
+	margin-top: 40px;
+}
+
 /****************************** END OF MAIN BODY ************************************/
 
 /* LINKS */
