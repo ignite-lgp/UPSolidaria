@@ -58,7 +58,7 @@ class AuthController extends Controller
             'localidade' => 'required',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
-            'cpassword' => 'required|min:6|confirmed',
+            'password_confirmation' => 'required|same:password',
         ]);
     }
 
@@ -76,7 +76,7 @@ class AuthController extends Controller
      /**
       *
       * Handle registration
-      *
+      * @param Request object
       */
       protected function handleRegistration(Request $data){
 
@@ -86,14 +86,20 @@ class AuthController extends Controller
           // Check if valid
 		 $validator = $this->validator($userInfo);
 
-         //var_dump($validator->errors()->all());
-
          if ($validator->fails()) {
             return redirect('auth/register')
                         ->withErrors($validator)
                         ->withInput();
         } else {
-			var_dump('success');
+			return User::create([
+                'name' => $userInfo['nome'],
+                //'nif' => $userInfo['nif'],
+                //'nacionalidade' => $userInfo['nacionalidade'],
+                //'localidade' => $userInfo['localidade'],
+                'email' => $userInfo['email'],
+                'password' => bcrypt($userInfo['password']),
+                'reg_date' => $_SERVER['REQUEST_TIME']
+                ]);
 		}
       }
 }
