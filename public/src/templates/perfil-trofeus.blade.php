@@ -509,6 +509,7 @@
 	
 	<!-- Footer -->
 	<footer id="footer">
+		<hr class="visible-xs">
 		<section class="container" id="container-footer">
 			<span class="hidden-xs">Copyright 2016 &copy Universidade do Porto | Termos e Condições | Acessibilidade</span>
 			<span class="hidden-xs">Última atualização: 2016-04-03 Página gerada em: 2016-04-03</span>
