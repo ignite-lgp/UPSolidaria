@@ -7,7 +7,8 @@
 <h2>Learning Laravel!</h2>
 
 <div>
-    Welcome to {!! $name !!} website!
+    Welcome to UPSolidaria.
+    click in this {{$link}}
 </div>
 
 </body>

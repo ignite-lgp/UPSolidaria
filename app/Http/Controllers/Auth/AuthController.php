@@ -96,7 +96,7 @@ class AuthController extends Controller
                         ->withInput();
         } else {
 
-			User::create([
+			$_temp = User::create([
                 'name' => $userInfo['nome'],
                 //'nif' => $userInfo['nif'],
                 //'nacionalidade' => $userInfo['nacionalidade'],
@@ -109,15 +109,17 @@ class AuthController extends Controller
                 ]);
 
 
-            Mail::send('welcome',['token' => ], function ($message) {
+            $url = env('APP_URL') . '/auth/confirm/token=' . $_temp['original']['token'] . '&email=' . $userInfo['email'];
+
+            Mail::send('email.welcome',['link' => $url], function ($message) use ($userInfo) {
 
                 $message->from(env('MAIL_USERNAME'), 'Bem vindo à UPSolidaria');
 
-                $message->to('tiago.lpneto@gmail.com')->subject('Learning Laravel test email'); // TODO: Alterar
+                $message->to($userInfo['email'])->subject('Learning Laravel test email'); // TODO: Alterar
 
             });
 
-            return 'hi';
+            return redirect($this->redirectTo);
 		}
       }
 }

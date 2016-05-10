@@ -56,6 +56,8 @@ class Database extends Migration
             $table->integer('point')->nullable();
             $table->boolean('carta_conducao')->nullable();
 
+            $table->text('token');
+
             $table->string('country')->unsigned();
             $table->integer('course')->unsigned()->nullable();
             $table->integer('postal_code')->unsigned()->nullable();
