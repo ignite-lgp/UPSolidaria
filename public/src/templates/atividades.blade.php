@@ -73,8 +73,8 @@
 		<div id="navbar" class="collapse navbar-collapse">
 		  <ul class="nav navbar-nav navigation-options">
 			<li><a href="#about">quem somos</a></li>
-			<li class="active"><a href="#organizations">organizações</a></li>
-			<li><a href="#activities">atividades</a></li>
+			<li><a href="#organizations">organizações</a></li>
+			<li class="active"><a href="#activities">atividades</a></li>
 			<li><a href="#news">notícias</a></li>
 			<li><a href="#contacts">contactos</a></li>
 		  </ul>
@@ -91,34 +91,19 @@
 		<!-- Left Sidebar -->
 		<section class="sidebar-left">
 			
-			<!-- Search sample -->
+			<!-- Search -->
 			<section class="hidden-xs"> 
 				<span class="sidebar-title">pesquisar</span>
-				<input class="search-bar-input" type="text" name="activities" placeholder="Pesquisar Organizações" />
+				<input class="search-bar-input" type="text" name="activities" placeholder="Pesquisar Atividades" />
 			</section>
 			
-			<!-- Options -->
-			<section class="sidebar-listing hidden-xs">
-				<span class="sidebar-title">G.A.S. Porto</span>
-				<ul>
-					<li><a>Estrutura</a></li>
-					<li><a>O que fazem</a></li>					
-					<li><a>Como fazem</a></li>
-					<li><a>Formação</a></li>					
-					<li><a>Mensagem do presidente</a></li>
-				</ul>
-			</section>
-					
-			<!-- Groups -->
-			<section class="sidebar-listing hidden-xs">
-				<span class="sidebar-title">Grupos</span>
-				<ul>
-					<li><a>100 diferenças</a></li>
-					<li><a>Futuros</a></li>					
-					<li><a>Horizontes</a></li>
-					<li><a>Abraço Amigo</a></li>
-					<li><a>Rumos</a></li>
-				</ul>
+			<section class="sidebar-categories hidden-xs">
+				<span class="sidebar-title">categorias</span>
+				<a>Angariação de fundos</a>
+				<a>Recolha de alimentos</a>
+				<a>Doações</a>
+				<a>Proteger o Planeta</a>
+				<a>Preservar a herança cultural</a>
 			</section>
 			
 			<!-- Authentication -->
@@ -136,54 +121,62 @@
 		
 		<!-- Main Body -->
 		<section class="main-container hidden-xs">
-			
+		
 			<!-- Title -->
 			<section class="title-section hidden-xs">
 				<h4><a>U.Porto Voluntariado</a></h4>
 				<span>/</span>
-				<h4><a>Organizações</a></h4>
-				<span>/</span>
-				<h4><a class="active">G.A.S. Porto</a></h4>
+				<h4><a class="active">Atividades</a></h4>
 			</section>
-		
-			<!-- Organization Section -->
-			<section class="organization-section">
-				<h3 class="title">Grupo de Ação Social do Porto</h3>
-				<img class="img img-responsive org-img" src="../imgs/gas_porto.png">
-				<section class="info-section">
-						<h4 class="sidebar-title">Missão</h4>
-						<p class="big">O G.A.S.Porto tem como missão ser uma Escola de Vida vocacionada para a Ajuda e Desenvolvimento Humano, contribuindo para um mundo melhor, com menos necessidades.</p>
-				</section>
-				<section class="info-section">
-						<h4 class="sidebar-title">Visão</h4>
-						<p class="big">Acreditamos num mundo com menos necessidades, menos pobre, mais solidário, igual e justo. Um mundo onde, através de exemplos de entrega e serviço, as pessoas possam ajudar de forma voluntária, contínua e integrada na sociedade.</p>
-				</section>
-				<section class="info-section">
-						<h4 class="sidebar-title">Valores</h4>
-						<p class="big">A nossa intervenção é multidisciplinar e desenvolve-se de forma profissional, sustentável e com espírito de equipa. Partindo de competências técnicas, focamo-nos na pessoa e no meio em que esta se insere. Seguimo-nos por valores reconhecidos pelas diversas escolas de pensamento, como essenciais à felicidade do ser humano: paz, liberdade, respeito, abertura, sensibilidade, caridade, alegria, complementados pelo necessário rigor, disciplina e justiça. Somos inspirados pelo exemplo de Jesus Cristo, na sua dedicação aos pobres, combate à injustiça e desigualdade e inspiração altruísta. Partindo da matriz criada na sua fundação em 2002, procuramos crescer e melhorar em comunidade, acumulando saber ao longo das gerações que constituem o grupo, acompanhado de abertura e diálogo às novas gerações.</p>
-				</section>
-      </section>
+            
+            <section class="main-container-xs hidden-xs">
+                <section class="main-title-section-xs">
+                    <h3 class="title">Atividades</h3>
+                </section>
+		    </section>
+            
+            <section class="img-section">
+                <img class="img img-responsive img-activities" src="../imgs/voluntariado_atividades.jpg">
+            </section>
+            
+            <section class="text-section">
+                <p>Poderá também envolver-se na nossa rede global de grupos, organizar um evento ou ser orador num evento. Ou pode ajudar-nos a organizar um evento de <strong>angariação de fundos</strong>.</p>
+                <p>Como é que a sua <strong>doação</strong> será utilizada? Se preferir pode realizar uma doação geral que será alocada às situações que a U.Porto considerar mais importantes. Alternativamente, pode escolher doar a uma escola ou um projeto da Universidade que pode corresponder aos seus interesses ou refletir os seus estudos passados ou carreira profissional atual. Áreas tão diversas como a educação, ambiente, inovação, saúde ou cultura podem ser impulsionadas com a sua ajuda.</p>
+                <p>Com a sua doação pode, por exemplo, ajudar os nossos estudantes mais brilhantes a dar o seu melhor, pode ajudar a proteger o nosso frágil planeta, pode ajudar as boas ideias a fazer crescer a economia, pode ajudar a solucionar os problemas de saúde do mundo ou pode também ajudar a preservar a nossa herança cultural.</p>
+                <p>Ao voluntariar-se na U.Porto, terá a oportunidade de retribuir para a sua Universidade, dando à próxima geração de graduados da U.Porto e aos recém-graduados, um valor acrescentado que permitirá fortalecer a sua rede de contatos e ganhar uma experiência valiosa de voluntariado. Existem várias oportunidades de participar em atividades de voluntariado em todo o mundo ou simplesmente a partir do conforto da sua própria casa.</p>
+                <p>Também poderá fazer <strong>recolhas</strong> de alimentos, roupa, brinquedos, livros, produtos para animais e produtos de higiene pessoal.</p>
+            </section>
+        </section>
+
 	</div>
 	
 	<section class="container" id="main-container-xs">
-				<section class="organization-section visible-xs">
-					<h3 class="title">Grupo de Ação Social do Porto</h3>
-					<img class="img img-responsive org-img" src="../imgs/gas_porto.png">
-					<section class="info-section">
-							<h4 class="sidebar-title">Missão</h4>
-							<p class="big">O G.A.S.Porto tem como missão ser uma Escola de Vida vocacionada para a Ajuda e Desenvolvimento Humano, contribuindo para um mundo melhor, com menos necessidades.</p>
-					</section>
-					<section class="info-section">
-							<h4 class="sidebar-title">Visão</h4>
-							<p class="big">Acreditamos num mundo com menos necessidades, menos pobre, mais solidário, igual e justo. Um mundo onde, através de exemplos de entrega e serviço, as pessoas possam ajudar de forma voluntária, contínua e integrada na sociedade.</p>
-					</section>
-					<section class="info-section">
-							<h4 class="sidebar-title">Valores</h4>
-							<p class="big">A nossa intervenção é multidisciplinar e desenvolve-se de forma profissional, sustentável e com espírito de equipa. Partindo de competências técnicas, focamo-nos na pessoa e no meio em que esta se insere. Seguimo-nos por valores reconhecidos pelas diversas escolas de pensamento, como essenciais à felicidade do ser humano: paz, liberdade, respeito, abertura, sensibilidade, caridade, alegria, complementados pelo necessário rigor, disciplina e justiça. Somos inspirados pelo exemplo de Jesus Cristo, na sua dedicação aos pobres, combate à injustiça e desigualdade e inspiração altruísta. Partindo da matriz criada na sua fundação em 2002, procuramos crescer e melhorar em comunidade, acumulando saber ao longo das gerações que constituem o grupo, acompanhado de abertura e diálogo às novas gerações.</p>
-					</section>
-      </section>
-				
-    </section>
+        
+		<section class="title-section-xs visible-xs">
+			<h4><a>U.Porto Voluntariado</a></h4>
+			<span>/</span>
+			<h4><a class="active">Atividades</a></h4>
+		</section>
+		
+		<section class="main-container-xs visible-xs">
+			<section class="main-title-section-xs">
+				<h3 class="title">Atividades</h3>
+			</section>
+		</section>
+        
+        <section class="img-section visible-xs">
+            <img class="img img-responsive" src="../imgs/voluntariado_atividades.jpg">
+        </section>
+        
+        <section class="text-section visible-xs">
+            <p>Poderá também envolver-se na nossa rede global de grupos, organizar um evento ou ser orador num evento. Ou pode ajudar-nos a organizar um evento de <strong>angariação de fundos</strong>.</p>
+            <p>Como é que a sua <strong>doação</strong> será utilizada? Se preferir pode realizar uma doação geral que será alocada às situações que a U.Porto considerar mais importantes. Alternativamente, pode escolher doar a uma escola ou um projeto da Universidade que pode corresponder aos seus interesses ou refletir os seus estudos passados ou carreira profissional atual. Áreas tão diversas como a educação, ambiente, inovação, saúde ou cultura podem ser impulsionadas com a sua ajuda.</p>
+            <p>Com a sua doação pode, por exemplo, ajudar os nossos estudantes mais brilhantes a dar o seu melhor, pode ajudar a proteger o nosso frágil planeta, pode ajudar as boas ideias a fazer crescer a economia, pode ajudar a solucionar os problemas de saúde do mundo ou pode também ajudar a preservar a nossa herança cultural.</p>
+            <p>Ao voluntariar-se na U.Porto, terá a oportunidade de retribuir para a sua Universidade, dando à próxima geração de graduados da U.Porto e aos recém-graduados, um valor acrescentado que permitirá fortalecer a sua rede de contatos e ganhar uma experiência valiosa de voluntariado. Existem várias oportunidades de participar em atividades de voluntariado em todo o mundo ou simplesmente a partir do conforto da sua própria casa.</p>
+            <p>Também poderá fazer <strong>recolhas</strong> de alimentos, roupa, brinquedos, livros, produtos para animais e produtos de higiene pessoal.</p>
+        </section>
+        
+	</section>
 	
 	<!-- Footer -->
 	<footer id="footer">

@@ -13,17 +13,17 @@
     <title>UP Solidária</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="/src/css/bootstrap.min.css" rel="stylesheet">
+    <link href="src/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="/src/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="src/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="/src/css/upsolidaria.css" rel="stylesheet">
+    <link href="src/css/upsolidaria.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="/src/js/ie-emulation-modes-warning.js"></script>
+    <script src="src/js/ie-emulation-modes-warning.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -70,10 +70,10 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav navigation-options">
-            <li><a href="#about">quem somos</a></li>
-            <li><a href="#organizations">organizações</a></li>
+            <li><a href="./quemsomos">quem somos</a></li>
+            <li><a href="./organizacoes">organizações</a></li>
             <li><a href="#activities">atividades</a></li>
-            <li class="active"><a href="#news">notícias</a></li>
+            <li><a href="./noticia">notícias</a></li>
             <li><a href="#contacts">contactos</a></li>
           </ul>
 		  <section class="search hidden-xs">
@@ -143,6 +143,7 @@
                     <li>Concursos | Até: 20 Março, 2016</li>
                 </ul>
 			</section>
+        
 			
 			<section class="sidebar-auth hidden-xs">
 				<span id="authentication-title">autenticação</span>

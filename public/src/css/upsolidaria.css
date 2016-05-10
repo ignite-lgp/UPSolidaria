@@ -263,6 +263,298 @@ p.big {
 	padding-top: 20px;
 }
 
+/* VOLUNTEER */
+
+.volunteer-basic-info {
+	margin-top: 30px;
+}
+
+.title-volunteer {
+	margin: 0px 0px 20px 0;
+	font-weight: 800;
+}
+
+.volunteer-info {
+	margin-bottom: 10px;
+}
+
+.volunteer-img {
+	min-height: 210px;
+	max-height: 210px;
+}
+
+.volunteer-row {
+	max-height: 220px;
+	margin-bottom: 10px;
+}
+
+.volunteer-row-xs {
+	max-height: 500px;
+	margin-bottom: 10px;
+}
+
+@media screen and (min-width: 480px) and (max-width: 900px) {
+	.volunteer-row {
+		max-height: 220px;
+	}
+}
+
+.clearfix-small {
+	height: 200px;
+}
+
+.blockfix-small {
+	margin-top: 40px;
+}
+
+.small-info {
+	margin-bottom: 5px;
+}
+
+.dark-info {
+	font-size: 16px;
+	font-weight: 800;
+}
+
+.light-red-info {
+	color: #be1e2d;
+	font-weight: 800;
+}
+
+.dark-red-info {
+	color: #691042;
+	font-weight: 800;
+}
+
+.medium-info {
+	margin: 20px 0px 20px 0;
+}
+
+.medium-dark-info {
+	font-size: 18px;
+	font-weight: 900;
+}
+
+.round-rectangle {
+	width: 50px;
+	height: 23px;
+	margin-left: 20px;
+	border: 1px solid #000000;
+	display: inline-block;
+	vertical-align: bottom;
+	border-radius: 10px;
+}
+
+.green-circle {
+	 float: right;
+	 height: 21px;
+	 width: 21px;
+	 background-color: #3ab54a;
+	 border-radius: 50%;
+	 vertical-align: bottom;
+}
+
+.red-circle {
+	 float: left;
+	 height: 21px;
+	 width: 21px;
+	 background-color: #be1e2d;
+	 border-radius: 50%;
+	 vertical-align: bottom;
+}
+
+.volunteer-organizations {
+	margin-top: 20px;
+}
+
+.volunteer-organizations-xs {
+	margin-top: 60px;
+}
+
+.volunteer-organization {
+	width: 500px;
+	height: 75px;
+	border-bottom: 1px solid #6c6d70;
+	margin-bottom: 20px;
+}
+
+.volunteer-organization-xs {
+	width: 280px;
+	height: 85px;
+	border-bottom: 1px solid #6c6d70;
+	margin-bottom: 20px;
+}
+
+.volunteer-organization-left {
+	float: left;
+	width: 100px;
+}
+
+.volunteer-organization-right {
+	float: left;
+	margin-left: 20px;
+}
+
+.volunteer-organization-right-xs {
+	float: left;
+}
+
+.volunteer-organization-img {
+	max-height: 50px;
+	max-width: 100px;
+}
+
+.volunteer-current-activities {
+	margin-top: 20px;
+}
+
+.volunteer-current-activities-xs {
+	margin-top: 60px;
+}
+
+.volunteer-current-activities-header {
+	margin-bottom: 20px;
+}
+
+.progress-bar {
+	display: inline-block;
+	margin-left: 20px;
+	width: 200px;
+	height: 20px;
+	border: 1px solid #000000;
+	background: none;
+}
+
+.progress-bar-xs {
+	float: left;
+	width: 100px;
+	height: 20px;
+	border: 1px solid #000000;
+	background: none;
+}
+
+.percentage {
+	display: inline-block;
+	margin-left: 20px;
+}
+
+/* DELETE THIS WHEN LOADING FROM DATABASE IS DONE */
+
+.bar1 {
+	width: 124px;
+	height: 100%;
+	float: left;
+	background: #f4bc1c;
+}
+
+.bar1-xs {
+	width: 62px;
+	height: 100%;
+	float: left;
+	background: #f4bc1c;
+}
+
+.bar2 {
+	width: 100px;
+	height: 100%;
+	float: left;
+	background: #f4bc1c;
+}
+
+.bar2-xs {
+	width: 50px;
+	height: 100%;
+	float: left;
+	background: #f4bc1c;
+}
+
+/* END DELETE */
+
+.volunteer-activity {
+	margin-bottom: 20px;
+}
+
+.volunteer-activity-header {
+	float: left;
+	width: 150px;
+}
+
+.volunteer-activities-history {
+	margin-top: 40px;
+}
+
+.volunteer-activities-history-header {
+	margin-bottom: 20px;
+}
+
+.volunteer-activity-history-header {
+	float: left;
+}
+
+.volunteer-done-activity {
+	height: 40px;
+	margin-bottom: 15px;
+}
+
+
+.volunteer-menu-row {
+	max-height: 200px;
+}
+
+.volunteer-menu {
+	margin-top: 40px;
+	max-height: 50px;
+}
+
+.volunteer-menu-col {
+	text-align: center;
+	border-bottom: 1px solid #000000;
+	padding-bottom: 5px;
+}
+
+.volunteer-menu-col.active {
+	background: linear-gradient(to right, #cbcb30 0%, #f5822f 20%, #ed2324 40%, #680924 60%, #691042 80%, #280e13 100%);
+	background-size: 100% 1px;
+	background-repeat: no-repeat;
+	background-position: bottom;
+	margin-top: 1px;
+	border: 0;
+}
+
+.volunteer-menu-col-collectibles {
+	text-align: center;
+	color: #6c6d70;
+}
+
+.volunteer-menu-collectibles {
+	margin-top: 20px;
+}
+
+.img-collectible {
+	max-height: 100px;
+	margin: 0 auto;
+}
+
+.trophy {
+	margin-top: 20px;
+}
+
+/* CONTACTS */
+
+.contacts > p {
+	margin: 0;
+}
+
+.contacts-section {
+	margin-top: 40px;
+}
+
+/* ACTIVITIES */
+
+.img-activities {
+	max-height: 400px;
+}
+
 /****************************** END OF MAIN BODY ************************************/
 
 /* LINKS */
@@ -494,6 +786,26 @@ button.navbar-toggle.collapsed:hover {
 
 .red-text {
 	color: #be1e2d;
+}
+
+.capital {
+	text-transform: uppercase;
+}
+
+.strong {
+	font-weight: 800;
+}
+
+.short {
+	font-size: 14px;
+}
+
+.block {
+	display: block;
+}
+
+.grey {
+	color: #6c6d70;
 }
 
 .span-view-more {

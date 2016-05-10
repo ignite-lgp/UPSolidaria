@@ -30,3 +30,27 @@ Route::get('/noticias', function () {
 Route::get('/auth/register', 'Auth\AuthController@showRegistrationForm');
 
 Route::post('/auth/register', 'Auth\AuthController@handleRegistration');
+
+Route::get('/noticia', function(){
+    return view('noticia'); 
+});
+
+Route::get('/organizacao', function () {
+    return view('organizacao');
+});
+
+Route::get('/organizacoes', function () {
+    return view('organizacoes');
+});
+
+Route::get('/perfil', function(){
+    return view('perfil'); 
+});
+
+Route::get('/quemsomos', function(){
+    return view('quemsomos'); 
+});
+
+Route::get('/template', function(){
+    return view('template'); 
+});

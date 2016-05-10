@@ -7,23 +7,23 @@
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<link rel="icon" href="../../src/imgs/logo_upsolidaria.png">
+	<link rel="icon" href="src/imgs/logo_upsolidaria.png">
 	<link href='https://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
 
 	<title>UP Solidária</title>
 
 	<!-- Bootstrap core CSS -->
-	<link href="../../src/css/bootstrap.min.css" rel="stylesheet">
+	<link href="src/css/bootstrap.min.css" rel="stylesheet">
 
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-	<link href="../../src/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+	<link href="src/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
 	<!-- Custom styles for this template -->
-	<link href="../../src/css/upsolidaria.css" rel="stylesheet">
+	<link href="src/css/upsolidaria.css" rel="stylesheet">
 
 	<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
 	<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-	<script src="../../src/js/ie-emulation-modes-warning.js"></script>
+	<script src="src/js/ie-emulation-modes-warning.js"></script>
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
@@ -72,12 +72,12 @@
 		</div>
 		<div id="navbar" class="collapse navbar-collapse">
 		  <ul class="nav navbar-nav navigation-options">
-			<li><a href="#about">quem somos</a></li>
-			<li class="active"><a href="#organizations">organizações</a></li>
-			<li><a href="#activities">atividades</a></li>
-			<li><a href="#news">notícias</a></li>
-			<li><a href="#contacts">contactos</a></li>
-		  </ul>
+            <li><a href="./quemsomos">quem somos</a></li>
+            <li><a href="./organizacoes">organizações</a></li>
+            <li><a href="#activities">atividades</a></li>
+            <li><a href="./noticia">notícias</a></li>
+            <li><a href="#contacts">contactos</a></li>
+          </ul>
 		  <section class="search hidden-xs">
 			<span id="search-icon" class="glyphicon glyphicon-search"></span>
 		  </section>
@@ -149,7 +149,7 @@
 			<!-- Organization Section -->
 			<section class="organization-section">
 				<h3 class="title">Grupo de Ação Social do Porto</h3>
-				<img class="img img-responsive org-img" src="../imgs/gas_porto.png">
+				<img class="img img-responsive org-img" src="src/imgs/gas_porto.png">
 				<section class="info-section">
 						<h4 class="sidebar-title">Missão</h4>
 						<p class="big">O G.A.S.Porto tem como missão ser uma Escola de Vida vocacionada para a Ajuda e Desenvolvimento Humano, contribuindo para um mundo melhor, com menos necessidades.</p>
@@ -166,23 +166,11 @@
 	</div>
 	
 	<section class="container" id="main-container-xs">
-				<section class="organization-section visible-xs">
-					<h3 class="title">Grupo de Ação Social do Porto</h3>
-					<img class="img img-responsive org-img" src="../imgs/gas_porto.png">
-					<section class="info-section">
-							<h4 class="sidebar-title">Missão</h4>
-							<p class="big">O G.A.S.Porto tem como missão ser uma Escola de Vida vocacionada para a Ajuda e Desenvolvimento Humano, contribuindo para um mundo melhor, com menos necessidades.</p>
-					</section>
-					<section class="info-section">
-							<h4 class="sidebar-title">Visão</h4>
-							<p class="big">Acreditamos num mundo com menos necessidades, menos pobre, mais solidário, igual e justo. Um mundo onde, através de exemplos de entrega e serviço, as pessoas possam ajudar de forma voluntária, contínua e integrada na sociedade.</p>
-					</section>
-					<section class="info-section">
-							<h4 class="sidebar-title">Valores</h4>
-							<p class="big">A nossa intervenção é multidisciplinar e desenvolve-se de forma profissional, sustentável e com espírito de equipa. Partindo de competências técnicas, focamo-nos na pessoa e no meio em que esta se insere. Seguimo-nos por valores reconhecidos pelas diversas escolas de pensamento, como essenciais à felicidade do ser humano: paz, liberdade, respeito, abertura, sensibilidade, caridade, alegria, complementados pelo necessário rigor, disciplina e justiça. Somos inspirados pelo exemplo de Jesus Cristo, na sua dedicação aos pobres, combate à injustiça e desigualdade e inspiração altruísta. Partindo da matriz criada na sua fundação em 2002, procuramos crescer e melhorar em comunidade, acumulando saber ao longo das gerações que constituem o grupo, acompanhado de abertura e diálogo às novas gerações.</p>
-					</section>
-      </section>
-				
+        <section class="main-container-xs visible-xs">
+            <section class="main-title-section-xs">
+                <h3 class="main-title-xs">G.A.S. Porto</h4>
+            </section>
+        </section> 
     </section>
 	
 	<!-- Footer -->

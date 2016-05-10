@@ -11,6 +11,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
+use DB;
+
 class AuthController extends Controller
 {
     /*
@@ -68,7 +70,8 @@ class AuthController extends Controller
      *  @return View with registration form
      */
      protected function showRegistrationForm(){
-         $countries = Countries::getList();
+         $countries = DB::table('country')->lists('country','code');
+
 
         return View::make('auth/register')->with('paises',$countries);
      }
@@ -91,6 +94,8 @@ class AuthController extends Controller
                         ->withErrors($validator)
                         ->withInput();
         } else {
+            //Password email
+
 			return User::create([
                 'name' => $userInfo['nome'],
                 //'nif' => $userInfo['nif'],
@@ -98,6 +103,7 @@ class AuthController extends Controller
                 //'localidade' => $userInfo['localidade'],
                 'email' => $userInfo['email'],
                 'password' => bcrypt($userInfo['password']),
+                'country' => $userInfo['nacionalidade'],
                 'reg_date' => $_SERVER['REQUEST_TIME']
                 ]);
 		}

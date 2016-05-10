@@ -238,137 +238,91 @@
 					</div>
 				</section>
 				
-				<section class="volunteer-menu visible-md visible-lg">
-					<div class="row volunteer-menu-row">
-						<div class="col-md-3 volunteer-menu-col">
-							<span class="dark-info"><a>Organizações</a></span>
-						</div>
-						<div class="col-md-3 volunteer-menu-col">
-							<span class="dark-info"><a>Atividades</a></span>
-						</div>
-						<div class="col-md-3 volunteer-menu-col">
-							<span class="dark-info"><a>Crachás</a></span>
-						</div>
-						<div class="col-md-3 volunteer-menu-col active">
-							<span class="dark-info"><a>Troféus</a></span>
-						</div>
-					</div>
-				</section>
-				
 				<section class="volunteer-menu visible-sm">
 					<div class="row volunteer-menu-row">
 						<div class="col-sm-6 volunteer-menu-col">
 							<span class="dark-info"><a>Organizações</a></span>
 						</div>
-						<div class="col-sm-6 volunteer-menu-col">
+						<div class="col-sm-6 volunteer-menu-col active">
 							<span class="dark-info"><a>Atividades</a></span>
 						</div>
 						<div class="col-sm-6 volunteer-menu-col">
 							<span class="dark-info"><a>Crachás</a></span>
 						</div>
-						<div class="col-sm-6 volunteer-menu-col active">
+						<div class="col-sm-6 volunteer-menu-col">
 							<span class="dark-info"><a>Troféus</a></span>
 						</div>
 					</div>
 				</section>
 				
-				<section class="volunteer-menu-collectibles visible-md visible-lg">
+				<section class="volunteer-menu visible-md visible-lg">
 					<div class="row volunteer-menu-row">
-						<div class="col-md-3 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/trophies/dedication.png">
-							<div class="trophy">
-								<span class="trophies capital strong">5 troféus</span>
-								<br>
-								<span class="trophies short">Dedicação</span>
-							</div>
+						<div class="col-md-3 volunteer-menu-col">
+							<span class="dark-info"><a>Organizações</a></span>
 						</div>
-						<div class="col-md-3 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/trophies/kindness.png">
-							<div class="trophy">
-								<span class="trophies capital strong">8 troféus</span>
-								<br>
-								<span class="trophies short">Simpatia</span>
-							</div>
+						<div class="col-md-3 volunteer-menu-col active">
+							<span class="dark-info"><a>Atividades</a></span>
 						</div>
-						<div class="col-md-3 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/trophies/teamwork.png">
-							<div class="trophy">
-								<span class="trophies capital strong">4 troféus</span>
-								<br>
-								<span class="trophies short">Espiírito de Equipa</span>
-							</div>
+						<div class="col-md-3 volunteer-menu-col">
+							<span class="dark-info"><a>Crachás</a></span>
 						</div>
-						<div class="col-md-3 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/trophies/creativity.png">
-							<div class="trophy">
-								<span class="trophies capital strong">4 troféus</span>
-								<br>
-								<span class="trophies short">Originalidade</span>
-							</div>
-						</div>
-					</div>
-					
-					<div class="row volunteer-menu-row">
-						<div class="col-md-3 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/trophies/creativity.png">
-							<div class="trophy">
-								<span class="trophies capital strong">7 troféus</span>
-								<br>
-								<span class="trophies short">Competência</span>
-							</div>
+						<div class="col-md-3 volunteer-menu-col">
+							<span class="dark-info"><a>Troféus</a></span>
 						</div>
 					</div>
 				</section>
 				
-				<section class="volunteer-menu-collectibles visible-sm">
-					<div class="row volunteer-menu-row">
-						<div class="col-sm-6 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/trophies/dedication.png">
-							<div class="trophy">
-								<span class="trophies capital strong">5 troféus</span>
-								<br>
-								<span class="trophies short">Dedicação</span>
-							</div>
+				<section class="volunteer-current-activities visible-sm visible-md visible-lg">
+					<div class="volunteer-current-activities-header">
+						<span class="dark-info">Atividades a decorrer</span>
+					</div>
+					<div class="volunteer-activity">
+						<div class="volunteer-activity-header">
+							<span>Recolha de Alimentos</span>
 						</div>
-						<div class="col-sm-6 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/trophies/kindness.png">
-							<div class="trophy">
-								<span class="trophies capital strong">8 troféus</span>
-								<br>
-								<span class="trophies short">Simpatia</span>
-							</div>
+						<div class="progress-bar">
+							<div class="bar1"> </div> <!-- Delete id="bar1" when loading data from database is done. This is supposed to controlled via PhP and CSS, defining the width ('percentage') of background which will be colored. -->
 						</div>
-						<div class="clearfix visible-sm-block clearfix-small"></div>
-						<div class="col-sm-6 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/trophies/teamwork.png">
-							<div class="trophy">
-								<span class="trophies capital strong">4 troféus</span>
-								<br>
-								<span class="trophies short">Espiírito de Equipa</span>
-							</div>
-						</div>
-						<div class="col-sm-6 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/trophies/creativity.png">
-							<div class="trophy">
-								<span class="trophies capital strong">4 troféus</span>
-								<br>
-								<span class="trophies short">Originalidade</span>
-							</div>
+						<div class="percentage">
+							<span>62%</span>
 						</div>
 					</div>
-					
-					<div class="row volunteer-menu-row">
-						<div class="col-sm-6 volunteer-menu-col-collectibles blockfix-small">
-							<img class="img img-responsive img-collectible" src="../imgs/trophies/creativity.png">
-							<div class="trophy">
-								<span class="trophies capital strong">7 troféus</span>
-								<br>
-								<span class="trophies short">Competência</span>
-							</div>
+					<div class="volunteer-activity">
+						<div class="volunteer-activity-header">
+							<span>Apoio a idas ao médico</span>
+						</div>
+						<div class="progress-bar">
+							<div class="bar2"> </div> <!-- Delete id="bar2" when loading data from database is done. This is supposed to controlled via PhP and CSS, defining the width ('percentage') of background which will be colored. -->
+						</div>
+						<div class="percentage">
+							<span>50%</span>
+						</div>
+					</div>	
+				</section>
+				
+				<section class="volunteer-activities-history">
+					<div class="volunteer-activities-history-header">
+						<span class="dark-info">Histórico</span>
+					</div>
+					<div class="volunteer-done-activity">
+						<div class="volunteer-activity-history-header">
+							<span class="block strong">Organização de jantar</span>
+							<span class="grey">G.A.S. Porto - Set. 2015</span>
+						</div>
+					</div>
+					<div class="volunteer-done-activity">
+						<div class="volunteer-activity-history-header">
+							<span class="block strong">Realização do Workshop</span>
+							<span class="grey">G.A.S. Porto - Feb. 2015</span>
+						</div>
+					</div>
+					<div class="volunteer-done-activity">
+						<div class="volunteer-activity-history-header">
+							<span class="block strong">Acompanhamento de Cidadão</span>
+							<span class="grey">G.A.S. Porto - Dez. 2014</span>
 						</div>
 					</div>
 				</section>
-				
 			</section>
 	</div>
 	
@@ -443,67 +397,71 @@
 					<div class="col-xs-6 col-md-3 volunteer-menu-col">
 						<span class="dark-info"><a>Organizações</a></span>
 					</div>
-					<div class="col-xs-6 col-md-3 volunteer-menu-col">
+					<div class="col-xs-6 col-md-3 volunteer-menu-col active">
 						<span class="dark-info"><a>Atividades</a></span>
 					</div>
 					<div class="clearfix visible-xs-block org-block"></div>
 					<div class="col-xs-6 col-md-3 volunteer-menu-col">
 						<span class="dark-info"><a>Crachás</a></span>
 					</div>
-					<div class="col-xs-6 col-md-3 volunteer-menu-col active">
+					<div class="col-xs-6 col-md-3 volunteer-menu-col">
 						<span class="dark-info"><a>Troféus</a></span>
 					</div>
 				</div>
 			</section>
 			
-			<section class="volunteer-menu-collectibles">
-				<div class="row volunteer-menu-row">
-					<div class="col-xs-6 col-md-3 volunteer-menu-col-collectibles">
-						<img class="img img-responsive img-collectible" src="../imgs/trophies/dedication.png">
-						<div class="trophy">
-							<span class="trophies capital strong">5 troféus</span>
-							<br>
-							<span class="trophies short">Dedicação</span>
+			<section class="volunteer-current-activities-xs visible-xs">
+					<div class="volunteer-current-activities-header">
+						<span class="dark-info">Atividades a decorrer</span>
+					</div>
+					<div class="volunteer-activity">
+						<div class="volunteer-activity-header-xs">
+							<span>Recolha de Alimentos</span>
+						</div>
+						<div class="progress-bar-xs">
+							<div class="bar1-xs"> </div> <!-- Delete id="bar1" when loading data from database is done. This is supposed to controlled via PhP and CSS, defining the width ('percentage') of background which will be colored. -->
+						</div>
+						<div class="percentage">
+							<span>62%</span>
 						</div>
 					</div>
-					<div class="col-xs-6 col-md-3 volunteer-menu-col-collectibles">
-						<img class="img img-responsive img-collectible" src="../imgs/trophies/kindness.png">
-						<div class="trophy">
-							<span class="trophies capital strong">8 troféus</span>
-							<br>
-							<span class="trophies short">Simpatia</span>
+					<div class="volunteer-activity">
+						<div class="volunteer-activity-header-xs">
+							<span>Apoio a idas ao médico</span>
 						</div>
-					</div>
-					<div class="clearfix visible-xs-block org-block"></div>
-					<div class="col-xs-6 col-md-3 volunteer-menu-col-collectibles">
-						<img class="img img-responsive img-collectible" src="../imgs/trophies/teamwork.png">
-						<div class="trophy">
-							<span class="trophies capital strong">4 troféus</span>
-							<br>
-							<span class="trophies short">Espiírito de Equipa</span>
+						<div class="progress-bar-xs">
+							<div class="bar2-xs"> </div> <!-- Delete id="bar2" when loading data from database is done. This is supposed to controlled via PhP and CSS, defining the width ('percentage') of background which will be colored. -->
 						</div>
-					</div>
-					<div class="col-xs-6 col-md-3 volunteer-menu-col-collectibles">
-						<img class="img img-responsive img-collectible" src="../imgs/trophies/creativity.png">
-						<div class="trophy">
-							<span class="trophies capital strong">4 troféus</span>
-							<br>
-							<span class="trophies short">Originalidade</span>
+						<div class="percentage">
+							<span>50%</span>
 						</div>
-					</div>
-				</div>
+					</div>	
+				</section>
 				
-				<div class="row volunteer-menu-row">
-					<div class="col-xs-6 col-md-3 volunteer-menu-col-collectibles">
-						<img class="img img-responsive img-collectible" src="../imgs/trophies/creativity.png">
-						<div class="trophy">
-							<span class="trophies capital strong">7 troféus</span>
-							<br>
-							<span class="trophies short">Competência</span>
+				<section class="volunteer-activities-history">
+					<div class="volunteer-activities-history-header">
+						<span class="dark-info">Histórico</span>
+					</div>
+					<div class="volunteer-done-activity">
+						<div class="volunteer-activity-history-header">
+							<span class="block strong">Organização de jantar</span>
+							<span class="grey">G.A.S. Porto - Set. 2015</span>
 						</div>
 					</div>
-				</div>
-			</section>		
+					<div class="volunteer-done-activity">
+						<div class="volunteer-activity-history-header">
+							<span class="block strong">Realização do Workshop</span>
+							<span class="grey">G.A.S. Porto - Feb. 2015</span>
+						</div>
+					</div>
+					<div class="volunteer-done-activity">
+						<div class="volunteer-activity-history-header">
+							<span class="block strong">Acompanhamento de Cidadão</span>
+							<span class="grey">G.A.S. Porto - Dez. 2014</span>
+						</div>
+					</div>
+				</section>
+			
 		</section>
 	</section>
 	

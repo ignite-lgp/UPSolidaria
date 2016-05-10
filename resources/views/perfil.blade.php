@@ -7,23 +7,23 @@
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<link rel="icon" href="../../src/imgs/logo_upsolidaria.png">
+	<link rel="icon" href="src/imgs/logo_upsolidaria.png">
 	<link href='https://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
 
 	<title>UP Solidária</title>
 
 	<!-- Bootstrap core CSS -->
-	<link href="../../src/css/bootstrap.min.css" rel="stylesheet">
+	<link href="src/css/bootstrap.min.css" rel="stylesheet">
 
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-	<link href="../../src/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+	<link href="src/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
 	<!-- Custom styles for this template -->
-	<link href="../../src/css/upsolidaria.css" rel="stylesheet">
+	<link href="src/css/upsolidaria.css" rel="stylesheet">
 
 	<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
 	<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-	<script src="../../src/js/ie-emulation-modes-warning.js"></script>
+	<script src="src/js/ie-emulation-modes-warning.js"></script>
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
@@ -72,12 +72,12 @@
 		</div>
 		<div id="navbar" class="collapse navbar-collapse">
 		  <ul class="nav navbar-nav navigation-options">
-			<li><a href="#about">quem somos</a></li>
-			<li><a href="#organizations">organizações</a></li>
-			<li><a href="#activities">atividades</a></li>
-			<li><a href="#news">notícias</a></li>
-			<li><a href="#contacts">contactos</a></li>
-		  </ul>
+            <li><a href="./quemsomos">quem somos</a></li>
+            <li><a href="./organizacoes">organizações</a></li>
+            <li><a href="#activities">atividades</a></li>
+            <li><a href="./noticia">notícias</a></li>
+            <li><a href="#contacts">contactos</a></li>
+          </ul>
 		  <section class="search hidden-xs">
 			<span id="search-icon" class="glyphicon glyphicon-search"></span>
 		  </section>
@@ -181,7 +181,7 @@
 			<section class="volunteer-basic-info">
 				<div class="row volunteer-row">
 					<div class="col-md-3 col-sm-6">
-						<img class="img img-responsive volunteer-img" src="../imgs/volunteers/stevejobs.jpg">
+						<img class="img img-responsive volunteer-img" src="src/imgs/volunteers/stevejobs.jpg">
 					</div>
 					
 					<div class="col-md-8 col-sm-6">
@@ -275,7 +275,7 @@
 				<section class="volunteer-menu-collectibles visible-md visible-lg">
 					<div class="row volunteer-menu-row">
 						<div class="col-md-3 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/trophies/dedication.png">
+							<img class="img img-responsive img-collectible" src="src/imgs/trophies/dedication.png">
 							<div class="trophy">
 								<span class="trophies capital strong">5 troféus</span>
 								<br>
@@ -283,7 +283,7 @@
 							</div>
 						</div>
 						<div class="col-md-3 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/trophies/kindness.png">
+							<img class="img img-responsive img-collectible" src="src/imgs/trophies/kindness.png">
 							<div class="trophy">
 								<span class="trophies capital strong">8 troféus</span>
 								<br>
@@ -291,15 +291,15 @@
 							</div>
 						</div>
 						<div class="col-md-3 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/trophies/teamwork.png">
+							<img class="img img-responsive img-collectible" src="src/imgs/trophies/teamwork.png">
 							<div class="trophy">
 								<span class="trophies capital strong">4 troféus</span>
 								<br>
-								<span class="trophies short">Espiírito de Equipa</span>
+								<span class="trophies short">Espírito de Equipa</span>
 							</div>
 						</div>
 						<div class="col-md-3 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/trophies/creativity.png">
+							<img class="img img-responsive img-collectible" src="src/imgs/trophies/creativity.png">
 							<div class="trophy">
 								<span class="trophies capital strong">4 troféus</span>
 								<br>
@@ -310,7 +310,7 @@
 					
 					<div class="row volunteer-menu-row">
 						<div class="col-md-3 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/trophies/creativity.png">
+							<img class="img img-responsive img-collectible" src="src/imgs/trophies/creativity.png">
 							<div class="trophy">
 								<span class="trophies capital strong">7 troféus</span>
 								<br>
@@ -323,7 +323,7 @@
 				<section class="volunteer-menu-collectibles visible-sm">
 					<div class="row volunteer-menu-row">
 						<div class="col-sm-6 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/trophies/dedication.png">
+							<img class="img img-responsive img-collectible" src="src/imgs/trophies/dedication.png">
 							<div class="trophy">
 								<span class="trophies capital strong">5 troféus</span>
 								<br>
@@ -331,7 +331,7 @@
 							</div>
 						</div>
 						<div class="col-sm-6 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/trophies/kindness.png">
+							<img class="img img-responsive img-collectible" src="src/imgs/trophies/kindness.png">
 							<div class="trophy">
 								<span class="trophies capital strong">8 troféus</span>
 								<br>
@@ -340,15 +340,15 @@
 						</div>
 						<div class="clearfix visible-sm-block clearfix-small"></div>
 						<div class="col-sm-6 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/trophies/teamwork.png">
+							<img class="img img-responsive img-collectible" src="src/imgs/trophies/teamwork.png">
 							<div class="trophy">
 								<span class="trophies capital strong">4 troféus</span>
 								<br>
-								<span class="trophies short">Espiírito de Equipa</span>
+								<span class="trophies short">Espírito de Equipa</span>
 							</div>
 						</div>
 						<div class="col-sm-6 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/trophies/creativity.png">
+							<img class="img img-responsive img-collectible" src="src/imgs/trophies/creativity.png">
 							<div class="trophy">
 								<span class="trophies capital strong">4 troféus</span>
 								<br>
@@ -359,7 +359,7 @@
 					
 					<div class="row volunteer-menu-row">
 						<div class="col-sm-6 volunteer-menu-col-collectibles blockfix-small">
-							<img class="img img-responsive img-collectible" src="../imgs/trophies/creativity.png">
+							<img class="img img-responsive img-collectible" src="src/imgs/trophies/creativity.png">
 							<div class="trophy">
 								<span class="trophies capital strong">7 troféus</span>
 								<br>
@@ -390,7 +390,7 @@
 		<section class="volunteer-basic-info visible-xs">
 			<div class="row volunteer-row-xs">
 				<div class="col-xs-6 col-md-3">
-					<img class="img img-responsive" src="../imgs/volunteers/stevejobs.jpg">
+					<img class="img img-responsive" src="src/imgs/volunteers/stevejobs.jpg">
 				</div>
 				
 				<div class="col-md-8">
@@ -459,7 +459,7 @@
 			<section class="volunteer-menu-collectibles">
 				<div class="row volunteer-menu-row">
 					<div class="col-xs-6 col-md-3 volunteer-menu-col-collectibles">
-						<img class="img img-responsive img-collectible" src="../imgs/trophies/dedication.png">
+						<img class="img img-responsive img-collectible" src="src/imgs/trophies/dedication.png">
 						<div class="trophy">
 							<span class="trophies capital strong">5 troféus</span>
 							<br>
@@ -467,7 +467,7 @@
 						</div>
 					</div>
 					<div class="col-xs-6 col-md-3 volunteer-menu-col-collectibles">
-						<img class="img img-responsive img-collectible" src="../imgs/trophies/kindness.png">
+						<img class="img img-responsive img-collectible" src="src/imgs/trophies/kindness.png">
 						<div class="trophy">
 							<span class="trophies capital strong">8 troféus</span>
 							<br>
@@ -476,7 +476,7 @@
 					</div>
 					<div class="clearfix visible-xs-block org-block"></div>
 					<div class="col-xs-6 col-md-3 volunteer-menu-col-collectibles">
-						<img class="img img-responsive img-collectible" src="../imgs/trophies/teamwork.png">
+						<img class="img img-responsive img-collectible" src="src/imgs/trophies/teamwork.png">
 						<div class="trophy">
 							<span class="trophies capital strong">4 troféus</span>
 							<br>
@@ -484,7 +484,7 @@
 						</div>
 					</div>
 					<div class="col-xs-6 col-md-3 volunteer-menu-col-collectibles">
-						<img class="img img-responsive img-collectible" src="../imgs/trophies/creativity.png">
+						<img class="img img-responsive img-collectible" src="src/imgs/trophies/creativity.png">
 						<div class="trophy">
 							<span class="trophies capital strong">4 troféus</span>
 							<br>
@@ -495,7 +495,7 @@
 				
 				<div class="row volunteer-menu-row">
 					<div class="col-xs-6 col-md-3 volunteer-menu-col-collectibles">
-						<img class="img img-responsive img-collectible" src="../imgs/trophies/creativity.png">
+						<img class="img img-responsive img-collectible" src="src/imgs/trophies/creativity.png">
 						<div class="trophy">
 							<span class="trophies capital strong">7 troféus</span>
 							<br>

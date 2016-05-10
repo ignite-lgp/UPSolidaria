@@ -43,7 +43,7 @@
 
         <p>{!! Form::label('Pais', 'nacionalidade')!!}</p>
         <p>{!! Form::select('nacionalidade',
-        ([$paises]),
+        ($paises),
             null) !!}</p>
         <p>{!! Form::submit('Submit') !!}</p>
 

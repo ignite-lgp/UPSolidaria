@@ -238,26 +238,9 @@
 					</div>
 				</section>
 				
-				<section class="volunteer-menu visible-md visible-lg">
-					<div class="row volunteer-menu-row">
-						<div class="col-md-3 volunteer-menu-col">
-							<span class="dark-info"><a>Organizações</a></span>
-						</div>
-						<div class="col-md-3 volunteer-menu-col">
-							<span class="dark-info"><a>Atividades</a></span>
-						</div>
-						<div class="col-md-3 volunteer-menu-col">
-							<span class="dark-info"><a>Crachás</a></span>
-						</div>
-						<div class="col-md-3 volunteer-menu-col active">
-							<span class="dark-info"><a>Troféus</a></span>
-						</div>
-					</div>
-				</section>
-				
 				<section class="volunteer-menu visible-sm">
 					<div class="row volunteer-menu-row">
-						<div class="col-sm-6 volunteer-menu-col">
+						<div class="col-sm-6 volunteer-menu-col active">
 							<span class="dark-info"><a>Organizações</a></span>
 						</div>
 						<div class="col-sm-6 volunteer-menu-col">
@@ -266,109 +249,81 @@
 						<div class="col-sm-6 volunteer-menu-col">
 							<span class="dark-info"><a>Crachás</a></span>
 						</div>
-						<div class="col-sm-6 volunteer-menu-col active">
+						<div class="col-sm-6 volunteer-menu-col">
 							<span class="dark-info"><a>Troféus</a></span>
 						</div>
 					</div>
 				</section>
 				
-				<section class="volunteer-menu-collectibles visible-md visible-lg">
+				<section class="volunteer-menu visible-md visible-lg">
 					<div class="row volunteer-menu-row">
-						<div class="col-md-3 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/trophies/dedication.png">
-							<div class="trophy">
-								<span class="trophies capital strong">5 troféus</span>
-								<br>
-								<span class="trophies short">Dedicação</span>
-							</div>
+						<div class="col-md-3 volunteer-menu-col active">
+							<span class="dark-info"><a>Organizações</a></span>
 						</div>
-						<div class="col-md-3 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/trophies/kindness.png">
-							<div class="trophy">
-								<span class="trophies capital strong">8 troféus</span>
-								<br>
-								<span class="trophies short">Simpatia</span>
-							</div>
+						<div class="col-md-3 volunteer-menu-col">
+							<span class="dark-info"><a>Atividades</a></span>
 						</div>
-						<div class="col-md-3 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/trophies/teamwork.png">
-							<div class="trophy">
-								<span class="trophies capital strong">4 troféus</span>
-								<br>
-								<span class="trophies short">Espiírito de Equipa</span>
-							</div>
+						<div class="col-md-3 volunteer-menu-col">
+							<span class="dark-info"><a>Crachás</a></span>
 						</div>
-						<div class="col-md-3 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/trophies/creativity.png">
-							<div class="trophy">
-								<span class="trophies capital strong">4 troféus</span>
-								<br>
-								<span class="trophies short">Originalidade</span>
-							</div>
-						</div>
-					</div>
-					
-					<div class="row volunteer-menu-row">
-						<div class="col-md-3 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/trophies/creativity.png">
-							<div class="trophy">
-								<span class="trophies capital strong">7 troféus</span>
-								<br>
-								<span class="trophies short">Competência</span>
-							</div>
+						<div class="col-md-3 volunteer-menu-col">
+							<span class="dark-info"><a>Troféus</a></span>
 						</div>
 					</div>
 				</section>
 				
-				<section class="volunteer-menu-collectibles visible-sm">
-					<div class="row volunteer-menu-row">
-						<div class="col-sm-6 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/trophies/dedication.png">
-							<div class="trophy">
-								<span class="trophies capital strong">5 troféus</span>
-								<br>
-								<span class="trophies short">Dedicação</span>
-							</div>
-						</div>
-						<div class="col-sm-6 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/trophies/kindness.png">
-							<div class="trophy">
-								<span class="trophies capital strong">8 troféus</span>
-								<br>
-								<span class="trophies short">Simpatia</span>
-							</div>
-						</div>
-						<div class="clearfix visible-sm-block clearfix-small"></div>
-						<div class="col-sm-6 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/trophies/teamwork.png">
-							<div class="trophy">
-								<span class="trophies capital strong">4 troféus</span>
-								<br>
-								<span class="trophies short">Espiírito de Equipa</span>
-							</div>
-						</div>
-						<div class="col-sm-6 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/trophies/creativity.png">
-							<div class="trophy">
-								<span class="trophies capital strong">4 troféus</span>
-								<br>
-								<span class="trophies short">Originalidade</span>
-							</div>
-						</div>
-					</div>
-					
-					<div class="row volunteer-menu-row">
-						<div class="col-sm-6 volunteer-menu-col-collectibles blockfix-small">
-							<img class="img img-responsive img-collectible" src="../imgs/trophies/creativity.png">
-							<div class="trophy">
-								<span class="trophies capital strong">7 troféus</span>
-								<br>
-								<span class="trophies short">Competência</span>
-							</div>
-						</div>
-					</div>
-				</section>
-				
+                <section class="volunteer-organizations">
+                    <article class="volunteer-organization">
+                        <div class="volunteer-organization-left">
+                            <img class="img img-responsive volunteer-organization-img" src="../imgs/organizations/afs.png">
+                        </div>
+                        <div class="volunteer-organization-right">
+                            <a class="red-link block">Associação Intercultural AFS</a>
+                            <span class="block">Integrou AFS</span>
+                            <span class="block">2015-Presente</span>
+                        </div>
+                    </article>
+                    <article class="volunteer-organization">
+                        <div class="volunteer-organization-left">
+                            <img class="img img-responsive volunteer-organization-img" src="../imgs/organizations/bancoalimentar.png">
+                        </div>
+                        <div class="volunteer-organization-right">
+                            <a class="red-link block">Banco Alimentar</a>
+                            <span class="block">Participou em atividade</span>
+                            <span class="block">Dez. 2015</span>
+                        </div>
+                    </article>
+                    <article class="volunteer-organization">
+                        <div class="volunteer-organization-left">
+                            <img class="img img-responsive volunteer-organization-img" src="../imgs/organizations/ajudaris.png">
+                        </div>
+                        <div class="volunteer-organization-right">
+                            <a class="red-link block">Ajudaris</a>
+                            <span class="block">Participou em atividade</span>
+                            <span class="block">Nov. 2015</span>
+                        </div>
+                    </article>
+                    <article class="volunteer-organization">
+                        <div class="volunteer-organization-left">
+                            <img class="img img-responsive volunteer-organization-img" src="../imgs/organizations/curamais.png">
+                        </div>
+                        <div class="volunteer-organization-right">
+                            <a class="red-link block">Cura+</a>
+                            <span class="block">Participou em atividade</span>
+                            <span class="block">Ago. 2015</span>
+                        </div>
+                    </article>
+                    <article class="volunteer-organization">
+                        <div class="volunteer-organization-left">
+                            <img class="img img-responsive volunteer-organization-img" src="../imgs/organizations/moa.png">
+                        </div>
+                        <div class="volunteer-organization-right">
+                            <a class="red-link block">Fundação MOA</a>
+                            <span class="block">Integrou Fundação MOA</span>
+                            <span class="block">2014-2015</span>
+                        </div>
+                    </article>
+                </section>
 			</section>
 	</div>
 	
@@ -440,7 +395,7 @@
 			
 			<section class="volunteer-menu">
 				<div class="row volunteer-menu-row">
-					<div class="col-xs-6 col-md-3 volunteer-menu-col">
+					<div class="col-xs-6 col-md-3 volunteer-menu-col active">
 						<span class="dark-info"><a>Organizações</a></span>
 					</div>
 					<div class="col-xs-6 col-md-3 volunteer-menu-col">
@@ -450,60 +405,64 @@
 					<div class="col-xs-6 col-md-3 volunteer-menu-col">
 						<span class="dark-info"><a>Crachás</a></span>
 					</div>
-					<div class="col-xs-6 col-md-3 volunteer-menu-col active">
+					<div class="col-xs-6 col-md-3 volunteer-menu-col">
 						<span class="dark-info"><a>Troféus</a></span>
 					</div>
 				</div>
 			</section>
-			
-			<section class="volunteer-menu-collectibles">
-				<div class="row volunteer-menu-row">
-					<div class="col-xs-6 col-md-3 volunteer-menu-col-collectibles">
-						<img class="img img-responsive img-collectible" src="../imgs/trophies/dedication.png">
-						<div class="trophy">
-							<span class="trophies capital strong">5 troféus</span>
-							<br>
-							<span class="trophies short">Dedicação</span>
-						</div>
-					</div>
-					<div class="col-xs-6 col-md-3 volunteer-menu-col-collectibles">
-						<img class="img img-responsive img-collectible" src="../imgs/trophies/kindness.png">
-						<div class="trophy">
-							<span class="trophies capital strong">8 troféus</span>
-							<br>
-							<span class="trophies short">Simpatia</span>
-						</div>
-					</div>
-					<div class="clearfix visible-xs-block org-block"></div>
-					<div class="col-xs-6 col-md-3 volunteer-menu-col-collectibles">
-						<img class="img img-responsive img-collectible" src="../imgs/trophies/teamwork.png">
-						<div class="trophy">
-							<span class="trophies capital strong">4 troféus</span>
-							<br>
-							<span class="trophies short">Espiírito de Equipa</span>
-						</div>
-					</div>
-					<div class="col-xs-6 col-md-3 volunteer-menu-col-collectibles">
-						<img class="img img-responsive img-collectible" src="../imgs/trophies/creativity.png">
-						<div class="trophy">
-							<span class="trophies capital strong">4 troféus</span>
-							<br>
-							<span class="trophies short">Originalidade</span>
-						</div>
-					</div>
-				</div>
-				
-				<div class="row volunteer-menu-row">
-					<div class="col-xs-6 col-md-3 volunteer-menu-col-collectibles">
-						<img class="img img-responsive img-collectible" src="../imgs/trophies/creativity.png">
-						<div class="trophy">
-							<span class="trophies capital strong">7 troféus</span>
-							<br>
-							<span class="trophies short">Competência</span>
-						</div>
-					</div>
-				</div>
-			</section>		
+                
+            <section class="volunteer-organizations-xs visible-xs">
+                <article class="volunteer-organization-xs">
+                    <div class="volunteer-organization-left">
+                        <img class="img img-responsive volunteer-organization-img" src="../imgs/organizations/afs.png">
+                    </div>
+                    <div class="volunteer-organization-right-xs">
+                        <a class="red-link block">Associação Intercultural AFS</a>
+                        <span class="block">Integrou AFS</span>
+                        <span class="block">2015-Presente</span>
+                    </div>
+                </article>
+                <article class="volunteer-organization-xs">
+                    <div class="volunteer-organization-left">
+                        <img class="img img-responsive volunteer-organization-img" src="../imgs/organizations/bancoalimentar.png">
+                    </div>
+                    <div class="volunteer-organization-right-xs">
+                        <a class="red-link block">Banco Alimentar</a>
+                        <span class="block">Participou em atividade</span>
+                        <span class="block">Dez. 2015</span>
+                    </div>
+                </article>
+                <article class="volunteer-organization-xs">
+                    <div class="volunteer-organization-left">
+                        <img class="img img-responsive volunteer-organization-img" src="../imgs/organizations/ajudaris.png">
+                    </div>
+                    <div class="volunteer-organization-right-xs">
+                        <a class="red-link block">Ajudaris</a>
+                        <span class="block">Participou em atividade</span>
+                        <span class="block">Nov. 2015</span>
+                    </div>
+                </article>
+                <article class="volunteer-organization-xs">
+                    <div class="volunteer-organization-left">
+                        <img class="img img-responsive volunteer-organization-img" src="../imgs/organizations/curamais.png">
+                    </div>
+                    <div class="volunteer-organization-right-xs">
+                        <a class="red-link block">Cura+</a>
+                        <span class="block">Participou em atividade</span>
+                        <span class="block">Ago. 2015</span>
+                    </div>
+                </article>
+                <article class="volunteer-organization-xs">
+                    <div class="volunteer-organization-left">
+                        <img class="img img-responsive volunteer-organization-img" src="../imgs/organizations/moa.png">
+                    </div>
+                    <div class="volunteer-organization-right-xs">
+                        <a class="red-link block">Fundação MOA</a>
+                        <span class="block">Integrou Fundação MOA</span>
+                        <span class="block">2014-2015</span>
+                    </div>
+                </article>
+            </section>
 		</section>
 	</section>
 	
