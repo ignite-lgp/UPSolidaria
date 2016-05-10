@@ -549,6 +549,12 @@ p.big {
 	margin-top: 40px;
 }
 
+/* ACTIVITIES */
+
+.img-activities {
+	max-height: 400px;
+}
+
 /****************************** END OF MAIN BODY ************************************/
 
 /* LINKS */
