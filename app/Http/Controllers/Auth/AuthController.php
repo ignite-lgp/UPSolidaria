@@ -11,6 +11,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
+use Mail;
 use DB;
 
 class AuthController extends Controller
@@ -94,9 +95,8 @@ class AuthController extends Controller
                         ->withErrors($validator)
                         ->withInput();
         } else {
-            //Password email
 
-			return User::create([
+			User::create([
                 'name' => $userInfo['nome'],
                 //'nif' => $userInfo['nif'],
                 //'nacionalidade' => $userInfo['nacionalidade'],
@@ -104,8 +104,20 @@ class AuthController extends Controller
                 'email' => $userInfo['email'],
                 'password' => bcrypt($userInfo['password']),
                 'country' => $userInfo['nacionalidade'],
-                'reg_date' => $_SERVER['REQUEST_TIME']
+                'reg_date' => $_SERVER['REQUEST_TIME'],
+                'token' => bin2hex(random_bytes(10))
                 ]);
+
+
+            Mail::send('welcome',['token' => ], function ($message) {
+
+                $message->from(env('MAIL_USERNAME'), 'Bem vindo à UPSolidaria');
+
+                $message->to('tiago.lpneto@gmail.com')->subject('Learning Laravel test email'); // TODO: Alterar
+
+            });
+
+            return 'hi';
 		}
       }
 }

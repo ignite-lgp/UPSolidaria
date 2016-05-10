@@ -55,8 +55,7 @@ return [
     |
     */
 
-    'from' => ['address' => upsolidaria@gmail.com, 'name' => UPSolidaria],
-
+    'from' => ['address' => env('MAIL_USERNAME'), 'name' => env('MAIL_NAME')],
     /*
     |--------------------------------------------------------------------------
     | E-Mail Encryption Protocol
