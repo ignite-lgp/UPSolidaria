@@ -191,7 +191,7 @@
 	
 	<section class="container" id="main-container-xs">
 		<section class="main-container-xs visible-xs">
-			<section class="main-title-section-xs">
+			<section class="title-section">
 				<h3 class="main-title-xs">Bem-vindos à plataforma de Voluntariado da UP!</h4>
 			</section>
 		</section>
