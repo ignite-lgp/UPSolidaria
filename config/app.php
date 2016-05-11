@@ -149,6 +149,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         'Monarobase\CountryList\CountryListServiceProvider',
+        'Tymon\JWTAuth\Providers\JWTAuthServiceProvider',
         /*
          * Application Service Providers...
          */
@@ -205,6 +206,8 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Countries' => 'Monarobase\CountryList\CountryListFacade',
+        'JWTAuth' => 'Tymon\JWTAuth\Facades\JWTAuth',
+        'JWTFactory' => 'Tymon\JWTAuth\Facades\JWTFactory',
     ],
 
 ];

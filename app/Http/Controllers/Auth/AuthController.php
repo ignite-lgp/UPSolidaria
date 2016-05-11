@@ -146,4 +146,24 @@ class AuthController extends Controller
 
       }
 
+
+      /**
+       *
+       * Handle Login 
+       *
+       */
+      protected function handleLogin(Request $data){
+        var_dump($data->all());
+
+        // Check if there is an user with those parameters
+        $user = User::whereRaw('email = ?',[$data->all()['username']])->first();
+
+        if (password_verify($data->all()['password'], $user->password)){
+            $cookieJar = new CookieJar();
+            echo 'OK';
+        } else {
+            echo 'Fail';
+        }
+      }
+
 }

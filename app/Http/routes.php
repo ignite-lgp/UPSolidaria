@@ -33,8 +33,7 @@ Route::post('/auth/register', 'Auth\AuthController@handleRegistration');
 
 Route::get('/auth/confirm/token={token}&email={email}', 'Auth\AuthController@handleConfirmation');
 
-
-
+Route::post('/auth/login', 'Auth\AuthController@handleLogin');
 
 /*
 	General routes

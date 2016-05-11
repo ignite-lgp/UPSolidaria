@@ -123,9 +123,11 @@
 			
 			<section class="sidebar-auth hidden-xs">
 				<span id="authentication-title">autenticação</span>
-				<input class="auth-input" type="text" name="username" placeholder="Utilizador" />
-				<input class="auth-input" type="password" name="password" placeholder="Palavra-Passe" />
-				<input class="btn-auth" type="submit" name="init-session" value="iniciar sessão" />
+                {!! Form::open(array('url' => '/auth/login', 'method' => 'POST')) !!}
+                    {!! Form::text('username','', array('class' => 'auth-input', 'placeholder' => 'Utilizador')) !!}
+                    {!! Form::password('password', array('class' => 'auth-input', 'placeholder' => 'Palavra-Passe')) !!}
+                    {!! Form::submit('iniciar sessão',array('class'=>'btn-auth'))!!}
+                {!! Form::close() !!}
 			</section>
 			
 			<section class="reg-data hidden-xs">
