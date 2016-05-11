@@ -31,6 +31,15 @@ Route::get('/auth/register', 'Auth\AuthController@showRegistrationForm');
 
 Route::post('/auth/register', 'Auth\AuthController@handleRegistration');
 
+Route::get('/auth/confirm/token={token}&email={email}', 'Auth\AuthController@handleConfirmation');
+
+
+
+
+/*
+	General routes
+*/
+
 Route::get('/noticia', function(){
     return view('noticia'); 
 });

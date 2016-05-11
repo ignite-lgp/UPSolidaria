@@ -104,7 +104,6 @@ class AuthController extends Controller
                 'email' => $userInfo['email'],
                 'password' => bcrypt($userInfo['password']),
                 'country' => $userInfo['nacionalidade'],
-                'reg_date' => $_SERVER['REQUEST_TIME'],
                 'token' => bin2hex(random_bytes(10))
                 ]);
 
@@ -122,4 +121,29 @@ class AuthController extends Controller
             return redirect($this->redirectTo);
 		}
       }
+
+
+      /**
+       *
+       * Handle registration's confirmation
+       *
+       */
+      protected function handleConfirmation($token, $email){
+
+        // Search for user with those atributes
+        $user = User::whereRaw('token = ? and email = ?', [$token, $email])->first();
+
+        if (is_null($user)){
+            return 'We were unable to find a user with these token and email.';
+        } else if ($user['confirm_date'] != '') {
+            return 'You already confirmed your account.';
+        } else {
+            $user->confirm_date = date("Y-m-d H:i:s"); 
+            $user->token = bin2hex(random_bytes(10));
+            $user->save();
+            return 'Thanks for confirming your account. You can now use our platform.';
+        }
+
+      }
+
 }

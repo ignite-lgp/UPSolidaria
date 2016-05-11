@@ -50,7 +50,7 @@ class Database extends Migration
             $table->date('birthdate')->nullable();
             $table->boolean('gender')->nullable();
             $table->integer('phone')->nullable();
-            $table->date('confirm_date')->nullable();
+            $table->dateTime('confirm_date')->nullable();
             $table->text('about')->nullable();
             $table->boolean('private_email')->nullable();
             $table->integer('point')->nullable();
