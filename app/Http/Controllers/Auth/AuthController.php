@@ -252,7 +252,7 @@ class AuthController extends Controller
             return 'We were unable to find a user with this e-mail.';}
         else {
             $user->token = bin2hex(random_bytes(10));
-            $user->password = $user2['password'];
+            $user->password =  bcrypt($user2['password']);
             $user->save();
             return redirect($this->redirectTo);
         }
