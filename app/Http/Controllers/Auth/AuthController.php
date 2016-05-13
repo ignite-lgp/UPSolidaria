@@ -10,7 +10,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
-
+use JWTAuth;
+use JWTFactory;
+use Tymon\JWTAuth\Exceptions\JWTException;
 use Mail;
 use DB;
 
@@ -153,14 +155,24 @@ class AuthController extends Controller
        *
        */
       protected function handleLogin(Request $data){
-        var_dump($data->all());
 
         // Check if there is an user with those parameters
         $user = User::whereRaw('email = ?',[$data->all()['username']])->first();
 
         if (password_verify($data->all()['password'], $user->password)){
-            $cookieJar = new CookieJar();
-            echo 'OK';
+
+            try {
+                $user_token = ['email' => $data->all()['username']];
+
+                $payload = JWTFactory::make($user_token);
+
+                $u_token = JWTAuth::encode($payload);
+                
+                return redirect('/')->withCookie(cookie('u_session', $u_token));
+
+            } catch(JWTException $e){
+
+            }
         } else {
             echo 'Fail';
         }
