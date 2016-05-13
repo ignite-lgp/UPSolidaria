@@ -72,7 +72,7 @@
 		</div>
 		<div id="navbar" class="collapse navbar-collapse">
 		  <ul class="nav navbar-nav navigation-options">
-			<li class="active"><a href="#about">quem somos</a></li>
+			<li><a href="#about">quem somos</a></li>
 			<li><a href="#organizations">organizações</a></li>
 			<li><a href="#activities">atividades</a></li>
 			<li><a href="#news">notícias</a></li>

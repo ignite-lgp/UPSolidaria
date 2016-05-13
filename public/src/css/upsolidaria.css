@@ -99,10 +99,6 @@ hr {
 	margin-bottom: 5px;
 }
 
-.sidebar-listing > ul > li {
-	font-weight: 400;
-}
-
 /****************************** END OF SIDEBAR ************************************/
 
 
@@ -116,26 +112,24 @@ hr {
 /* Title */
 .title-section {
 	padding-top: 40px;
+	margin-bottom: 60px;
+	text-align: left;
 }
 
-.title-section-xs {
-	padding-top: 20px;
-}
-
-.title-section *, .title-section-xs *{
+.title-section * {
 	margin: 0;
 	display: inline-block;
 }
 
-.title-section h2, .title-section-xs h2 {
+.title-section h2 {
 	font-weight: 800;
 }
 
-.title-section h3, .title-section-xs h3 {
+.title-section h3 {
 	font-weight: 800;
 }
 
-.title-section h4, .title-section-xs h4 {
+.title-section  h4 {
 	font-weight: 600;
 }
 
@@ -214,6 +208,176 @@ hr {
 	text-transform: uppercase;
 	font-weight: 800;
 	line-height: 3;
+}
+
+/* GERAL? */
+
+.main-section {
+	margin-bottom: 60px;
+	font-weight: 600;
+}
+
+.main-section > h4, .main-section > h3, .main-section > h2 {
+	font-weight: 800;
+	margin-bottom: 30px;
+}
+
+.main-section > h4 {
+	font-weight: 600;
+}
+
+.centered-container {
+	text-align: center;
+}
+
+.big-separator {
+	margin-top: 150px;
+	margin-bottom: 100px;
+}
+
+/* LOGIN */
+.login-auth {
+	margin-left: auto;
+	margin-right: auto;
+	width: 300px;
+}
+.login-auth > .auth-input, .login-auth > .btn-auth {
+	width: 100%;
+}/**/
+/*
+.login-auth > .auth-input, .login-auth > .btn-auth {
+	width: 250px;
+}/**/
+
+.login-auth > .auth-input, .login-auth > .btn-auth {
+	display: list-item;
+	font-size: 13px;
+}
+
+.login-auth > .auth-input {
+	height: 30px;
+}
+
+.login-separator {
+	height: 20px;
+	width:100%;
+}
+
+.login-separator * {
+	display: inline-block;
+	float:left;
+}
+
+.login-separator > hr {
+	margin-top: 3px;
+	width: 46%;
+	margin: 0;
+	margin-top: 10px;
+}
+
+.login-separator > p {
+	font-size: 17px;
+	margin-top: auto;
+	margin-bottom: auto;
+	padding: 0 1%;
+	padding-bottom: 5px;
+	color: grey;
+	width: 6%;
+}
+
+.login-social-networks {
+	width: 100%;
+	margin-top: 50px;
+}
+
+.login-social-networks > ul {
+	width: 100%;
+	display: table;
+	padding: 0;
+}
+
+.login-social-networks > ul > li {
+	display: table-cell;
+}
+
+.login-social-networks > ul > li > a > img {
+	height: 60px;
+	width: 60px;
+}
+
+.login-register > h2 {
+	margin-bottom: 70px;
+}
+
+.required:before {
+	content: "* ";
+	color: red;
+}
+
+.not-centered {
+	text-align: left;
+	font-weight: 600px;
+	font-size: 15px;
+}
+
+.reg-input {
+	background-color: inherit;
+	border: 0 none;
+	border-bottom: 2px solid;
+	margin-bottom: 70px;
+	padding-left: 10px;
+	outline: none;
+}
+
+.reg-input.reg-aligned {
+	display: inline;
+}
+
+.login-register form>input {
+	width: 60%;
+	display: list-item;
+	font-size: 15px;
+}
+
+.login-register form>input[type=date] {
+	width: 20%;
+	min-width: 150px;
+}
+
+.login-register input[type=checkbox] {
+	vertical-align: middle;
+	width: 17px;
+	height: 20px;
+	display: inline;
+	bottom: 1px;
+	position: relative;
+}
+
+.login-register .reg-input {
+	height: 30px;
+}
+
+.reg-buttons {
+	margin-top: 70px;
+	display: table;
+	width: 100%;
+	padding: 0 40px;
+}
+
+.reg-buttons > li{
+	display: table-cell;
+	width: 100%;
+}
+
+.reg-buttons input {
+	border-width: 1px;
+	border-style: hidden;
+	padding: 5px 10px;
+	background-color: #ccc;
+}
+
+.reg-buttons input:hover {
+	background-color: #aaa;
 }
 
 /* ORGANIZATION */
@@ -563,8 +727,14 @@ a {
 	text-decoration: none;
 }
 
-a:hover {
+*:hover:not(input) {
+	cursor: default;
+}
+a:hover, a *:hover {
 	cursor: pointer;
+}
+a.helper:hover {
+	cursor: help;
 }
 
 .red-link, a.red-link, a:hover {
@@ -578,6 +748,10 @@ a.red-link:hover {
 
 a.active {
 	color: #be1e2d;
+	text-decoration: underline;
+}
+
+.red-link.active {
 	text-decoration: underline;
 }
 
@@ -791,19 +965,15 @@ button.navbar-toggle.collapsed:hover {
 .capital {
 	text-transform: uppercase;
 }
-
 .strong {
 	font-weight: 800;
 }
-
 .short {
 	font-size: 14px;
 }
-
 .block {
 	display: block;
 }
-
 .grey {
 	color: #6c6d70;
 }
@@ -838,6 +1008,7 @@ button.navbar-toggle.collapsed:hover {
 	text-align: center;
 	font-size: 12px;
 	padding-bottom: 5px;
+	margin: 0 auto;
 }
 
 #container-footer > span {
