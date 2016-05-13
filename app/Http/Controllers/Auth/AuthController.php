@@ -156,9 +156,9 @@ class AuthController extends Controller
       protected function handleLogin(Request $data){
 
         // Check if there is an user with those parameters
-        $user = User::whereRaw('email = ?',[$data->all()['username']])->first();
+        $user = User::whereRaw('email = ?',[strtolower($data->all()['username'])])->first();
 
-        if (password_verify($data->all()['password'], $user->password)){
+        if (!is_null($user) && password_verify($data->all()['password'], $user->password)){
 
             try {
                 $user_token = ['email' => $data->all()['username']];
