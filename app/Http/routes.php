@@ -47,7 +47,6 @@ Route::get('auth/change_password', function(){
     return view('auth/change_password'); 
 });
 
-
 Route::post('/auth/recover_pass', 'Auth\AuthController@handleRecover');
 
 Route::get('/auth/recover_pass/token={token}&email={email}', 'Auth\AuthController@showPassChangeForm');

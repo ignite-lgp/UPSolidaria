@@ -90,7 +90,7 @@ class AuthController extends Controller
           $userInfo = $data->all();
 
           // Check if valid
-		 $validator = $this->validator($userInfo);
+     $validator = $this->validator($userInfo);
 
          if ($validator->fails()) {
             return redirect('auth/register')
@@ -98,17 +98,16 @@ class AuthController extends Controller
                         ->withInput();
         } else {
 
-			$_temp = User::create([
+      $_temp = User::create([
                 'name' => $userInfo['nome'],
-                //'nif' => $userInfo['nif'],
-                //'nacionalidade' => $userInfo['nacionalidade'],
-                //'localidade' => $userInfo['localidade'],
+                'nif' => $userInfo['nif'],
+                'localidade' => $userInfo['localidade'],
                 'email' => $userInfo['email'],
                 'password' => bcrypt($userInfo['password']),
                 'country' => $userInfo['nacionalidade'],
-                'token' => bin2hex(random_bytes(10))
+                'token' => bin2hex(random_bytes(10)),
+                'admin' => false,
                 ]);
-
 
             $url = env('APP_URL') . '/auth/confirm/token=' . $_temp['original']['token'] . '&email=' . $userInfo['email'];
 
@@ -121,7 +120,7 @@ class AuthController extends Controller
             });
 
             return redirect($this->redirectTo);
-		}
+    }
       }
 
 
@@ -258,10 +257,6 @@ class AuthController extends Controller
             return redirect($this->redirectTo);
         }
         }
-
-
-      
-
     }
 
 }

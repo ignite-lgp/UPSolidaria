@@ -68,8 +68,6 @@ class Database extends Migration
             $table->foreign('postal_code')->references('id')->on('postal_code');
             
             $table->boolean('admin');
-
-            $table->rememberToken();
             $table->timestamps();
         });
 
