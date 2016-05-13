@@ -178,4 +178,90 @@ class AuthController extends Controller
         }
       }
 
+      /**
+      *
+      * Handle recover password
+      * @param Request email to confirm 
+      */
+      protected function handleRecover(Request $email){
+
+        $email2 = $email['email'];
+         // Check e-mail in users
+        $user = User::whereRaw('email = ?', [$email2])->first();
+
+         // Send e-mail with password
+        if (is_null($user)){
+            return 'We were unable to find a user with this e-mail.';}
+        else {
+            $user->token = bin2hex(random_bytes(10));
+            $user->save();
+        }
+
+        // url to insert new password
+         $url = env('APP_URL') . '/auth/recover_pass/token=' . $user['token'] . '&email=' . $user['email'];
+
+        // email token
+        
+        Mail::send('email.recover_pass',['link' => $url], function ($message) use ($user) {
+
+        $message->from(env('MAIL_USERNAME'), 'Bem vindo à UPSolidaria');
+
+                $message->to($user['email'])->subject('Alterar palavra-passe'); // TODO: Alterar
+           });
+          
+
+      }
+
+      protected function showPassChangeForm($token, $email){
+
+        // Search for user with those atributes
+        $user = User::whereRaw('email = ?', [$email])->first();
+
+        if (is_null($user)){
+          //----------------- ERRO ------------------------------------------
+            return 'The user doesnt exist';
+        } else {
+            return View('auth/change_password')->with('user', $user);
+        }
+
+    }
+    protected function validatorNewPass(array $data)
+    {
+        return Validator::make($data, [
+            'password' => 'required|min:6',
+            'password_confirmation' => 'required|same:password',
+        ]);
+    }
+
+    protected function handlePassChange(Request $data){
+
+        $user2 = $data->all();
+
+        $validator = array('password' => $user2['password'], 'password_confirmation' => $user2['password_confirmation']);
+        
+
+        $validator_res = $this->validatorNewPass($validator);
+
+        if ($validator_res->fails()) {
+            return redirect('/auth/recover_pass/token=' . $user2['_token'] . '&email=' . $user2['email'])
+                        ->withErrors($validator_res)
+                        ->withInput();
+        } else {
+            $user = User::whereRaw('email = ?', [$user2['email']])->first();
+
+        if (is_null($user)){
+            return 'We were unable to find a user with this e-mail.';}
+        else {
+            $user->token = bin2hex(random_bytes(10));
+            $user->password = $user2['password'];
+            $user->save();
+            return redirect($this->redirectTo);
+        }
+        }
+
+
+      
+
+    }
+
 }

@@ -35,6 +35,29 @@ Route::get('/auth/confirm/token={token}&email={email}', 'Auth\AuthController@han
 
 Route::post('/auth/login', 'Auth\AuthController@handleLogin');
 
+/* ----------------------------
+ Recover password
+*/
+
+Route::get('auth/recover', function () {
+    return view('auth/recover');
+});
+
+Route::get('auth/change_password', function(){
+    return view('auth/change_password'); 
+});
+
+
+Route::post('/auth/recover_pass', 'Auth\AuthController@handleRecover');
+
+Route::get('/auth/recover_pass/token={token}&email={email}', 'Auth\AuthController@showPassChangeForm');
+
+Route::post('auth/confirm_password', 'Auth\AuthController@handlePassChange');
+
+/* ----------------------------
+
+
+
 /*
 	General routes
 */

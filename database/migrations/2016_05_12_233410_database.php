@@ -55,15 +55,20 @@ class Database extends Migration
             $table->boolean('private_email')->nullable();
             $table->integer('point')->nullable();
             $table->boolean('carta_conducao')->nullable();
+            $table->string('nif',9)->nullable();
+            $table->string('localidade')->nullable();
 
             $table->text('token');
 
-            $table->string('country')->unsigned();
+            $table->string('country');
             $table->integer('course')->unsigned()->nullable();
             $table->integer('postal_code')->unsigned()->nullable();
             $table->foreign('country')->references('code')->on('country');
             $table->foreign('course')->references('id')->on('course');
             $table->foreign('postal_code')->references('id')->on('postal_code');
+            
+            $table->boolean('admin');
+
             $table->rememberToken();
             $table->timestamps();
         });
@@ -75,7 +80,6 @@ class Database extends Migration
             $table->foreign('interest')->references('id')->on('interest');
 
             $table->primary(['volunteer', 'interest']);
-            
         }); 
 
         Schema::create('organization', function ($table) {
@@ -84,10 +88,10 @@ class Database extends Migration
             $table->string('password');
             $table->string('email')->unique();
             $table->string('address');
-            $table->integer('phone');
-            $table->string('website');
-            $table->integer('facebook');
-            $table->text('about');
+            $table->integer('phone')->nullable();;
+            $table->string('website')->nullable();;
+            $table->integer('facebook')->nullable();;
+            $table->text('about')->nullable();;
             $table->timestamp('confirm_date');
             $table->timestamp('created_date');
             $table->rememberToken();
@@ -189,6 +193,7 @@ class Database extends Migration
         
 
         // ADMIN TABLE
+        /*
         Schema::create('adminstrator', function ($table) {
             $table->increments('id');
             $table->string('name');
@@ -196,6 +201,7 @@ class Database extends Migration
             $table->string('password');
             $table->integer('phone');
         });
+        */
 
         DB::table('country')->insert(array('code'=>'AF','country'=>'Afghanistan'));
         DB::table('country')->insert(array('code'=>'AL','country'=>'Albania'));
