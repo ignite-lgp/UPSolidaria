@@ -275,7 +275,7 @@
 				<section class="volunteer-menu-collectibles visible-md visible-lg">
 					<div class="row volunteer-menu-row">
 						<div class="col-md-3 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/badges/dedication.png">
+							<img class="img img-responsive img-collectible" src="../imgs/badges/dedication.PNG">
 							<div class="trophy">
 								<span class="trophies capital strong">4 crachás</span>
 								<br>
@@ -283,7 +283,7 @@
 							</div>
 						</div>
 						<div class="col-md-3 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/badges/kindness.png">
+							<img class="img img-responsive img-collectible" src="../imgs/badges/kindness.PNG">
 							<div class="trophy">
 								<span class="trophies capital strong">7 crachás</span>
 								<br>
@@ -291,7 +291,7 @@
 							</div>
 						</div>
 						<div class="col-md-3 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/badges/teamwork.png">
+							<img class="img img-responsive img-collectible" src="../imgs/badges/teamwork.PNG">
 							<div class="trophy">
 								<span class="trophies capital strong">8 crachás</span>
 								<br>
@@ -299,7 +299,7 @@
 							</div>
 						</div>
 						<div class="col-md-3 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/badges/creativity.png">
+							<img class="img img-responsive img-collectible" src="../imgs/badges/creativity.PNG">
 							<div class="trophy">
 								<span class="trophies capital strong">4 crachás</span>
 								<br>
@@ -310,7 +310,7 @@
 					
 					<div class="row volunteer-menu-row">
 						<div class="col-md-3 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/badges/competence.png">
+							<img class="img img-responsive img-collectible" src="../imgs/badges/competence.PNG">
 							<div class="trophy">
 								<span class="trophies capital strong">12 crachás</span>
 								<br>
@@ -323,7 +323,7 @@
 				<section class="volunteer-menu-collectibles visible-sm">
 					<div class="row volunteer-menu-row">
 						<div class="col-sm-6 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/badges/dedication.png">
+							<img class="img img-responsive img-collectible" src="../imgs/badges/dedication.PNG">
 							<div class="trophy">
 								<span class="trophies capital strong">4 crachás</span>
 								<br>
@@ -331,7 +331,7 @@
 							</div>
 						</div>
 						<div class="col-sm-6 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/badges/kindness.png">
+							<img class="img img-responsive img-collectible" src="../imgs/badges/kindness.PNG">
 							<div class="trophy">
 								<span class="trophies capital strong">7 crachás</span>
 								<br>
@@ -340,7 +340,7 @@
 						</div>
 						<div class="clearfix visible-sm-block clearfix-small"></div>
 						<div class="col-sm-6 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/badges/teamwork.png">
+							<img class="img img-responsive img-collectible" src="../imgs/badges/teamwork.PNG">
 							<div class="trophy">
 								<span class="trophies capital strong">8 crachás</span>
 								<br>
@@ -348,7 +348,7 @@
 							</div>
 						</div>
 						<div class="col-sm-6 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/badges/creativity.png">
+							<img class="img img-responsive img-collectible" src="../imgs/badges/creativity.PNG">
 							<div class="trophy">
 								<span class="trophies capital strong">4 crachás</span>
 								<br>
@@ -359,7 +359,7 @@
 					
 					<div class="row volunteer-menu-row">
 						<div class="col-sm-6 volunteer-menu-col-collectibles blockfix-small">
-							<img class="img img-responsive img-collectible" src="../imgs/trophies/competence.png">
+							<img class="img img-responsive img-collectible" src="../imgs/trophies/competence.PNG">
 							<div class="trophy">
 								<span class="trophies capital strong">12 crachás</span>
 								<br>
@@ -459,7 +459,7 @@
 			<section class="volunteer-menu-collectibles">
 				<div class="row volunteer-menu-row">
 					<div class="col-xs-6 col-md-3 volunteer-menu-col-collectibles">
-						<img class="img img-responsive img-collectible" src="../imgs/trophies/dedication.png">
+						<img class="img img-responsive img-collectible" src="../imgs/trophies/dedication.PNG">
 						<div class="trophy">
                             <span class="trophies capital strong">4 crachás</span>
                             <br>
@@ -467,7 +467,7 @@
                         </div>
 					</div>
 					<div class="col-xs-6 col-md-3 volunteer-menu-col-collectibles">
-						<img class="img img-responsive img-collectible" src="../imgs/trophies/kindness.png">
+						<img class="img img-responsive img-collectible" src="../imgs/trophies/kindness.PNG">
 						<div class="trophy">
                             <span class="trophies capital strong">7 crachás</span>
                             <br>
@@ -476,7 +476,7 @@
 					</div>
 					<div class="clearfix visible-xs-block org-block"></div>
 					<div class="col-xs-6 col-md-3 volunteer-menu-col-collectibles">
-						<img class="img img-responsive img-collectible" src="../imgs/trophies/teamwork.png">
+						<img class="img img-responsive img-collectible" src="../imgs/trophies/teamwork.PNG">
 						<div class="trophy">
                             <span class="trophies capital strong">8 crachás</span>
                             <br>
@@ -484,7 +484,7 @@
                         </div>
 					</div>
 					<div class="col-xs-6 col-md-3 volunteer-menu-col-collectibles">
-						<img class="img img-responsive img-collectible" src="../imgs/trophies/creativity.png">
+						<img class="img img-responsive img-collectible" src="../imgs/trophies/creativity.PNG">
 						<div class="trophy">
                             <span class="trophies capital strong">4 crachás</span>
                             <br>
@@ -495,7 +495,7 @@
 				
 				<div class="row volunteer-menu-row">
 					<div class="col-xs-6 col-md-3 volunteer-menu-col-collectibles">
-						<img class="img img-responsive img-collectible" src="../imgs/trophies/competence.png">
+						<img class="img img-responsive img-collectible" src="../imgs/trophies/competence.PNG">
 						<div class="trophy">
                             <span class="trophies capital strong">12 crachás</span>
                             <br>
