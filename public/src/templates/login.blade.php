@@ -7,23 +7,23 @@
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<link rel="icon" href="../../public/src/imgs/logo_upsolidaria.png">
+	<link rel="icon" href="../../src/imgs/logo_upsolidaria.png">
 	<link href='https://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
 
 	<title>UP Solidária</title>
 
 	<!-- Bootstrap core CSS -->
-	<link href="../../public/src/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../../src/css/bootstrap.min.css" rel="stylesheet">
 
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-	<link href="../../public/src/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+	<link href="../../src/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
 	<!-- Custom styles for this template -->
-	<link href="../../public/src/css/upsolidaria.css" rel="stylesheet">
+	<link href="../../src/css/upsolidaria.css" rel="stylesheet">
 
 	<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
 	<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-	<script src="../../public/src/js/ie-emulation-modes-warning.js"></script>
+	<script src="../../src/js/ie-emulation-modes-warning.js"></script>
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
@@ -68,7 +68,7 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		  </button>
-		  <a class="navbar-brand" href="./"><img src = "../../public/src/imgs/logo.png" id="logo"></a>
+		  <a class="navbar-brand" href="./"><img src = "../../src/imgs/logo.png" id="logo"></a>
 		</div>
 		<div id="navbar" class="collapse navbar-collapse">
 		  <ul class="nav navbar-nav navigation-options">
@@ -135,10 +135,10 @@
 					<h3>Entre através de rede social</h3>
 					<section class="login-social-networks">
 						<ul>
-							<li><a><img src="../../public/src/imgs/fb_logo.png"></a></li>
-							<li><a><img src="../../public/src/imgs/twitter_logo.png"></a></li>
-							<li><a><img src="../../public/src/imgs/google_plus_logo.svg"></a></li>
-							<li><a><img src="../../public/src/imgs/linkedin_logo.png"></a></li>
+							<li><a><img src="../../src/imgs/fb_logo.png"></a></li>
+							<li><a><img src="../../src/imgs/twitter_logo.png"></a></li>
+							<li><a><img src="../../src/imgs/google_plus_logo.svg"></a></li>
+							<li><a><img src="../../src/imgs/linkedin_logo.png"></a></li>
 						</ul>
 					</section>
 			</section>
@@ -206,10 +206,10 @@
 					<h3>Entre através de rede social</h3>
 					<section class="login-social-networks">
 						<ul>
-							<li><a><img src="../../public/src/imgs/fb_logo.png"></a></li>
-							<li><a><img src="../../public/src/imgs/twitter_logo.png"></a></li>
-							<li><a><img src="../../public/src/imgs/google_plus_logo.svg"></a></li>
-							<li><a><img src="../../public/src/imgs/linkedin_logo.png"></a></li>
+							<li><a><img src="../../src/imgs/fb_logo.png"></a></li>
+							<li><a><img src="../../src/imgs/twitter_logo.png"></a></li>
+							<li><a><img src="../../src/imgs/google_plus_logo.svg"></a></li>
+							<li><a><img src="../../src/imgs/linkedin_logo.png"></a></li>
 						</ul>
 					</section>
 			</section>
@@ -257,8 +257,8 @@
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.min.js"><\/script>')</script>
-	<script src="../../public/src/js/bootstrap.min.js"></script>
+	<script src="../../src/js/bootstrap.min.js"></script>
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-	<script src="../../public/src/js/ie10-viewport-bug-workaround.js"></script>
+	<script src="../../src/js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>
