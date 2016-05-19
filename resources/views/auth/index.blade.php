@@ -33,7 +33,15 @@
   </head>
 
   <body>
-	
+	    @if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
 	<!-- Upper bar, contains authentication and language -->
 	<nav class="navbar navbar-inverse navbar-little">
 		<section class="auth hidden-xs">
@@ -120,6 +128,11 @@
 					<input class="auth-input" type="text" name="username" placeholder="Utilizador" />
 					<input class="auth-input" type="password" name="password" placeholder="Palavra-Passe" />
 					<input class="btn-auth" type="submit" name="init-session" value="iniciar sessão" />
+					{!! Form::open(array('url' => '/auth/login', 'method' => 'POST')) !!}
+						{!! Form::text('username','', array('class' => 'auth-input', 'placeholder' => 'Utilizador')) !!}
+						{!! Form::password('password', array('class' => 'auth-input', 'placeholder' => 'Palavra-Passe')) !!}
+						{!! Form::submit('iniciar sessão',array('class'=>'btn-auth'))!!}
+                	{!! Form::close() !!}
 					<a>Esqueceu-se da palavra-passe? Recupere</a>
 			</section>
 			
@@ -152,19 +165,33 @@
 			<section class="main-section login-register">
 					<h2>Registe os seus dados</h2>
 					<section class="not-centered">
-						<form>
-							<label class="required">Nome completo</label><input required class="reg-input" type="text" name="nome" />
-							<label class="required">Número do documento de identificação</label><input required class="reg-input" type="number" name="numero_identificacao" />
-							<label class="required">E-mail eletrónico</label><input required class="reg-input" type="email" name="email" />
-							<label class="required">Nacionalidade</label><input required class="reg-input" type="text" name="nacionalidade" />
-							<label>Localidade</label><input class="reg-input" type="text" name="localidade" />
-							<label >Data de nascimento</label><input class="reg-input" type="date" name="data_nascimento" />
-							<label class="reg-aligned"><input class="reg-aligned" type="checkbox" name="carta_conducao" /> Carta de condução</label>
+						{!! Form::open(array('url' => '/auth/register', 'method' => 'POST')) !!}
+						{!! Form::label('nome', 'Nome completo', array('class' => 'required')) !!}
+						{!! Form::text('nome','', array('class' => 'reg-input')) !!}
+						{!! Form::label('numero_identificacao', 'Número do documento de identificação', array('class' => 'required')) !!}
+						{!! Form::text('numero_identificacao','', array('class' => 'reg-input')) !!}
+						{!! Form::label('email', 'E-mail eletrónico', array('class' => 'required')) !!}
+						{!! Form::email('email','', array('class' => 'reg-input')) !!}
+						{!! Form::label('password', 'Password',array('class' => 'required'))!!}
+						{!! Form::password('password',array('class' => 'reg-input')) !!}
+						{!! Form::label('password_confirmation', 'Confirmar password',array('class' => 'required'))!!}
+						{!! Form::password('password_confirmation',array('class' => 'reg-input')) !!}
+						{!! Form::label('nacionalidade', 'Nacionalidade', array('class' => 'required')) !!}
+						<br/>
+						{!! Form::select('nacionalidade',($paises),array('class' => 'reg-input')) !!}
+						<br/>
+						<br/>
+						{!! Form::label('localidade', 'Localidade', array('class' => 'required')) !!}
+						{!! Form::text('localidade','',array('class' => 'reg-input')) !!}
+						{!! Form::label('data_nascimento', 'Data de nascimento', array('class' => 'required')) !!}
+						{!! Form::date('data_nascimento','',array('class' => 'reg-input')) !!}
+						{!! Form::label('carta_conducao', 'Carta de condução') !!}
+						{!! Form::checkbox('carta_conducao', 'value',false,array('class' => 'reg-aligned')) !!}
 							<ul class="reg-buttons">
 								<li><input type="reset" name="reset_form" value="Limpar registo" /></li>
-								<li><input type="submit" name="commit_register" value="Finalizar" /></li>
+								<li>{!! Form::submit('Finalizar') !!}</li>
 							</ul>
-						</form>
+						{!! Form::close() !!}
 					</section>
 			</section>
 		</section>
@@ -188,9 +215,11 @@
 			<!-- Main Body Section -->
 			<section class="main-section login-auth">
 					<h3>Autenticação</h3>
-					<input class="auth-input" type="text" name="username" placeholder="Utilizador" />
-					<input class="auth-input" type="password" name="password" placeholder="Palavra-Passe" />
-					<input class="btn-auth" type="submit" name="init-session" value="iniciar sessão" />
+					{!! Form::open(array('url' => '/auth/login', 'method' => 'POST')) !!}
+						{!! Form::text('username','', array('class' => 'auth-input', 'placeholder' => 'Utilizador')) !!}
+						{!! Form::password('password', array('class' => 'auth-input', 'placeholder' => 'Palavra-Passe')) !!}
+						{!! Form::submit('iniciar sessão',array('class'=>'btn-auth'))!!}
+                	{!! Form::close() !!}
 					<a>Esqueceu-se da palavra-passe? Recupere</a>
 			</section>
 			
@@ -223,19 +252,26 @@
 			<section class="main-section login-register">
 					<h2>Registe os seus dados</h2>
 					<section class="not-centered">
-						<form>
-							<label class="required">Nome completo</label><input required class="reg-input" type="text" name="nome" />
-							<label class="required">Número do documento de identificação</label><input required class="reg-input" type="number" name="numero_identificacao" />
-							<label class="required">E-mail eletrónico</label><input required class="reg-input" type="email" name="email" />
-							<label class="required">Nacionalidade</label><input required class="reg-input" type="text" name="nacionalidade" />
-							<label>Localidade</label><input class="reg-input" type="text" name="localidade" />
-							<label >Data de nascimento</label><input class="reg-input" type="date" name="data_nascimento" />
-							<label class="reg-aligned"><input class="reg-aligned" type="checkbox" name="carta_conducao" /> Carta de condução</label>
+						{!! Form::open(array('url' => '/auth/register', 'method' => 'POST')) !!}
+						{!! Form::label('nome', 'Nome completo', array('class' => 'required')) !!};
+						{!! Form::text('nome','', array('class' => 'reg-input')) !!}
+						{!! Form::label('numero_identificacao', 'Número do documento de identificação', array('class' => 'required')) !!};
+						{!! Form::text('numero_identificacao','', array('class' => 'reg-input')) !!}
+						{!! Form::label('email', 'E-mail eletrónico', array('class' => 'required')) !!};
+						{!! Form::email('email','', array('class' => 'reg-input')) !!}
+						{!! Form::label('nacionalidade', 'Nacionalidade', array('class' => 'required')) !!};
+						{!! Form::select('nacionalidade',($paises),array('class' => 'reg-input')) !!}
+						{!! Form::label('localidade', 'Localidade', array('class' => 'required')) !!};
+						{!! Form::text('localidade','',array('class' => 'reg-input')) !!}
+						{!! Form::label('data_nascimento', 'Data de nascimento', array('class' => 'required')) !!};
+						{!! Form::date('data_nascimento','',array('class' => 'reg-input')) !!}
+						{!! Form::label('carta_conducao', 'Carta de condução') !!};
+						{!! Form::checkbox('carta_conducao', 'value',array('class' => 'reg-aligned')) !!}
 							<ul class="reg-buttons">
 								<li><input type="reset" name="reset_form" value="Limpar registo" /></li>
 								<li><input type="submit" name="commit_register" value="Finalizar" /></li>
 							</ul>
-						</form>
+						{!! Form::close() !!}
 					</section>
 			</section>
 		</section>

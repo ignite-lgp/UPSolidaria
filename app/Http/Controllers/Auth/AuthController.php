@@ -58,7 +58,7 @@ class AuthController extends Controller
     {
         return Validator::make($data, [
             'nome' => 'required|max:255',
-            'nif' => 'required|numeric|min:10000000|max:999999999',
+            'numero_identificacao' => 'required|numeric|min:10000000|max:999999999',
             'nacionalidade' => 'required',
             'localidade' => 'required',
             'email' => 'required|email|max:255|unique:users',
@@ -67,16 +67,13 @@ class AuthController extends Controller
         ]);
     }
 
-    /**
-     *  Get the registration form.
-     *
-     *  @return View with registration form
-     */
-     protected function showRegistrationForm(){
-         $countries = DB::table('country')->lists('country','code');
-
-
-        return View::make('auth/register')->with('paises',$countries);
+     /**
+      *  Handle login
+      *  @return view
+      */
+     protected function auth(){
+      $countries = DB::table('country')->lists('country','code');
+      return View('auth/index')->with('paises',$countries);
      }
 
      /**
@@ -93,29 +90,31 @@ class AuthController extends Controller
      $validator = $this->validator($userInfo);
 
          if ($validator->fails()) {
-            return redirect('auth/register')
+            return redirect('auth/')
                         ->withErrors($validator)
                         ->withInput();
         } else {
 
       $_temp = User::create([
                 'name' => $userInfo['nome'],
-                'nif' => $userInfo['nif'],
+                'nif' => $userInfo['numero_identificacao'],
                 'localidade' => $userInfo['localidade'],
                 'email' => $userInfo['email'],
                 'password' => bcrypt($userInfo['password']),
                 'country' => $userInfo['nacionalidade'],
                 'token' => bin2hex(random_bytes(10)),
                 'admin' => false,
+                'birthdate' => $userInfo['data_nascimento'],
+                'carta_conducao' => $userInfo['carta_conducao'] == 'false' ? false : true,
                 ]);
 
             $url = env('APP_URL') . '/auth/confirm/token=' . $_temp['original']['token'] . '&email=' . $userInfo['email'];
 
             Mail::send('email.welcome',['link' => $url], function ($message) use ($userInfo) {
 
-                $message->from(env('MAIL_USERNAME'), 'Bem vindo à UPSolidaria');
+                $message->from(env('MAIL_USERNAME'), 'Bem vindo à UPSolidária');
 
-                $message->to($userInfo['email'])->subject('Learning Laravel test email'); // TODO: Alterar
+                $message->to($userInfo['email'])->subject('Obrigado por se juntar à UPSolidária');
 
             });
 

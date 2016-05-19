@@ -27,7 +27,7 @@ Route::get('/noticias', function () {
     Routes related to Auth
 */
 
-Route::get('/auth/register', 'Auth\AuthController@showRegistrationForm');
+Route::get('/auth/', 'Auth\AuthController@auth');
 
 Route::post('/auth/register', 'Auth\AuthController@handleRegistration');
 
