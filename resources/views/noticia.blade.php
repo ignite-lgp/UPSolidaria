@@ -200,7 +200,7 @@
     <section class="container" id="main-container-xs">
         <section class="main-container-xs visible-xs">
             <section class="main-title-section-xs">
-                <h3 class="main-title-xs">Bem-vindos à plataforma de Voluntariado da UP!</h4>
+                <h3 class="main-title-xs">{{ $noticia->title }}</h3>
             </section>
         </section>
         <section class="news-group-xs visible-xs">
@@ -209,10 +209,10 @@
                     <img class="img-responsive news-img" src="../../src/imgs/up.jpg">
                 </section>
                 <section class="news-title">
-                    <h4 class="news-title-xs">lorem ipsum</h5>
+                    <h4 class="news-title-xs">{{ $noticia->title }}</h4>
                 </section>
                 <section class="news-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        {{ $noticia->description }}
                 </section>
                 <section class="news-view-more">
                     <span class="red-text span-view-more">Ver mais...</span>

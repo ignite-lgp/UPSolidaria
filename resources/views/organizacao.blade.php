@@ -149,7 +149,7 @@
 			<!-- Organization Section -->
 			<section class="organization-section">
 				<h3 class="title">{{ $info->name}}</h3>
-				<img class="img img-responsive org-img" src="./src/imgs/gas_porto.png">
+				<img class="img img-responsive org-img" src="/src/imgs/gas_porto.png">
 				<section class="info-section">
 						<h4 class="sidebar-title">Missão</h4>
 						<p class="big">{{ $info->mission }}</p>
@@ -168,7 +168,7 @@
 	<section class="container" id="main-container-xs">
 				<section class="organization-section visible-xs">
 					<h3 class="title">{{ $info->name}}</h3>
-					<img class="img img-responsive org-img" src="../imgs/gas_porto.png">
+					<img class="img img-responsive org-img" src="/src/imgs/gas_porto.png">
 					<section class="info-section">
 							<h4 class="sidebar-title">Missão</h4>
 							<p class="big">{{ $info->mission }}</p>
