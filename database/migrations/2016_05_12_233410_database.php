@@ -86,13 +86,11 @@ class Database extends Migration
             $table->string('password');
             $table->string('email')->unique();
             $table->string('address');
-            $table->integer('phone')->nullable();;
-            $table->string('website')->nullable();;
-            $table->integer('facebook')->nullable();;
-            $table->text('about')->nullable();;
+            $table->integer('phone')->nullable();
+            $table->string('website')->nullable();
+            $table->integer('facebook')->nullable();
+            $table->text('about')->nullable();
             $table->timestamp('confirm_date');
-            $table->timestamp('created_date');
-            $table->rememberToken();
             $table->timestamps();
         });
 
@@ -103,6 +101,15 @@ class Database extends Migration
             $table->foreign('interest')->references('id')->on('interest');
             
             $table->primary(['organization', 'interest']);
+        });
+
+        Schema::create('organization_page', function($table) {
+            $table->increments('id');
+            $table->integer('organization')->unsigned();
+            $table->foreign('organization')->references('id')->on('organization');
+            $table->text('mission');
+            $table->text('vision');
+            $table->text('values');
         });
 
        Schema::create('registration', function ($table) {

@@ -15,7 +15,7 @@ Route::get('/', function () {
 });
 
 Route::get('/noticias', function () {
-    return view('noticia');
+    return view('index');
 });
 
 /*
@@ -51,16 +51,13 @@ Route::post('auth/confirm_password', 'Auth\AuthController@handlePassChange');
 /* ----------------------------
 
 
-
 /*
 	General routes
 */
 
 Route::get('/noticia/{organization}/{title}', 'Geral\NewsController@showNews');
 
-Route::get('/organizacao', function () {
-    return view('organizacao');
-});
+Route::get('/organizacao/{name}', 'Geral\OrgController@showOrgPage');
 
 Route::get('/organizacoes', function () {
     return view('organizacoes');
