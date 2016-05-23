@@ -34,4 +34,23 @@ class OrgController extends Controller
 
         return View('organizacao')->with('info', $information[0]);
     }
+
+
+    /**
+    *
+    * Show the orgs 
+    * @return view
+    */
+    protected function showOrgs(){
+
+        /*
+            IMPORTANT : ALL ORGANIZATIONS NAME MUST BE UPPER CASE
+        */
+        $orgs =  DB::select('select id, name from organization');
+
+        //print_r($orgs);
+
+        return View('organizacoes')->with('orgs', $orgs);
+    }
+}
 }

@@ -49,6 +49,11 @@ Route::get('/auth/recover_pass/token={token}&email={email}', 'Auth\AuthControlle
 Route::post('auth/confirm_password', 'Auth\AuthController@handlePassChange');
 
 /* ----------------------------
+/* Organizacoes */
+
+Route::get('/organizacoes', 'Geral\OrgController@showOrgs');
+
+/* -----------------------------------
 
 
 /*

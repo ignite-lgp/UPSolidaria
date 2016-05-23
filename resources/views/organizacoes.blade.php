@@ -179,97 +179,19 @@
             
             <h3 class="title">Organizações</h3>
             
-            <div class="row org-row">
-                <div class="col-xs-6 col-sm-3">
-					<img class="img img-responsive org-list-img" src="src/imgs/organizations/ajudaris.png">
-					<span class="org-list-title">Ajudaris - Associação de Solidariedade Social</span>
-				</div>
-                <div class="col-xs-6 col-sm-3">
-					<img class="img img-responsive org-list-img" src="src/imgs/organizations/curamais.png">
-					<span class="org-list-title">Associação Cura +</span>
-				</div>
+    <!-- ///////////////////////////////////////////////////// -->
 
-                <!-- Add the extra clearfix for only the required viewport -->
-                <!--<div class="clearfix visible-xs-block"></div>-->
-
-                <div class="col-xs-6 col-sm-3">
-					<img class="img img-responsive org-list-img" src="src/imgs/organizations/afs.png">
-					<span class="org-list-title">Associação Intercultural AFS</span>
-				</div>
-                <div class="col-xs-6 col-sm-3">
-					<img class="img img-responsive org-list-img" src="src/imgs/organizations/moa.png">
-					<span class="org-list-title">Fundação MOA de Portugal</span>
-				</div>
-            </div>
 			<div class="row org-row">
-                <div class="col-xs-6 col-sm-3">
-					<img class="img img-responsive org-list-img" src="src/imgs/organizations/ajudaris.png">
-					<span class="org-list-title">Ajudaris - Associação de Solidariedade Social</span>
+            <?php
+            	foreach ($orgs as $org) { ?>
+   				<div class="col-xs-6 col-sm-3">
+   					<!-- Imagens das organizações têm que ter exatamente o nome que está guardado na bd -->
+					<img class="img img-responsive org-list-img" src="src/imgs/organizations/<?php print(get_object_vars($org)['name']) ?>.png">
+					<span class="org-list-title"><?php print(get_object_vars($org)['name']) ?></span>
 				</div>
-                <div class="col-xs-6 col-sm-3">
-					<img class="img img-responsive org-list-img" src="src/imgs/organizations/curamais.png">
-					<span class="org-list-title">Associação Cura +</span>
-				</div>
+			<?php } ?>
 
-                <!-- Add the extra clearfix for only the required viewport -->
-                <!--<div class="clearfix visible-xs-block"></div>-->
-
-                <div class="col-xs-6 col-sm-3">
-					<img class="img img-responsive org-list-img" src="src/imgs/organizations/afs.png">
-					<span class="org-list-title">Associação Intercultural AFS</span>
-				</div>
-                <div class="col-xs-6 col-sm-3">
-					<img class="img img-responsive org-list-img" src="src/imgs/organizations/moa.png">
-					<span class="org-list-title">Fundação MOA de Portugal</span>
-				</div>
-            </div>
-			<div class="row org-row">
-                <div class="col-xs-6 col-sm-3">
-					<img class="img img-responsive org-list-img" src="src/imgs/organizations/ajudaris.png">
-					<span class="org-list-title">Ajudaris - Associação de Solidariedade Social</span>
-				</div>
-                <div class="col-xs-6 col-sm-3">
-					<img class="img img-responsive org-list-img" src="src/imgs/organizations/curamais.png">
-					<span class="org-list-title">Associação Cura +</span>
-				</div>
-
-                <!-- Add the extra clearfix for only the required viewport -->
-                <!--<div class="clearfix visible-xs-block"></div>-->
-
-                <div class="col-xs-6 col-sm-3">
-					<img class="img img-responsive org-list-img" src="src/imgs/organizations/afs.png">
-					<span class="org-list-title">Associação Intercultural AFS</span>
-				</div>
-                <div class="col-xs-6 col-sm-3">
-					<img class="img img-responsive org-list-img" src="src/imgs/organizations/moa.png">
-					<span class="org-list-title">Fundação MOA de Portugal</span>
-				</div>
-            </div>
-			<div class="row org-row">
-                <div class="col-xs-6 col-sm-3">
-					<img class="img img-responsive org-list-img" src="src/imgs/organizations/ajudaris.png">
-					<span class="org-list-title">Ajudaris - Associação de Solidariedade Social</span>
-				</div>
-                <div class="col-xs-6 col-sm-3">
-					<img class="img img-responsive org-list-img" src="src/imgs/organizations/curamais.png">
-					<span class="org-list-title">Associação Cura +</span>
-				</div>
-
-                <!-- Add the extra clearfix for only the required viewport -->
-                <!--<div class="clearfix visible-xs-block"></div>-->
-
-                <div class="col-xs-6 col-sm-3">
-					<img class="img img-responsive org-list-img" src="src/imgs/organizations/afs.png">
-					<span class="org-list-title">Associação Intercultural AFS</span>
-				</div>
-                <div class="col-xs-6 col-sm-3">
-					<img class="img img-responsive org-list-img" src="src/imgs/organizations/moa.png">
-					<span class="org-list-title">Fundação MOA de Portugal</span>
-				</div>
-            </div>
-			
-
-	</div>
+<!-- //////////////////////////////////////////////////	-->        
 	
 	<section class="container" id="main-container-xs">
 		
