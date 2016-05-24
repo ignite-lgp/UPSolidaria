@@ -187,7 +187,9 @@
    				<div class="col-xs-6 col-sm-3">
    					<!-- Imagens das organizações têm que ter exatamente o nome que está guardado na bd -->
 					<img class="img img-responsive org-list-img" src="src/imgs/organizations/<?php print(get_object_vars($org)['name']) ?>.png">
+					<a href="/UPSolidaria/public/organizacao/<?php print(get_object_vars($org)['name']) ?>"
 					<span class="org-list-title"><?php print(get_object_vars($org)['name']) ?></span>
+					</a>
 				</div>
 			<?php } ?>
 
