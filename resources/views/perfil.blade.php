@@ -378,7 +378,7 @@
 		
 		<section class="main-container-xs visible-xs">
 			<section class="main-title-section-xs">
-				<h3 class="title">Steve Jobs</h3>
+				<h3 class="title">{{ $profile->name }}</h3>
 			</section>
 		</section>
 		
@@ -392,7 +392,7 @@
 					
 					<div class="volunteer-info">
 						<span>Email:</span> 
-						<a class="red-link">stevejobs@apple.com</a>
+						<a class="red-link">{{ $profile->email }}</a>
 					</div>
 					
 					<div class="volunteer-info">
@@ -402,12 +402,7 @@
 					
 					<div class="volunteer-info">
 						<span>Localidade:</span> 
-						<span>Póvoa do Varzim, Portugal</span>
-					</div>
-					
-					<div class="volunteer-info">
-						<span>Distrito:</span> 
-						<span>Porto, Portugal</span>
+						<span>{{ $profile->localidade }}, {{ $profile->country }}</span>
 					</div>
 				</div>
 			</div>
