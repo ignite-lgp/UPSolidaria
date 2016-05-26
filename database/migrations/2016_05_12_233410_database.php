@@ -74,7 +74,7 @@ class Database extends Migration
 
             $table->text('token');
 			
-			$table->integer('image')->unsigned();
+			$table->integer('image')->unsigned()->nullable();
 			$table->foreign('image')->references('id')->on('image');
 
 
