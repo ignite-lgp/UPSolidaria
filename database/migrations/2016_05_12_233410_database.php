@@ -3,6 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
+
 class Database extends Migration
 {
     /**
@@ -12,6 +13,19 @@ class Database extends Migration
      */
     public function up()
     {
+		//IMAGES
+		
+		Schema::create('image', function ($table) {
+			$table->increments('id');
+			$table->string('alt')->nullable();
+			$table->integer('height')->nullable();
+			$table->integer('width')->nullable();
+			$table->string('location')->unique();
+			$table->integer('size')->nullable();
+		});
+		
+		//PERSONAL INFO
+		
         Schema::create('course', function ($table) {
             $table->increments('id');
             $table->string('name')->unique();
@@ -59,6 +73,10 @@ class Database extends Migration
             $table->string('localidade')->nullable();
 
             $table->text('token');
+			
+			$table->integer('image')->unsigned();
+			$table->foreign('image')->references('id')->on('image');
+
 
             $table->string('country');
             $table->integer('course')->unsigned()->nullable();
@@ -91,6 +109,8 @@ class Database extends Migration
             $table->integer('facebook')->nullable();
             $table->text('about')->nullable();
             $table->timestamp('confirm_date');
+			$table->integer('image')->unsigned();
+			$table->foreign('image')->references('id')->on('image');
             $table->timestamps();
         });
 
@@ -120,6 +140,7 @@ class Database extends Migration
             $table->timestamp('reg_date');
             $table->boolean('banned');
             $table->boolean('active');
+			$table->boolean('admin');
 
             $table->primary(['volunteer', 'organization']);
         });
@@ -129,6 +150,8 @@ class Database extends Migration
             $table->string('name');
             $table->integer('organization')->unsigned();
             $table->foreign('organization')->references('id')->on('organization');
+			$table->integer('image')->unsigned();
+			$table->foreign('image')->references('id')->on('image');
             $table->text('description');
             $table->boolean('public');
             $table->boolean('open');
@@ -144,18 +167,48 @@ class Database extends Migration
             $table->integer('group')->unsigned();
             $table->foreign('volunteer')->references('id')->on('users');
             $table->foreign('group')->references('id')->on('group');
+			$table->boolean('admin');
 
             $table->primary(['volunteer', 'group']);
+        });
+		
+		Schema::create('activity', function ($table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->integer('group')->unsigned();
+            $table->foreign('group')->references('id')->on('group');
+			$table->integer('image')->unsigned();
+			$table->foreign('image')->references('id')->on('image');
+            $table->text('description');
+            $table->boolean('public');
+            $table->boolean('open');
+            $table->boolean('active');
+            $table->timestamp('created_date');
+			$table->timestamp('init_date');
+			$table->timestamp('end_date');
+            $table->rememberToken();
+            $table->timestamps();
+        });
+		
+		Schema::create('volunteeractivity', function ($table) {
+            $table->integer('volunteer')->unsigned();
+            $table->integer('activity')->unsigned();
+            $table->foreign('volunteer')->references('id')->on('users');
+            $table->foreign('activity')->references('id')->on('activity');
+			$table->boolean('admin');
+
+            $table->primary(['volunteer', 'activity']);
         });
         
 
         Schema::create('news', function ($table) {
             $table->increments('id');
-            $table->integer('organization')->unsigned();
-            $table->foreign('organization')->references('id')->on('organization');
+			$table->integer('image')->unsigned();
+			$table->foreign('image')->references('id')->on('image');
             $table->text('title');
             $table->text('description');
             $table->timestamp('date');
+			$table->timestamps();
         });
 
 
@@ -195,18 +248,6 @@ class Database extends Migration
 
             $table->primary(['volunteer', 'trophy']);
         });
-        
-
-        // ADMIN TABLE
-        /*
-        Schema::create('adminstrator', function ($table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->string('email');
-            $table->string('password');
-            $table->integer('phone');
-        });
-        */
 
         DB::table('country')->insert(array('code'=>'AF','country'=>'Afghanistan'));
         DB::table('country')->insert(array('code'=>'AL','country'=>'Albania'));
@@ -447,6 +488,24 @@ class Database extends Migration
         DB::table('country')->insert(array('code'=>'YE','country'=>'Yemen'));
         DB::table('country')->insert(array('code'=>'ZM','country'=>'Zambia'));
         DB::table('country')->insert(array('code'=>'ZW','country'=>'Zimbabwe'));
+		
+		
+		$description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+		Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+		Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+		Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
+		
+		DB::table('image')->insert(array('alt' => 'An image', 'height' => 90, 'width' => 90, 'location' => '../../public/src/imgs/voluntariado_atividades.jpg', 'size' => 900));
+		$lastId = DB::table('image')->max('id');
+		DB::table('news')->insert(array('image' => $lastId, 'title' => 'Título 1' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+		
+		DB::table('image')->insert(array('alt' => 'Another image', 'height' => 90, 'width' => 90, 'location' => '../../public/src/imgs/voluntariado_up.jpg', 'size' => 900));
+		$lastId = DB::table('image')->max('id');
+		DB::table('news')->insert(array('image' => $lastId, 'title' => 'Título 2' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+		
+		DB::table('image')->insert(array('alt' => 'Yet another image', 'height' => 90, 'width' => 90, 'location' => '../../public/src/imgs/voluntariado3.jpg', 'size' => 900));
+		$lastId = DB::table('image')->max('id');
+		DB::table('news')->insert(array('image' => $lastId, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
     }
 
     /**
@@ -456,7 +515,6 @@ class Database extends Migration
      */
     public function down()
     {
-        Schema::drop('adminstrator');
         Schema::drop('trophyvolunteer');
         Schema::drop('medalattribution');
         Schema::drop('trophy');
@@ -467,11 +525,14 @@ class Database extends Migration
         Schema::drop('registration');
         Schema::drop('organizationinterest');
         Schema::drop('organization');
-        Schema::drop('volunteerinterest');
+		Schema::drop('volunteerinterest');
         Schema::drop('interest');
         Schema::drop('postal_code');
         Schema::drop('faculty');
         Schema::drop('country');
         Schema::drop('course');
+		Schema::drop('image');
+		Schema::drop('activity');
+		Schema::drop('volunteeractivity');
     }
 }
