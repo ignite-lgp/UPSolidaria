@@ -15,6 +15,7 @@ use JWTFactory;
 use Tymon\JWTAuth\Exceptions\JWTException;
 use Mail;
 use DB;
+use Session;
 
 class AuthController extends Controller
 {
@@ -87,13 +88,13 @@ class AuthController extends Controller
           $userInfo = $data->all();
 
           // Check if valid
-     $validator = $this->validator($userInfo);
+          $validator = $this->validator($userInfo);
 
-         if ($validator->fails()) {
-            return redirect('auth/')
-                        ->withErrors($validator)
-                        ->withInput();
-        } else {
+          if ($validator->fails()) {
+              return redirect('auth/')
+                          ->withErrors($validator)
+                          ->withInput();
+          } else {
 
       $_temp = User::create([
                 'name' => $userInfo['nome'],
@@ -159,18 +160,9 @@ class AuthController extends Controller
 
         if (!is_null($user) && password_verify($data->all()['password'], $user->password)){
 
-            try {
-                $user_token = ['email' => $data->all()['username']];
+                Session::put('email', $data->all()['username']);
 
-                $payload = JWTFactory::make($user_token);
-
-                $u_token = JWTAuth::encode($payload);
-                
-                return redirect('/')->withCookie(cookie('u_session', $u_token));
-
-            } catch(JWTException $e){
-
-            }
+                return redirect('/perfil');
         } else {
             echo 'Fail';
         }

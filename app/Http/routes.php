@@ -30,10 +30,6 @@ Route::get('/auth/confirm/token={token}&email={email}', 'Auth\AuthController@han
 
 Route::post('/auth/login', 'Auth\AuthController@handleLogin');
 
-/* ----------------------------
- Recover password
-*/
-
 Route::get('auth/recover', function () {
     return view('auth/recover');
 });
@@ -68,9 +64,11 @@ Route::get('/organizacoes', function () {
     return view('organizacoes');
 });
 
-Route::get('/perfil', function(){
-    return view('perfil'); 
-});
+/*
+    User related routes
+*/
+
+Route::get('/perfil', 'Geral\UserController@showProfile');
 
 Route::get('/quemsomos', function(){
     return view('quemsomos'); 

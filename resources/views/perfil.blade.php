@@ -185,31 +185,26 @@
 					</div>
 					
 					<div class="col-md-8 col-sm-6">
-						<h4 class="title-volunteer"><a>Steve Jobs</a></h4>
+						<h4 class="title-volunteer"><a>{{ $profile->name }}</a></h4>
 						
 						<div class="volunteer-info">
 							<span>Email:</span> 
-							<a class="red-link">stevejobs@apple.com</a>
+							<a class="red-link">{{ $profile->email }}</a>
 						</div>
 						
 						<div class="volunteer-info">
 							<span>Estatuto:</span> 
-							<span>Docente</span>
+							<span>--->Docente<---</span>
 						</div>
 						
 						<div class="volunteer-info">
 							<span>Localidade:</span> 
-							<span>Póvoa do Varzim, Portugal</span>
+							<span>{{ $profile->localidade }}, {{ $profile->country }}</span>
 						</div>
-						
-						<div class="volunteer-info">
-							<span>Distrito:</span> 
-							<span>Porto, Portugal</span>
-						</div>
-						
+
 						<div class="volunteer-info">
 							<span>Ano de inscrição no voluntariado:</span> 
-							<span>2010</span>
+							<span>{{ $profile->created_at }}</span>
 						</div>
 						
 						<div class="volunteer-info">

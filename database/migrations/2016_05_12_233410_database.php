@@ -52,7 +52,7 @@ class Database extends Migration
             $table->integer('phone')->nullable();
             $table->dateTime('confirm_date')->nullable();
             $table->text('about')->nullable();
-            $table->boolean('private_email')->nullable();
+            $table->boolean('private_email')->nullable()->default(false);
             $table->integer('point')->nullable();
             $table->boolean('carta_conducao')->nullable();
             $table->string('nif',9)->nullable();
