@@ -85,6 +85,7 @@ class Database extends Migration
             $table->foreign('course')->references('id')->on('course');
             $table->foreign('postal_code')->references('id')->on('postal_code');
             
+            $table->boolean('available')->default(true);
             $table->boolean('admin');
             $table->timestamps();
         });
