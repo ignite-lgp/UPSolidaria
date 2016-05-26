@@ -69,7 +69,7 @@ class Database extends Migration
             $table->boolean('private_email')->nullable()->default(false);
             $table->integer('points')->default(0);
             $table->boolean('carta_conducao')->nullable();
-            $table->string('nif',9)->nullable();
+            $table->string('nif',9)->unique();
             $table->string('localidade')->nullable();
 
             $table->text('token');
