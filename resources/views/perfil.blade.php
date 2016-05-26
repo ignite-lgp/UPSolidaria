@@ -229,7 +229,11 @@
 				<section class="medium-info">
 					<span class="medium-dark-info">Disponibilidade</span>
 					<div class="round-rectangle">
+						@if ($profile->available == true)
 						<span class="green-circle"></span>
+						@else
+						<span class="red-circle"></span>
+						@endif
 					</div>
 				</section>
 				

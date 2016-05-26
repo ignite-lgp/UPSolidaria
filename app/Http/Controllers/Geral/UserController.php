@@ -33,7 +33,7 @@ class UserController extends Controller
         if ($session_email == ''){
             return View('errors.403');
         } else {
-            $information = DB::select('select users.name, users.email, users.localidade, country.country, users.created_at, users.private_email, users.points from users, country where users.country = country.code and users.email = ?', array($session_email));
+            $information = DB::select('select users.name, users.email, users.localidade, country.country, users.created_at, users.private_email, users.points, users.available from users, country where users.country = country.code and users.email = ?', array($session_email));
 
             if ($information[0]->private_email){
                 $information[0]->email = 'private';
@@ -73,8 +73,6 @@ class UserController extends Controller
         for ($i=0; $i < $_levelInformation[0]; $i++) { 
             $_xpAccummulated += pow( ($i+1) / 0.4,2) -pow($i / 0.4,2);
         }
-
-        var_dump($_xpAccummulated);
 
         array_push($_levelInformation, floor(pow(($i+1)/0.4,2)));
         array_push($_levelInformation, floor($currentPoints - $_xpAccummulated));
