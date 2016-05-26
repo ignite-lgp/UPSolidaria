@@ -13,17 +13,17 @@
 	<title>UP Solidária</title>
 
 	<!-- Bootstrap core CSS -->
-	<link href="../../src/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../public/src/css/bootstrap.min.css" rel="stylesheet">
 
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-	<link href="../../src/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+	<link href="../public/src/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
 	<!-- Custom styles for this template -->
-	<link href="../../src/css/upsolidaria.css" rel="stylesheet">
+	<link href="../public/src/css/upsolidaria.css" rel="stylesheet">
 
 	<!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
 	<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-	<script src="../../src/js/ie-emulation-modes-warning.js"></script>
+	<script src="../public/src/js/ie-emulation-modes-warning.js"></script>
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
@@ -112,7 +112,7 @@
 				<span class="sidebar-title">Documentos</span>
 				<ul>
 					<li><a>Princípios de Enquadramento de Voluntariado da U.Porto</a></li>
-					<li><a class="red-link">Descarregar</a></li>
+					<li><a href="./download">Descarregar</a></li>
 				</ul>
                 <br>
                 <ul>
