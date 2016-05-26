@@ -79,3 +79,16 @@ Route::get('/quemsomos', function(){
 Route::get('/template', function(){
     return view('template'); 
 });
+
+/*
+* Contactos
+*/
+
+Route::get('/contatos', function(){
+    return view('contatos'); 
+});
+
+/*
+* Download view
+*/
+Route::get('/download', 'Download\DownloadController@DownloadFile1');
