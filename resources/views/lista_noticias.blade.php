@@ -13,17 +13,17 @@
     <title>UP Solidária</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../../public/src/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../public/src/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../public/src/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="../public/src/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../../public/src/css/upsolidaria.css" rel="stylesheet">
+    <link href="../public/src/css/upsolidaria.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../public/src/js/ie-emulation-modes-warning.js"></script>
+    <script src="../public/src/js/ie-emulation-modes-warning.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -161,9 +161,12 @@
                 <span>/</span>
                 <h4><a>Notícias</a></h4>
                 <span>/</span>
-                <h4><a class="active">{{ $noticia->title }}</a></h4>
+                <h4><a class="active"></a></h4>
             </section>
+           
+           <!-- Noticia Aqui -->
             
+            @foreach ($noticias as $noticia)       
             <section class="news-section">
                 <section class="news-header">
                     <h3 class="news-header-title">{{ $noticia->title }}</h3>
@@ -180,19 +183,29 @@
                         <section class="news-text">
                         {{ $noticia->description }}
                         </section>
+                        <section class="news-view-more">
+                            <a href="./noticia/{{ $noticia->title }}">
+                            Ver mais...
+                            </a>
+                        
+                        </section>
+
                         <section class="news-social-networks">
                             <span class="news-social-networks-span">Partilhar:</span>
                             <ul class="social-networks">
-                                <li><a><img src="../../public/src/imgs/fb_logo.png"></a></li>
-                                <li><a><img src="../../public/src/imgs/twitter_logo.png"></a></li>
-                                <li><a><img src="../../public/src/imgs/google_plus_logo.svg"></a></li>
-                                <li><a><img src="../../public/src/imgs/linkedin_logo.png"></a></li>
+                                <li><a><img src="../public/src/imgs/fb_logo.png"></a></li>
+                                <li><a><img src="../public/src/imgs/twitter_logo.png"></a></li>
+                                <li><a><img src="../public/src/imgs/google_plus_logo.svg"></a></li>
+                                <li><a><img src="../public/src/imgs/linkedin_logo.png"></a></li>
                             </ul>
                         </section>
+
+                        <hr>
+
                      </article>
                 </section>
             </section>
-            
+            @endforeach
             
 
     </div>
@@ -200,7 +213,7 @@
     <section class="container" id="main-container-xs">
         <section class="main-container-xs visible-xs">
             <section class="main-title-section-xs">
-                <h3 class="main-title-xs">{{ $noticia->title }}</h3>
+                <h3 class="main-title-xs"></h3>
             </section>
         </section>
         <section class="news-group-xs visible-xs">
@@ -209,10 +222,10 @@
                     <img class="img-responsive news-img" src="../../src/imgs/up.jpg">
                 </section>
                 <section class="news-title">
-                    <h4 class="news-title-xs">{{ $noticia->title }}</h4>
+                    <h4 class="news-title-xs"></h4>
                 </section>
                 <section class="news-text">
-                        {{ $noticia->description }}
+                       
                 </section>
                 <section class="news-view-more">
                     <span class="red-text span-view-more">Ver mais...</span>
@@ -220,37 +233,6 @@
                 </section>
             </article>
             
-            <article class="news">
-                <section class="news-img">
-                    <img class="img-responsive news-img" src="../../src/imgs/capa_voluntariado.jpg">
-                </section>
-                <section class="news-title">
-                    <h4 class="news-title-xs">lorem ipsum</h5>
-                </section>
-                <section class="news-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </section>
-                <section class="news-view-more">
-                    <span class="red-text span-view-more">Ver mais...</span>
-                    <hr>
-                </section>
-            </article>
-            
-            <article class="news">
-                <section class="news-img">
-                    <img class="img-responsive news-img" src="../../src/imgs/gas_porto.png">
-                </section>
-                <section class="news-title">
-                    <h4 class="news-title-xs">lorem ipsum</h5>
-                </section>
-                <section class="news-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </section>
-                <section class="news-view-more">
-                    <span class="red-text span-view-more">Ver mais...</span>
-                    <hr>
-                </section>
-            </article>
         </section>
     </section>
     

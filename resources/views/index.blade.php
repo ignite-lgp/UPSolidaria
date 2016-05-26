@@ -73,7 +73,7 @@
             <li><a href="./quemsomos">quem somos</a></li>
             <li><a href="./organizacoes">organizações</a></li>
             <li><a href="#activities">atividades</a></li>
-            <li><a href="./noticia">notícias</a></li>
+            <li><a href="./noticias">notícias</a></li>
             <li><a href="#contacts">contactos</a></li>
           </ul>
 		  <section class="search hidden-xs">

@@ -56,7 +56,6 @@ Route::get('/organizacoes', 'Geral\OrgController@showOrgs');
 	General routes
 */
 
-Route::get('/noticia/{organization}/{title}', 'Geral\NewsController@showNews');
 
 Route::get('/organizacao/{name}', 'Geral\OrgController@showOrgPage');
 
@@ -86,3 +85,15 @@ Route::get('/contatos', function(){
 * Download view
 */
 Route::get('/download', 'Download\DownloadController@DownloadFile1');
+
+/*
+* Lista de noticias view
+*/
+
+Route::get('/noticias', 'Geral\NewsController@showAllNews');
+
+/*
+* Noticia Individual
+*/
+
+Route::get('/noticia/{title}', 'Geral\NewsController@showNews');

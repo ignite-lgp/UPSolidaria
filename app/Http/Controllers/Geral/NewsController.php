@@ -23,15 +23,30 @@ class NewsController extends Controller
     * Show a news 
     * @return view
     */
-    protected function showNews($organization, $title){
+    protected function showNews($title){
 
         /*
             IMPORTANT : ALL ORGANIZATIONS NAME MUST BE UPPER CASE
         */
-        $organization = strtoupper($organization);
+        $information = DB::select('select news.* from news where news.title = ?', array($title));
 
-        $information = DB::select('select news.* from news, organization where news.organization = organization.id and organization.name = ? and news.title = ?', array($organization, $title));
+        //print_r($information);
 
         return View('noticia')->with('noticia', $information[0]);
+    }
+
+    protected function showAllNews(){
+
+        /*
+            IMPORTANT : ALL ORGANIZATIONS NAME MUST BE UPPER CASE
+        */
+        
+        //$organization = strtoupper($organization);
+
+        $news = DB::select('select * from news');
+
+        //print_r($news);
+
+        return View('lista_noticias')->with('noticias', $news);
     }
 }
