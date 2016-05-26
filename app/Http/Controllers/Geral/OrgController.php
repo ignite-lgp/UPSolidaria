@@ -48,9 +48,6 @@ class OrgController extends Controller
         */
         $orgs =  DB::select('select id, name from organization');
 
-        //print_r($orgs);
-
         return View('organizacoes')->with('orgs', $orgs);
     }
-}
 }

@@ -60,10 +60,6 @@ Route::get('/noticia/{organization}/{title}', 'Geral\NewsController@showNews');
 
 Route::get('/organizacao/{name}', 'Geral\OrgController@showOrgPage');
 
-Route::get('/organizacoes', function () {
-    return view('organizacoes');
-});
-
 /*
     User related routes
 */

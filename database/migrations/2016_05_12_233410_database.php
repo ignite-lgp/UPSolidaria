@@ -67,7 +67,7 @@ class Database extends Migration
             $table->dateTime('confirm_date')->nullable();
             $table->text('about')->nullable();
             $table->boolean('private_email')->nullable()->default(false);
-            $table->integer('point')->nullable();
+            $table->integer('points')->nullable();
             $table->boolean('carta_conducao')->nullable();
             $table->string('nif',9)->nullable();
             $table->string('localidade')->nullable();
@@ -132,7 +132,7 @@ class Database extends Migration
             $table->text('values');
         });
 
-       Schema::create('registration', function ($table) {
+       Schema::create('user_organization', function ($table) {
             $table->integer('volunteer')->unsigned();
             $table->integer('organization')->unsigned();
             $table->foreign('volunteer')->references('id')->on('users');
