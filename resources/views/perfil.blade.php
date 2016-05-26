@@ -216,14 +216,14 @@
 				
 				<section class="small-info">
 					<span class="dark-info">Nível:</span>
-					<span class="light-red-info">64</span>
+					<span class="light-red-info">{{ $profile->current_level }}</span>
 				</section>
 				
 				<section class="small-info">
 					<span class="dark-info">Pontos:</span>
-					<span class="light-red-info">1230</span>
+					<span class="light-red-info">{{ $profile->current_points }}</span>
 					<span class="dark-info">/</span>
-					<span class="dark-red-info">1340</span>
+					<span class="dark-red-info">{{ $profile->next_lower_limit }}</span>
 				</section>
 				
 				<section class="medium-info">
@@ -411,14 +411,14 @@
 			
 			<section class="small-info">
 				<span class="dark-info">Nível:</span>
-				<span class="light-red-info">64</span>
+				<span class="light-red-info">{{ $profile->current_level }}</span>
 			</section>
 			
 			<section class="small-info">
 				<span class="dark-info">Pontos:</span>
-				<span class="light-red-info">1230</span>
+				<span class="light-red-info">{{ $profile->current_points }}</span>
 				<span class="dark-info">/</span>
-				<span class="dark-red-info">1340</span>
+				<span class="dark-red-info">{{ $profile->next_lower_limit }}</span>
 			</section>
 			
 			<section class="medium-info">

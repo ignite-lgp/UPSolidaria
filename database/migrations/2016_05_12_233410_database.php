@@ -67,7 +67,7 @@ class Database extends Migration
             $table->dateTime('confirm_date')->nullable();
             $table->text('about')->nullable();
             $table->boolean('private_email')->nullable()->default(false);
-            $table->integer('points')->nullable();
+            $table->integer('points')->default(0);
             $table->boolean('carta_conducao')->nullable();
             $table->string('nif',9)->nullable();
             $table->string('localidade')->nullable();
