@@ -522,7 +522,7 @@ class Database extends Migration
         Schema::drop('news');
         Schema::drop('volunteergroup');
         Schema::drop('group');
-        Schema::drop('registration');
+        Schema::drop('user_organization');
         Schema::drop('organizationinterest');
         Schema::drop('organization');
 		Schema::drop('volunteerinterest');
