@@ -110,7 +110,7 @@ class Database extends Migration
             $table->integer('facebook')->nullable();
             $table->text('about')->nullable();
             $table->timestamp('confirm_date');
-			$table->integer('image')->unsigned();
+			$table->integer('image')->unsigned()->nullable();
 			$table->foreign('image')->references('id')->on('image');
             $table->timestamps();
         });
@@ -507,6 +507,14 @@ class Database extends Migration
 		DB::table('image')->insert(array('alt' => 'Yet another image', 'height' => 90, 'width' => 90, 'location' => '../../public/src/imgs/voluntariado3.jpg', 'size' => 900));
 		$lastId = DB::table('image')->max('id');
 		DB::table('news')->insert(array('image' => $lastId, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+
+
+
+
+        /* Insert example organization */
+
+        DB::table('organization')->insert(array('name'=>'G.A.S Porto', 'password' => '12345', 'email'=>'_a@w.com', 'address' => 'Rua', 'confirm_date' => '2016-05-26 22:53:27', 'created_at' => '2016-05-26 22:53:27', 'updated_at' => '2016-05-26 22:53:27'));
+
     }
 
     /**

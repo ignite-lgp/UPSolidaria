@@ -72,12 +72,12 @@
 		</div>
 		<div id="navbar" class="collapse navbar-collapse">
 		  <ul class="nav navbar-nav navigation-options">
-            <li><a href="./quemsomos">quem somos</a></li>
+			<li><a href="./quemsomos">quem somos</a></li>
             <li><a href="./organizacoes">organizações</a></li>
             <li><a href="#activities">atividades</a></li>
             <li><a href="./noticia">notícias</a></li>
             <li><a href="#contacts">contactos</a></li>
-          </ul>
+		  </ul>
 		  <section class="search hidden-xs">
 			<span id="search-icon" class="glyphicon glyphicon-search"></span>
 		  </section>
@@ -179,102 +179,102 @@
 			<h3 class="title">Voluntário</h3>
 			
 			<section class="volunteer-basic-info">
-				<div class="row volunteer-row">
-					<div class="col-md-3 col-sm-6">
-						<img class="img img-responsive volunteer-img" src="src/imgs/volunteers/stevejobs.jpg">
-					</div>
-					
-					<div class="col-md-8 col-sm-6">
-						<h4 class="title-volunteer"><a>{{ $profile->name }}</a></h4>
-						
-						<div class="volunteer-info">
-							<span>Email:</span> 
-							<a class="red-link">{{ $profile->email }}</a>
-						</div>
-						
-						<div class="volunteer-info">
-							<span>Estatuto:</span> 
-							<span>--->Docente<---</span>
-						</div>
-						
-						<div class="volunteer-info">
-							<span>Localidade:</span> 
-							<span>{{ $profile->localidade }}, {{ $profile->country }}</span>
-						</div>
-
-						<div class="volunteer-info">
-							<span>Ano de inscrição no voluntariado:</span> 
-							<span>{{ $profile->created_at }}</span>
-						</div>
-						
-						<div class="volunteer-info">
-							<span>Organização acolhedora:</span>
-							<span>G.A.S. Porto</span>
-						</div>
-					</div>
-				</div>
-				
-				<section class="small-info">
-					<span class="dark-info">Nível:</span>
-					<span class="light-red-info">{{ $profile->current_level }}</span>
-				</section>
-				
-				<section class="small-info">
-					<span class="dark-info">Pontos:</span>
-					<span class="light-red-info">{{ $profile->current_points }}</span>
-					<span class="dark-info">/</span>
-					<span class="dark-red-info">{{ $profile->next_lower_limit }}</span>
-				</section>
-				
-				<section class="medium-info">
-					<span class="medium-dark-info">Disponibilidade</span>
-					<div class="round-rectangle">
-						@if ($profile->available == true)
-						<span class="green-circle"></span>
-						@else
-						<span class="red-circle"></span>
-						@endif
-					</div>
-				</section>
+                <div class="row volunteer-row">
+                    <div class="col-md-3 col-sm-6">
+                        <img class="img img-responsive volunteer-img" src="src/imgs/volunteers/stevejobs.jpg">
+                    </div>
+                    
+                    <div class="col-md-8 col-sm-6">
+                        <h4 class="title-volunteer"><a>{{ $profile->name }}</a></h4>
+                        
+                        <div class="volunteer-info">
+                            <span>Email:</span> 
+                            <a class="red-link">{{ $profile->email }}</a>
+                        </div>
+                        
+                        <div class="volunteer-info">
+                            <span>Estatuto:</span> 
+                            <span>--->Docente<---</span>
+                        </div>
+                        
+                        <div class="volunteer-info">
+                            <span>Localidade:</span> 
+                            <span>{{ $profile->localidade }}, {{ $profile->country }}</span>
+ 
+ 
+ 
+ 
+ 
+                        </div>
+ 
+                        <div class="volunteer-info">
+                            <span>Ano de inscrição no voluntariado:</span> 
+                            <span>{{ $profile->created_at }}</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <section class="small-info">
+                    <span class="dark-info">Nível:</span>
+                    <span class="light-red-info">{{ $profile->current_level }}</span>
+                </section>
+                
+                <section class="small-info">
+                    <span class="dark-info">Pontos:</span>
+                    <span class="light-red-info">{{ $profile->current_points }}</span>
+                    <span class="dark-info">/</span>
+                    <span class="dark-red-info">{{ $profile->next_lower_limit }}</span>
+                </section>
+                
+                <section class="medium-info">
+                    <span class="medium-dark-info">Disponibilidade</span>
+                    <div class="round-rectangle">
+                        @if ($profile->available == true)
+                        <span class="green-circle"></span>
+                        @else
+                        <span class="red-circle"></span>
+                        @endif
+                    </div>
+                </section>
 				
 				<section class="volunteer-menu visible-md visible-lg">
 					<div class="row volunteer-menu-row">
-						<div class="col-md-3 volunteer-menu-col">
-							<span class="dark-info"><a>Organizações</a></span>
+						<div class="Orga profile_tab_header col-md-3 volunteer-menu-col">
+							<span class="dark-info"><a href="#" onclick="openProfileTab('Orga', 'Orga_tab');">Organizações</a></span>
 						</div>
-						<div class="col-md-3 volunteer-menu-col">
-							<span class="dark-info"><a>Atividades</a></span>
+						<div class="Atividade profile_tab_header col-md-3 volunteer-menu-col">
+							<span class="dark-info"><a href="#" onclick="openProfileTab('Atividade', 'Atividade_tab');">Atividades</a></span>
 						</div>
-						<div class="col-md-3 volunteer-menu-col">
-							<span class="dark-info"><a>Crachás</a></span>
+						<div class="Cracha profile_tab_header col-md-3 volunteer-menu-col">
+							<span class="dark-info"><a href="#" onclick="openProfileTab('Cracha', 'Cracha_tab');">Crachás</a></span>
 						</div>
-						<div class="col-md-3 volunteer-menu-col active">
-							<span class="dark-info"><a>Troféus</a></span>
+						<div class="Trofeu profile_tab_header col-md-3 volunteer-menu-col active">
+							<span class="dark-info"><a href="#" onclick="openProfileTab('Trofeu', 'Trofeu_tab');">Troféus</a></span>
 						</div>
 					</div>
 				</section>
 				
 				<section class="volunteer-menu visible-sm">
 					<div class="row volunteer-menu-row">
-						<div class="col-sm-6 volunteer-menu-col">
-							<span class="dark-info"><a>Organizações</a></span>
+						<div class="Orga profile_tab_header col_sm_6 volunteer-menu-col">
+							<span class="dark-info"><a href="#" onclick="openProfileTab('Orga', 'Orga_tab');">Organizações</a></span>
 						</div>
-						<div class="col-sm-6 volunteer-menu-col">
-							<span class="dark-info"><a>Atividades</a></span>
+						<div class="Atividade profile_tab_header col_sm_6 volunteer-menu-col">
+							<span class="dark-info"><a href="#" onclick="openProfileTab('Atividade', 'Atividade_tab');">Atividades</a></span>
 						</div>
-						<div class="col-sm-6 volunteer-menu-col">
-							<span class="dark-info"><a>Crachás</a></span>
+						<div class="Cracha profile_tab_header col_sm_6 volunteer-menu-col">
+							<span class="dark-info"><a href="#" onclick="openProfileTab('Cracha', 'Cracha_tab');">Crachás</a></span>
 						</div>
-						<div class="col-sm-6 volunteer-menu-col active">
-							<span class="dark-info"><a>Troféus</a></span>
+						<div class="Trofeu profile_tab_header col_sm_6 volunteer-menu-col active">
+							<span class="dark-info"><a href="#" onclick="openProfileTab('Trofeu', 'Trofeu_tab');">Troféus</a></span>
 						</div>
 					</div>
 				</section>
 				
-				<section class="volunteer-menu-collectibles visible-md visible-lg">
+				<section class="Trofeu_tab profile_tab_body_md_lg volunteer-menu-collectibles visible-md visible-lg">
 					<div class="row volunteer-menu-row">
 						<div class="col-md-3 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="src/imgs/trophies/dedication.png">
+							<img class="img img-responsive img-collectible" src="../imgs/trophies/dedication.png">
 							<div class="trophy">
 								<span class="trophies capital strong">5 troféus</span>
 								<br>
@@ -282,7 +282,7 @@
 							</div>
 						</div>
 						<div class="col-md-3 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="src/imgs/trophies/kindness.png">
+							<img class="img img-responsive img-collectible" src="../imgs/trophies/kindness.png">
 							<div class="trophy">
 								<span class="trophies capital strong">8 troféus</span>
 								<br>
@@ -290,15 +290,15 @@
 							</div>
 						</div>
 						<div class="col-md-3 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="src/imgs/trophies/teamwork.png">
+							<img class="img img-responsive img-collectible" src="../imgs/trophies/teamwork.png">
 							<div class="trophy">
 								<span class="trophies capital strong">4 troféus</span>
 								<br>
-								<span class="trophies short">Espírito de Equipa</span>
+								<span class="trophies short">Espiírito de Equipa</span>
 							</div>
 						</div>
 						<div class="col-md-3 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="src/imgs/trophies/creativity.png">
+							<img class="img img-responsive img-collectible" src="../imgs/trophies/creativity.png">
 							<div class="trophy">
 								<span class="trophies capital strong">4 troféus</span>
 								<br>
@@ -309,7 +309,7 @@
 					
 					<div class="row volunteer-menu-row">
 						<div class="col-md-3 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="src/imgs/trophies/creativity.png">
+							<img class="img img-responsive img-collectible" src="../imgs/trophies/creativity.png">
 							<div class="trophy">
 								<span class="trophies capital strong">7 troféus</span>
 								<br>
@@ -319,10 +319,10 @@
 					</div>
 				</section>
 				
-				<section class="volunteer-menu-collectibles visible-sm">
+				<section class="Trofeu_tab profile_tab_body_sm volunteer-menu-collectibles visible-sm">
 					<div class="row volunteer-menu-row">
 						<div class="col-sm-6 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="src/imgs/trophies/dedication.png">
+							<img class="img img-responsive img-collectible" src="../imgs/trophies/dedication.png">
 							<div class="trophy">
 								<span class="trophies capital strong">5 troféus</span>
 								<br>
@@ -330,7 +330,7 @@
 							</div>
 						</div>
 						<div class="col-sm-6 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="src/imgs/trophies/kindness.png">
+							<img class="img img-responsive img-collectible" src="../imgs/trophies/kindness.png">
 							<div class="trophy">
 								<span class="trophies capital strong">8 troféus</span>
 								<br>
@@ -339,15 +339,15 @@
 						</div>
 						<div class="clearfix visible-sm-block clearfix-small"></div>
 						<div class="col-sm-6 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="src/imgs/trophies/teamwork.png">
+							<img class="img img-responsive img-collectible" src="../imgs/trophies/teamwork.png">
 							<div class="trophy">
 								<span class="trophies capital strong">4 troféus</span>
 								<br>
-								<span class="trophies short">Espírito de Equipa</span>
+								<span class="trophies short">Espiírito de Equipa</span>
 							</div>
 						</div>
 						<div class="col-sm-6 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="src/imgs/trophies/creativity.png">
+							<img class="img img-responsive img-collectible" src="../imgs/trophies/creativity.png">
 							<div class="trophy">
 								<span class="trophies capital strong">4 troféus</span>
 								<br>
@@ -358,7 +358,7 @@
 					
 					<div class="row volunteer-menu-row">
 						<div class="col-sm-6 volunteer-menu-col-collectibles blockfix-small">
-							<img class="img img-responsive img-collectible" src="src/imgs/trophies/creativity.png">
+							<img class="img img-responsive img-collectible" src="../imgs/trophies/creativity.png">
 							<div class="trophy">
 								<span class="trophies capital strong">7 troféus</span>
 								<br>
@@ -368,11 +368,213 @@
 					</div>
 				</section>
 				
+				<section class="Orga_tab profile_tab_body volunteer-organizations " style="display: none;">
+                    <article class="volunteer-organization">
+                        <div class="volunteer-organization-left">
+                            <img class="img img-responsive volunteer-organization-img" src="../imgs/organizations/afs.png">
+                        </div>
+                        <div class="volunteer-organization-right">
+                            <a class="red-link block">Associação Intercultural AFS</a>
+                            <span class="block">Integrou AFS</span>
+                            <span class="block">2015-Presente</span>
+                        </div>
+                    </article>
+                    <article class="volunteer-organization">
+                        <div class="volunteer-organization-left">
+                            <img class="img img-responsive volunteer-organization-img" src="../imgs/organizations/bancoalimentar.png">
+                        </div>
+                        <div class="volunteer-organization-right">
+                            <a class="red-link block">Banco Alimentar</a>
+                            <span class="block">Participou em atividade</span>
+                            <span class="block">Dez. 2015</span>
+                        </div>
+                    </article>
+                    <article class="volunteer-organization">
+                        <div class="volunteer-organization-left">
+                            <img class="img img-responsive volunteer-organization-img" src="../imgs/organizations/ajudaris.png">
+                        </div>
+                        <div class="volunteer-organization-right">
+                            <a class="red-link block">Ajudaris</a>
+                            <span class="block">Participou em atividade</span>
+                            <span class="block">Nov. 2015</span>
+                        </div>
+                    </article>
+                    <article class="volunteer-organization">
+                        <div class="volunteer-organization-left">
+                            <img class="img img-responsive volunteer-organization-img" src="../imgs/organizations/curamais.png">
+                        </div>
+                        <div class="volunteer-organization-right">
+                            <a class="red-link block">Cura+</a>
+                            <span class="block">Participou em atividade</span>
+                            <span class="block">Ago. 2015</span>
+                        </div>
+                    </article>
+                    <article class="volunteer-organization">
+                        <div class="volunteer-organization-left">
+                            <img class="img img-responsive volunteer-organization-img" src="../imgs/organizations/moa.png">
+                        </div>
+                        <div class="volunteer-organization-right">
+                            <a class="red-link block">Fundação MOA</a>
+                            <span class="block">Integrou Fundação MOA</span>
+                            <span class="block">2014-2015</span>
+                        </div>
+                    </article>
+                </section>
+				
+				<section class="Cracha_tab profile_tab_body_md_lg volunteer-menu-collectibles " style="display: none;">
+					<div class="row volunteer-menu-row">
+						<div class="col-md-3 volunteer-menu-col-collectibles">
+							<img class="img img-responsive img-collectible" src="../imgs/badges/dedication.PNG">
+							<div class="trophy">
+								<span class="trophies capital strong">4 crachás</span>
+								<br>
+								<span class="trophies short">Espírito de Equipa</span>
+							</div>
+						</div>
+						<div class="col-md-3 volunteer-menu-col-collectibles">
+							<img class="img img-responsive img-collectible" src="../imgs/badges/kindness.PNG">
+							<div class="trophy">
+								<span class="trophies capital strong">7 crachás</span>
+								<br>
+								<span class="trophies short">Dedicação</span>
+							</div>
+						</div>
+						<div class="col-md-3 volunteer-menu-col-collectibles">
+							<img class="img img-responsive img-collectible" src="../imgs/badges/teamwork.PNG">
+							<div class="trophy">
+								<span class="trophies capital strong">8 crachás</span>
+								<br>
+								<span class="trophies short">Simpatia</span>
+							</div>
+						</div>
+						<div class="col-md-3 volunteer-menu-col-collectibles">
+							<img class="img img-responsive img-collectible" src="../imgs/badges/creativity.PNG">
+							<div class="trophy">
+								<span class="trophies capital strong">4 crachás</span>
+								<br>
+								<span class="trophies short">Originalidade</span>
+							</div>
+						</div>
+					</div>
+					
+					<div class="row volunteer-menu-row">
+						<div class="col-md-3 volunteer-menu-col-collectibles">
+							<img class="img img-responsive img-collectible" src="../imgs/badges/competence.PNG">
+							<div class="trophy">
+								<span class="trophies capital strong">12 crachás</span>
+								<br>
+								<span class="trophies short">Competência</span>
+							</div>
+						</div>
+					</div>
+				</section>
+				
+				<section class="Cracha_tab profile_tab_body_sm volunteer-menu-collectibles " style="display: none;">
+					<div class="row volunteer-menu-row">
+						<div class="col-sm-6 volunteer-menu-col-collectibles">
+							<img class="img img-responsive img-collectible" src="../imgs/badges/dedication.PNG">
+							<div class="trophy">
+								<span class="trophies capital strong">4 crachás</span>
+								<br>
+								<span class="trophies short">Espírito de Equipa</span>
+							</div>
+						</div>
+						<div class="col-sm-6 volunteer-menu-col-collectibles">
+							<img class="img img-responsive img-collectible" src="../imgs/badges/kindness.PNG">
+							<div class="trophy">
+								<span class="trophies capital strong">7 crachás</span>
+								<br>
+								<span class="trophies short">Dedicação</span>
+							</div>
+						</div>
+						<div class="clearfix visible-sm-block clearfix-small"></div>
+						<div class="col-sm-6 volunteer-menu-col-collectibles">
+							<img class="img img-responsive img-collectible" src="../imgs/badges/teamwork.PNG">
+							<div class="trophy">
+								<span class="trophies capital strong">8 crachás</span>
+								<br>
+								<span class="trophies short">Simpatia</span>
+							</div>
+						</div>
+						<div class="col-sm-6 volunteer-menu-col-collectibles">
+							<img class="img img-responsive img-collectible" src="../imgs/badges/creativity.PNG">
+							<div class="trophy">
+								<span class="trophies capital strong">4 crachás</span>
+								<br>
+								<span class="trophies short">Originalidade</span>
+							</div>
+						</div>
+					</div>
+					
+					<div class="row volunteer-menu-row">
+						<div class="col-sm-6 volunteer-menu-col-collectibles blockfix-small">
+							<img class="img img-responsive img-collectible" src="../imgs/trophies/competence.PNG">
+							<div class="trophy">
+								<span class="trophies capital strong">12 crachás</span>
+								<br>
+								<span class="trophies short">Competência</span>
+							</div>
+						</div>
+					</div>
+				</section>
+				
+				<section class="Atividade_tab profile_tab_body volunteer-current-activities " style="display: none;">
+					<div class="volunteer-current-activities-header">
+						<span class="dark-info">Atividades a decorrer</span>
+					</div>
+					<div class="volunteer-activity">
+						<div class="volunteer-activity-header">
+							<span>Recolha de Alimentos</span>
+						</div>
+						<div class="progress-bar">
+							<div class="bar1"> </div> <!-- Delete id="bar1" when loading data from database is done. This is supposed to controlled via PhP and CSS, defining the width ('percentage') of background which will be colored. -->
+						</div>
+						<div class="percentage">
+							<span>62%</span>
+						</div>
+					</div>
+					<div class="volunteer-activity">
+						<div class="volunteer-activity-header">
+							<span>Apoio a idas ao médico</span>
+						</div>
+						<div class="progress-bar">
+							<div class="bar2"> </div> <!-- Delete id="bar2" when loading data from database is done. This is supposed to controlled via PhP and CSS, defining the width ('percentage') of background which will be colored. -->
+						</div>
+						<div class="percentage">
+							<span>50%</span>
+						</div>
+					</div>	
+				</section>
+				
+				<section class="Atividade_tab profile_tab_body volunteer-activities-history " style="display: none;">
+					<div class="volunteer-activities-history-header">
+						<span class="dark-info">Histórico</span>
+					</div>
+					<div class="volunteer-done-activity">
+						<div class="volunteer-activity-history-header">
+							<span class="block strong">Organização de jantar</span>
+							<span class="grey">G.A.S. Porto - Set. 2015</span>
+						</div>
+					</div>
+					<div class="volunteer-done-activity">
+						<div class="volunteer-activity-history-header">
+							<span class="block strong">Realização do Workshop</span>
+							<span class="grey">G.A.S. Porto - Feb. 2015</span>
+						</div>
+					</div>
+					<div class="volunteer-done-activity">
+						<div class="volunteer-activity-history-header">
+							<span class="block strong">Acompanhamento de Cidadão</span>
+							<span class="grey">G.A.S. Porto - Dez. 2014</span>
+						</div>
+					</div>
+				</section>
+				
 			</section>
 	</div>
 	
 	<section class="container" id="main-container-xs">
-		<section class="title-section-xs visible-xs">
+		<section class="title-section visible-xs">
 			<h4><a>U.Porto Voluntariado</a></h4>
 			<span>/</span>
 			<h4><a>Conta</a></h4>
@@ -389,7 +591,7 @@
 		<section class="volunteer-basic-info visible-xs">
 			<div class="row volunteer-row-xs">
 				<div class="col-xs-6 col-md-3">
-					<img class="img img-responsive" src="src/imgs/volunteers/stevejobs.jpg">
+					<img class="img img-responsive" src="../imgs/volunteers/stevejobs.jpg">
 				</div>
 				
 				<div class="col-md-8">
@@ -415,7 +617,7 @@
 			
 			<section class="small-info">
 				<span class="dark-info">Nível:</span>
-				<span class="light-red-info">{{ $profile->current_level }}</span>
+				<span class="light-red-info">{{ $profile->current_points }}</span>
 			</section>
 			
 			<section class="small-info">
@@ -426,34 +628,37 @@
 			</section>
 			
 			<section class="medium-info">
-				<span class="medium-dark-info">Disponibilidade</span>
-				<div class="round-rectangle">
-					<span class="green-circle"></span>
-				</div>
-			</section>
+                    <span class="medium-dark-info">Disponibilidade</span>
+                    <div class="round-rectangle">
+                        @if ($profile->available == true)
+                        <span class="green-circle"></span>
+                        @else
+                        <span class="red-circle"></span>
+                        @endif
+                    </div>
+            </section>
 			
 			<section class="volunteer-menu">
 				<div class="row volunteer-menu-row">
-					<div class="col-xs-6 col-md-3 volunteer-menu-col">
-						<span class="dark-info"><a>Organizações</a></span>
+					<div class="Orga profile_tab_header col-xs-6 col-md-3 volunteer-menu-col">
+						<span class="dark-info"><a href="#" onclick="openProfileTab('Orga', 'Orga_tab');">Organizações</a></span>
 					</div>
-					<div class="col-xs-6 col-md-3 volunteer-menu-col">
-						<span class="dark-info"><a>Atividades</a></span>
+					<div class="Atividade profile_tab_header col-xs-6 col-md-3 volunteer-menu-col">
+						<span class="dark-info"><a href="#" onclick="openProfileTab('Atividade', 'Atividade_tab');">Atividades</a></span>
 					</div>
-					<div class="clearfix visible-xs-block org-block"></div>
-					<div class="col-xs-6 col-md-3 volunteer-menu-col">
-						<span class="dark-info"><a>Crachás</a></span>
+					<div class="Cracha profile_tab_header col-xs-6 col-md-3 volunteer-menu-col">
+						<span class="dark-info"><a href="#" onclick="openProfileTab('Cracha', 'Cracha_tab');">Crachás</a></span>
 					</div>
-					<div class="col-xs-6 col-md-3 volunteer-menu-col active">
-						<span class="dark-info"><a>Troféus</a></span>
+					<div class="Trofeu profile_tab_header col-xs-6 col-md-3 volunteer-menu-col active">
+						<span class="dark-info"><a href="#" onclick="openProfileTab('Trofeu', 'Trofeu_tab');">Troféus</a></span>
 					</div>
 				</div>
 			</section>
 			
-			<section class="volunteer-menu-collectibles">
+			<section class="Trofeu_tab profile_tab_body volunteer-menu-collectibles ">
 				<div class="row volunteer-menu-row">
 					<div class="col-xs-6 col-md-3 volunteer-menu-col-collectibles">
-						<img class="img img-responsive img-collectible" src="src/imgs/trophies/dedication.png">
+						<img class="img img-responsive img-collectible" src="../imgs/trophies/dedication.png">
 						<div class="trophy">
 							<span class="trophies capital strong">5 troféus</span>
 							<br>
@@ -461,7 +666,7 @@
 						</div>
 					</div>
 					<div class="col-xs-6 col-md-3 volunteer-menu-col-collectibles">
-						<img class="img img-responsive img-collectible" src="src/imgs/trophies/kindness.png">
+						<img class="img img-responsive img-collectible" src="../imgs/trophies/kindness.png">
 						<div class="trophy">
 							<span class="trophies capital strong">8 troféus</span>
 							<br>
@@ -470,15 +675,15 @@
 					</div>
 					<div class="clearfix visible-xs-block org-block"></div>
 					<div class="col-xs-6 col-md-3 volunteer-menu-col-collectibles">
-						<img class="img img-responsive img-collectible" src="src/imgs/trophies/teamwork.png">
+						<img class="img img-responsive img-collectible" src="../imgs/trophies/teamwork.png">
 						<div class="trophy">
 							<span class="trophies capital strong">4 troféus</span>
 							<br>
-							<span class="trophies short">Espiírito de Equipa</span>
+							<span class="trophies short">Espírito de Equipa</span>
 						</div>
 					</div>
 					<div class="col-xs-6 col-md-3 volunteer-menu-col-collectibles">
-						<img class="img img-responsive img-collectible" src="src/imgs/trophies/creativity.png">
+						<img class="img img-responsive img-collectible" src="../imgs/trophies/creativity.png">
 						<div class="trophy">
 							<span class="trophies capital strong">4 troféus</span>
 							<br>
@@ -489,7 +694,7 @@
 				
 				<div class="row volunteer-menu-row">
 					<div class="col-xs-6 col-md-3 volunteer-menu-col-collectibles">
-						<img class="img img-responsive img-collectible" src="src/imgs/trophies/creativity.png">
+						<img class="img img-responsive img-collectible" src="../imgs/trophies/creativity.png">
 						<div class="trophy">
 							<span class="trophies capital strong">7 troféus</span>
 							<br>
@@ -498,17 +703,212 @@
 					</div>
 				</div>
 			</section>		
+			
+			<section class="Orga_tab profile_tab_body volunteer-organizations-xs " style="display: none;">
+                <article class="volunteer-organization-xs">
+                    <div class="volunteer-organization-left">
+                        <img class="img img-responsive volunteer-organization-img" src="../imgs/organizations/afs.png">
+                    </div>
+                    <div class="volunteer-organization-right-xs">
+                        <a class="red-link block">Associação Intercultural AFS</a>
+                        <span class="block">Integrou AFS</span>
+                        <span class="block">2015-Presente</span>
+                    </div>
+                </article>
+                <article class="volunteer-organization-xs">
+                    <div class="volunteer-organization-left">
+                        <img class="img img-responsive volunteer-organization-img" src="../imgs/organizations/bancoalimentar.png">
+                    </div>
+                    <div class="volunteer-organization-right-xs">
+                        <a class="red-link block">Banco Alimentar</a>
+                        <span class="block">Participou em atividade</span>
+                        <span class="block">Dez. 2015</span>
+                    </div>
+                </article>
+                <article class="volunteer-organization-xs">
+                    <div class="volunteer-organization-left">
+                        <img class="img img-responsive volunteer-organization-img" src="../imgs/organizations/ajudaris.png">
+                    </div>
+                    <div class="volunteer-organization-right-xs">
+                        <a class="red-link block">Ajudaris</a>
+                        <span class="block">Participou em atividade</span>
+                        <span class="block">Nov. 2015</span>
+                    </div>
+                </article>
+                <article class="volunteer-organization-xs">
+                    <div class="volunteer-organization-left">
+                        <img class="img img-responsive volunteer-organization-img" src="../imgs/organizations/curamais.png">
+                    </div>
+                    <div class="volunteer-organization-right-xs">
+                        <a class="red-link block">Cura+</a>
+                        <span class="block">Participou em atividade</span>
+                        <span class="block">Ago. 2015</span>
+                    </div>
+                </article>
+                <article class="volunteer-organization-xs">
+                    <div class="volunteer-organization-left">
+                        <img class="img img-responsive volunteer-organization-img" src="../imgs/organizations/moa.png">
+                    </div>
+                    <div class="volunteer-organization-right-xs">
+                        <a class="red-link block">Fundação MOA</a>
+                        <span class="block">Integrou Fundação MOA</span>
+                        <span class="block">2014-2015</span>
+                    </div>
+                </article>
+            </section>
+			
+			<section class="Cracha_tab profile_tab_body volunteer-menu-collectibles " style="display: none;">
+				<div class="row volunteer-menu-row">
+					<div class="col-xs-6 col-md-3 volunteer-menu-col-collectibles">
+						<img class="img img-responsive img-collectible" src="../imgs/trophies/dedication.PNG">
+						<div class="trophy">
+                            <span class="trophies capital strong">4 crachás</span>
+                            <br>
+                            <span class="trophies short">Espírito de Equipa</span>
+                        </div>
+					</div>
+					<div class="col-xs-6 col-md-3 volunteer-menu-col-collectibles">
+						<img class="img img-responsive img-collectible" src="../imgs/trophies/kindness.PNG">
+						<div class="trophy">
+                            <span class="trophies capital strong">7 crachás</span>
+                            <br>
+                            <span class="trophies short">Dedicação</span>
+                        </div>
+					</div>
+					<div class="clearfix visible-xs-block org-block"></div>
+					<div class="col-xs-6 col-md-3 volunteer-menu-col-collectibles">
+						<img class="img img-responsive img-collectible" src="../imgs/trophies/teamwork.PNG">
+						<div class="trophy">
+                            <span class="trophies capital strong">8 crachás</span>
+                            <br>
+                            <span class="trophies short">Simpatia</span>
+                        </div>
+					</div>
+					<div class="col-xs-6 col-md-3 volunteer-menu-col-collectibles">
+						<img class="img img-responsive img-collectible" src="../imgs/trophies/creativity.PNG">
+						<div class="trophy">
+                            <span class="trophies capital strong">4 crachás</span>
+                            <br>
+                            <span class="trophies short">Originalidade</span>
+                        </div>
+					</div>
+				</div>
+				
+				<div class="row volunteer-menu-row">
+					<div class="col-xs-6 col-md-3 volunteer-menu-col-collectibles">
+						<img class="img img-responsive img-collectible" src="../imgs/trophies/competence.PNG">
+						<div class="trophy">
+                            <span class="trophies capital strong">12 crachás</span>
+                            <br>
+                            <span class="trophies short">Competência</span>
+                        </div>
+					</div>
+				</div>
+			</section>
+			
+			<section class="Atividade_tab profile_tab_body volunteer-current-activities-xs " style="display: none;">
+				<div class="volunteer-current-activities-header">
+					<span class="dark-info">Atividades a decorrer</span>
+				</div>
+				<div class="volunteer-activity">
+					<div class="volunteer-activity-header-xs">
+						<span>Recolha de Alimentos</span>
+					</div>
+					<div class="progress-bar-xs">
+						<div class="bar1-xs"> </div> <!-- Delete id="bar1" when loading data from database is done. This is supposed to controlled via PhP and CSS, defining the width ('percentage') of background which will be colored. -->
+					</div>
+					<div class="percentage">
+						<span>62%</span>
+					</div>
+				</div>
+				<div class="volunteer-activity">
+					<div class="volunteer-activity-header-xs">
+						<span>Apoio a idas ao médico</span>
+					</div>
+					<div class="progress-bar-xs">
+						<div class="bar2-xs"> </div> <!-- Delete id="bar2" when loading data from database is done. This is supposed to controlled via PhP and CSS, defining the width ('percentage') of background which will be colored. -->
+					</div>
+					<div class="percentage">
+						<span>50%</span>
+					</div>
+				</div>	
+			</section>
+			
+			<section class="Atividade_tab profile_tab_body volunteer-activities-history" style="display: none;">
+				<div class="volunteer-activities-history-header">
+					<span class="dark-info">Histórico</span>
+				</div>
+				<div class="volunteer-done-activity">
+					<div class="volunteer-activity-history-header">
+						<span class="block strong">Organização de jantar</span>
+						<span class="grey">G.A.S. Porto - Set. 2015</span>
+					</div>
+				</div>
+				<div class="volunteer-done-activity">
+					<div class="volunteer-activity-history-header">
+						<span class="block strong">Realização do Workshop</span>
+						<span class="grey">G.A.S. Porto - Feb. 2015</span>
+					</div>
+				</div>
+				<div class="volunteer-done-activity">
+					<div class="volunteer-activity-history-header">
+						<span class="block strong">Acompanhamento de Cidadão</span>
+						<span class="grey">G.A.S. Porto - Dez. 2014</span>
+					</div>
+				</div>
+			</section>
+			
 		</section>
 	</section>
 	
 	<!-- Footer -->
 	<footer id="footer">
+		<hr class="visible-xs">
 		<section class="container" id="container-footer">
 			<span class="hidden-xs">Copyright 2016 &copy Universidade do Porto | Termos e Condições | Acessibilidade</span>
 			<span class="hidden-xs">Última atualização: 2016-04-03 Página gerada em: 2016-04-03</span>
 			<span class="visible-xs">Copyright 2016 &copy UP Solidária</span>
 		</section>
 	</footer>
+	
+	
+	<?php
+		echo
+		"<script>
+		function openProfileTab(header, body) {
+			var x, y, z, zz;
+			x = document.getElementsByClassName(\"profile_tab_body\");
+			for (i = 0; i < x.length; i++) {
+				x[i].style.display = \"none\";
+			}
+			x = document.getElementsByClassName(\"profile_tab_body_sm\");
+			for (i = 0; i < x.length; i++) {
+				x[i].style.display = \"none\";
+				x[i].className = x[i].className.replace(\"visible-sm\",\"\");
+			}
+			x = document.getElementsByClassName(\"profile_tab_body_md_lg\");
+			for (i = 0; i < x.length; i++) {
+				x[i].style.display = \"none\";
+				x[i].className = x[i].className.replace(\"visible-md visible-lg\",\"\");
+			}
+			y = document.getElementsByClassName(\"profile_tab_header\");
+			for (i = 0; i < y.length; i++) {
+				y[i].className = y[i].className.replace(\" active\", \"\");
+			}
+			z = document.getElementsByClassName(header);
+			for (i = 0; i < z.length; i++) {
+				z[i].className += \" active\";
+			}
+			z = document.getElementsByClassName(body)
+			for (i = 0; i < z.length; i++) {
+				z[i].style.display = \"block\";
+				zz = z[i].className;
+				if(zz.includes(\"profile_tab_body_sm\")) z[i].className += \"visible-sm\";
+				else if(zz.includes(\"profile_tab_body_md_lg\")) z[i].className += \"visible-md visible-lg\";
+			}
+		}
+		</script>";
+	?>
 
 	<!-- Bootstrap core JavaScript
 	================================================== -->
