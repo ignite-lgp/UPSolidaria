@@ -13,7 +13,7 @@ class Database extends Migration
      */
     public function up()
     {
-		//IMAGES
+		//IMAGES ............
 		
 		Schema::create('image', function ($table) {
 			$table->increments('id');
