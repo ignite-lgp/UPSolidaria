@@ -125,9 +125,6 @@
 			<!-- Main Body Section -->
 			<section class="main-section login-auth">
 					<h3>Autenticação</h3>
-					<input class="auth-input" type="text" name="username" placeholder="Utilizador" />
-					<input class="auth-input" type="password" name="password" placeholder="Palavra-Passe" />
-					<input class="btn-auth" type="submit" name="init-session" value="iniciar sessão" />
 					{!! Form::open(array('url' => '/auth/login', 'method' => 'POST')) !!}
 						{!! Form::text('username','', array('class' => 'auth-input', 'placeholder' => 'Utilizador')) !!}
 						{!! Form::password('password', array('class' => 'auth-input', 'placeholder' => 'Palavra-Passe')) !!}
