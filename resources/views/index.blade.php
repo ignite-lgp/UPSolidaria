@@ -72,7 +72,7 @@
           <ul class="nav navbar-nav navigation-options">
             <li><a href="./quemsomos">quem somos</a></li>
             <li><a href="./organizacoes">organizações</a></li>
-            <li><a href="#activities">atividades</a></li>
+            <li><a href="./atividades">atividades</a></li>
             <li><a href="./noticias">notícias</a></li>
             <li><a href="#contacts">contactos</a></li>
           </ul>
