@@ -241,20 +241,17 @@ hr {
 	margin-right: auto;
 	width: 300px;
 }
-.login-auth > .auth-input, .login-auth > .btn-auth {
+.login-auth > form > .auth-input, .login-auth > form > .btn-auth {
 	width: 100%;
+	display: list-item;
+	font-size: 13px;
 }/**/
 /*
 .login-auth > .auth-input, .login-auth > .btn-auth {
 	width: 250px;
 }/**/
 
-.login-auth > .auth-input, .login-auth > .btn-auth {
-	display: list-item;
-	font-size: 13px;
-}
-
-.login-auth > .auth-input {
+.login-auth > form > .auth-input {
 	height: 30px;
 }
 
