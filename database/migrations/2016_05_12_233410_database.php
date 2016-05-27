@@ -13,7 +13,7 @@ class Database extends Migration
      */
     public function up()
     {
-		//IMAGES ............
+		//IMAGES
 		
 		Schema::create('image', function ($table) {
 			$table->increments('id');
@@ -88,6 +88,7 @@ class Database extends Migration
             $table->boolean('available')->default(true);
             $table->boolean('admin');
             $table->timestamps();
+			$table->index(['email','password']);
         });
 
         Schema::create('volunteerinterest', function ($table) {
@@ -113,6 +114,8 @@ class Database extends Migration
 			$table->integer('image')->unsigned()->nullable();
 			$table->foreign('image')->references('id')->on('image');
             $table->timestamps();
+			
+			$table->index('name');
         });
 
         Schema::create('organizationinterest', function ($table) {
@@ -144,6 +147,8 @@ class Database extends Migration
 			$table->boolean('admin');
 
             $table->primary(['volunteer', 'organization']);
+			
+			$table->index('organization');
         });
 
         Schema::create('group', function (Blueprint $table) {
@@ -160,6 +165,8 @@ class Database extends Migration
             $table->timestamp('created_date');
             $table->rememberToken();
             $table->timestamps();
+			
+			$table->index('organization');
         });
 
         
@@ -171,6 +178,8 @@ class Database extends Migration
 			$table->boolean('admin');
 
             $table->primary(['volunteer', 'group']);
+			
+			$table->index('group');
         });
 		
 		Schema::create('activity', function ($table) {
@@ -189,6 +198,8 @@ class Database extends Migration
 			$table->timestamp('end_date');
             $table->rememberToken();
             $table->timestamps();
+			
+			$table->index('group');
         });
 		
 		Schema::create('volunteeractivity', function ($table) {
@@ -199,6 +210,8 @@ class Database extends Migration
 			$table->boolean('admin');
 
             $table->primary(['volunteer', 'activity']);
+			
+			$table->index('activity');
         });
         
 
@@ -238,6 +251,8 @@ class Database extends Migration
             $table->timestamp('date');
 
             $table->primary(['volunteer', 'medal', 'organization']);
+			
+			$table->index('volunteer');
         });
 
         Schema::create('trophyvolunteer', function ($table) {
@@ -248,6 +263,8 @@ class Database extends Migration
             $table->timestamp('date');
 
             $table->primary(['volunteer', 'trophy']);
+			
+			$table->index('volunteer');
         });
 
         DB::table('country')->insert(array('code'=>'AF','country'=>'Afghanistan'));
