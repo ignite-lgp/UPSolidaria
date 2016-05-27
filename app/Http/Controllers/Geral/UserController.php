@@ -45,7 +45,8 @@ class UserController extends Controller
 
             // Convert points to levels
             $levelInformation = $this->calculatePoints($information[0]->points);
-            
+
+
             // Add points to response so we can show them on view
             $information[0]->current_level = $levelInformation[0];
             $information[0]->next_lower_limit = $levelInformation[1];
@@ -63,7 +64,7 @@ class UserController extends Controller
     *   @param integer representing the current total points user has.
     *   @return array where 1st index = current lvl, 2nd index = next level lower limit and 3rd index = current points
     */
-    private function calculatePoints(int $currentPoints){
+    private function calculatePoints($currentPoints){
 
         $_levelInformation = [];
         $_xpAccummulated = 0;
