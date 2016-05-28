@@ -529,12 +529,38 @@ class Database extends Migration
 
 
 
+///////////////////////////////////////////
+//      Testes para log in com org
+///////////////////////////////////////////
+        /* Insert G.A.S.Porto organization */
+        DB::table('organization')->insert(array('name'=>'G.A.S. Porto', 'password' => '123456'
+            ,'email'=>'alcino.jssousa@gmail.com', 'address' => 'Rua'
+            ,'confirm_date' => '2016-05-26 22:53:27'
+            ,'created_at' => '2016-05-26 22:53:27'
+            , 'updated_at' => '2016-05-26 22:53:27'));
 
-        /* Insert example organization */
 
-        DB::table('organization')->insert(array('name'=>'G.A.S Porto', 'password' => '12345', 'email'=>'_a@w.com', 'address' => 'Rua', 'confirm_date' => '2016-05-26 22:53:27', 'created_at' => '2016-05-26 22:53:27', 'updated_at' => '2016-05-26 22:53:27'));
+        //Conta user de org G.A.S.Porto 
+        DB::table('users')->insert(['name' => 'G.A.S.Porto'
+            , 'email' => 'alcino.jssousa@gmail.com'
+            , 'password' => bcrypt('123456')
+            , 'nif' => '789456123'
+            , 'token' => bin2hex(random_bytes(10))
+            , 'country' => 'PT'
+            , 'organization' => 1 //referencia à org gasporto
+            , 'admin' => false]);
+            
+        //Pagina de org de teste
+        DB::table('organization_page')->insert([
+            'organization' => 1
+            ,'mission' => 'Missaoooooooooooooooooo'
+            ,'vision' => 'Visaaoooooooooooooooooooo'
+            ,'values' => 'Valoressssssssssssssssss'
+            ]);
+        
+///////////////////////////////////////////
 
-    }
+}
 
     /**
      * Reverse the migrations.

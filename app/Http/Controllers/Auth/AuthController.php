@@ -162,7 +162,15 @@ class AuthController extends Controller
 
                 Session::put('email', $data->all()['username']);
 
-                return redirect('/perfil');
+                //If normal user redirect to user profile
+                if(is_null($user->organization)) {
+                  return redirect('/perfil');
+                }
+                //Else redirect to org page with admin privileges
+                //var_dump($user->organization);
+                $org = DB::table('organization')->where('id', $user->organization)->first();
+                var_dump($org->name);
+                return redirect('/organizacao/'. $org->name);
         } else {
             echo 'Fail';
         }

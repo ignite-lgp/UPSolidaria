@@ -104,3 +104,11 @@ Route::get('/noticia/{title}', 'Geral\NewsController@showNews');
 
 Route::get('/atividades', 'Geral\ActivitiesController@showActivities');
 
+
+/*
+* TESTE LOGOUT
+*/
+
+Route::get('/logout', 'Geral\UserController@destroySession');
+
+

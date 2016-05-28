@@ -28,7 +28,7 @@ class OrgController extends Controller
         /*
             IMPORTANT : ALL ORGANIZATIONS NAME MUST BE UPPER CASE
         */
-        $organization = strtoupper($organization);
+        //$organization = strtoupper($organization);
 
         $information = DB::select('select organization_page.mission, organization_page.values, organization_page.vision, organization.name from organization_page, organization where organization_page.id = organization.id and organization.name = ?', array($organization));
 

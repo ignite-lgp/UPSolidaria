@@ -27,7 +27,7 @@ class UserController extends Controller
     */
 
     protected function showProfile(Request $request){
-
+        
         $session_email = Session::get('email', 'default');
 
         if ($session_email == ''){
@@ -79,5 +79,16 @@ class UserController extends Controller
         array_push($_levelInformation, floor($currentPoints - $_xpAccummulated));
 
         return $_levelInformation;
+    }
+
+
+    /*
+    * Test route to logout - 'http... /logout'
+    */
+    protected function destroySession(){
+
+        Session::flush();
+        print_r(Session::all());
+        return View('/index');
     }
 }
