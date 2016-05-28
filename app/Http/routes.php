@@ -97,3 +97,18 @@ Route::get('/noticias', 'Geral\NewsController@showAllNews');
 */
 
 Route::get('/noticia/{title}', 'Geral\NewsController@showNews');
+
+/*
+* Atividades
+*/
+
+Route::get('/atividades', 'Geral\ActivitiesController@showActivities');
+
+
+/*
+* TESTE LOGOUT
+*/
+
+Route::get('/logout', 'Geral\UserController@destroySession');
+
+

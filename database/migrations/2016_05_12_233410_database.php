@@ -24,6 +24,24 @@ class Database extends Migration
 			$table->integer('size')->nullable();
 		});
 
+		Schema::create('organization', function ($table) {
+            $table->increments('id');
+            $table->string('name')->unique();
+            $table->string('password');
+            $table->string('email')->unique();
+            $table->string('address');
+            $table->integer('phone')->nullable();
+            $table->string('website')->nullable();
+            $table->integer('facebook')->nullable();
+            $table->text('about')->nullable();
+            $table->timestamp('confirm_date');
+			$table->integer('image')->unsigned()->nullable();
+			$table->foreign('image')->references('id')->on('image');
+            $table->timestamps();
+			
+			$table->index('name');
+        });
+
 		//PERSONAL INFO
 		
         Schema::create('course', function ($table) {
@@ -81,13 +99,16 @@ class Database extends Migration
             $table->string('country');
             $table->integer('course')->unsigned()->nullable();
             $table->integer('postal_code')->unsigned()->nullable();
+			$table->integer('organization')->unsigned()->nullable(); //null if volunteer, not null if organization with its id
             $table->foreign('country')->references('code')->on('country');
             $table->foreign('course')->references('id')->on('course');
             $table->foreign('postal_code')->references('id')->on('postal_code');
+			$table->foreign('organization')->references('id')->on('organization');
             
             $table->boolean('available')->default(true);
             $table->boolean('admin')->default(false);
             $table->timestamps();
+			$table->index(['email','password']);
         });
 
         Schema::create('volunteerinterest', function ($table) {
@@ -97,22 +118,6 @@ class Database extends Migration
             $table->foreign('interest')->references('id')->on('interest');
 
             $table->primary(['volunteer', 'interest']);
-        }); 
-
-        Schema::create('organization', function ($table) {
-            $table->increments('id');
-            $table->string('name')->unique();
-            $table->string('password');
-            $table->string('email')->unique();
-            $table->string('address');
-            $table->integer('phone')->nullable();
-            $table->string('website')->nullable();
-            $table->integer('facebook')->nullable();
-            $table->text('about')->nullable();
-            $table->timestamp('confirm_date');
-			$table->integer('image')->unsigned()->nullable();
-			$table->foreign('image')->references('id')->on('image');
-            $table->timestamps();
         });
 
         Schema::create('organizationinterest', function ($table) {
@@ -145,6 +150,8 @@ class Database extends Migration
 			$table->boolean('admin')->default(false);
 
             $table->primary(['volunteer', 'organization']);
+			
+			$table->index('organization');
         });
 
 
@@ -162,6 +169,8 @@ class Database extends Migration
             $table->timestamp('created_date');
             $table->rememberToken();
             $table->timestamps();
+			
+			$table->index('organization');
         });
 
         
@@ -173,6 +182,8 @@ class Database extends Migration
 			$table->boolean('admin');
 
             $table->primary(['volunteer', 'group']);
+			
+			$table->index('group');
         });
 		
 		Schema::create('activity', function ($table) {
@@ -189,6 +200,7 @@ class Database extends Migration
             $table->timestamp('created_date');
 			$table->timestamp('init_date');
 			$table->timestamp('end_date');
+			$table->index('group');
         });
 		
 		Schema::create('volunteeractivity', function ($table) {
@@ -199,6 +211,8 @@ class Database extends Migration
 			$table->boolean('admin');
 
             $table->primary(['volunteer', 'activity']);
+			
+			$table->index('activity');
         });
         
 
@@ -238,6 +252,8 @@ class Database extends Migration
             $table->timestamp('date');
 
             $table->primary(['volunteer', 'medal', 'organization']);
+			
+			$table->index('volunteer');
         });
 
         Schema::create('trophyvolunteer', function ($table) {
@@ -248,6 +264,8 @@ class Database extends Migration
             $table->timestamp('date');
 
             $table->primary(['volunteer', 'trophy']);
+			
+			$table->index('volunteer');
         });
 
         DB::table('country')->insert(array('code'=>'AF','country'=>'Afghanistan'));
@@ -522,6 +540,7 @@ class Database extends Migration
         DB::table('trophy')->insert(array('name'=>'T_Capitalista','description'=>'Ganhou imenso dinheiro.'));
 
 
+
         DB::table('medalattribution')->insert(array('volunteer'=>'1','medal'=>'1', 'organization' => '1', 'date' => '2016-05-26 22:53:27'));
         DB::table('medalattribution')->insert(array('volunteer'=>'1','medal'=>'1', 'organization' => '2', 'date' => '2016-05-26 22:53:27'));
         DB::table('medalattribution')->insert(array('volunteer'=>'1','medal'=>'3', 'organization' => '1', 'date' => '2016-05-26 22:53:27'));
@@ -540,7 +559,37 @@ class Database extends Migration
         DB::table('news')->insert(array('image' => 3, 'title' => 'Título 2' , 'description' => $description, 'date' => Carbon\Carbon::now()));
 		DB::table('news')->insert(array('image' => 4, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
 
-    }
+
+        ///////////////////////////////////////////
+        //      Testes para log in com org
+        ///////////////////////////////////////////
+
+        /* Insert G.A.S.Porto organization */
+        DB::table('organization')->insert(array('name'=>'G.A.S. Porto', 'password' => '123456'
+            ,'email'=>'alcino.jssousa@gmail.com', 'address' => 'Rua'
+            ,'confirm_date' => '2016-05-26 22:53:27'
+            ,'created_at' => '2016-05-26 22:53:27'
+            , 'updated_at' => '2016-05-26 22:53:27'));
+
+
+        //Conta user de org G.A.S.Porto 
+        DB::table('users')->insert(['name' => 'G.A.S.Porto'
+            , 'email' => 'alcino.jssousa@gmail.com'
+            , 'password' => bcrypt('123456')
+            , 'nif' => '789456123'
+            , 'token' => bin2hex(random_bytes(10))
+            , 'country' => 'PT'
+            , 'organization' => 1 //referencia à org gasporto
+            , 'admin' => false]);
+            
+        //Pagina de org de teste
+        DB::table('organization_page')->insert([
+            'organization' => 1
+            ,'mission' => 'Missaoooooooooooooooooo'
+            ,'vision' => 'Visaaoooooooooooooooooooo'
+            ,'values' => 'Valoressssssssssssssssss'
+            ]);
+}
 
     /**
      * Reverse the migrations.
