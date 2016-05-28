@@ -273,98 +273,31 @@
 				
 				<section class="Trofeu_tab profile_tab_body_md_lg volunteer-menu-collectibles visible-md visible-lg">
 					<div class="row volunteer-menu-row">
+						@foreach ($trofeus as $trof)
 						<div class="col-md-3 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/trophies/dedication.png">
+							<img class="img img-responsive img-collectible" src="src/imgs/trophies/dedication.png" alt="{{ $trof->description}}">
 							<div class="trophy">
-								<span class="trophies capital strong">5 troféus</span>
+								<span class="trophies capital strong">{{ $trof->trofeus }} troféus</span>
 								<br>
-								<span class="trophies short">Dedicação</span>
+								<span class="trophies short">{{ $trof->name}}</span>
 							</div>
 						</div>
-						<div class="col-md-3 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/trophies/kindness.png">
-							<div class="trophy">
-								<span class="trophies capital strong">8 troféus</span>
-								<br>
-								<span class="trophies short">Simpatia</span>
-							</div>
-						</div>
-						<div class="col-md-3 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/trophies/teamwork.png">
-							<div class="trophy">
-								<span class="trophies capital strong">4 troféus</span>
-								<br>
-								<span class="trophies short">Espiírito de Equipa</span>
-							</div>
-						</div>
-						<div class="col-md-3 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/trophies/creativity.png">
-							<div class="trophy">
-								<span class="trophies capital strong">4 troféus</span>
-								<br>
-								<span class="trophies short">Originalidade</span>
-							</div>
-						</div>
-					</div>
-					
-					<div class="row volunteer-menu-row">
-						<div class="col-md-3 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/trophies/creativity.png">
-							<div class="trophy">
-								<span class="trophies capital strong">7 troféus</span>
-								<br>
-								<span class="trophies short">Competência</span>
-							</div>
-						</div>
+						@endforeach
 					</div>
 				</section>
 				
 				<section class="Trofeu_tab profile_tab_body_sm volunteer-menu-collectibles visible-sm">
 					<div class="row volunteer-menu-row">
+						@foreach ($trofeus as $trof)
 						<div class="col-sm-6 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/trophies/dedication.png">
+							<img class="img img-responsive img-collectible" src="src/imgs/trophies/dedication.png" alt="{{ $trof->description}}">
 							<div class="trophy">
-								<span class="trophies capital strong">5 troféus</span>
+								<span class="trophies capital strong">{{ $trof->trofeus }} troféus</span>
 								<br>
-								<span class="trophies short">Dedicação</span>
+								<span class="trophies short">{{ $trof->name}}</span>
 							</div>
 						</div>
-						<div class="col-sm-6 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/trophies/kindness.png">
-							<div class="trophy">
-								<span class="trophies capital strong">8 troféus</span>
-								<br>
-								<span class="trophies short">Simpatia</span>
-							</div>
-						</div>
-						<div class="clearfix visible-sm-block clearfix-small"></div>
-						<div class="col-sm-6 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/trophies/teamwork.png">
-							<div class="trophy">
-								<span class="trophies capital strong">4 troféus</span>
-								<br>
-								<span class="trophies short">Espiírito de Equipa</span>
-							</div>
-						</div>
-						<div class="col-sm-6 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/trophies/creativity.png">
-							<div class="trophy">
-								<span class="trophies capital strong">4 troféus</span>
-								<br>
-								<span class="trophies short">Originalidade</span>
-							</div>
-						</div>
-					</div>
-					
-					<div class="row volunteer-menu-row">
-						<div class="col-sm-6 volunteer-menu-col-collectibles blockfix-small">
-							<img class="img img-responsive img-collectible" src="../imgs/trophies/creativity.png">
-							<div class="trophy">
-								<span class="trophies capital strong">7 troféus</span>
-								<br>
-								<span class="trophies short">Competência</span>
-							</div>
-						</div>
+						@endforeach
 					</div>
 				</section>
 				
@@ -387,7 +320,7 @@
 					<div class="row volunteer-menu-row">
 						@foreach ($medals as $medal)
 						<div class="col-md-3 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/badges/dedication.PNG" alt="{{ $medal->description}}">
+							<img class="img img-responsive img-collectible" src="src/imgs/badges/dedication.PNG" alt="{{ $medal->description}}">
 							<div class="trophy">
 								<span class="trophies capital strong">{{ $medal->medalhas}} crachás</span>
 								<br>
@@ -400,50 +333,16 @@
 				
 				<section class="Cracha_tab profile_tab_body_sm volunteer-menu-collectibles " style="display: none;">
 					<div class="row volunteer-menu-row">
+						@foreach ($medals as $medal)
 						<div class="col-sm-6 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/badges/dedication.PNG">
+							<img class="img img-responsive img-collectible" src="src/imgs/badges/dedication.PNG" alt="{{ $medal->description}}">
 							<div class="trophy">
-								<span class="trophies capital strong">4 crachás</span>
+								<span class="trophies capital strong">{{ $medal->medalhas}} crachás</span>
 								<br>
-								<span class="trophies short">Espírito de Equipa</span>
+								<span class="trophies short">{{ $medal->name}}</span>
 							</div>
 						</div>
-						<div class="col-sm-6 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/badges/kindness.PNG">
-							<div class="trophy">
-								<span class="trophies capital strong">7 crachás</span>
-								<br>
-								<span class="trophies short">Dedicação</span>
-							</div>
-						</div>
-						<div class="clearfix visible-sm-block clearfix-small"></div>
-						<div class="col-sm-6 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/badges/teamwork.PNG">
-							<div class="trophy">
-								<span class="trophies capital strong">8 crachás</span>
-								<br>
-								<span class="trophies short">Simpatia</span>
-							</div>
-						</div>
-						<div class="col-sm-6 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/badges/creativity.PNG">
-							<div class="trophy">
-								<span class="trophies capital strong">4 crachás</span>
-								<br>
-								<span class="trophies short">Originalidade</span>
-							</div>
-						</div>
-					</div>
-					
-					<div class="row volunteer-menu-row">
-						<div class="col-sm-6 volunteer-menu-col-collectibles blockfix-small">
-							<img class="img img-responsive img-collectible" src="../imgs/trophies/competence.PNG">
-							<div class="trophy">
-								<span class="trophies capital strong">12 crachás</span>
-								<br>
-								<span class="trophies short">Competência</span>
-							</div>
-						</div>
+						@endforeach
 					</div>
 				</section>
 				

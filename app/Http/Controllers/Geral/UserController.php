@@ -45,7 +45,6 @@ class UserController extends Controller
 
             $trophies = DB::select('select trophy.name, trophy.description, count(*) as trofeus from trophy, trophyvolunteer where trophyvolunteer.trophy = trophy.id and trophyvolunteer.volunteer = ? group by trophy.description, trophy.name;', array($information[0]->id));
 
-            var_dump($trophies);
 
             for ($i=0; $i < count($organizations); $i++) { 
                 $organizations[$i]->reg_date = substr($organizations[$i]->reg_date,0,4);
@@ -73,7 +72,7 @@ class UserController extends Controller
             $information[0]->next_lower_limit = $levelInformation[1];
             $information[0]->current_points = $levelInformation[2];
 
-            return View('perfil')->with('profile',$information[0])->with('organizations', $organizations)->with('medals', $medals);
+            return View('perfil')->with('profile',$information[0])->with('organizations', $organizations)->with('medals', $medals)->with('trofeus', $trophies);
         }
     }
 
