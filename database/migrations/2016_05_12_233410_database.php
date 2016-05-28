@@ -24,6 +24,24 @@ class Database extends Migration
 			$table->integer('size')->nullable();
 		});
 		
+		Schema::create('organization', function ($table) {
+            $table->increments('id');
+            $table->string('name')->unique();
+            $table->string('password');
+            $table->string('email')->unique();
+            $table->string('address');
+            $table->integer('phone')->nullable();
+            $table->string('website')->nullable();
+            $table->integer('facebook')->nullable();
+            $table->text('about')->nullable();
+            $table->timestamp('confirm_date');
+			$table->integer('image')->unsigned()->nullable();
+			$table->foreign('image')->references('id')->on('image');
+            $table->timestamps();
+			
+			$table->index('name');
+        });
+		
 		//PERSONAL INFO
 		
         Schema::create('course', function ($table) {
@@ -81,9 +99,11 @@ class Database extends Migration
             $table->string('country');
             $table->integer('course')->unsigned()->nullable();
             $table->integer('postal_code')->unsigned()->nullable();
+			$table->integer('organization')->unsigned()->nullable(); //null if volunteer, not null if organization with its id
             $table->foreign('country')->references('code')->on('country');
             $table->foreign('course')->references('id')->on('course');
             $table->foreign('postal_code')->references('id')->on('postal_code');
+			$table->foreign('organization')->references('id')->on('organization');
             
             $table->boolean('available')->default(true);
             $table->boolean('admin');
@@ -98,24 +118,6 @@ class Database extends Migration
             $table->foreign('interest')->references('id')->on('interest');
 
             $table->primary(['volunteer', 'interest']);
-        }); 
-
-        Schema::create('organization', function ($table) {
-            $table->increments('id');
-            $table->string('name')->unique();
-            $table->string('password');
-            $table->string('email')->unique();
-            $table->string('address');
-            $table->integer('phone')->nullable();
-            $table->string('website')->nullable();
-            $table->integer('facebook')->nullable();
-            $table->text('about')->nullable();
-            $table->timestamp('confirm_date');
-			$table->integer('image')->unsigned()->nullable();
-			$table->foreign('image')->references('id')->on('image');
-            $table->timestamps();
-			
-			$table->index('name');
         });
 
         Schema::create('organizationinterest', function ($table) {
