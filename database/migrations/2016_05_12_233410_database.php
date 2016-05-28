@@ -233,6 +233,8 @@ class Database extends Migration
             $table->increments('id');
             $table->string('name')->unique();
             $table->text('description');
+			$table->integer('image')->unsigned();
+			$table->foreign('image')->references('id')->on('image');
         });
 
     
@@ -240,6 +242,8 @@ class Database extends Migration
             $table->increments('id');
             $table->string('name')->unique();
             $table->text('description');
+			$table->integer('image')->unsigned();
+			$table->foreign('image')->references('id')->on('image');
         });
         
         Schema::create('medalattribution', function ($table) {
@@ -529,15 +533,15 @@ class Database extends Migration
         DB::table('user_organization')->insert(array('volunteer'=>'1', 'organization' => '2', 'reg_date'=>'2016-05-26 22:53:27'));
 
 
-        DB::table('medal')->insert(array('name'=>'Testix','description'=>'Quando se testa alguma coisa.'));
-        DB::table('medal')->insert(array('name'=>'Patria','description'=>'Palavra que me veio a cabeça.'));
-        DB::table('medal')->insert(array('name'=>'FEUP','description'=>'Medalha FEUP'));
-        DB::table('medal')->insert(array('name'=>'Capitalista','description'=>'Ganhou imenso dinheiro.'));
+        DB::table('medal')->insert(array('name'=>'Testix','description'=>'Quando se testa alguma coisa.','image'=>1));
+        DB::table('medal')->insert(array('name'=>'Patria','description'=>'Palavra que me veio a cabeça.','image'=>1));
+        DB::table('medal')->insert(array('name'=>'FEUP','description'=>'Medalha FEUP','image'=>1));
+        DB::table('medal')->insert(array('name'=>'Capitalista','description'=>'Ganhou imenso dinheiro.','image'=>1));
 
-        DB::table('trophy')->insert(array('name'=>'T_Testix','description'=>'Quando se testa alguma coisa.'));
-        DB::table('trophy')->insert(array('name'=>'T_Patria','description'=>'Palavra que me veio a cabeça.'));
-        DB::table('trophy')->insert(array('name'=>'T_FEUP','description'=>'Medalha FEUP'));
-        DB::table('trophy')->insert(array('name'=>'T_Capitalista','description'=>'Ganhou imenso dinheiro.'));
+        DB::table('trophy')->insert(array('name'=>'T_Testix','description'=>'Quando se testa alguma coisa.','image'=>2));
+        DB::table('trophy')->insert(array('name'=>'T_Patria','description'=>'Palavra que me veio a cabeça.','image'=>2));
+        DB::table('trophy')->insert(array('name'=>'T_FEUP','description'=>'Medalha FEUP','image'=>2));
+        DB::table('trophy')->insert(array('name'=>'T_Capitalista','description'=>'Ganhou imenso dinheiro.','image'=>2));
 
 
 
