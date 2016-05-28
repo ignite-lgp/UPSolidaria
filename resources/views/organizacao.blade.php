@@ -33,7 +33,7 @@
   </head>
 
   <body>
-	
+
 	<!-- Upper bar, contains authentication and language -->
 	<nav class="navbar navbar-inverse navbar-little">
 		<section class="auth hidden-xs">
@@ -96,6 +96,18 @@
 				<span class="sidebar-title">pesquisar</span>
 				<input class="search-bar-input" type="text" name="activities" placeholder="Pesquisar Organizações" />
 			</section>
+
+			@if ($admin)
+			<!-- Admin section -->
+				<section class="sidebar-listing hidden-xs">
+					<span class="sidebar-title">Administrador</span>
+					<ul>
+						<li><a onclick="changeInfo();">Editar Informações</a></li>
+						<li><a class="manage-groups">Gerir Grupos</a></li>
+						<li><a class="manage-volunteers">Gerir Voluntários</a></li>
+					</ul>
+				</section>
+			@endif
 			
 			<!-- Options -->
 			<section class="sidebar-listing hidden-xs">
@@ -120,6 +132,9 @@
 					<li><a>Rumos</a></li>
 				</ul>
 			</section>
+
+
+			
 			
 			<!-- Authentication -->
 			<section class="hidden-xs">
@@ -148,8 +163,8 @@
 		
 			<!-- Organization Section -->
 			<section class="organization-section">
-				<h3 class="title">{{ $info->name}}</h3>
-				<img class="img img-responsive org-img" src="/src/imgs/gas_porto.png">
+				<h3 class="title">{{ $info->name }}</h3>
+				<img class="img img-responsive org-img" src="../{{ $image_location }}">
 				<section class="info-section">
 						<h4 class="sidebar-title">Missão</h4>
 						<p class="big">{{ $info->mission }}</p>
@@ -162,26 +177,35 @@
 						<h4 class="sidebar-title">Valores</h4>
 						<p class="big">{{ $info->values }}</p>
 				</section>
+      		</section>
+
+
+			<!-- Organization Change Info Section -->
+			<!-- Criar um form que permita alterar todos os valores. Depois de submito redirecionar para a pagina da org -->
+			<section class="organization-section-change-info" style="display: none;">
+				<h3 class="title">Editar Informações</h3>
+				<img class="img img-responsive org-img" src="../{{ $image_location }}">
+				<section class="info-section">
+						<h4 class="sidebar-title">Missão</h4>
+						<p class="big">{{ $info->mission }}</p>
+				</section>
+				<section class="info-section">
+						<h4 class="sidebar-title">Visão</h4>
+						<p class="big">{{ $info->vision }}</p>
+				</section>
+				<section class="info-section">
+						<h4 class="sidebar-title">Valores</h4>
+						<p class="big">{{ $info->values }}</p>
+				</section>
+			</section>
+
+
+
       </section>
+
+
 	</div>
-	
-	<section class="container" id="main-container-xs">
-				<section class="organization-section visible-xs">
-					<h3 class="title">{{ $info->name}}</h3>
-					<img class="img img-responsive org-img" src="/src/	imgs/gas_porto.png">
-					<section class="info-section">
-							<h4 class="sidebar-title">Missão</h4>
-							<p class="big">{{ $info->mission }}</p>
-					</section>
-					<section class="info-section">
-							<h4 class="sidebar-title">Visão</h4>
-							<p class="big">{{ $info->vision }}</p>
-					</section>
-					<section class="info-section">
-							<h4 class="sidebar-title">Valores</h4>
-							<p class="big">{{ $info->values }}</p>
-					</section>
-      </section>
+
 				
     </section>
 	
@@ -194,6 +218,26 @@
 			<span class="visible-xs">Copyright 2016 &copy UP Solidária</span>
 		</section>
 	</footer>
+
+<?php
+		echo
+		"<script>
+			function changeInfo(){
+				var x;
+				// Hide original contents
+				x =	document.getElementsByClassName(\"organization-section\");
+				for (i = 0; i < x.length; i++) {
+					x[i].style.display = \"none\";
+				}
+				// Show new contents
+				x =	document.getElementsByClassName(\"organization-section-change-info\");
+				for (i = 0; i < x.length; i++) {
+					x[i].style.display = \"block\";
+				}
+			}
+		</script>";
+	?>
+
 
 	<!-- Bootstrap core JavaScript
 	================================================== -->

@@ -583,12 +583,12 @@ class Database extends Migration
             , 'nif' => '789456123'
             , 'token' => bin2hex(random_bytes(10))
             , 'country' => 'PT'
-            , 'organization' => 1 //referencia à org gasporto
+            , 'organization' => 3 //referencia à org gasporto
             , 'admin' => false]);
             
         //Pagina de org de teste
         DB::table('organization_page')->insert([
-            'organization' => 1
+            'organization' => 3
             ,'mission' => 'Missaoooooooooooooooooo'
             ,'vision' => 'Visaaoooooooooooooooooooo'
             ,'values' => 'Valoressssssssssssssssss'

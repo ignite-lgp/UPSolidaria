@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Geral;
 
+use App\User;
 use App\Http\Controllers\Controller;
 use View;
 use DB;
+use Session;
 
 class OrgController extends Controller
 {
@@ -30,9 +32,30 @@ class OrgController extends Controller
         */
         //$organization = strtoupper($organization);
 
-        $information = DB::select('select organization_page.mission, organization_page.values, organization_page.vision, organization.name from organization_page, organization where organization_page.id = organization.id and organization.name = ?', array($organization));
+        $information = DB::select('select organization_page.mission, organization_page.values, organization_page.vision, organization.name, organization.image from organization_page, organization where organization_page.organization = organization.id and organization.name = ?', array($organization));
+    
 
-        return View('organizacao')->with('info', $information[0]);
+        $image_location = DB::select('select location from image where image.id = ?', array($information[0]->image));
+        $email = Session::get('email');
+        $user = User::whereRaw('email = ?', [$email])->first();
+
+        //If user is not logged in shows defaul view
+        if(is_null($user)) {
+                  return View('organizacao')->with(['info' => $information[0]
+                   , 'image_location' => $image_location[0]->location
+                   , 'admin' => false]);
+        }
+        //Else if admin shows admin view
+        else {
+            if(is_null($user->organization)) //It is not an admin
+                return View('organizacao')->with(['info' => $information[0]
+                    , 'image_location' => $image_location[0]->location
+                    , 'admin' => false]);
+            else //It is an admin
+                return View('organizacao')->with(['info' => $information[0]
+                    , 'image_location' => $image_location[0]->location
+                    , 'admin' => true]);
+        }   
     }
 
 
@@ -43,9 +66,6 @@ class OrgController extends Controller
     */
     protected function showOrgs(){
 
-        /*
-            IMPORTANT : ALL ORGANIZATIONS NAME MUST BE UPPER CASE
-        */
         $orgs =  DB::select('select id, name from organization');
 
         return View('organizacoes')->with('orgs', $orgs);

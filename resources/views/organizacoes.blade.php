@@ -186,8 +186,8 @@
    				<div class="col-xs-6 col-sm-3">
    					<!-- Imagens das organizações têm que ter exatamente o nome que está guardado na bd -->
 					<img class="img img-responsive org-list-img" src="src/imgs/organizations/{{ $org->name}}">
-					<a href="/UPSolidaria/public/organizacao/{{ $org->name}}>"
-					<span class="org-list-title"><{{ $org->name}}</span>
+					<a href="/UPSolidaria/public/organizacao/{{ $org->name}}">
+					<span class="org-list-title"> {{ $org->name}} </span>
 					</a>
 				</div>
 				@endforeach

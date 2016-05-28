@@ -169,7 +169,7 @@ class AuthController extends Controller
                 //Else redirect to org page with admin privileges
                 //var_dump($user->organization);
                 $org = DB::table('organization')->where('id', $user->organization)->first();
-                var_dump($org->name);
+                //var_dump($org->name);
                 return redirect('/organizacao/'. $org->name);
         } else {
             echo 'Fail';
