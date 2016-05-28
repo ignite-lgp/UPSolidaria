@@ -40,6 +40,13 @@ class UserController extends Controller
             // Get all organizations in which user is in
             $organizations = DB::select('select organization.name, user_organization.reg_date, user_organization.leave_date, image.location as image from user_organization, organization, image where user_organization.organization = organization.id and image.id = organization.image and volunteer = ?', array($information[0]->id));
 
+            // Get all medals and trophies user has.
+            $medals = DB::select('select medal.name, medal.description, count(*) as medalhas from medal, medalattribution where medalattribution.medal = medal.id and medalattribution.volunteer = ? group by medal.description, medal.name;', array($information[0]->id));
+
+            $trophies = DB::select('select trophy.name, trophy.description, count(*) as trofeus from trophy, trophyvolunteer where trophyvolunteer.trophy = trophy.id and trophyvolunteer.volunteer = ? group by trophy.description, trophy.name;', array($information[0]->id));
+
+            var_dump($trophies);
+
             for ($i=0; $i < count($organizations); $i++) { 
                 $organizations[$i]->reg_date = substr($organizations[$i]->reg_date,0,4);
 
@@ -65,7 +72,7 @@ class UserController extends Controller
             $information[0]->next_lower_limit = $levelInformation[1];
             $information[0]->current_points = $levelInformation[2];
 
-            return View('perfil')->with('profile',$information[0])->with('organizations', $organizations);
+            return View('perfil')->with('profile',$information[0])->with('organizations', $organizations)->with('medals', $medals);
         }
     }
 

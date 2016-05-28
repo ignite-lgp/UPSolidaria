@@ -385,49 +385,16 @@
 				
 				<section class="Cracha_tab profile_tab_body_md_lg volunteer-menu-collectibles " style="display: none;">
 					<div class="row volunteer-menu-row">
+						@foreach ($medals as $medal)
 						<div class="col-md-3 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/badges/dedication.PNG">
+							<img class="img img-responsive img-collectible" src="../imgs/badges/dedication.PNG" alt="{{ $medal->description}}">
 							<div class="trophy">
-								<span class="trophies capital strong">4 crachás</span>
+								<span class="trophies capital strong">{{ $medal->medalhas}} crachás</span>
 								<br>
-								<span class="trophies short">Espírito de Equipa</span>
+								<span class="trophies short">{{ $medal->name}}</span>
 							</div>
 						</div>
-						<div class="col-md-3 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/badges/kindness.PNG">
-							<div class="trophy">
-								<span class="trophies capital strong">7 crachás</span>
-								<br>
-								<span class="trophies short">Dedicação</span>
-							</div>
-						</div>
-						<div class="col-md-3 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/badges/teamwork.PNG">
-							<div class="trophy">
-								<span class="trophies capital strong">8 crachás</span>
-								<br>
-								<span class="trophies short">Simpatia</span>
-							</div>
-						</div>
-						<div class="col-md-3 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/badges/creativity.PNG">
-							<div class="trophy">
-								<span class="trophies capital strong">4 crachás</span>
-								<br>
-								<span class="trophies short">Originalidade</span>
-							</div>
-						</div>
-					</div>
-					
-					<div class="row volunteer-menu-row">
-						<div class="col-md-3 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="../imgs/badges/competence.PNG">
-							<div class="trophy">
-								<span class="trophies capital strong">12 crachás</span>
-								<br>
-								<span class="trophies short">Competência</span>
-							</div>
-						</div>
+						@endforeach
 					</div>
 				</section>
 				
@@ -667,105 +634,31 @@
 			</section>		
 			
 			<section class="Orga_tab profile_tab_body volunteer-organizations-xs " style="display: none;">
+				@foreach ($organizations as $org)
                 <article class="volunteer-organization-xs">
                     <div class="volunteer-organization-left">
-                        <img class="img img-responsive volunteer-organization-img" src="../imgs/organizations/afs.png">
+                        <img class="img img-responsive volunteer-organization-img" src="{{ $org->image }}">
                     </div>
                     <div class="volunteer-organization-right-xs">
-                        <a class="red-link block">Associação Intercultural AFS</a>
-                        <span class="block">Integrou AFS</span>
-                        <span class="block">2015-Presente</span>
+                        <a class="red-link block">{{ $org->name }}</a>
+                        <span class="block">{{ $org->reg_date }} @if ($org->leave_date == null ) - Presente @else - {{ $org->leave_date }} @endif</span>
                     </div>
                 </article>
-                <article class="volunteer-organization-xs">
-                    <div class="volunteer-organization-left">
-                        <img class="img img-responsive volunteer-organization-img" src="../imgs/organizations/bancoalimentar.png">
-                    </div>
-                    <div class="volunteer-organization-right-xs">
-                        <a class="red-link block">Banco Alimentar</a>
-                        <span class="block">Participou em atividade</span>
-                        <span class="block">Dez. 2015</span>
-                    </div>
-                </article>
-                <article class="volunteer-organization-xs">
-                    <div class="volunteer-organization-left">
-                        <img class="img img-responsive volunteer-organization-img" src="../imgs/organizations/ajudaris.png">
-                    </div>
-                    <div class="volunteer-organization-right-xs">
-                        <a class="red-link block">Ajudaris</a>
-                        <span class="block">Participou em atividade</span>
-                        <span class="block">Nov. 2015</span>
-                    </div>
-                </article>
-                <article class="volunteer-organization-xs">
-                    <div class="volunteer-organization-left">
-                        <img class="img img-responsive volunteer-organization-img" src="../imgs/organizations/curamais.png">
-                    </div>
-                    <div class="volunteer-organization-right-xs">
-                        <a class="red-link block">Cura+</a>
-                        <span class="block">Participou em atividade</span>
-                        <span class="block">Ago. 2015</span>
-                    </div>
-                </article>
-                <article class="volunteer-organization-xs">
-                    <div class="volunteer-organization-left">
-                        <img class="img img-responsive volunteer-organization-img" src="../imgs/organizations/moa.png">
-                    </div>
-                    <div class="volunteer-organization-right-xs">
-                        <a class="red-link block">Fundação MOA</a>
-                        <span class="block">Integrou Fundação MOA</span>
-                        <span class="block">2014-2015</span>
-                    </div>
-                </article>
+                @endforeach
             </section>
-			
+
 			<section class="Cracha_tab profile_tab_body volunteer-menu-collectibles " style="display: none;">
 				<div class="row volunteer-menu-row">
+					@foreach ($medals as $medal)
 					<div class="col-xs-6 col-md-3 volunteer-menu-col-collectibles">
-						<img class="img img-responsive img-collectible" src="../imgs/trophies/dedication.PNG">
+						<img class="img img-responsive img-collectible" src="../imgs/trophies/dedication.PNG" alt="{{ $medal->description}}">
 						<div class="trophy">
-                            <span class="trophies capital strong">4 crachás</span>
+                            <span class="trophies capital strong">{{ $medal->medalhas}} crachás</span>
                             <br>
-                            <span class="trophies short">Espírito de Equipa</span>
+                            <span class="trophies short">{{ $medal->name}}</span>
                         </div>
 					</div>
-					<div class="col-xs-6 col-md-3 volunteer-menu-col-collectibles">
-						<img class="img img-responsive img-collectible" src="../imgs/trophies/kindness.PNG">
-						<div class="trophy">
-                            <span class="trophies capital strong">7 crachás</span>
-                            <br>
-                            <span class="trophies short">Dedicação</span>
-                        </div>
-					</div>
-					<div class="clearfix visible-xs-block org-block"></div>
-					<div class="col-xs-6 col-md-3 volunteer-menu-col-collectibles">
-						<img class="img img-responsive img-collectible" src="../imgs/trophies/teamwork.PNG">
-						<div class="trophy">
-                            <span class="trophies capital strong">8 crachás</span>
-                            <br>
-                            <span class="trophies short">Simpatia</span>
-                        </div>
-					</div>
-					<div class="col-xs-6 col-md-3 volunteer-menu-col-collectibles">
-						<img class="img img-responsive img-collectible" src="../imgs/trophies/creativity.PNG">
-						<div class="trophy">
-                            <span class="trophies capital strong">4 crachás</span>
-                            <br>
-                            <span class="trophies short">Originalidade</span>
-                        </div>
-					</div>
-				</div>
-				
-				<div class="row volunteer-menu-row">
-					<div class="col-xs-6 col-md-3 volunteer-menu-col-collectibles">
-						<img class="img img-responsive img-collectible" src="../imgs/trophies/competence.PNG">
-						<div class="trophy">
-                            <span class="trophies capital strong">12 crachás</span>
-                            <br>
-                            <span class="trophies short">Competência</span>
-                        </div>
-					</div>
-				</div>
+					@endforeach
 			</section>
 			
 			<section class="Atividade_tab profile_tab_body volunteer-current-activities-xs " style="display: none;">

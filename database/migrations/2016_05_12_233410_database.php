@@ -189,8 +189,6 @@ class Database extends Migration
             $table->timestamp('created_date');
 			$table->timestamp('init_date');
 			$table->timestamp('end_date');
-            $table->rememberToken();
-            $table->timestamps();
         });
 		
 		Schema::create('volunteeractivity', function ($table) {
@@ -223,12 +221,12 @@ class Database extends Migration
             $table->text('description');
         });
 
+    
         Schema::create('trophy', function ($table) {
             $table->increments('id');
             $table->string('name')->unique();
             $table->text('description');
         });
-
         
         Schema::create('medalattribution', function ($table) {
             $table->integer('volunteer')->unsigned();
@@ -496,7 +494,7 @@ class Database extends Migration
         /*
             Insert example data. Remove to final release
         */
-
+        
         DB::table('image')->insert(array('location'=>'src/imgs/gas_porto.png'));
         DB::table('image')->insert(array('alt' => 'An image', 'height' => 90, 'width' => 90, 'location' => 'src/imgs/voluntariado_atividades.jpg', 'size' => 900));
         DB::table('image')->insert(array('alt' => 'Another image', 'height' => 90, 'width' => 90, 'location' => 'src/imgs/voluntariado_up.jpg', 'size' => 900));
@@ -512,6 +510,25 @@ class Database extends Migration
         DB::table('user_organization')->insert(array('volunteer'=>'1', 'organization' => '1', 'reg_date'=>'2016-05-26 22:53:27', 'leave_date'=>'2017-05-26 22:53:27'));
         DB::table('user_organization')->insert(array('volunteer'=>'1', 'organization' => '2', 'reg_date'=>'2016-05-26 22:53:27'));
 
+
+        DB::table('medal')->insert(array('name'=>'Testix','description'=>'Quando se testa alguma coisa.'));
+        DB::table('medal')->insert(array('name'=>'Patria','description'=>'Palavra que me veio a cabeça.'));
+        DB::table('medal')->insert(array('name'=>'FEUP','description'=>'Medalha FEUP'));
+        DB::table('medal')->insert(array('name'=>'Capitalista','description'=>'Ganhou imenso dinheiro.'));
+
+        DB::table('trophy')->insert(array('name'=>'T_Testix','description'=>'Quando se testa alguma coisa.'));
+        DB::table('trophy')->insert(array('name'=>'T_Patria','description'=>'Palavra que me veio a cabeça.'));
+        DB::table('trophy')->insert(array('name'=>'T_FEUP','description'=>'Medalha FEUP'));
+        DB::table('trophy')->insert(array('name'=>'T_Capitalista','description'=>'Ganhou imenso dinheiro.'));
+
+
+        DB::table('medalattribution')->insert(array('volunteer'=>'1','medal'=>'1', 'organization' => '1', 'date' => '2016-05-26 22:53:27'));
+        DB::table('medalattribution')->insert(array('volunteer'=>'1','medal'=>'1', 'organization' => '2', 'date' => '2016-05-26 22:53:27'));
+        DB::table('medalattribution')->insert(array('volunteer'=>'1','medal'=>'3', 'organization' => '1', 'date' => '2016-05-26 22:53:27'));
+
+        DB::table('trophyvolunteer')->insert(array('volunteer'=>'1','trophy'=>'1', 'date' => '2016-05-26 22:53:27'));
+        DB::table('trophyvolunteer')->insert(array('volunteer'=>'1','trophy'=>'2', 'date' => '2016-05-26 22:53:27'));
+        DB::table('trophyvolunteer')->insert(array('volunteer'=>'1','trophy'=>'3', 'date' => '2016-05-26 22:53:27'));
 
 		$description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
 		Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
