@@ -66,7 +66,7 @@ class Database extends Migration
             $table->integer('phone')->nullable();
             $table->dateTime('confirm_date')->nullable();
             $table->text('about')->nullable();
-            $table->boolean('private_email')->nullable()->default(false);
+            $table->boolean('private_email')->default(false);
             $table->integer('points')->default(0);
             $table->boolean('carta_conducao')->nullable();
             $table->string('nif',9)->unique();
@@ -86,7 +86,7 @@ class Database extends Migration
             $table->foreign('postal_code')->references('id')->on('postal_code');
             
             $table->boolean('available')->default(true);
-            $table->boolean('admin');
+            $table->boolean('admin')->default(false);
             $table->timestamps();
         });
 
@@ -139,12 +139,14 @@ class Database extends Migration
             $table->foreign('volunteer')->references('id')->on('users');
             $table->foreign('organization')->references('id')->on('organization');
             $table->timestamp('reg_date');
-            $table->boolean('banned');
-            $table->boolean('active');
-			$table->boolean('admin');
+            $table->timestamp('leave_date')->nullable();
+            $table->boolean('banned')->default(false);
+            $table->boolean('active')->default(true);
+			$table->boolean('admin')->default(false);
 
             $table->primary(['volunteer', 'organization']);
         });
+
 
         Schema::create('group', function (Blueprint $table) {
             $table->increments('id');
@@ -491,29 +493,36 @@ class Database extends Migration
         DB::table('country')->insert(array('code'=>'ZW','country'=>'Zimbabwe'));
 		
 		
+        /*
+            Insert example data. Remove to final release
+        */
+        DB::table('users')->insert(array('name'=>'Tiago', 'email' => 'tiago@email.com','password' =>'$2y$10$5UCl9QPQJshKIjgrJgqMz.6dZ/feyUqdLUZ7F5wbEW.jnrk21nnpm',
+        'nif' => '000000000', 'token' => 'f2f7c30e91c7c8e7f32c', 'confirm_date' => '2016-05-26 22:53:27', 'country' => 'PT', 'created_at'=>'2016-05-26 22:53:27',
+        'updated_at' => '2016-05-26 22:53:27'));
+
+        DB::table('organization')->insert(array('name'=>'G.A.S Porto', 'password' => '12345', 'email'=>'_a@w.com', 'address' => 'Rua', 'confirm_date' => '2016-05-26 22:53:27', 'created_at' => '2016-05-26 22:53:27', 'updated_at' => '2016-05-26 22:53:27'));
+        DB::table('organization')->insert(array('name'=>'U.P Solidária', 'password' => '12345', 'email'=>'_p@w.com', 'address' => 'Rua', 'confirm_date' => '2016-05-26 22:53:27', 'created_at' => '2016-05-26 22:53:27', 'updated_at' => '2016-05-26 22:53:27'));
+
+        DB::table('user_organization')->insert(array('volunteer'=>'1', 'organization' => '1', 'reg_date'=>'2016-05-26 22:53:27', 'leave_date'=>'2017-05-26 22:53:27'));
+        DB::table('user_organization')->insert(array('volunteer'=>'1', 'organization' => '2', 'reg_date'=>'2016-05-26 22:53:27'));
+
+
 		$description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
 		Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
 		Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
 		Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
 		
-		DB::table('image')->insert(array('alt' => 'An image', 'height' => 90, 'width' => 90, 'location' => '../../public/src/imgs/voluntariado_atividades.jpg', 'size' => 900));
+		DB::table('image')->insert(array('alt' => 'An image', 'height' => 90, 'width' => 90, 'location' => 'src/imgs/voluntariado_atividades.jpg', 'size' => 900));
 		$lastId = DB::table('image')->max('id');
 		DB::table('news')->insert(array('image' => $lastId, 'title' => 'Título 1' , 'description' => $description, 'date' => Carbon\Carbon::now()));
 		
-		DB::table('image')->insert(array('alt' => 'Another image', 'height' => 90, 'width' => 90, 'location' => '../../public/src/imgs/voluntariado_up.jpg', 'size' => 900));
+		DB::table('image')->insert(array('alt' => 'Another image', 'height' => 90, 'width' => 90, 'location' => 'src/imgs/voluntariado_up.jpg', 'size' => 900));
 		$lastId = DB::table('image')->max('id');
 		DB::table('news')->insert(array('image' => $lastId, 'title' => 'Título 2' , 'description' => $description, 'date' => Carbon\Carbon::now()));
 		
-		DB::table('image')->insert(array('alt' => 'Yet another image', 'height' => 90, 'width' => 90, 'location' => '../../public/src/imgs/voluntariado3.jpg', 'size' => 900));
+		DB::table('image')->insert(array('alt' => 'Yet another image', 'height' => 90, 'width' => 90, 'location' => 'src/imgs/voluntariado3.jpg', 'size' => 900));
 		$lastId = DB::table('image')->max('id');
 		DB::table('news')->insert(array('image' => $lastId, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
-
-
-
-
-        /* Insert example organization */
-
-        DB::table('organization')->insert(array('name'=>'G.A.S Porto', 'password' => '12345', 'email'=>'_a@w.com', 'address' => 'Rua', 'confirm_date' => '2016-05-26 22:53:27', 'created_at' => '2016-05-26 22:53:27', 'updated_at' => '2016-05-26 22:53:27'));
 
     }
 

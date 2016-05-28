@@ -369,56 +369,18 @@
 				</section>
 				
 				<section class="Orga_tab profile_tab_body volunteer-organizations " style="display: none;">
+
+					@foreach ($organizations as $org)
                     <article class="volunteer-organization">
                         <div class="volunteer-organization-left">
                             <img class="img img-responsive volunteer-organization-img" src="../imgs/organizations/afs.png">
                         </div>
                         <div class="volunteer-organization-right">
-                            <a class="red-link block">Associação Intercultural AFS</a>
-                            <span class="block">Integrou AFS</span>
-                            <span class="block">2015-Presente</span>
+                            <a class="red-link block">{{ $org->name }}</a>
+                            <span class="block">{{ $org->reg_date }} @if ($org->leave_date == null ) - Presente @else - {{ $org->leave_date }} @endif</span>
                         </div>
                     </article>
-                    <article class="volunteer-organization">
-                        <div class="volunteer-organization-left">
-                            <img class="img img-responsive volunteer-organization-img" src="../imgs/organizations/bancoalimentar.png">
-                        </div>
-                        <div class="volunteer-organization-right">
-                            <a class="red-link block">Banco Alimentar</a>
-                            <span class="block">Participou em atividade</span>
-                            <span class="block">Dez. 2015</span>
-                        </div>
-                    </article>
-                    <article class="volunteer-organization">
-                        <div class="volunteer-organization-left">
-                            <img class="img img-responsive volunteer-organization-img" src="../imgs/organizations/ajudaris.png">
-                        </div>
-                        <div class="volunteer-organization-right">
-                            <a class="red-link block">Ajudaris</a>
-                            <span class="block">Participou em atividade</span>
-                            <span class="block">Nov. 2015</span>
-                        </div>
-                    </article>
-                    <article class="volunteer-organization">
-                        <div class="volunteer-organization-left">
-                            <img class="img img-responsive volunteer-organization-img" src="../imgs/organizations/curamais.png">
-                        </div>
-                        <div class="volunteer-organization-right">
-                            <a class="red-link block">Cura+</a>
-                            <span class="block">Participou em atividade</span>
-                            <span class="block">Ago. 2015</span>
-                        </div>
-                    </article>
-                    <article class="volunteer-organization">
-                        <div class="volunteer-organization-left">
-                            <img class="img img-responsive volunteer-organization-img" src="../imgs/organizations/moa.png">
-                        </div>
-                        <div class="volunteer-organization-right">
-                            <a class="red-link block">Fundação MOA</a>
-                            <span class="block">Integrou Fundação MOA</span>
-                            <span class="block">2014-2015</span>
-                        </div>
-                    </article>
+                    @endforeach
                 </section>
 				
 				<section class="Cracha_tab profile_tab_body_md_lg volunteer-menu-collectibles " style="display: none;">
