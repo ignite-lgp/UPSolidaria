@@ -38,7 +38,7 @@ class UserController extends Controller
             $information = DB::select('select users.id, users.name, users.email, users.localidade, country.country, users.created_at, users.private_email, users.points, users.available from users, country where users.country = country.code and users.email = ?', array($session_email));
 
             // Get all organizations in which user is in
-            $organizations = DB::select('select organization.name, user_organization.reg_date, user_organization.leave_date from user_organization, organization where user_organization.organization = organization.id and volunteer = ?', array($information[0]->id));
+            $organizations = DB::select('select organization.name, user_organization.reg_date, user_organization.leave_date, image.location as image from user_organization, organization, image where user_organization.organization = organization.id and image.id = organization.image and volunteer = ?', array($information[0]->id));
 
             for ($i=0; $i < count($organizations); $i++) { 
                 $organizations[$i]->reg_date = substr($organizations[$i]->reg_date,0,4);

@@ -373,7 +373,7 @@
 					@foreach ($organizations as $org)
                     <article class="volunteer-organization">
                         <div class="volunteer-organization-left">
-                            <img class="img img-responsive volunteer-organization-img" src="../imgs/organizations/afs.png">
+                            <img class="img img-responsive volunteer-organization-img" src="{{ $org->image}}">
                         </div>
                         <div class="volunteer-organization-right">
                             <a class="red-link block">{{ $org->name }}</a>

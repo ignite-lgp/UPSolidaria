@@ -23,7 +23,7 @@ class Database extends Migration
 			$table->string('location')->unique();
 			$table->integer('size')->nullable();
 		});
-		
+
 		//PERSONAL INFO
 		
         Schema::create('course', function ($table) {
@@ -496,12 +496,18 @@ class Database extends Migration
         /*
             Insert example data. Remove to final release
         */
+
+        DB::table('image')->insert(array('location'=>'src/imgs/gas_porto.png'));
+        DB::table('image')->insert(array('alt' => 'An image', 'height' => 90, 'width' => 90, 'location' => 'src/imgs/voluntariado_atividades.jpg', 'size' => 900));
+        DB::table('image')->insert(array('alt' => 'Another image', 'height' => 90, 'width' => 90, 'location' => 'src/imgs/voluntariado_up.jpg', 'size' => 900));
+        DB::table('image')->insert(array('alt' => 'Yet another image', 'height' => 90, 'width' => 90, 'location' => 'src/imgs/voluntariado3.jpg', 'size' => 900));
+
         DB::table('users')->insert(array('name'=>'Tiago', 'email' => 'tiago@email.com','password' =>'$2y$10$5UCl9QPQJshKIjgrJgqMz.6dZ/feyUqdLUZ7F5wbEW.jnrk21nnpm',
         'nif' => '000000000', 'token' => 'f2f7c30e91c7c8e7f32c', 'confirm_date' => '2016-05-26 22:53:27', 'country' => 'PT', 'created_at'=>'2016-05-26 22:53:27',
         'updated_at' => '2016-05-26 22:53:27'));
 
-        DB::table('organization')->insert(array('name'=>'G.A.S Porto', 'password' => '12345', 'email'=>'_a@w.com', 'address' => 'Rua', 'confirm_date' => '2016-05-26 22:53:27', 'created_at' => '2016-05-26 22:53:27', 'updated_at' => '2016-05-26 22:53:27'));
-        DB::table('organization')->insert(array('name'=>'U.P Solidária', 'password' => '12345', 'email'=>'_p@w.com', 'address' => 'Rua', 'confirm_date' => '2016-05-26 22:53:27', 'created_at' => '2016-05-26 22:53:27', 'updated_at' => '2016-05-26 22:53:27'));
+        DB::table('organization')->insert(array('name'=>'G.A.S Porto', 'password' => '12345', 'email'=>'_a@w.com', 'address' => 'Rua', 'confirm_date' => '2016-05-26 22:53:27', 'created_at' => '2016-05-26 22:53:27', 'updated_at' => '2016-05-26 22:53:27', 'image' => '1'));
+        DB::table('organization')->insert(array('name'=>'U.P Solidária', 'password' => '12345', 'email'=>'_p@w.com', 'address' => 'Rua', 'confirm_date' => '2016-05-26 22:53:27', 'created_at' => '2016-05-26 22:53:27', 'updated_at' => '2016-05-26 22:53:27', 'image' => '2'));
 
         DB::table('user_organization')->insert(array('volunteer'=>'1', 'organization' => '1', 'reg_date'=>'2016-05-26 22:53:27', 'leave_date'=>'2017-05-26 22:53:27'));
         DB::table('user_organization')->insert(array('volunteer'=>'1', 'organization' => '2', 'reg_date'=>'2016-05-26 22:53:27'));
@@ -511,18 +517,11 @@ class Database extends Migration
 		Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
 		Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
 		Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
-		
-		DB::table('image')->insert(array('alt' => 'An image', 'height' => 90, 'width' => 90, 'location' => 'src/imgs/voluntariado_atividades.jpg', 'size' => 900));
-		$lastId = DB::table('image')->max('id');
-		DB::table('news')->insert(array('image' => $lastId, 'title' => 'Título 1' , 'description' => $description, 'date' => Carbon\Carbon::now()));
-		
-		DB::table('image')->insert(array('alt' => 'Another image', 'height' => 90, 'width' => 90, 'location' => 'src/imgs/voluntariado_up.jpg', 'size' => 900));
-		$lastId = DB::table('image')->max('id');
-		DB::table('news')->insert(array('image' => $lastId, 'title' => 'Título 2' , 'description' => $description, 'date' => Carbon\Carbon::now()));
-		
-		DB::table('image')->insert(array('alt' => 'Yet another image', 'height' => 90, 'width' => 90, 'location' => 'src/imgs/voluntariado3.jpg', 'size' => 900));
-		$lastId = DB::table('image')->max('id');
-		DB::table('news')->insert(array('image' => $lastId, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+
+        
+		DB::table('news')->insert(array('image' => 2, 'title' => 'Título 1' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 3, 'title' => 'Título 2' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+		DB::table('news')->insert(array('image' => 4, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
 
     }
 
