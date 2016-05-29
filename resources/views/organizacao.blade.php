@@ -181,26 +181,34 @@
 
 
 			<!-- Organization Change Info Section -->
-			<!-- Criar um form que permita alterar todos os valores. Depois de submito redirecionar para a pagina da org -->
+		
 			<section class="organization-section-change-info" style="display: none;">
 				<h3 class="title">Editar Informações</h3>
-				<img class="img img-responsive org-img" src="../{{ $image_location }}">
-				<section class="info-section">
+
+				{!!  Form::open(array('url' => '/editarInfo', 'method' => 'post', 'files' => 'true')) !!}
+					<section class="info-section">
+						<h4 class="sidebar-title">Imagem atual</h4>
+					<img class="img img-responsive org-img" src="../{{ $image_location }}">
+					{!! Form::file('image'); !!} <!-- , $image_location -->
+					<section class="info-section">
 						<h4 class="sidebar-title">Missão</h4>
-						<p class="big">{{ $info->mission }}</p>
-				</section>
-				<section class="info-section">
+					{!! Form::textarea('missao', $info->mission); !!} <!-- , $info->mission -->
+					</section>
+					<section class="info-section">
 						<h4 class="sidebar-title">Visão</h4>
-						<p class="big">{{ $info->vision }}</p>
-				</section>
-				<section class="info-section">
+					{!! Form::textarea('visao', $info->vision); !!} <!-- , $info->vision -->
+					</section>
+					<section class="info-section">
 						<h4 class="sidebar-title">Valores</h4>
-						<p class="big">{{ $info->values }}</p>
-				</section>
+					{!! Form::textarea('valores', $info->values ); !!} <!-- , $info->values -->
+					</section>
+
+					{!! Form::hidden('organizacao', $info->name); !!}
+					{!! Form::hidden('organizacao_id', $info->id); !!} 
+
+					{!! Form::submit('Guardar'); !!}
+                {!! Form::close() !!}
 			</section>
-
-
-
       </section>
 
 

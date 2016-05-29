@@ -112,3 +112,10 @@ Route::get('/atividades', 'Geral\ActivitiesController@showActivities');
 Route::get('/logout', 'Geral\UserController@destroySession');
 
 
+/*
+*   Edit info of an organization
+*/
+Route::post('/editarInfo', 'Geral\OrgController@editInfo');
+
+
+
