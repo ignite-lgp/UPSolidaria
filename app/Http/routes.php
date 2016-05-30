@@ -118,4 +118,9 @@ Route::get('/logout', 'Geral\UserController@destroySession');
 Route::post('/editarInfo', 'Geral\OrgController@editInfo');
 
 
+/*
+*   Create Group 
+*/
+Route::post('/adicionarGrupo', 'Geral\OrgController@addGroup');
+
 

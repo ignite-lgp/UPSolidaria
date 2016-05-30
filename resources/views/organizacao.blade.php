@@ -103,7 +103,8 @@
 					<span class="sidebar-title">Administrador</span>
 					<ul>
 						<li><a onclick="changeInfo();">Editar Informações</a></li>
-						<li><a class="manage-groups">Gerir Grupos</a></li>
+						<span class="sidebar-title">Gerir Grupos</span>
+						<li><a onclick="addGroup();">Adicionar Grupo</a></li>
 						<li><a class="manage-volunteers">Gerir Voluntários</a></li>
 					</ul>
 				</section>
@@ -125,11 +126,9 @@
 			<section class="sidebar-listing hidden-xs">
 				<span class="sidebar-title">Grupos</span>
 				<ul>
-					<li><a>100 diferenças</a></li>
-					<li><a>Futuros</a></li>					
-					<li><a>Horizontes</a></li>
-					<li><a>Abraço Amigo</a></li>
-					<li><a>Rumos</a></li>
+					@foreach ($groups as $group)
+					<li><a> {{ $group->name }}</a></li>
+					@endforeach
 				</ul>
 			</section>
 
@@ -192,15 +191,15 @@
 					{!! Form::file('image'); !!} <!-- , $image_location -->
 					<section class="info-section">
 						<h4 class="sidebar-title">Missão</h4>
-					{!! Form::textarea('missao', $info->mission); !!} <!-- , $info->mission -->
+					{!! Form::textarea('missao', $info->mission, ['required' => 'required']); !!} <!-- , $info->mission -->
 					</section>
 					<section class="info-section">
 						<h4 class="sidebar-title">Visão</h4>
-					{!! Form::textarea('visao', $info->vision); !!} <!-- , $info->vision -->
+					{!! Form::textarea('visao', $info->vision, ['required' => 'required']); !!} <!-- , $info->vision -->
 					</section>
 					<section class="info-section">
 						<h4 class="sidebar-title">Valores</h4>
-					{!! Form::textarea('valores', $info->values ); !!} <!-- , $info->values -->
+					{!! Form::textarea('valores', $info->values, ['required' => 'required']); !!} <!-- , $info->values -->
 					</section>
 
 					{!! Form::hidden('organizacao', $info->name); !!}
@@ -208,8 +207,40 @@
 
 					{!! Form::submit('Guardar'); !!}
                 {!! Form::close() !!}
-			</section>
-      </section>
+					</section>
+     		</section>
+
+     		<!-- Organization Add Group -->
+		
+			<section class="organization-section-add-group" style="display: none;">
+				<h3 class="title">Adicionar Grupo</h3>
+
+				{!!  Form::open(array('url' => '/adicionarGrupo', 'method' => 'post', 'files' => 'true')) !!}
+					<section class="info-section">
+						<h4 class="sidebar-title">Imagem</h4>
+					{!! Form::file('image'); !!} 
+					<section class="info-section">
+						<h4 class="sidebar-title">Nome</h4>
+					{!! Form::text('nome', '', ['required' => 'required']); !!}
+					</section>
+					<section class="info-section">
+						<h4 class="sidebar-title">Descrição</h4>
+					{!! Form::textarea('descricao', '', ['required' => 'required']); !!}
+					</section>
+					<section class="info-section">
+						<h4 class="sidebar-title">Público</h4>
+					{!! Form::checkbox('publico', true); !!}
+					</section>
+					<section class="info-section">
+						<h4 class="sidebar-title">Aberto</h4>
+					{!! Form::checkbox('aberto', true); !!}
+					</section>
+					{!! Form::hidden('organizacao_id', $info->id); !!}
+
+					{!! Form::submit('Criar'); !!}
+                {!! Form::close() !!}
+					</section>
+     		</section>
 
 
 	</div>
@@ -231,14 +262,37 @@
 		echo
 		"<script>
 			function changeInfo(){
-				var x;
+				var x, y;
 				// Hide original contents
 				x =	document.getElementsByClassName(\"organization-section\");
+				y =	document.getElementsByClassName(\"organization-section-add-group\");
+
 				for (i = 0; i < x.length; i++) {
 					x[i].style.display = \"none\";
 				}
+				for (i = 0; i < y.length; i++) {
+					y[i].style.display = \"none\";
+				}
 				// Show new contents
 				x =	document.getElementsByClassName(\"organization-section-change-info\");
+				for (i = 0; i < x.length; i++) {
+					x[i].style.display = \"block\";
+				}
+			}
+
+			function addGroup(){
+				var x, y;
+				// Hide original contents
+				x =	document.getElementsByClassName(\"organization-section\");
+				y = document.getElementsByClassName(\"organization-section-change-info\");
+				for (i = 0; i < x.length; i++) {
+					x[i].style.display = \"none\";
+				}
+				for (i = 0; i < y.length; i++) {
+					y[i].style.display = \"none\";
+				}
+				// Show new contents
+				x =	document.getElementsByClassName(\"organization-section-add-group\");
 				for (i = 0; i < x.length; i++) {
 					x[i].style.display = \"block\";
 				}
