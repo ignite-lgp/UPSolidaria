@@ -76,7 +76,11 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		  </button>
-		  <a class="navbar-brand" href="./"><img src = "../../src/imgs/logo.png" id="logo"></a>
+		  <a class="navbar-brand hidden-xs" href="./"><img src = "../../src/imgs/logo.png" id="logo"></a>
+		  <div class="visible-xs navbar-brand">
+			<a onClick="swapXSSidebar();" class="red-link glyphicon glyphicon-align-justify" style="text-decoration: none; margin-right: 10px;"></a>
+			<a href="./"><img src = "../../public/src/imgs/logo.png" id="logo" style="margin-top: -17px;"></a>
+		  </div>
 		</div>
 		<div id="navbar" class="collapse navbar-collapse">
 		  <ul class="nav navbar-nav navigation-options">
@@ -197,7 +201,20 @@
 	<!--END of WEB Body-->
 	
 	<!-- MOBILE Body -->
-	<div class="container visible-xs">
+	<div class="container mobile-container visible-xs">
+		
+		<!-- Left Sidebar -->
+		<section class="sidebar-left sidebar-left-xs" style="display: none;">
+			<!-- Options sample -->
+			<section class="sidebar-options">
+				<span class="sidebar-title">Opções</span>
+				<ul>
+					<li><a>Autenticação por Federação</a></li>
+				</ul>
+				<a class="helper">Ajuda</a>
+			</section>
+		</section>
+		<!-- Left Sidebar Over -->
 		
 		<!-- Main Body -->
 		<section class="container centered-container">
@@ -285,6 +302,30 @@
 		</section>
 	</footer>
 
+	
+	<?php
+		echo
+		"<script>
+		function swapXSSidebar() {
+			var x, y;
+			x = document.getElementsByClassName(\"sidebar-left-xs\");
+			for (i = 0; i < x.length; i++) {
+				if(x[i].style.display == \"none\") {
+					x[i].style.display = \"\";
+					y = x[i].nextElementSibling;
+					y.className = y.className.replace(\"container\", \"main-container\");
+				}
+				else {
+					x[i].style.display = \" none\";
+					y = x[i].nextElementSibling;
+					y.className = y.className.replace(\"main-container\", \"container\");
+				}
+			}
+		}
+		</script>";
+	?>
+	
+	
 	<!-- Bootstrap core JavaScript
 	================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
