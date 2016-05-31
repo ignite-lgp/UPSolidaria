@@ -155,7 +155,7 @@ class Database extends Migration
         });
 
 
-        Schema::create('groups', function (Blueprint $table) {
+        Schema::create('group', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->integer('organization')->unsigned();
@@ -178,7 +178,7 @@ class Database extends Migration
             $table->integer('volunteer')->unsigned();
             $table->integer('group')->unsigned();
             $table->foreign('volunteer')->references('id')->on('users');
-            $table->foreign('group')->references('id')->on('groups');
+            $table->foreign('group')->references('id')->on('group');
 			$table->boolean('admin');
 
             $table->primary(['volunteer', 'group']);
@@ -190,7 +190,7 @@ class Database extends Migration
             $table->increments('id');
             $table->string('name');
             $table->integer('group')->unsigned();
-            $table->foreign('group')->references('id')->on('groups');
+            $table->foreign('group')->references('id')->on('group');
 			$table->integer('image')->unsigned();
 			$table->foreign('image')->references('id')->on('image');
             $table->text('description');
@@ -593,63 +593,6 @@ class Database extends Migration
             ,'vision' => 'Visaaoooooooooooooooooooo'
             ,'values' => 'Valoressssssssssssssssss'
             ]);
-
-         DB::table('image')->insert(array('alt' => 'G.A.S. Porto'
-            , 'height' => 90
-            , 'width' => 90
-            , 'location' => 'src/imgs/organizations/G.A.S.Porto.jpg'
-            , 'size' => 900));
-
-        ///////////////////////////////////////////
-        // Testes para grupos
-        ///////////////////////////////////////////
-
-        //id 10
-         DB::table('image')->insert(array('alt' => 'Group 1', 'height' => 90, 'width' => 90, 'location' => 'src/imgs/groups/group1.jpg', 'size' => 900));
-        //id 11
-        DB::table('image')->insert(array('alt' => 'Group 2', 'height' => 90, 'width' => 90, 'location' => 'src/imgs/groups/group2.jpg', 'size' => 900));
-
-        
-        DB::table('groups')->insert([
-            'name' => 'Group 1'
-            ,'organization' => 3
-            //Imagem id 10 adicionada em cima
-            ,'image' => 5
-            ,'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-             Nulla sed magna quis nisl tempus condimentum a non elit.
-              Cras augue tellus, scelerisque ut ullamcorper pharetra, ullamcorper id lectus.
-               Integer posuere porttitor est at efficitur.
-                Donec magna tellus, vehicula id accumsan quis, lacinia et tellus.
-                 Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                  Nunc egestas dictum nibh, vel mollis ligula facilisis at. Vivamus ultrices gravida justo at facilisis.
-                   Donec tempor sapien ac nisi molestie accumsan.'
-            ,'public' => false
-            , 'open' => false
-            , 'active' => false
-            , 'created_date' => '2001-09-28 01:00:00'
-            ]);
-
-         DB::table('groups')->insert([
-            'name' => 'Group 2'
-            ,'organization' => 3
-            //Imagem id 11 adicionada em cima
-            ,'image' => 6
-            ,'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-             Nulla sed magna quis nisl tempus condimentum a non elit.
-              Cras augue tellus, scelerisque ut ullamcorper pharetra, ullamcorper id lectus.
-               Integer posuere porttitor est at efficitur.
-                Donec magna tellus, vehicula id accumsan quis, lacinia et tellus.
-                 Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-                  Nunc egestas dictum nibh, vel mollis ligula facilisis at. Vivamus ultrices gravida justo at facilisis.
-                   Donec tempor sapien ac nisi molestie accumsan.'
-            ,'public' => false
-            , 'open' => false
-            , 'active' => false
-            , 'created_date' => '2001-09-28 01:00:00'
-            ]);
-
-        ///////////////////////////////////////////
-
 }
 
     /**
@@ -665,7 +608,7 @@ class Database extends Migration
         Schema::drop('medal');
         Schema::drop('news');
         Schema::drop('volunteergroup');
-        Schema::drop('groups');
+        Schema::drop('group');
         Schema::drop('user_organization');
         Schema::drop('organizationinterest');
         Schema::drop('organization');

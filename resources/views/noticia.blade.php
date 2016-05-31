@@ -1,36 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../src/imgs/logo_upsolidaria.png">
-    <link href='https://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
+@extends('master')
 
-    <title>UP Solidária</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="../../public/src/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../public/src/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="../../public/src/css/upsolidaria.css" rel="stylesheet">
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../public/src/js/ie-emulation-modes-warning.js"></script>
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
+@section('main_content')
 
   <body>
     
@@ -66,7 +36,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="./"><img src="../../src/imgs/logo.png" id="logo"></a>
+          <a class="navbar-brand" href="./"><img src="src/imgs/logo.png" id="logo"></a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav navigation-options">
@@ -175,7 +145,7 @@
                 <section class="news-group-longer">
                      <article class="news-longer">
                         <section class="news-img">
-                            <img class="img-responsive" src="../../src/imgs/voluntariado_up.jpg">
+                            <img class="img-responsive" src="src/imgs/voluntariado_up.jpg">
                         </section>
                         <section class="news-text">
                         {{ $noticia->description }}
@@ -183,10 +153,10 @@
                         <section class="news-social-networks">
                             <span class="news-social-networks-span">Partilhar:</span>
                             <ul class="social-networks">
-                                <li><a><img src="../../public/src/imgs/fb_logo.png"></a></li>
-                                <li><a><img src="../../public/src/imgs/twitter_logo.png"></a></li>
-                                <li><a><img src="../../public/src/imgs/google_plus_logo.svg"></a></li>
-                                <li><a><img src="../../public/src/imgs/linkedin_logo.png"></a></li>
+                                <li><a><img src="src/imgs/fb_logo.png"></a></li>
+                                <li><a><img src="src/imgs/twitter_logo.png"></a></li>
+                                <li><a><img src="src/imgs/google_plus_logo.svg"></a></li>
+                                <li><a><img src="src/imgs/linkedin_logo.png"></a></li>
                             </ul>
                         </section>
                      </article>
@@ -206,7 +176,7 @@
         <section class="news-group-xs visible-xs">
             <article class="news">
                 <section class="news-img">
-                    <img class="img-responsive news-img" src="../../src/imgs/up.jpg">
+                    <img class="img-responsive news-img" src="src/imgs/up.jpg">
                 </section>
                 <section class="news-title">
                     <h4 class="news-title-xs">{{ $noticia->title }}</h4>
@@ -222,7 +192,7 @@
             
             <article class="news">
                 <section class="news-img">
-                    <img class="img-responsive news-img" src="../../src/imgs/capa_voluntariado.jpg">
+                    <img class="img-responsive news-img" src="src/imgs/capa_voluntariado.jpg">
                 </section>
                 <section class="news-title">
                     <h4 class="news-title-xs">lorem ipsum</h5>
@@ -238,7 +208,7 @@
             
             <article class="news">
                 <section class="news-img">
-                    <img class="img-responsive news-img" src="../../src/imgs/gas_porto.png">
+                    <img class="img-responsive news-img" src="src/imgs/gas_porto.png">
                 </section>
                 <section class="news-title">
                     <h4 class="news-title-xs">lorem ipsum</h5>
@@ -254,22 +224,4 @@
         </section>
     </section>
     
-    <footer id="footer">
-        <hr class="visible-xs">
-        <section class="container" id="container-footer">
-            <span class="hidden-xs">Copyright 2016 &copy Universidade do Porto | Termos e Condições | Acessibilidade</span>
-            <span class="hidden-xs">Última atualização: 2016-04-03 Página gerada em: 2016-04-03</span>
-            <span class="visible-xs">Copyright 2016 &copy UP Solidária</span>
-        </section>
-    </footer>
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../src/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../src/js/ie10-viewport-bug-workaround.js"></script>
-  </body>
-</html>
+@stop

@@ -15,7 +15,7 @@ Route::get('/', function () {
 });
 
 Route::get('/noticias', function () {
-    return view('noticia');
+    return view('index');
 });
 
 /*
@@ -90,11 +90,7 @@ Route::get('/download', 'Download\DownloadController@DownloadFile1');
 * Lista de noticias view
 */
 
-//Route::get('/noticias', 'Geral\NewsController@showAllNews');
-Route::get('/noticias', function(){
-    return view('lista_noticias'); 
-});
-
+Route::get('/noticias', 'Geral\NewsController@showAllNews');
 
 /*
 * Noticia Individual
@@ -121,5 +117,35 @@ Route::get('/logout', 'Geral\UserController@destroySession');
 */
 Route::post('/editarInfo', 'Geral\OrgController@editInfo');
 
+
+/*
+*   Create Group 
+*/
+Route::post('/adicionarGrupo', 'Geral\OrgController@addGroup');
+
+
+/*
+*   Autocomplete search Volunteers
+*/
+
+Route::get('/organizacao/search/autocomplete', 'Geral\UserController@autocomplete');
+
+/*
+*   Add Volunteer to org
+*/
+
+Route::post('/adicionaVoluntario', 'Geral\OrgController@addVolunteer');
+
+/*
+* Admin news list
+*/
+
+Route::get('/gerir_noticias', 'Geral\NewsController@showNewsAdmin');
+
+/*
+* Admin volunteers list
+*/
+
+Route::get('/gerir_voluntarios', 'Geral\UserController@showVolunteersAdmin');
 
 
