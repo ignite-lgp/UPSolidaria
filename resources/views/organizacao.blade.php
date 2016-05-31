@@ -30,6 +30,12 @@
 	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+
   </head>
 
   <body>
@@ -176,6 +182,18 @@
 						<h4 class="sidebar-title">Valores</h4>
 						<p class="big">{{ $info->values }}</p>
 				</section>
+
+				<!-- //////////////////////////// TESTE //////////////////////////////// -->
+				<!-- {{ Form::open(array('url' => '/adicionaVoluntario', 'method' => 'POST'))}}
+    			{{ Form::text('q', '', ['id' =>  'q', 'placeholder' =>  'Nome'])}}
+    			{{ Form::submit('Pesquisar', array('class' => 'button expand')) }}
+				{{ Form::close() }} -->
+
+				{{ Form::open(array('url' => '/adicionaVoluntario', 'method' => 'post'))}}
+        		{{  Form::label('auto', 'Nome: ') }}
+        		{{  Form::text('auto', '', array('id' => 'auto'))}}
+        		{{  Form::close() }}
+
       		</section>
 
 
@@ -298,16 +316,39 @@
 				}
 			}
 		</script>";
-	?>
+?>
 
+<script type="text/javascript">       
+	$(function() {
+	$("#auto").autocomplete({
+		 	minLength: 2,
+		  source: './search/autocomplete',
+		  select: function(event, ui) {
+	  			$("#auto").val(ui.item.value);
+     }});
+});
+</script>
 
 	<!-- Bootstrap core JavaScript
 	================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.min.js"><\/script>')</script>
+	<!--  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
+	<!-- <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.min.js"><\/script>')</script>
+	-->
+	
+
+
+
+
+
 	<script src="../../src/js/bootstrap.min.js"></script>
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 	<script src="../../src/js/ie10-viewport-bug-workaround.js"></script>
+
+
+
+
   </body>
 </html>
+
+

@@ -21,6 +21,8 @@ class OrgController extends Controller
     */
 
 
+
+
     /**
     *
     * Show a org page 
@@ -212,6 +214,15 @@ class OrgController extends Controller
               //Alter to a more intuitive error showing
               return View('errors.500');
         }
+    }
+
+    /**
+    *
+    * Add volunteer to group 
+    * @return view
+    */
+    protected function addVolunteer(Request $info){
+        print($info);
     }
 }
 

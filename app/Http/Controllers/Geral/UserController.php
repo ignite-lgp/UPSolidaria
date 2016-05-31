@@ -3,10 +3,13 @@
 namespace App\Http\Controllers\Geral;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
 use View;
 use DB;
 use Session;
+use Response;
+
 
 class UserController extends Controller
 {
@@ -111,4 +114,30 @@ class UserController extends Controller
         print_r(Session::all());
         return View('/index');
     }
+
+
+    /*
+    * To use in an autocomplete search box
+    */
+
+    //->orWhere('email', 'LIKE', '%'.$term.'%')
+    public function autocomplete(){
+            $term = Input::get('term');
+        
+            $results = array();
+            
+            $queries = DB::table('users')
+                ->where('name', 'LIKE', '%'.$term.'%')
+                ->take(5)->get();
+        
+        foreach ($queries as $query)
+        {
+            $results[] = [ 'id' => $query->id, 'value' => $query->name];
+        }
+    return Response::json($results);
+    }
+
+   
+
+
 }
