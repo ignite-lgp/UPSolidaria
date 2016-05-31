@@ -136,4 +136,16 @@ Route::get('/organizacao/search/autocomplete', 'Geral\UserController@autocomplet
 
 Route::post('/adicionaVoluntario', 'Geral\OrgController@addVolunteer');
 
+/*
+* Admin news list
+*/
+
+Route::get('/gerir_noticias', 'Geral\NewsController@showNewsAdmin');
+
+/*
+* Admin volunteers list
+*/
+
+Route::get('/gerir_voluntarios', 'Geral\UserController@showVolunteersAdmin');
+
 

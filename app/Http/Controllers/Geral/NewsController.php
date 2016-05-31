@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Geral;
 
 use App\Http\Controllers\Controller;
+use UserController;
+use App\User;
 use View;
 use DB;
+use Session;
 
 class NewsController extends Controller
 {
@@ -48,5 +51,22 @@ class NewsController extends Controller
         //print_r($news);
 
         return View('lista_noticias')->with('noticias', $news);
+    }
+	
+	protected function showNewsAdmin(){
+
+		$email = Session::get('email');
+        $user = User::whereRaw('email = ?', [$email])->first();
+
+		//If user is not logged in
+        if(is_null($user) || $user->admin == 0) {
+            return View('errors/403');
+        }
+		else { //Else, platform admin --> get list for news management
+		
+			$news = DB::select('select * from news');
+			return View('gerir_noticias')->with('noticias', $news);        
+		}
+        
     }
 }
