@@ -160,19 +160,16 @@ class Database extends Migration
             $table->string('name');
             $table->integer('organization')->unsigned();
             $table->foreign('organization')->references('id')->on('organization');
-			$table->integer('image')->unsigned();
+			$table->integer('image')->unsigned()->nullable();;
 			$table->foreign('image')->references('id')->on('image');
             $table->text('description');
             $table->boolean('public');
             $table->boolean('open');
             $table->boolean('active');
             $table->timestamp('created_date');
-            $table->rememberToken();
-            $table->timestamps();
-			
+
 			$table->index('organization');
         });
-
         
         Schema::create('volunteergroup', function ($table) {
             $table->integer('volunteer')->unsigned();
@@ -191,7 +188,7 @@ class Database extends Migration
             $table->string('name');
             $table->integer('group')->unsigned();
             $table->foreign('group')->references('id')->on('group');
-			$table->integer('image')->unsigned();
+			$table->integer('image')->unsigned()->nullable();
 			$table->foreign('image')->references('id')->on('image');
             $table->text('description');
             $table->boolean('public');
@@ -202,19 +199,18 @@ class Database extends Migration
 			$table->timestamp('end_date');
 			$table->index('group');
         });
-		
+
 		Schema::create('volunteeractivity', function ($table) {
             $table->integer('volunteer')->unsigned();
             $table->integer('activity')->unsigned();
             $table->foreign('volunteer')->references('id')->on('users');
             $table->foreign('activity')->references('id')->on('activity');
-			$table->boolean('admin');
+			$table->boolean('admin')->default('false');
 
             $table->primary(['volunteer', 'activity']);
 			
 			$table->index('activity');
         });
-        
 
         Schema::create('news', function ($table) {
             $table->increments('id');
@@ -532,6 +528,13 @@ class Database extends Migration
         DB::table('user_organization')->insert(array('volunteer'=>'1', 'organization' => '1', 'reg_date'=>'2016-05-26 22:53:27', 'leave_date'=>'2017-05-26 22:53:27'));
         DB::table('user_organization')->insert(array('volunteer'=>'1', 'organization' => '2', 'reg_date'=>'2016-05-26 22:53:27'));
 
+        DB::table('group')->insert(array('name'=>'Grupo 1', 'organization' => '1', 'description' => 'Lorep Ipsum', 'public' => 'false', 'open' => 'false', 'active' => 'false', 'created_date' => '2016-05-26 22:53:27'));
+
+        DB::table('activity')->insert(array('name'=>'Atividade 1', 'group' => '1', 'image' => '1', 'description' => 'Lorep Ipsum', 'public' => 'false', 'open' => 'false', 'active' => 'false', 'created_date' => '2016-05-26 22:53:27', 'init_date' => '2016-05-26 22:53:27', 'end_date' => '2016-06-26 22:53:27'));
+        DB::table('activity')->insert(array('name'=>'Atividade 2', 'group' => '1', 'image' => '1', 'description' => 'Lorep Ipsum', 'public' => 'false', 'open' => 'false', 'active' => 'false', 'created_date' => '2016-05-26 22:53:27', 'init_date' => '2016-05-26 22:53:27', 'end_date' => '2016-05-26 22:53:27'));
+
+        DB::table('volunteeractivity')->insert(array('volunteer'=>'1','activity'=>'1'));
+        DB::table('volunteeractivity')->insert(array('volunteer'=>'1','activity'=>'2'));
 
         DB::table('medal')->insert(array('name'=>'Testix','description'=>'Quando se testa alguma coisa.','image'=>1));
         DB::table('medal')->insert(array('name'=>'Patria','description'=>'Palavra que me veio a cabeça.','image'=>1));
