@@ -205,7 +205,7 @@ class Database extends Migration
             $table->integer('activity')->unsigned();
             $table->foreign('volunteer')->references('id')->on('users');
             $table->foreign('activity')->references('id')->on('activity');
-			$table->boolean('admin')->default('false');
+			$table->boolean('admin')->default(false);
 
             $table->primary(['volunteer', 'activity']);
 			
