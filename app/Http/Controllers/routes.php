@@ -147,5 +147,3 @@ Route::get('/gerir_noticias', 'Geral\NewsController@showNewsAdmin');
 */
 
 Route::get('/gerir_voluntarios', 'Geral\UserController@showVolunteersAdmin');
-
-

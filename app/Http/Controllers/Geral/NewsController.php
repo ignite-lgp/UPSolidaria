@@ -69,4 +69,20 @@ class NewsController extends Controller
 		}
         
     }
+	
+	protected function deleteNews($id){
+	
+		$email = Session::get('email');
+        $user = User::whereRaw('email = ?', [$email])->first();
+
+		//If user is not logged in
+        if(is_null($user) || $user->admin == 0) {
+            return View('errors/403');
+        }
+		else { //Else, platform admin --> get list for news management
+			DB::table('news')->where('id', '=', $id)->delete();
+			$news = DB::select('select * from news');
+			return redirect()->route('gerir_noticias',[$news]);
+		}
+	}
 }

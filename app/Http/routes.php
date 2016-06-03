@@ -122,4 +122,38 @@ Route::get('/logout', 'Geral\UserController@destroySession');
 Route::post('/editarInfo', 'Geral\OrgController@editInfo');
 
 
+/*
+* Admin news list
+*/
 
+Route::get('/gerir_noticias', 'Geral\NewsController@showNewsAdmin');
+
+/*
+* Admin edit news
+*/
+
+//Route::post();
+
+/*
+* Admin delete news
+*/
+
+Route::delete('delete/{id}',array('uses' => 'Geral\NewsController@deleteNews', 'as' => 'DeleteNews.route'));
+
+/*
+* Admin volunteers list
+*/
+
+Route::get('/gerir_voluntarios', 'Geral\UserController@showVolunteersAdmin');
+
+/*
+* Admin edit volunteer
+*/
+
+//Route::post();
+
+/*
+* Admin delete volunteer
+*/
+
+//Route::delete();
