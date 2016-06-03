@@ -155,7 +155,7 @@ class Database extends Migration
         });
 
 
-        Schema::create('group', function (Blueprint $table) {
+        Schema::create('groups', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->integer('organization')->unsigned();
@@ -175,7 +175,7 @@ class Database extends Migration
             $table->integer('volunteer')->unsigned();
             $table->integer('group')->unsigned();
             $table->foreign('volunteer')->references('id')->on('users');
-            $table->foreign('group')->references('id')->on('group');
+            $table->foreign('group')->references('id')->on('groups');
 			$table->boolean('admin');
 
             $table->primary(['volunteer', 'group']);
@@ -187,7 +187,7 @@ class Database extends Migration
             $table->increments('id');
             $table->string('name');
             $table->integer('group')->unsigned();
-            $table->foreign('group')->references('id')->on('group');
+            $table->foreign('group')->references('id')->on('groups');
 			$table->integer('image')->unsigned()->nullable();
 			$table->foreign('image')->references('id')->on('image');
             $table->text('description');
@@ -528,7 +528,7 @@ class Database extends Migration
         DB::table('user_organization')->insert(array('volunteer'=>'1', 'organization' => '1', 'reg_date'=>'2016-05-26 22:53:27', 'leave_date'=>'2017-05-26 22:53:27'));
         DB::table('user_organization')->insert(array('volunteer'=>'1', 'organization' => '2', 'reg_date'=>'2016-05-26 22:53:27'));
 
-        DB::table('group')->insert(array('name'=>'Grupo 1', 'organization' => '1', 'description' => 'Lorep Ipsum', 'public' => 'false', 'open' => 'false', 'active' => 'false', 'created_date' => '2016-05-26 22:53:27'));
+        DB::table('groups')->insert(array('name'=>'Grupo 1', 'organization' => '1', 'description' => 'Lorep Ipsum', 'public' => 'false', 'open' => 'false', 'active' => 'false', 'created_date' => '2016-05-26 22:53:27'));
 
         DB::table('activity')->insert(array('name'=>'Atividade 1', 'group' => '1', 'image' => '1', 'description' => 'Lorep Ipsum', 'public' => 'false', 'open' => 'false', 'active' => 'false', 'created_date' => '2016-05-26 22:53:27', 'init_date' => '2016-05-26 22:53:27', 'end_date' => '2016-06-26 22:53:27'));
         DB::table('activity')->insert(array('name'=>'Atividade 2', 'group' => '1', 'image' => '1', 'description' => 'Lorep Ipsum', 'public' => 'false', 'open' => 'false', 'active' => 'false', 'created_date' => '2016-05-26 22:53:27', 'init_date' => '2016-05-26 22:53:27', 'end_date' => '2016-05-26 22:53:27'));

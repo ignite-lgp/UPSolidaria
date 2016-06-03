@@ -267,52 +267,33 @@
 					<div class="volunteer-current-activities-header">
 						<span class="dark-info">Atividades a decorrer</span>
 					</div>
+					@foreach ($actividades[0] as $actividade)
 					<div class="volunteer-activity">
 						<div class="volunteer-activity-header">
-							<span>Recolha de Alimentos</span>
+							<span>{{ $actividade->name }}</span>
 						</div>
 						<div class="progress-bar">
 							<div class="bar1"> </div> <!-- Delete id="bar1" when loading data from database is done. This is supposed to controlled via PhP and CSS, defining the width ('percentage') of background which will be colored. -->
 						</div>
 						<div class="percentage">
-							<span>62%</span>
+							<span>{{ $actividade->completedPercentage }}%</span>
 						</div>
 					</div>
-					<div class="volunteer-activity">
-						<div class="volunteer-activity-header">
-							<span>Apoio a idas ao médico</span>
-						</div>
-						<div class="progress-bar">
-							<div class="bar2"> </div> <!-- Delete id="bar2" when loading data from database is done. This is supposed to controlled via PhP and CSS, defining the width ('percentage') of background which will be colored. -->
-						</div>
-						<div class="percentage">
-							<span>50%</span>
-						</div>
-					</div>	
+					@endforeach
 				</section>
 				
 				<section class="Atividade_tab profile_tab_body volunteer-activities-history " style="display: none;">
 					<div class="volunteer-activities-history-header">
 						<span class="dark-info">Histórico</span>
 					</div>
+					@foreach ($actividades[1] as $actividade)
 					<div class="volunteer-done-activity">
 						<div class="volunteer-activity-history-header">
-							<span class="block strong">Organização de jantar</span>
-							<span class="grey">G.A.S. Porto - Set. 2015</span>
+							<span class="block strong">{{ $actividade->name}}</span>
+							<span class="grey">{{ $actividade->org}} - {{ $actividade->mes }}. {{ $actividade->ano }}</span>
 						</div>
 					</div>
-					<div class="volunteer-done-activity">
-						<div class="volunteer-activity-history-header">
-							<span class="block strong">Realização do Workshop</span>
-							<span class="grey">G.A.S. Porto - Feb. 2015</span>
-						</div>
-					</div>
-					<div class="volunteer-done-activity">
-						<div class="volunteer-activity-history-header">
-							<span class="block strong">Acompanhamento de Cidadão</span>
-							<span class="grey">G.A.S. Porto - Dez. 2014</span>
-						</div>
-					</div>
+					@endforeach
 				</section>
 				
 			</section>

@@ -50,6 +50,11 @@ class UserController extends Controller
             $trophies = DB::select('select trophy.name, trophy.description, count(*) as trofeus from trophy, trophyvolunteer where trophyvolunteer.trophy = trophy.id and trophyvolunteer.volunteer = ? group by trophy.description, trophy.name;', array($information[0]->id));
 
 
+            // Get activities the user is or was in
+            $activities = DB::select('select activity.name, activity.init_date, activity.end_date, organization.name as org from volunteeractivity, activity, groups, organization where activity.id = volunteeractivity.activity and groups.id = activity.group and organization.id = groups.organization and volunteer = ?',array($information[0]->id) );
+
+
+
             for ($i=0; $i < count($organizations); $i++) { 
                 $organizations[$i]->reg_date = substr($organizations[$i]->reg_date,0,4);
 
@@ -58,12 +63,35 @@ class UserController extends Controller
                 }
             }
 
+            // Organize the activities
+            // organized_activities = [ [Still active], [Not active] ]
+            $organized_activities = array( array(), array());
+
+            for ($i=0; $i < count($activities); $i++) { 
+                $time = time();
+
+                $ano = substr($activities[$i]->end_date,0,4);
+
+                $mes = date('F', mktime(0, 0, 0, substr($activities[$i]->end_date,5,2), 10));
+                $activities[$i]->init_date = strtotime($activities[$i]->init_date);
+                $activities[$i]->end_date = strtotime($activities[$i]->end_date);
+
+                if ($time >= $activities[$i]->init_date && $time <= $activities[$i]->end_date){
+                    $activities[$i]->completedPercentage = round (100 * ($time - $activities[$i]->init_date) / ($activities[$i]->end_date - $activities[$i]->init_date) );
+                    array_push($organized_activities[0], $activities[$i]);
+                } else {
+                    $activities[$i]->ano = $ano;
+                    $activities[$i]->mes = $mes;
+                    array_push($organized_activities[1], $activities[$i]);
+                }
+            }
+
             // Make sure that email stays private if user wants.
             if ($information[0]->private_email){
                 $information[0]->email = 'private';
             }
 
-            // extract (year from users.created_at) seems to expload this function
+            // extract (year from users.created_at) seems to expload the sql function
             // Let the hack begin
             $information[0]->created_at = substr($information[0]->created_at,0,4);
 
@@ -76,7 +104,10 @@ class UserController extends Controller
             $information[0]->next_lower_limit = $levelInformation[1];
             $information[0]->current_points = $levelInformation[2];
 
-            return View('perfil')->with('profile',$information[0])->with('organizations', $organizations)->with('medals', $medals)->with('trofeus', $trophies);
+            return View('perfil')->with('profile',$information[0])->with('organizations', $organizations)
+                ->with('medals', $medals)
+                ->with('trofeus', $trophies)
+                ->with('actividades', $organized_activities);
         }
     }
 
