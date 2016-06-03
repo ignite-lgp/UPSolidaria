@@ -138,7 +138,7 @@ Route::get('/gerir_noticias', 'Geral\NewsController@showNewsAdmin');
 * Admin delete news
 */
 
-Route::delete('delete/{id}',array('uses' => 'Geral\NewsController@deleteNews', 'as' => 'DeleteNews.route'));
+Route::delete('deleteNews/{id}',array('uses' => 'Geral\NewsController@deleteNews', 'as' => 'DeleteNews.route'));
 
 /*
 * Admin volunteers list
@@ -156,4 +156,5 @@ Route::get('/gerir_voluntarios', 'Geral\UserController@showVolunteersAdmin');
 * Admin delete volunteer
 */
 
-//Route::delete();
+Route::delete('deleteVolunteer/{id}',array('uses' => 'Geral\UserController@deleteVolunteer', 'as' => 'DeleteVolunteer.route'));
+

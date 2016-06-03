@@ -81,8 +81,7 @@ class NewsController extends Controller
         }
 		else { //Else, platform admin --> get list for news management
 			DB::table('news')->where('id', '=', $id)->delete();
-			$news = DB::select('select * from news');
-			return redirect()->route('gerir_noticias',[$news]);
+			return redirect('/gerir_noticias');
 		}
 	}
 }

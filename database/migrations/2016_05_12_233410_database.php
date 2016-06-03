@@ -114,7 +114,7 @@ class Database extends Migration
         Schema::create('volunteerinterest', function ($table) {
             $table->integer('volunteer')->unsigned();
             $table->integer('interest')->unsigned();
-            $table->foreign('volunteer')->references('id')->on('users');
+            $table->foreign('volunteer')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('interest')->references('id')->on('interest');
 
             $table->primary(['volunteer', 'interest']);
@@ -141,7 +141,7 @@ class Database extends Migration
        Schema::create('user_organization', function ($table) {
             $table->integer('volunteer')->unsigned();
             $table->integer('organization')->unsigned();
-            $table->foreign('volunteer')->references('id')->on('users');
+            $table->foreign('volunteer')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('organization')->references('id')->on('organization');
             $table->timestamp('reg_date');
             $table->timestamp('leave_date')->nullable();
@@ -174,7 +174,7 @@ class Database extends Migration
         Schema::create('volunteergroup', function ($table) {
             $table->integer('volunteer')->unsigned();
             $table->integer('group')->unsigned();
-            $table->foreign('volunteer')->references('id')->on('users');
+            $table->foreign('volunteer')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('group')->references('id')->on('groups');
 			$table->boolean('admin');
 
@@ -203,7 +203,7 @@ class Database extends Migration
 		Schema::create('volunteeractivity', function ($table) {
             $table->integer('volunteer')->unsigned();
             $table->integer('activity')->unsigned();
-            $table->foreign('volunteer')->references('id')->on('users');
+            $table->foreign('volunteer')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('activity')->references('id')->on('activity');
 			$table->boolean('admin')->default(false);
 
@@ -246,7 +246,7 @@ class Database extends Migration
             $table->integer('volunteer')->unsigned();
             $table->integer('medal')->unsigned();
             $table->integer('organization')->unsigned();
-            $table->foreign('volunteer')->references('id')->on('users');
+            $table->foreign('volunteer')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('medal')->references('id')->on('medal');
             $table->foreign('organization')->references('id')->on('organization');
             $table->timestamp('date');
@@ -259,7 +259,7 @@ class Database extends Migration
         Schema::create('trophyvolunteer', function ($table) {
             $table->integer('trophy')->unsigned();
             $table->integer('volunteer')->unsigned();
-            $table->foreign('volunteer')->references('id')->on('users');
+            $table->foreign('volunteer')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('trophy')->references('id')->on('trophy');
             $table->timestamp('date');
 

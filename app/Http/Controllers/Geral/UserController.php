@@ -180,9 +180,25 @@ class UserController extends Controller
         }
 		else { //Else, platform admin --> get list for volunteers management
 		
-			$information = DB::select('select users.name, users.confirm_date from users where users.organization is null and users.admin = 0');
+			$information = DB::select('select users.name, users.confirm_date, users.id from users where users.organization is null and users.admin = 0');
 			return View('gerir_voluntarios')->with('voluntarios', $information);
         }
+	}
+	
+	protected function deleteVolunteer($id){
+	
+		$email = Session::get('email');
+        $user = User::whereRaw('email = ?', [$email])->first();
+
+		//If user is not logged in
+        if(is_null($user) || $user->admin == 0) {
+            return View('errors/403');
+        }
+		else { //Else, platform admin --> get list for news management
+			DB::table('users')->where('id', '=', $id)->delete();
+			return redirect('/gerir_voluntarios');
+		}
+		
 	}
 
    
