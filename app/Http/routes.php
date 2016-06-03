@@ -158,3 +158,10 @@ Route::get('/gerir_voluntarios', 'Geral\UserController@showVolunteersAdmin');
 
 Route::delete('deleteVolunteer/{id}',array('uses' => 'Geral\UserController@deleteVolunteer', 'as' => 'DeleteVolunteer.route'));
 
+/*
+*
+*/
+
+Route::get('/criar_noticia', 'Geral\NewsController@showForm');
+
+

@@ -11,6 +11,9 @@
     <link rel="icon" href="src/imgs/logo_upsolidaria.png">
 	<link href='https://fonts.googleapis.com/css?family=PT+Sans' rel='stylesheet' type='text/css'>
 
+	<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+	<script>tinymce.init({ selector:'textarea' });</script>
+	
     <title>UP Solidária</title>
 
     <!-- Bootstrap core CSS -->

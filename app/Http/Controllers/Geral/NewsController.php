@@ -84,4 +84,17 @@ class NewsController extends Controller
 			return redirect('/gerir_noticias');
 		}
 	}
+	
+	protected function showForm(){
+		$email = Session::get('email');
+        $user = User::whereRaw('email = ?', [$email])->first();
+
+		//If user is not logged in
+        if(is_null($user) || $user->admin == 0) {
+            return View('errors/403');
+        }
+		else { //Else, platform admin --> get list for news management
+			return View('/criar_noticia');
+		}
+	}
 }
