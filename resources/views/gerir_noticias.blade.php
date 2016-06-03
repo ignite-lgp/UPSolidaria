@@ -9,8 +9,10 @@
                     <section class="news-authors-date">
                         <span class="news-date">{{ $noticia->date }}</span>
                     </section>
+					{{ Form::open(['route' => ['DeleteNews.route', $noticia->id], 'method' => 'delete']) }}
+						<button type="submit">Delete</button>
+					{{ Form::close() }}
             </section>
             @endforeach
 	</body>
-
 @stop
