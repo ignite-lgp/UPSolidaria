@@ -184,6 +184,7 @@
 				
     </section>
 
+
      <script src="../../public/src/js/organization_page.js"></script>
      
      

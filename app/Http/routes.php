@@ -138,4 +138,39 @@ Route::get('/organizacao/search/autocomplete', 'Geral\UserController@autocomplet
 Route::post('/adicionaVoluntario', 'Geral\OrgController@addVolunteer');
 
 
+/*
+* Admin news list
+*/
+
+Route::get('/gerir_noticias', 'Geral\NewsController@showNewsAdmin');
+
+/*
+* Admin edit news
+*/
+
+//Route::post();
+
+/*
+* Admin delete news
+*/
+
+Route::delete('deleteNews/{id}',array('uses' => 'Geral\NewsController@deleteNews', 'as' => 'DeleteNews.route'));
+
+/*
+* Admin volunteers list
+*/
+
+Route::get('/gerir_voluntarios', 'Geral\UserController@showVolunteersAdmin');
+
+/*
+* Admin edit volunteer
+*/
+
+//Route::post();
+
+/*
+* Admin delete volunteer
+*/
+
+Route::delete('deleteVolunteer/{id}',array('uses' => 'Geral\UserController@deleteVolunteer', 'as' => 'DeleteVolunteer.route'));
 
