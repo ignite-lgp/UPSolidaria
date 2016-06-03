@@ -273,7 +273,7 @@
 							<span>{{ $actividade->name }}</span>
 						</div>
 						<div class="progress-bar">
-							<div class="bar1"> </div> <!-- Delete id="bar1" when loading data from database is done. This is supposed to controlled via PhP and CSS, defining the width ('percentage') of background which will be colored. -->
+							<div style="height: 100%; float: left; background: #f4bc1c; width: {{ $actividade->completedPercentage }}%"> </div> <!-- Delete id="bar1" when loading data from database is done. This is supposed to controlled via PhP and CSS, defining the width ('percentage') of background which will be colored. -->
 						</div>
 						<div class="percentage">
 							<span>{{ $actividade->completedPercentage }}%</span>
