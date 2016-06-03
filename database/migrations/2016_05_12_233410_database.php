@@ -585,6 +585,35 @@ class Database extends Migration
             , 'country' => 'PT'
             , 'organization' => 3 //referencia à org gasporto
             , 'admin' => false]);
+
+
+        DB::table('users')->insert(['name' => 'João'
+            , 'email' => 'alcino@gmail.com'
+            , 'password' => bcrypt('123456')
+            , 'nif' => '789555123'
+            , 'token' => bin2hex(random_bytes(10))
+            , 'country' => 'PT'
+            , 'organization' => 3 //referencia à org gasporto
+            , 'admin' => false]);
+
+
+        DB::table('users')->insert(['name' => 'João1'
+            , 'email' => 'alcino.@gmail.com'
+            , 'password' => bcrypt('123456')
+            , 'nif' => '222222222'
+            , 'token' => bin2hex(random_bytes(10))
+            , 'country' => 'PT'
+            , 'organization' => 3 //referencia à org gasporto
+            , 'admin' => false]);
+
+        DB::table('users')->insert(['name' => 'João2'
+            , 'email' => 'alcino.j@gmail.com'
+            , 'password' => bcrypt('123456')
+            , 'nif' => '333333333'
+            , 'token' => bin2hex(random_bytes(10))
+            , 'country' => 'PT'
+            , 'organization' => 3 //referencia à org gasporto
+            , 'admin' => false]);
             
         //Pagina de org de teste
         DB::table('organization_page')->insert([

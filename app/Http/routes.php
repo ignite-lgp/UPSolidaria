@@ -122,4 +122,20 @@ Route::get('/logout', 'Geral\UserController@destroySession');
 Route::post('/editarInfo', 'Geral\OrgController@editInfo');
 
 
+Route::post('/adicionarGrupo', 'Geral\OrgController@addGroup');
+  
+  
+ /*
+ *   Autocomplete search Volunteers
+ */
+ 
+Route::get('/organizacao/search/autocomplete', 'Geral\UserController@autocomplete');
+ 
+ /*
+ *   Add Volunteer to org
+ */
+ 
+Route::post('/adicionaVoluntario', 'Geral\OrgController@addVolunteer');
+
+
 

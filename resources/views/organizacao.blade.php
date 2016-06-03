@@ -2,57 +2,9 @@
 
 @section('main_content')
 
-	<!-- Upper bar, contains authentication and language -->
-	<nav class="navbar navbar-inverse navbar-little">
-		<section class="auth hidden-xs">
-			<section class="auth-left">
-				<span id="auth-span">Autenticar-se</span>
-			</section>
-			<section class="auth-right">
-				<span id="auth-span" class="glyphicon glyphicon-lock"></i>
-			</section>
-		</section>
-		<section class="search-visible-xs visible-xs">
-			<span id="search-span" class="glyphicon glyphicon-search"></i>
-		</section>
-		<section class="auth-visible-xs visible-xs">
-			<span id="auth-span" class="glyphicon glyphicon-lock"></i>
-		</section>
-		<section class="language-visible-xs visible-xs">
-			<a id="language-link" href="#"><span id="language-span-capital">en</span></a>
-		</section>   
-		<section class="language hidden-xs">
-			<a id="language-link" href="#"><span id="language-span">en</span></a>
-		</section>	  
-	</nav>
-	
-	<!-- Navigation bar -->
-	<nav class="navbar navbar-inverse navigation-gradient navbar-margin">
-	  <div class="container" id="container-navbar">
-		<div class="navbar-header">
-		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-			<span class="sr-only">Toggle navigation</span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-		  </button>
-		  <a class="navbar-brand" href="./"><img src = "../../src/imgs/logo.png" id="logo"></a>
-		</div>
-		<div id="navbar" class="collapse navbar-collapse">
-		  <ul class="nav navbar-nav navigation-options">
-			<li><a href="#about">quem somos</a></li>
-			<li class="active"><a href="#organizations">organizações</a></li>
-			<li><a href="#activities">atividades</a></li>
-			<li><a href="#news">notícias</a></li>
-			<li><a href="#contacts">contactos</a></li>
-		  </ul>
-		  <section class="search hidden-xs">
-			<span id="search-icon" class="glyphicon glyphicon-search"></span>
-		  </section>
-		</div><!--/.nav-collapse -->
-	  </div>
-	</nav>
-	
+
+ <!-- Autocomplete -->
+
 	<!-- Body -->
 	<div class="container hidden-xs" id="container-left">
 		
@@ -71,7 +23,11 @@
 					<span class="sidebar-title">Administrador</span>
 					<ul>
 						<li><a onclick="changeInfo();">Editar Informações</a></li>
-						<span class="sidebar-title">Gerir Grupos</span>
+					</ul>
+				</section>
+				<section class="sidebar-listing hidden-xs">
+					<span class="sidebar-title">Gerir Gruposr</span>
+					<ul>
 						<li><a onclick="addGroup();">Adicionar Grupo</a></li>
 						<li><a class="manage-volunteers">Gerir Voluntários</a></li>
 					</ul>
@@ -192,7 +148,7 @@
 
      		<!-- Organization Add Group -->
 		
-			<section class="organization-section-add-group" style="display: none;">
+			<section class="main-section organization-section-add-group" style="display: none;">
 				<h3 class="title">Adicionar Grupo</h3>
 
 				{!!  Form::open(array('url' => '/adicionarGrupo', 'method' => 'post', 'files' => 'true')) !!}
@@ -228,57 +184,10 @@
 				
     </section>
 
+     <script src="../../public/src/js/organization_page.js"></script>
+     
+     
 
-<?php
-		echo
-		"<script>
-			function changeInfo(){
-				var x, y;
-				// Hide original contents
-				x =	document.getElementsByClassName(\"organization-section\");
-				y =	document.getElementsByClassName(\"organization-section-add-group\");
 
-				for (i = 0; i < x.length; i++) {
-					x[i].style.display = \"none\";
-				}
-				for (i = 0; i < y.length; i++) {
-					y[i].style.display = \"none\";
-				}
-				// Show new contents
-				x =	document.getElementsByClassName(\"organization-section-change-info\");
-				for (i = 0; i < x.length; i++) {
-					x[i].style.display = \"block\";
-				}
-			}
-
-			function addGroup(){
-				var x, y;
-				// Hide original contents
-				x =	document.getElementsByClassName(\"organization-section\");
-				y = document.getElementsByClassName(\"organization-section-change-info\");
-				for (i = 0; i < x.length; i++) {
-					x[i].style.display = \"none\";
-				}
-				for (i = 0; i < y.length; i++) {
-					y[i].style.display = \"none\";
-				}
-				// Show new contents
-				x =	document.getElementsByClassName(\"organization-section-add-group\");
-				for (i = 0; i < x.length; i++) {
-					x[i].style.display = \"block\";
-				}
-			}
-		</script>";
-?>
-
-<script type="text/javascript">       
-	$(function() {
-	$("#auto").autocomplete({
-		 	minLength: 2,
-		  source: './search/autocomplete',
-		  select: function(event, ui) {
-	  			$("#auto").val(ui.item.value);
-     }});
-});
 
 @stop
