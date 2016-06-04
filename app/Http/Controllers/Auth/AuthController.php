@@ -160,8 +160,9 @@ class AuthController extends Controller
 
         if (!is_null($user) && password_verify($data->all()['password'], $user->password)){
 
+                Session::put('name', $user->name);
                 Session::put('email', $data->all()['username']);
-
+                
                 //If normal user redirect to user profile
                 if(is_null($user->organization)) {
                   return redirect('/perfil');

@@ -13,18 +13,18 @@ class Database extends Migration
      */
     public function up()
     {
-		//IMAGES
-		
-		Schema::create('image', function ($table) {
-			$table->increments('id');
-			$table->string('alt')->nullable();
-			$table->integer('height')->nullable();
-			$table->integer('width')->nullable();
-			$table->string('location')->unique();
-			$table->integer('size')->nullable();
-		});
+        //IMAGES
+        
+        Schema::create('image', function ($table) {
+            $table->increments('id');
+            $table->string('alt')->nullable();
+            $table->integer('height')->nullable();
+            $table->integer('width')->nullable();
+            $table->string('location')->unique();
+            $table->integer('size')->nullable();
+        });
 
-		Schema::create('organization', function ($table) {
+        Schema::create('organization', function ($table) {
             $table->increments('id');
             $table->string('name')->unique();
             $table->string('password');
@@ -35,15 +35,15 @@ class Database extends Migration
             $table->integer('facebook')->nullable();
             $table->text('about')->nullable();
             $table->timestamp('confirm_date');
-			$table->integer('image')->unsigned()->nullable();
-			$table->foreign('image')->references('id')->on('image');
+            $table->integer('image')->unsigned()->nullable();
+            $table->foreign('image')->references('id')->on('image');
             $table->timestamps();
-			
-			$table->index('name');
+            
+            $table->index('name');
         });
 
-		//PERSONAL INFO
-		
+        //PERSONAL INFO
+        
         Schema::create('course', function ($table) {
             $table->increments('id');
             $table->string('name')->unique();
@@ -91,24 +91,24 @@ class Database extends Migration
             $table->string('localidade')->nullable();
 
             $table->text('token');
-			
-			$table->integer('image')->unsigned()->nullable();
-			$table->foreign('image')->references('id')->on('image');
+            
+            $table->integer('image')->unsigned()->nullable();
+            $table->foreign('image')->references('id')->on('image');
 
 
             $table->string('country');
             $table->integer('course')->unsigned()->nullable();
             $table->integer('postal_code')->unsigned()->nullable();
-			$table->integer('organization')->unsigned()->nullable(); //null if volunteer, not null if organization with its id
+            $table->integer('organization')->unsigned()->nullable(); //null if volunteer, not null if organization with its id
             $table->foreign('country')->references('code')->on('country');
             $table->foreign('course')->references('id')->on('course');
             $table->foreign('postal_code')->references('id')->on('postal_code');
-			$table->foreign('organization')->references('id')->on('organization');
+            $table->foreign('organization')->references('id')->on('organization');
             
             $table->boolean('available')->default(true);
             $table->boolean('admin')->default(false);
             $table->timestamps();
-			$table->index(['email','password']);
+            $table->index(['email','password']);
         });
 
         Schema::create('volunteerinterest', function ($table) {
@@ -147,11 +147,11 @@ class Database extends Migration
             $table->timestamp('leave_date')->nullable();
             $table->boolean('banned')->default(false);
             $table->boolean('active')->default(true);
-			$table->boolean('admin')->default(false);
+            $table->boolean('admin')->default(false);
 
             $table->primary(['volunteer', 'organization']);
-			
-			$table->index('organization');
+            
+            $table->index('organization');
         });
 
 
@@ -160,15 +160,15 @@ class Database extends Migration
             $table->string('name');
             $table->integer('organization')->unsigned();
             $table->foreign('organization')->references('id')->on('organization');
-			$table->integer('image')->unsigned()->nullable();;
-			$table->foreign('image')->references('id')->on('image');
+            $table->integer('image')->unsigned()->nullable();;
+            $table->foreign('image')->references('id')->on('image');
             $table->text('description');
             $table->boolean('public');
             $table->boolean('open');
             $table->boolean('active');
             $table->timestamp('created_date');
 
-			$table->index('organization');
+            $table->index('organization');
         });
         
         Schema::create('volunteergroup', function ($table) {
@@ -176,50 +176,50 @@ class Database extends Migration
             $table->integer('group')->unsigned();
             $table->foreign('volunteer')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('group')->references('id')->on('groups');
-			$table->boolean('admin');
+            $table->boolean('admin');
 
             $table->primary(['volunteer', 'group']);
-			
-			$table->index('group');
+            
+            $table->index('group');
         });
-		
-		Schema::create('activity', function ($table) {
+        
+        Schema::create('activity', function ($table) {
             $table->increments('id');
             $table->string('name');
             $table->integer('group')->unsigned();
             $table->foreign('group')->references('id')->on('groups');
-			$table->integer('image')->unsigned()->nullable();
-			$table->foreign('image')->references('id')->on('image');
+            $table->integer('image')->unsigned()->nullable();
+            $table->foreign('image')->references('id')->on('image');
             $table->text('description');
             $table->boolean('public');
             $table->boolean('open');
             $table->boolean('active');
             $table->timestamp('created_date');
-			$table->timestamp('init_date');
-			$table->timestamp('end_date');
-			$table->index('group');
+            $table->timestamp('init_date');
+            $table->timestamp('end_date');
+            $table->index('group');
         });
 
-		Schema::create('volunteeractivity', function ($table) {
+        Schema::create('volunteeractivity', function ($table) {
             $table->integer('volunteer')->unsigned();
             $table->integer('activity')->unsigned();
             $table->foreign('volunteer')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('activity')->references('id')->on('activity');
-			$table->boolean('admin')->default(false);
+            $table->boolean('admin')->default(false);
 
             $table->primary(['volunteer', 'activity']);
-			
-			$table->index('activity');
+            
+            $table->index('activity');
         });
 
         Schema::create('news', function ($table) {
             $table->increments('id');
-			$table->integer('image')->unsigned();
-			$table->foreign('image')->references('id')->on('image');
+            $table->integer('image')->unsigned();
+            $table->foreign('image')->references('id')->on('image');
             $table->text('title');
             $table->text('description');
             $table->timestamp('date');
-			$table->timestamps();
+            $table->timestamps();
         });
 
 
@@ -229,8 +229,8 @@ class Database extends Migration
             $table->increments('id');
             $table->string('name')->unique();
             $table->text('description');
-			$table->integer('image')->unsigned();
-			$table->foreign('image')->references('id')->on('image');
+            $table->integer('image')->unsigned();
+            $table->foreign('image')->references('id')->on('image');
         });
 
     
@@ -238,8 +238,8 @@ class Database extends Migration
             $table->increments('id');
             $table->string('name')->unique();
             $table->text('description');
-			$table->integer('image')->unsigned();
-			$table->foreign('image')->references('id')->on('image');
+            $table->integer('image')->unsigned();
+            $table->foreign('image')->references('id')->on('image');
         });
         
         Schema::create('medalattribution', function ($table) {
@@ -252,8 +252,8 @@ class Database extends Migration
             $table->timestamp('date');
 
             $table->primary(['volunteer', 'medal', 'organization']);
-			
-			$table->index('volunteer');
+            
+            $table->index('volunteer');
         });
 
         Schema::create('trophyvolunteer', function ($table) {
@@ -264,8 +264,8 @@ class Database extends Migration
             $table->timestamp('date');
 
             $table->primary(['volunteer', 'trophy']);
-			
-			$table->index('volunteer');
+            
+            $table->index('volunteer');
         });
 
         DB::table('country')->insert(array('code'=>'AF','country'=>'Afghanistan'));
@@ -507,8 +507,8 @@ class Database extends Migration
         DB::table('country')->insert(array('code'=>'YE','country'=>'Yemen'));
         DB::table('country')->insert(array('code'=>'ZM','country'=>'Zambia'));
         DB::table('country')->insert(array('code'=>'ZW','country'=>'Zimbabwe'));
-		
-		
+        
+        
         /*
             Insert example data. Remove to final release
         */
@@ -556,15 +556,15 @@ class Database extends Migration
         DB::table('trophyvolunteer')->insert(array('volunteer'=>'1','trophy'=>'2', 'date' => '2016-05-26 22:53:27'));
         DB::table('trophyvolunteer')->insert(array('volunteer'=>'1','trophy'=>'3', 'date' => '2016-05-26 22:53:27'));
 
-		$description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-		Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-		Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-		Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
+        $description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
 
         
-		DB::table('news')->insert(array('image' => 2, 'title' => 'Título 1' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 2, 'title' => 'Título 1' , 'description' => $description, 'date' => Carbon\Carbon::now()));
         DB::table('news')->insert(array('image' => 3, 'title' => 'Título 2' , 'description' => $description, 'date' => Carbon\Carbon::now()));
-		DB::table('news')->insert(array('image' => 4, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 4, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
 
 
         ///////////////////////////////////////////
@@ -644,14 +644,14 @@ class Database extends Migration
         Schema::drop('user_organization');
         Schema::drop('organizationinterest');
         Schema::drop('organization');
-		Schema::drop('volunteerinterest');
+        Schema::drop('volunteerinterest');
         Schema::drop('interest');
         Schema::drop('postal_code');
         Schema::drop('faculty');
         Schema::drop('country');
         Schema::drop('course');
-		Schema::drop('image');
-		Schema::drop('activity');
-		Schema::drop('volunteeractivity');
+        Schema::drop('image');
+        Schema::drop('activity');
+        Schema::drop('volunteeractivity');
     }
 }

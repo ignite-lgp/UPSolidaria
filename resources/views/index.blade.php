@@ -40,18 +40,7 @@
 				<span>Casa Ronald McDonald do Porto</span>
 			</section>
 			
-			<section class="sidebar-auth hidden-xs">
-				<span id="authentication-title">autenticação</span>
-                {!! Form::open(array('url' => '/auth/login', 'method' => 'POST')) !!}
-                    {!! Form::text('username','', array('class' => 'auth-input', 'placeholder' => 'Utilizador')) !!}
-                    {!! Form::password('password', array('class' => 'auth-input', 'placeholder' => 'Palavra-Passe')) !!}
-                    {!! Form::submit('iniciar sessão',array('class'=>'btn-auth'))!!}
-                {!! Form::close() !!}
-			</section>
-			
-			<section class="reg-data hidden-xs">
-				<span id="span-bold">Registe os seus dados</span>
-			</section>
+			@include('partials/auth') 
 		
 		</section>
 		

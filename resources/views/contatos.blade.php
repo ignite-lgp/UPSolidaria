@@ -26,14 +26,7 @@
 				</ul>
 			</section>
 			
-			<!-- Authentication -->
-			<section class="hidden-xs">
-				<span class="sidebar-title">autenticação</span>
-				<input class="auth-input" type="text" name="username" placeholder="Utilizador" />
-				<input class="auth-input" type="password" name="password" placeholder="Palavra-Passe" />
-				<input class="btn-auth" type="submit" name="init-session" value="iniciar sessão" />
-				<br><a>Registe os seus dados</a>
-			</section>
+			@include('partials/auth') 
 			
 		</section>
 		<!-- Left Sidebar Over -->
