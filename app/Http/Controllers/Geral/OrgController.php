@@ -20,9 +20,6 @@ class OrgController extends Controller
     |
     */
 
-
-
-
     /**
     *
     * Show a org page 
@@ -31,19 +28,16 @@ class OrgController extends Controller
     protected function showOrgPage($organization){
 
         $information = DB::select('select organization_page.mission, organization_page.values, organization_page.vision, organization.name, organization.id, organization.image from organization_page, organization where organization_page.organization = organization.id and organization.name = ?', array($organization));
-        
-        //print_r($information[0]);
 
-        $image_location = DB::select('select location from image where image.alt = ?', array($information[0]->name));
+        $image_location = DB::select('select location from image where image.id = ?', array($information[0]->image));
         $email = Session::get('email');
         $user = User::whereRaw('email = ?', [$email])->first();
 
         //Info on the groups of the org and their images
         $groups =  DB::select(
             'select image.id, image.alt, image.location, groups.id, groups.name, groups.image, groups.description, groups.public, 
-            groups.open, groups.active, groups.created_date, groups.remember_token, groups.created_at, groups.updated_at 
-            from groups inner join image on groups.image=image.id where organization = ?', array($information[0]->id));
-        //print_r($groups);
+            groups.open, groups.active, groups.created_date
+            from groups inner join image on groups.image=image.id where groups.organization = ?', array($information[0]->id));
 
         //If user is not logged in shows defaul view
         if(is_null($user)) {

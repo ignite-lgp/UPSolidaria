@@ -22,7 +22,7 @@ Route::get('/noticias', 'Geral\NewsController@showOrgs');
     Routes related to Auth
 */
 
-Route::get('/auth/', 'Auth\AuthController@auth');
+Route::get('/auth', 'Auth\AuthController@auth');
 
 Route::post('/auth/register', 'Auth\AuthController@handleRegistration');
 
