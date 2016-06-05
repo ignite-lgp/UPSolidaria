@@ -3,7 +3,11 @@
     <nav class="navbar navbar-inverse navbar-little">
         <section class="auth hidden-xs">
             <section class="auth-left">
-                <span id="auth-span">Autenticar-se</span>
+                @if (!Session::has('email'))
+                <span id="auth-span"><a href="/auth">Autenticar-se</a></span>
+                @else
+                <span id="auth-span"><a href="/perfil">{{ Session::get('name') }}</a></span>
+                @endif
             </section>
             <section class="auth-right">
                 <span id="auth-span" class="glyphicon glyphicon-lock"></i>
@@ -40,7 +44,7 @@
             <li><a href="./organizacoes">organizações</a></li>
             <li><a href="./atividades">atividades</a></li>
             <li><a href="./noticias">notícias</a></li>
-            <li><a href="#contacts">contactos</a></li>
+            <li><a href="./contatos">contactos</a></li>
           </ul>
 		  <section class="search hidden-xs">
 			<span id="search-icon" class="glyphicon glyphicon-search"></span>

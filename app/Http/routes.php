@@ -9,10 +9,7 @@
 /*
     Routes visible to common users.
 */
-
-Route::get('/', function () {
-  return view('index');
-});
+Route::get('/', 'Geral\IndexController@showIndex');
 
 /*
     Routes related to Auth
@@ -171,5 +168,3 @@ Route::delete('deleteVolunteer/{id}',array('uses' => 'Geral\UserController@delet
 */
 
 Route::get('/criar_noticia', 'Geral\NewsController@showForm');
-
-

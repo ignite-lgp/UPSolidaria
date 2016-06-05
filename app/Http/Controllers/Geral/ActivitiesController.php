@@ -35,8 +35,8 @@ class ActivitiesController extends Controller
         //User logged in shows the list of activities 
         // the user is responsible for and the ones
         // from the organization he is in plus the public activities.
-        return View('index');
-    }
+        return redirect('/');
+      }
     }
 
 }

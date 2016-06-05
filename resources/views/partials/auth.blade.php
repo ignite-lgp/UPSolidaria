@@ -9,7 +9,15 @@
                 {!! Form::close() !!}
                 <a>Registe os seus dados</a>
 			</section>
-
+    @else
+        <section>
+                <span class="sidebar-title">autenticação</span>
+                <ul>
+                    <li>Utilizador</li>
+                    <li><a href="/perfil">{{ Session::get('name') }}</a></li>                    
+                </ul>
+                <a href="/logout"><button type="button" class="btn-auth">Terminar Sessao</button></a>
+        </section>
     @endif
 
  

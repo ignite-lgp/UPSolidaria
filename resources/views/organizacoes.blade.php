@@ -17,21 +17,9 @@
             <!-- Categories -->
 			<section class="sidebar-categories hidden-xs">
 				<span class="sidebar-title">categorias</span>
-				<a>AJUDARIS</a>
-				<a>Cura+</a>
-				<a>S. C. Cruz IPSS</a>
-				<a>MIACIS</a>
-				<a>G.A.S. Porto</a>
-				<a>U.Dream</a>
-				<a>MOA de Portugal</a>
-				<a>Banco Alimentar</a>
-				<a>Intercultura-AFS</a>
-				<a>G.A.S Africa</a>
-				<a>Active cat</a>
-				<a>MHNC-UP</a>
-				<a>Leigos para o desenvolvimento</a>
-				<a>Câmara Municipal do Porto</a>
-				<a>Vo.U</a>
+				@foreach ($orgs as $org)
+					<a>{{ $org->name }}</a>
+                @endforeach
 			</section>
             
 			<!-- Interests -->

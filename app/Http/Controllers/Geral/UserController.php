@@ -144,7 +144,7 @@ class UserController extends Controller
 
         Session::flush();
         print_r(Session::all());
-        return View('/index');
+        return redirect('/');
     }
 
 
