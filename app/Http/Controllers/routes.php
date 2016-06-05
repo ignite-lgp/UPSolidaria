@@ -14,9 +14,9 @@ Route::get('/', function () {
   return view('index');
 });
 
-Route::get('/noticias', function () {
-    return view('index');
-});
+
+
+Route::get('/noticias', 'Geral\NewsController@showOrgs');
 
 /*
     Routes related to Auth

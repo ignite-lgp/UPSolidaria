@@ -1,0 +1,32 @@
+<?php
+
+namespace App\Http\Controllers\Geral;
+
+use App\Http\Controllers\Controller;
+use View;
+use DB;
+use Session;
+
+use App\Http\Requests;
+
+class IndexController extends Controller
+{
+    //
+        /**
+    *
+    * Show the index page
+    * @return view
+    */
+    protected function showIndex(){
+       
+        /*
+            IMPORTANT : ALL ORGANIZATIONS NAME MUST BE UPPER CASE
+        */
+        $news = DB::select('select news.* from news where news.title = ?', array($title));
+
+        //print_r($information);
+
+        return View('index')->with('noticias', $news);
+   	}
+    
+}

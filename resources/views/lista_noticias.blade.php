@@ -72,9 +72,7 @@
             <section class="title-section hidden-xs">
                 <h4><a>U.Porto Voluntariado</a></h3>
                 <span>/</span>
-                <h4><a>Notícias</a></h4>
-                <span>/</span>
-                <h4><a class="active"></a></h4>
+                <h4><a class="active">Notícias</a></h4>
             </section>
            
            <!-- Noticia Aqui -->

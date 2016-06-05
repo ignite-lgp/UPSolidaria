@@ -9,14 +9,8 @@
 /*
     Routes visible to common users.
 */
+Route::get('/', 'Geral\IndexController@showIndex');
 
-Route::get('/', function () {
-  return view('index');
-});
-
-Route::get('/noticias', function () {
-    return view('noticia');
-});
 
 /*
     Routes related to Auth
@@ -90,10 +84,7 @@ Route::get('/download', 'Download\DownloadController@DownloadFile1');
 * Lista de noticias view
 */
 
-//Route::get('/noticias', 'Geral\NewsController@showAllNews');
-Route::get('/noticias', function(){
-    return view('lista_noticias'); 
-});
+Route::get('/noticias', 'Geral\NewsController@showAllNews');
 
 
 /*
@@ -179,5 +170,3 @@ Route::delete('deleteVolunteer/{id}',array('uses' => 'Geral\UserController@delet
 */
 
 Route::get('/criar_noticia', 'Geral\NewsController@showForm');
-
-
