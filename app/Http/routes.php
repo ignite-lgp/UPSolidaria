@@ -40,7 +40,18 @@ Route::post('auth/confirm_password', 'Auth\AuthController@handlePassChange');
 /* ----------------------------
 /* Organizacoes */
 
-Route::get('/organizacoes', 'Geral\OrgController@showOrgs');
+Route::get('/organizacoes', 'Geral\OrgController@handleRegistration');
+
+Route::get('/criar_organizacao', function () {
+    if(!Session::has('email'))
+        return redirect('/');
+    else
+        return view('organization/register');
+     
+});
+
+Route::post('/org/register', 'Geral\OrgController@handleRegistration');
+
 
 /* -----------------------------------
 
@@ -168,3 +179,5 @@ Route::delete('deleteVolunteer/{id}',array('uses' => 'Geral\UserController@delet
 */
 
 Route::get('/criar_noticia', 'Geral\NewsController@showForm');
+
+

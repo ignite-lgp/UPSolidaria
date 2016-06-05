@@ -29,11 +29,13 @@ class Database extends Migration
             $table->string('name')->unique();
             $table->string('password');
             $table->string('email')->unique();
-            $table->string('address');
+            $table->string('address')->nullable();
             $table->integer('phone')->nullable();
             $table->string('website')->nullable();
             $table->integer('facebook')->nullable();
-            $table->text('about')->nullable();
+            $table->text('mission')->nullable();
+            $table->text('vision')->nullable();
+            $table->text('values')->nullable();
             $table->timestamp('confirm_date');
             $table->integer('image')->unsigned()->nullable();
             $table->foreign('image')->references('id')->on('image');

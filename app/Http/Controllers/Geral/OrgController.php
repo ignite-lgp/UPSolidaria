@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Geral;
 
-use App\User;
+use App\Organization;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use View;
@@ -20,6 +20,9 @@ class OrgController extends Controller
     |
     */
 
+
+
+
     /**
     *
     * Show a org page 
@@ -28,8 +31,10 @@ class OrgController extends Controller
     protected function showOrgPage($organization){
 
         $information = DB::select('select organization_page.mission, organization_page.values, organization_page.vision, organization.name, organization.id, organization.image from organization_page, organization where organization_page.organization = organization.id and organization.name = ?', array($organization));
+        
+        //print_r($information[0]);
 
-        $image_location = DB::select('select location from image where image.id = ?', array($information[0]->image));
+        $image_location = DB::select('select location from image where image.id = ?', array($information[0]->name));
         $email = Session::get('email');
         $user = User::whereRaw('email = ?', [$email])->first();
 
@@ -37,7 +42,8 @@ class OrgController extends Controller
         $groups =  DB::select(
             'select image.id, image.alt, image.location, groups.id, groups.name, groups.image, groups.description, groups.public, 
             groups.open, groups.active, groups.created_date
-            from groups inner join image on groups.image=image.id where groups.organization = ?', array($information[0]->id));
+            from groups inner join image on groups.image=image.id where organization = ?', array($information[0]->id));
+        //print_r($groups);
 
         //If user is not logged in shows defaul view
         if(is_null($user)) {
@@ -80,6 +86,59 @@ class OrgController extends Controller
         return View('organizacoes')->with('orgs', $orgs);
     }
 
+       /**
+     * Get a validator for an incoming registration request.
+     *
+     * @param  array  $data
+     * @return \Illuminate\Contracts\Validation\Validator
+     */
+    protected function validator(array $data) {
+        return Validator::make($data, [
+            'name' => 'required|max:255',
+            'phone' => 'numeric|min:100000000|max:999999999',
+            'address' => 'required|max:255',
+            'email' => 'required|email|max:255|unique:users',
+            'password' => 'required|min:6|confirmed',
+            'password_confirmation' => 'required|same:password',
+    }
+
+
+    /**
+      *
+      * Handle registration
+      * @param Request object
+      */
+      protected function handleRegistration(Request $data){
+
+        // Just need the form data
+        $orgInfo = $data->all();
+        /*
+        // Check if valid
+        $validator = $this->validator($orgInfo);
+
+          if ($validator->fails()) {
+              return redirect('/create_organization')
+                          ->withErrors($validator)
+                          ->withInput();
+          } else {
+        */
+         $_temp = Organization::create([
+                'name' => $orgInfo['name'],
+                'email' => $orgInfo['email'],
+                'password' => bcrypt($orgInfo['password']),
+                'address' => $orgInfo['address'],
+                'phone' => $orgInfo['phone'],
+                'website' => $orgInfo['website'],
+                'facebook' => $orgInfo['facebook'],
+                'mission' => $orgInfo['mission'],
+                'vision' => $orgInfo['vision'],
+                'values' => $orgInfo['values']
+               // 'token' => bin2hex(random_bytes(10)),
+                ]);
+
+            return redirect('/');
+       // }
+      }
 
 
     /**
@@ -111,7 +170,7 @@ class OrgController extends Controller
         $size = $image->getSize();
             if($image->isValid()) {
 
-            $destinationPath = '../public/src/imgs/organizations';
+            $destinationPath = '/src/imgs/organizations';
             //Change the name of the img file to org Name
             //Moving the image to img folder
             $image->move($destinationPath, $data['organizacao'].'.jpg');
