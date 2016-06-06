@@ -778,6 +778,161 @@ p.big {
     max-height: 400px;
 }
 
+/* ADMINISTRATION */
+
+.navigation-admin {
+    height: 70px;
+}
+
+#dropdownMenu1 {
+    background-color: #e6e7e9;
+    border-radius: 0;
+}
+
+#order-by {
+    list-style: none;
+    background-color: #e6e7e9;
+    border-radius: 0;
+}
+
+#order-by > li {
+    background-color: #e6e7e9;
+    border-radius: 0;
+    font-size: 12px;
+}
+
+.pagination-drop {
+    background-color: #e6e7e9;
+
+}
+
+.pagination-drop > li {
+    display: inline-block;
+    background-color: #e6e7e9;
+}
+
+.order-by-i {
+  margin-right: 5px;
+}
+
+.dropdown-menu {
+  min-width: 0;
+}
+
+.dropdown-menus-left {
+    float:left;
+}
+
+.dropdown-menus-right {
+    float: right;
+}
+
+#menu-right {
+    margin-left: 50px;
+}
+
+.pagination {
+    display:table;
+    margin: 0;
+    float: right;
+    margin-left: 25px;
+}
+
+.pagination-range {
+    display:table;
+    margin: 0;
+    float: right;
+}
+
+.pagination-div-range {
+    width: 34px;
+    height: 34px;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.pagination-div {
+    width: 34px;
+    height: 34px;
+    display: table-cell;
+    background-color: #e6e7e9;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: 400;
+    border: 1px solid #adadad;
+}
+
+.pagination-div:hover, .pagination-div > i:hover {
+    cursor: pointer;
+}
+
+.pagination-div > i:hover {
+    color: #be1e2d;
+}
+
+.listing-requests {
+    height: 100%;
+}
+
+.listing-request {
+    height: 50px;
+    margin-top: 30px;
+}
+
+.info-request {
+    float: left;
+}
+
+.name-request {
+    display:block;
+}
+
+.green-ok {
+    display: table-cell;
+    vertical-align: middle;
+    color: #8ec743;
+    font-size: 24px;
+    padding-right: 10px;
+}
+
+.red-remove {
+    display: table-cell;
+    vertical-align: middle;
+    color: #c53a48;
+    font-size: 24px;
+    padding-right: 10px;
+}
+
+.small-info-request {
+    font-weight: 400;
+    font-size: 12px;
+    color: #adadad;
+}
+
+.validate-request {
+    display: table;
+    float: right;
+    font-size: 18px;
+    text-align: center;
+}
+
+.reject-request {
+    display: table;
+    float: right;
+    font-size: 18px;
+    text-align: center;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.rule-request {
+    border: 1px solid #686667;
+    color: #686667;
+    opacity: 1;
+}
 
 /****************************** END OF MAIN BODY ************************************/
 
