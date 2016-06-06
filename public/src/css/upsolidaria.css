@@ -873,6 +873,41 @@ p.big {
     color: #be1e2d;
 }
 
+.lefting-div {
+  margin-left: 25px;
+}
+
+.publish, .trash-publish {
+    float: left;
+    border: 1px solid #adadad;
+    background-color: #e6e7e9;
+    height: 34px;
+    text-align: center;
+    display: table;
+    padding: 0px 15px 0px 15px;
+}
+
+.publish > span {
+    font-weight: 400;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.publish:hover, .trash-publish:hover {
+    cursor: pointer;
+}
+
+.publish > span:hover {
+    cursor: pointer;
+    color: #be1e2d;
+}
+
+.trash-publish > i {
+    font-weight: 400;
+    display: table-cell;
+    vertical-align: middle;
+}
+
 .listing-requests {
     height: 100%;
 }
@@ -884,6 +919,11 @@ p.big {
 
 .info-request {
     float: left;
+}
+
+.select-request {
+    float: left;
+    margin-right: 25px;
 }
 
 .name-request {
@@ -912,6 +952,11 @@ p.big {
     color: #adadad;
 }
 
+.small-info-request:hover {
+    color: #be1e2d;
+    cursor: pointer;
+}
+
 .validate-request {
     display: table;
     float: right;
@@ -919,7 +964,7 @@ p.big {
     text-align: center;
 }
 
-.organization-request, .trophies-request, .date-request {
+.organization-request, .trophies-request, .date-request, .person-publication {
     display: table;
     float: right;
     text-align: center;
@@ -927,6 +972,17 @@ p.big {
     margin-right: 25px;
     display: table-cell;
     vertical-align: middle;
+}
+
+.select-request {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #adadad;
+    margin-top: 3px;
+}
+
+.select-request:hover {
+    cursor: pointer;
 }
 
 .trophies-request {
