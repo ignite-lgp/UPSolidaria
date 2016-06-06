@@ -908,6 +908,11 @@ p.big {
     vertical-align: middle;
 }
 
+.trash-publish > i:hover {
+    cursor: pointer;
+    color: #be1e2d;
+}
+
 .listing-requests {
     height: 100%;
 }
