@@ -49,15 +49,9 @@ Route::post('auth/confirm_password', 'Auth\AuthController@handlePassChange');
 
 Route::get('/organizacoes', 'Geral\OrgController@showOrgs');
 
-/* -----------------------------------
-
-
-/*
-	General routes
-*/
-
-
 Route::get('/organizacao/{name}', 'Geral\OrgController@showOrgPage');
+
+Route::post('/organizacao/{name}/signin', 'Geral\OrgController@showOrgPage');
 
 /*
     User related routes

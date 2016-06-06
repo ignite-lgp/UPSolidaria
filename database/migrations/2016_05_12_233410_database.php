@@ -149,7 +149,7 @@ class Database extends Migration
             $table->boolean('active')->default(true);
             $table->boolean('admin')->default(false);
 
-            $table->primary(['volunteer', 'organization']);
+            $table->primary(['volunteer', 'organization', 'reg_date']);
             
             $table->index('organization');
         });

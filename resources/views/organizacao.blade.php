@@ -34,6 +34,11 @@
 			<!-- Options -->
 			<section class="sidebar-listing hidden-xs">
 				<span class="sidebar-title">G.A.S. Porto</span>
+				@if ($is_in)
+					{!! Form::open(array('url' => '/organizacao/' . $info->name . '/signin', 'method' => 'POST')) !!}	
+					{!! Form::submit('Juntar se à organização',array('class'=>'btn-auth'))!!}
+					{!! Form::close() !!}
+				@endif
 				<ul>
 					<li><a>Estrutura</a></li>
 					<li><a>O que fazem</a></li>					
@@ -68,7 +73,7 @@
 				<span>/</span>
 				<h4><a>Organizações</a></h4>
 				<span>/</span>
-				<h4><a class="active">G.A.S. Porto</a></h4>
+				<h4><a class="active">{{ $info->name }}</a></h4>
 			</section>
 		
 			<!-- Organization Section -->

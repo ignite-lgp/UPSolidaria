@@ -30,6 +30,7 @@ class OrgController extends Controller
         $information = DB::select('select organization_page.mission, organization_page.values, organization_page.vision, organization.name, organization.id, organization.image from organization_page, organization where organization_page.organization = organization.id and organization.name = ?', array($organization));
 
         $image_location = DB::select('select location from image where image.id = ?', array($information[0]->image));
+        
         $email = Session::get('email');
         $user = User::whereRaw('email = ?', [$email])->first();
 
@@ -39,32 +40,21 @@ class OrgController extends Controller
             groups.open, groups.active, groups.created_date
             from groups inner join image on groups.image=image.id where groups.organization = ?', array($information[0]->id));
 
-        //If user is not logged in shows defaul view
-        if(is_null($user)) {
-                  return View('organizacao')->with(['info' => $information[0]
-                   , 'image_location' => $image_location[0]->location
-                   , 'admin' => false
-                   , 'groups' => $groups]);
+        // Check if user is already on this organization
+        if (count($user) > 0 ){
+            $is_user_on_organization = DB::select('select * from users, organization, user_organization where users.id = ? and  user_organization.volunteer = users.id 
+                and user_organization.leave_date is null
+                and organization.name = ?
+                and organization.id = user_organization.organization', array($user->id, $organization));
         }
-        //Else if admin shows admin view
-        else {
-            if(is_null($user->organization)) //It is not an admin
-                return View('organizacao')->with(['info' => $information[0]
+        
+        //If user is not logged in shows defaul view
+        return View('organizacao')->with([
+                      'info' => $information[0]
                     , 'image_location' => $image_location[0]->location
-                    , 'admin' => false
-                    , 'groups' => $groups]);
-            else //It is an admin
-              //  print('Info:');
-              //  print_r($information);
-              //  print('image_location:');
-             // print_r($image_location[0]);
-              // print('groups:');
-               // print_r($groups);
-                return View('organizacao')->with(['info' => $information[0]
-                    , 'image_location' => $image_location[0]->location
-                    , 'admin' => true
-                    , 'groups' => $groups]);
-        }   
+                    , 'admin' => (is_null($user) || is_null($user->organization)) ? false : true
+                    , 'groups' => $groups
+                    , 'is_in' => (!is_null($user) && isset($is_user_on_organization) && count($is_user_on_organization)) > 0 ? false : true]);   
     }
 
 
@@ -215,8 +205,30 @@ class OrgController extends Controller
     * Add volunteer to group 
     * @return view
     */
-    protected function addVolunteer(Request $info){
-        print($info);
+    protected function addVolunteer($organization){
+        
+
+        // Get user that did the request
+        $email = Session::get('email');
+        $user = User::whereRaw('email = ?', [$email])->first();
+
+        // Get organization id
+        $organizationID = DB::select('select organization.id from organization where organization.name = ?', 
+            array($organization))[0]->id;
+
+        if (count($user) > 0){
+
+            DB::table('user_organization')->insert(
+                [
+                    'volunteer' => $user->id,
+                    'organization' => $organizationID,
+                    'reg_date' => date('Y-m-d G:i:s')
+                ]);
+
+            return redirect('organizacao/' . $organization);
+        } else {
+            echo fail;
+        }
     }
 }
 
