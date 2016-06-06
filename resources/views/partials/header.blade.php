@@ -40,11 +40,11 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav navigation-options">
-            <li><a href="./quemsomos">quem somos</a></li>
-            <li><a href="./organizacoes">organizações</a></li>
-            <li><a href="./atividades">atividades</a></li>
-            <li><a href="./noticias">notícias</a></li>
-            <li><a href="./contatos">contactos</a></li>
+            <li><a href="/quemsomos">quem somos</a></li>
+            <li><a href="/organizacoes">organizações</a></li>
+            <li><a href="/atividades">atividades</a></li>
+            <li><a href="/noticias">notícias</a></li>
+            <li><a href="/contatos">contactos</a></li>
           </ul>
 		  <section class="search hidden-xs">
 			<span id="search-icon" class="glyphicon glyphicon-search"></span>
