@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Geral;
 
-use App\User;
+use App\Organization;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use View;
 use DB;
 use Session;
+use Validator;
 
 class OrgController extends Controller
 {
@@ -69,6 +70,63 @@ class OrgController extends Controller
 
         return View('organizacoes')->with('orgs', $orgs);
     }
+
+
+       /**
+     * Get a validator for an incoming registration request.
+     *
+     * @param  array  $data
+     * @return \Illuminate\Contracts\Validation\Validator
+     */
+    protected function validator(array $data) 
+    {
+        return Validator::make($data, [
+            'name' => 'required|max:255',
+            'phone' => 'numeric|min:100000000|max:999999999',
+            'address' => 'required|max:255',
+            'email' => 'required|email|max:255|unique:users',
+            'password' => 'required|min:6|confirmed',
+            'password_confirmation' => 'required|same:password',
+            ]);
+    }
+
+
+    /**
+      *
+      * Handle registration
+      * @param Request object
+      */
+    protected function handleRegistration(Request $data){
+
+        // Just need the form data
+        $orgInfo = $data->all();
+        
+        // Check if valid
+        $validator = $this->validator($orgInfo);
+
+          if ($validator->fails()) {
+              return redirect('/criar_organizacao')
+                          ->withErrors($validator)
+                          ->withInput();
+          } else {
+        
+         $_temp = Organization::create([
+                'name' => $orgInfo['name'],
+                'email' => $orgInfo['email'],
+                'password' => bcrypt($orgInfo['password']),
+                'address' => $orgInfo['address'],
+                'phone' => $orgInfo['phone'],
+                'website' => $orgInfo['website'],
+                'facebook' => $orgInfo['facebook'],
+                'mission' => $orgInfo['mission'],
+                'vision' => $orgInfo['vision'],
+                'values' => $orgInfo['values']
+               // 'token' => bin2hex(random_bytes(10)),
+                ]);
+
+            return redirect('/');
+        }
+      }
 
 
 

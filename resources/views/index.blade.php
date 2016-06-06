@@ -44,7 +44,9 @@
                         </section>
                     </article>
                 </section>
-                <br>
+                
+                <section class="main-section big-separator">
+                </section>
                 @endforeach
             
 
