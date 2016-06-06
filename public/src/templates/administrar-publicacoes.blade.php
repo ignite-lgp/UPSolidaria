@@ -108,14 +108,14 @@
 				<span class="sidebar-title">publicações</span>
 				<ul>
 					<li><a>Escrever nova notícia</a></li>
-					<li><a>Ver todas as publicações</a></li>
+					<li><a class="red-link">Ver todas as publicações</a></li>
 				</ul>
 			</section>
 
 			<section class="sidebar-listing">
 				<span class="sidebar-title">registos</span>
 				<ul>
-					<li><a class="red-link">Ver registo de voluntários</a></li>
+					<li><a>Ver registo de voluntários</a></li>
 					<li><a>Ver registo de organizações</a></li>
 					<li><a>Validar pedidos de registo</a></li>
 				</ul>
@@ -144,9 +144,9 @@
 			<section class="title-section">
 				<h4><a>U.Porto Voluntariado</a></h3>
 				<span>/</span>
-				<h4><a>Registo</a></h4>
+				<h4><a>Publicações</a></h4>
 				<span>/</span>
-				<h4><a class="active">Voluntários</a></h4>
+				<h4><a class="active">Todas as publicações</a></h4>
 			</section>
 
 			<section class="main-section listing-navigation">
