@@ -40,7 +40,7 @@ Route::post('auth/confirm_password', 'Auth\AuthController@handlePassChange');
 /* ----------------------------
 /* Organizacoes */
 
-Route::get('/organizacoes', 'Geral\OrgController@handleRegistration');
+Route::get('/organizacoes', 'Geral\OrgController@showOrgs');
 
 Route::get('/criar_organizacao', function () {
     if(!Session::has('email'))
