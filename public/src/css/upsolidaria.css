@@ -845,8 +845,8 @@ p.big {
 }
 
 .pagination-div-range {
-    width: 34px;
-    height: 34px;
+    width: 40px;
+    height: 40px;
     display: table-cell;
     text-align: center;
     vertical-align: middle;
@@ -917,6 +917,27 @@ p.big {
     float: right;
     font-size: 18px;
     text-align: center;
+}
+
+.organization-request, .trophies-request, .date-request {
+    display: table;
+    float: right;
+    text-align: center;
+    margin-left: 25px;
+    margin-right: 25px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.trophies-request {
+    background-color: #e6e7e9;
+    padding: 5px;
+    border: 1px solid #adadad;
+    color: #6c6d70;
+}
+
+.trophies-number {
+    font-size: 12px;
 }
 
 .reject-request {
