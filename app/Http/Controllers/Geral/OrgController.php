@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Geral;
 
 use App\Organization;
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Http\Request;
 use View;
 use DB;
@@ -27,10 +28,10 @@ class OrgController extends Controller
     * @return view
     */
     protected function showOrgPage($organization){
-
-        $information = DB::select('select organization_page.mission, organization_page.values, organization_page.vision, organization.name, organization.id, organization.image from organization_page, organization where organization_page.organization = organization.id and organization.name = ?', array($organization));
-
-        $image_location = DB::select('select location from image where image.id = ?', array($information[0]->image));
+		
+        $information = DB::select('select op.mission, op.values, op.vision, o.name, o.id, o.image from organization_page op right join organization o on op.organization = o.id where o.name = ?', array($organization));
+		
+        $image_location = DB::select('select location from image where id = ?', array($information[0]->image));
         
         $email = Session::get('email');
         $user = User::whereRaw('email = ?', [$email])->first();
