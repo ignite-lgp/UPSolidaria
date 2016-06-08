@@ -96,7 +96,7 @@
 						<br/>
 						{!! Form::select('nacionalidade',($paises),array('class' => 'reg-input')) !!}
 						<br/>
-						<br/>
+						<br/><br><br>
 						{!! Form::label('localidade', 'Localidade', array('class' => 'required')) !!}
 						{!! Form::text('localidade','',array('class' => 'reg-input')) !!}
 						{!! Form::label('data_nascimento', 'Data de nascimento', array('class' => 'required')) !!}
@@ -182,19 +182,19 @@
 					<h2>Registe os seus dados</h2>
 					<section class="not-centered">
 						{!! Form::open(array('url' => '/auth/register', 'method' => 'POST')) !!}
-						{!! Form::label('nome', 'Nome completo', array('class' => 'required')) !!};
+						{!! Form::label('nome', 'Nome completo', array('class' => 'required')) !!}
 						{!! Form::text('nome','', array('class' => 'reg-input')) !!}
-						{!! Form::label('numero_identificacao', 'Número do documento de identificação', array('class' => 'required')) !!};
+						{!! Form::label('numero_identificacao', 'Número do documento de identificação', array('class' => 'required')) !!}
 						{!! Form::text('numero_identificacao','', array('class' => 'reg-input')) !!}
-						{!! Form::label('email', 'E-mail eletrónico', array('class' => 'required')) !!};
+						{!! Form::label('email', 'E-mail eletrónico', array('class' => 'required')) !!}
 						{!! Form::email('email','', array('class' => 'reg-input')) !!}
-						{!! Form::label('nacionalidade', 'Nacionalidade', array('class' => 'required')) !!};
-						{!! Form::select('nacionalidade',($paises),array('class' => 'reg-input')) !!}
-						{!! Form::label('localidade', 'Localidade', array('class' => 'required')) !!};
+						{!! Form::label('nacionalidade', 'Nacionalidade', array('class' => 'required')) !!}
+						{!! Form::select('nacionalidade',($paises),array('class' => 'reg-input')) !!}<br><br><br><br>
+						{!! Form::label('localidade', 'Localidade', array('class' => 'required')) !!}
 						{!! Form::text('localidade','',array('class' => 'reg-input')) !!}
-						{!! Form::label('data_nascimento', 'Data de nascimento', array('class' => 'required')) !!};
+						{!! Form::label('data_nascimento', 'Data de nascimento', array('class' => 'required')) !!}
 						{!! Form::date('data_nascimento','',array('class' => 'reg-input')) !!}
-						{!! Form::label('carta_conducao', 'Carta de condução') !!};
+						{!! Form::label('carta_conducao', 'Carta de condução') !!}
 						{!! Form::checkbox('carta_conducao', 'value',array('class' => 'reg-aligned')) !!}
 							<ul class="reg-buttons">
 								<li><input type="reset" name="reset_form" value="Limpar registo" /></li>

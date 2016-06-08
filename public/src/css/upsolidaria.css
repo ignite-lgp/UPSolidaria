@@ -19,6 +19,7 @@ body {
 
 /***************************************************************************/
 
+
 /****************************** SIDEBAR ************************************/
 
 .sidebar-left {
@@ -100,6 +101,10 @@ section.sidebar-options > ul {
 .sidebar-categories>a {
     color: #ababab;
     padding-right: 5px;
+}
+
+.sidebar-left-xs .sidebar-categories > a{
+	color: #696969;
 }
 
 
