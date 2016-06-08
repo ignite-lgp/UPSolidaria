@@ -98,7 +98,7 @@
 		
 			<!-- Title -->
 			<section class="title-section hidden-xs">
-				<h4><a>U.Porto Voluntariado</a></h4>
+				<h4><a href="/">U.Porto Voluntariado</a></h4>
 				<span>/</span>
 				<h4><a class="active">Autenticação</a></h4>
 			</section>

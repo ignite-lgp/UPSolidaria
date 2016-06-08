@@ -70,7 +70,7 @@
         
         <section class="main-container hidden-xs">
             <section class="title-section hidden-xs">
-                <h4><a>U.Porto Voluntariado</a></h3>
+                <h4><a href="/">U.Porto Voluntariado</a></h3>
                 <span>/</span>
                 <h4><a>Notícias</a></h4>
                 <span>/</span>

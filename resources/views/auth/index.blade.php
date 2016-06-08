@@ -36,7 +36,7 @@
 		
 			<!-- Title -->
 			<section class="title-section">
-				<h4><a>U.Porto Voluntariado</a></h4>
+				<h4><a href="/">U.Porto Voluntariado</a></h4>
 				<span>/</span>
 				<h4><span class="red-link active">Autenticação</span></h4>
 			</section>
@@ -136,7 +136,7 @@
 		
 			<!-- Title -->
 			<section class="title-section">
-				<h4><a>U.Porto Voluntariado</a></h4>
+				<h4><a href="/">U.Porto Voluntariado</a></h4>
 				<span>/</span>
 				<h4><span class="red-link active">Autenticação</span></h4>
 			</section>
@@ -208,27 +208,6 @@
 	</div>
 	<!-- END of Mobile Body-->
 	
-	<?php
-		echo
-		"<script>
-		function swapXSSidebar() {
-			var x, y;
-			x = document.getElementsByClassName(\"sidebar-left-xs\");
-			for (i = 0; i < x.length; i++) {
-				if(x[i].style.display == \"none\") {
-					x[i].style.display = \"\";
-					y = x[i].nextElementSibling;
-					y.className = y.className.replace(\"container\", \"main-container\");
-				}
-				else {
-					x[i].style.display = \" none\";
-					y = x[i].nextElementSibling;
-					y.className = y.className.replace(\"main-container\", \"container\");
-				}
-			}
-		}
-		</script>";
-	?>
 
 @stop
 	
