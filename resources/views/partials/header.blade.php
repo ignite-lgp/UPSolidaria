@@ -36,7 +36,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="./"><img src = "/src/imgs/logo.png" id="logo"></a>
+          <a class="hidden-xs navbar-brand" href="./"><img src = "/src/imgs/logo.png" id="logo"></a>
+		  <div class="visible-xs navbar-brand">
+			<a onClick="swapXSSidebar();" class="red-link glyphicon glyphicon-align-justify" style="text-decoration: none; margin-right: 10px;"></a>
+			<a href="./"><img src = "/src/imgs/logo.png" id="logo" style="margin-top: -17px;"></a>
+		  </div>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav navigation-options">

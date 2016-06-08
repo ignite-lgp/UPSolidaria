@@ -1,4 +1,5 @@
 
+
       <footer id="footer">
           <section class="container" id="container-footer">
               <span class="hidden-xs">Copyright 2016 &copy Universidade do Porto | Termos e Condições | Acessibilidade</span>
@@ -6,6 +7,28 @@
               <span class="visible-xs">Copyright 2016 &copy UP Solidária</span>
           </section>
       </footer>
+	  
+	<?php
+		echo
+		"<script>
+		function swapXSSidebar() {
+			var x, y;
+			x = document.getElementsByClassName(\"sidebar-left-xs\");
+			for (i = 0; i < x.length; i++) {
+				if(x[i].style.display == \"none\") {
+					x[i].style.display = \"\";
+					y = x[i].nextElementSibling;
+					y.className = y.className.replace(\"container\", \"main-container\");
+				}
+				else {
+					x[i].style.display = \" none\";
+					y = x[i].nextElementSibling;
+					y.className = y.className.replace(\"main-container\", \"container\");
+				}
+			}
+		}
+		</script>";
+	?>
 
       <!-- Bootstrap core JavaScript
       ================================================== -->

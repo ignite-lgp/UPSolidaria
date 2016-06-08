@@ -19,7 +19,7 @@
 		<section class="sidebar-left">
 			
 			<!-- Options sample -->
-			<section class="sidebar-options hidden-xs">
+			<section class="sidebar-options">
 				<span class="sidebar-title">Opções</span>
 				<ul>
 					<li><a>Autenticação por Federação</a></li>
