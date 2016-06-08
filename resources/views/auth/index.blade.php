@@ -64,10 +64,10 @@
 					<h3>Entre através de rede social</h3>
 					<section class="login-social-networks">
 						<ul>
-							<li><a><img src="src/imgs/fb_logo.png"></a></li>
-							<li><a><img src="src/imgs/twitter_logo.png"></a></li>
-							<li><a><img src="src/imgs/google_plus_logo.svg"></a></li>
-							<li><a><img src="src/imgs/linkedin_logo.png"></a></li>
+							<li><a><img src="/src/imgs/fb_logo.png"></a></li>
+							<li><a><img src="/src/imgs/twitter_logo.png"></a></li>
+							<li><a><img src="/src/imgs/google_plus_logo.svg"></a></li>
+							<li><a><img src="/src/imgs/linkedin_logo.png"></a></li>
 						</ul>
 					</section>
 			</section>
@@ -164,10 +164,10 @@
 					<h3>Entre através de rede social</h3>
 					<section class="login-social-networks">
 						<ul>
-							<li><a><img src="src/imgs/fb_logo.png"></a></li>
-							<li><a><img src="src/imgs/twitter_logo.png"></a></li>
-							<li><a><img src="src/imgs/google_plus_logo.svg"></a></li>
-							<li><a><img src="src/imgs/linkedin_logo.png"></a></li>
+							<li><a><img src="/src/imgs/fb_logo.png"></a></li>
+							<li><a><img src="/src/imgs/twitter_logo.png"></a></li>
+							<li><a><img src="/src/imgs/google_plus_logo.svg"></a></li>
+							<li><a><img src="/src/imgs/linkedin_logo.png"></a></li>
 						</ul>
 					</section>
 			</section>

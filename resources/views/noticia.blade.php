@@ -88,7 +88,7 @@
                 <section class="news-group-longer">
                      <article class="news-longer">
                         <section class="news-img">
-                            <img class="img-responsive" src="src/imgs/voluntariado_up.jpg">
+                            <img class="img-responsive" src="/src/imgs/voluntariado_up.jpg">
                         </section>
                         <section class="news-text">
                         {{ $noticia->description }}
@@ -96,10 +96,10 @@
                         <section class="news-social-networks">
                             <span class="news-social-networks-span">Partilhar:</span>
                             <ul class="social-networks">
-                                <li><a><img src="src/imgs/fb_logo.png"></a></li>
-                                <li><a><img src="src/imgs/twitter_logo.png"></a></li>
-                                <li><a><img src="src/imgs/google_plus_logo.svg"></a></li>
-                                <li><a><img src="src/imgs/linkedin_logo.png"></a></li>
+                                <li><a><img src="/src/imgs/fb_logo.png"></a></li>
+                                <li><a><img src="/src/imgs/twitter_logo.png"></a></li>
+                                <li><a><img src="/src/imgs/google_plus_logo.svg"></a></li>
+                                <li><a><img src="/src/imgs/linkedin_logo.png"></a></li>
                             </ul>
                         </section>
                      </article>
@@ -119,7 +119,7 @@
         <section class="news-group-xs visible-xs">
             <article class="news">
                 <section class="news-img">
-                    <img class="img-responsive news-img" src="src/imgs/up.jpg">
+                    <img class="img-responsive news-img" src="/src/imgs/up.jpg">
                 </section>
                 <section class="news-title">
                     <h4 class="news-title-xs">{{ $noticia->title }}</h4>
@@ -135,7 +135,7 @@
             
             <article class="news">
                 <section class="news-img">
-                    <img class="img-responsive news-img" src="src/imgs/capa_voluntariado.jpg">
+                    <img class="img-responsive news-img" src="/src/imgs/capa_voluntariado.jpg">
                 </section>
                 <section class="news-title">
                     <h4 class="news-title-xs">lorem ipsum</h5>
@@ -151,7 +151,7 @@
             
             <article class="news">
                 <section class="news-img">
-                    <img class="img-responsive news-img" src="src/imgs/gas_porto.png">
+                    <img class="img-responsive news-img" src="/src/imgs/gas_porto.png">
                 </section>
                 <section class="news-title">
                     <h4 class="news-title-xs">lorem ipsum</h5>

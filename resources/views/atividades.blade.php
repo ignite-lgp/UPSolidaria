@@ -46,7 +46,7 @@
 		    </section>
             
             <section class="img-section">
-                <img class="img img-responsive img-activities" src="src/imgs/voluntariado_atividades.jpg">
+                <img class="img img-responsive img-activities" src="/src/imgs/voluntariado_atividades.jpg">
             </section>
             
             <section class="text-section">
@@ -75,7 +75,7 @@
 		</section>
         
         <section class="img-section visible-xs">
-            <img class="img img-responsive" src="src/imgs/voluntariado_atividades.jpg">
+            <img class="img img-responsive" src="/src/imgs/voluntariado_atividades.jpg">
         </section>
         
         <section class="text-section visible-xs">

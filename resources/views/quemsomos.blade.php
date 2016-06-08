@@ -61,7 +61,7 @@
 		    </section>
             
             <section class="img-section">
-                <img class="img img-responsive" src="src/imgs/quemsomos.jpg">
+                <img class="img img-responsive" src="/src/imgs/quemsomos.jpg">
             </section>
             
             <section class="text-section">
@@ -91,7 +91,7 @@
 		</section>
         
         <section class="img-section visible-xs">
-            <img class="img img-responsive" src="src/imgs/quemsomos.jpg">
+            <img class="img img-responsive" src="/src/imgs/quemsomos.jpg">
         </section>
         
         <section class="text-section visible-xs">

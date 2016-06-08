@@ -91,7 +91,7 @@
 			<section class="volunteer-basic-info">
                 <div class="row volunteer-row">
                     <div class="col-md-3 col-sm-6">
-                        <img class="img img-responsive volunteer-img" src="src/imgs/volunteers/stevejobs.jpg">
+                        <img class="img img-responsive volunteer-img" src="/src/imgs/volunteers/stevejobs.jpg">
                     </div>
                     
                     <div class="col-md-8 col-sm-6">
@@ -185,7 +185,7 @@
 					<div class="row volunteer-menu-row">
 						@foreach ($trofeus as $trof)
 						<div class="col-md-3 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="src/imgs/trophies/dedication.png" alt="{{ $trof->description}}">
+							<img class="img img-responsive img-collectible" src="/src/imgs/trophies/dedication.png" alt="{{ $trof->description}}">
 							<div class="trophy">
 								<span class="trophies capital strong">{{ $trof->trofeus }} troféus</span>
 								<br>
@@ -200,7 +200,7 @@
 					<div class="row volunteer-menu-row">
 						@foreach ($trofeus as $trof)
 						<div class="col-sm-6 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="src/imgs/trophies/dedication.png" alt="{{ $trof->description}}">
+							<img class="img img-responsive img-collectible" src="/src/imgs/trophies/dedication.png" alt="{{ $trof->description}}">
 							<div class="trophy">
 								<span class="trophies capital strong">{{ $trof->trofeus }} troféus</span>
 								<br>
@@ -230,7 +230,7 @@
 					<div class="row volunteer-menu-row">
 						@foreach ($medals as $medal)
 						<div class="col-md-3 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="src/imgs/badges/dedication.PNG" alt="{{ $medal->description}}">
+							<img class="img img-responsive img-collectible" src="/src/imgs/badges/dedication.PNG" alt="{{ $medal->description}}">
 							<div class="trophy">
 								<span class="trophies capital strong">{{ $medal->medalhas}} crachás</span>
 								<br>
@@ -245,7 +245,7 @@
 					<div class="row volunteer-menu-row">
 						@foreach ($medals as $medal)
 						<div class="col-sm-6 volunteer-menu-col-collectibles">
-							<img class="img img-responsive img-collectible" src="src/imgs/badges/dedication.PNG" alt="{{ $medal->description}}">
+							<img class="img img-responsive img-collectible" src="/src/imgs/badges/dedication.PNG" alt="{{ $medal->description}}">
 							<div class="trophy">
 								<span class="trophies capital strong">{{ $medal->medalhas}} crachás</span>
 								<br>
