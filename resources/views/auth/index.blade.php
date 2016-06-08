@@ -73,7 +73,7 @@
 			</section>
 			
 			<!-- Main Body Section -->
-			<section class="main-section big-separator">
+			<section id="register" class="main-section big-separator">
 					<hr/>
 			</section>
 			

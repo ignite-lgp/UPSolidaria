@@ -7,7 +7,7 @@
                     {!! Form::password('password', array('class' => 'auth-input', 'placeholder' => 'Palavra-Passe')) !!}
                     {!! Form::submit('iniciar sessão',array('class'=>'btn-auth'))!!}
                 {!! Form::close() !!}
-                <a>Registe os seus dados</a>
+                <a href="/auth#register">Registe os seus dados</a>
 			</section>
     @else
         <section>
