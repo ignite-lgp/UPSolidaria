@@ -19,7 +19,7 @@
 				<span class="sidebar-title">Opções</span>
 				<ul>
 					<li><a>Ver lista voluntários</a></li>
-					<li><a>Atribuir crachás</a></li>					
+					<li><a>Atribuir medalhas</a></li>					
 					<li><a>Ver horário</a></li>
                     <li><a>Reconhecimentos</a></li>
                     <li><a>Pedir certificados</a></li>
@@ -152,8 +152,8 @@
 						<div class="Atividade profile_tab_header col-md-3 volunteer-menu-col">
 							<span class="dark-info"><a onclick="openProfileTab('Atividade', 'Atividade_tab');">Atividades</a></span>
 						</div>
-						<div class="Cracha profile_tab_header col-md-3 volunteer-menu-col">
-							<span class="dark-info"><a onclick="openProfileTab('Cracha', 'Cracha_tab');">Crachás</a></span>
+						<div class="Medalha profile_tab_header col-md-3 volunteer-menu-col">
+							<span class="dark-info"><a onclick="openProfileTab('Medalha', 'Medalha_tab');">Medalhas</a></span>
 						</div>
 						<div class="Trofeu profile_tab_header col-md-3 volunteer-menu-col active">
 							<span class="dark-info"><a onclick="openProfileTab('Trofeu', 'Trofeu_tab');">Troféus</a></span>
@@ -169,8 +169,8 @@
 						<div class="Atividade profile_tab_header col_sm_6 volunteer-menu-col">
 							<span class="dark-info"><a onclick="openProfileTab('Atividade', 'Atividade_tab');">Atividades</a></span>
 						</div>
-						<div class="Cracha profile_tab_header col_sm_6 volunteer-menu-col">
-							<span class="dark-info"><a onclick="openProfileTab('Cracha', 'Cracha_tab');">Crachás</a></span>
+						<div class="Medalha profile_tab_header col_sm_6 volunteer-menu-col">
+							<span class="dark-info"><a onclick="openProfileTab('Medalha', 'Medalha_tab');">Medalhas</a></span>
 						</div>
 						<div class="Trofeu profile_tab_header col_sm_6 volunteer-menu-col active">
 							<span class="dark-info"><a onclick="openProfileTab('Trofeu', 'Trofeu_tab');">Troféus</a></span>
@@ -223,13 +223,13 @@
                     @endforeach
                 </section>
 				
-				<section class="Cracha_tab profile_tab_body_md_lg volunteer-menu-collectibles " style="display: none;">
+				<section class="Medalha_tab profile_tab_body_md_lg volunteer-menu-collectibles " style="display: none;">
 					<div class="row volunteer-menu-row">
 						@foreach ($medals as $medal)
 						<div class="col-md-3 volunteer-menu-col-collectibles">
 							<img class="img img-responsive img-collectible" src="/src/imgs/badges/dedication.PNG" alt="{{ $medal->description}}">
 							<div class="trophy">
-								<span class="trophies capital strong">{{ $medal->medalhas}} crachás</span>
+								<span class="trophies capital strong">{{ $medal->medalhas}} medalhas</span>
 								<br>
 								<span class="trophies short">{{ $medal->name}}</span>
 							</div>
@@ -238,13 +238,13 @@
 					</div>
 				</section>
 				
-				<section class="Cracha_tab profile_tab_body_sm volunteer-menu-collectibles " style="display: none;">
+				<section class="Medalha_tab profile_tab_body_sm volunteer-menu-collectibles " style="display: none;">
 					<div class="row volunteer-menu-row">
 						@foreach ($medals as $medal)
 						<div class="col-sm-6 volunteer-menu-col-collectibles">
 							<img class="img img-responsive img-collectible" src="/src/imgs/badges/dedication.PNG" alt="{{ $medal->description}}">
 							<div class="trophy">
-								<span class="trophies capital strong">{{ $medal->medalhas}} crachás</span>
+								<span class="trophies capital strong">{{ $medal->medalhas}} medalhas</span>
 								<br>
 								<span class="trophies short">{{ $medal->name}}</span>
 							</div>
@@ -308,7 +308,7 @@
 				<span class="sidebar-title">Opções</span>
 				<ul>
 					<li><a>Ver lista voluntários</a></li>
-					<li><a>Atribuir crachás</a></li>					
+					<li><a>Atribuir medalhas</a></li>					
 					<li><a>Ver horário</a></li>
                     <li><a>Reconhecimentos</a></li>
                     <li><a>Pedir certificados</a></li>
@@ -433,8 +433,8 @@
 						<div class="Atividade profile_tab_header col-xs-6 col-md-3 volunteer-menu-col">
 							<span class="dark-info"><a onclick="openProfileTab('Atividade', 'Atividade_tab');">Atividades</a></span>
 						</div>
-						<div class="Cracha profile_tab_header col-xs-6 col-md-3 volunteer-menu-col">
-							<span class="dark-info"><a onclick="openProfileTab('Cracha', 'Cracha_tab');">Crachás</a></span>
+						<div class="Medalha profile_tab_header col-xs-6 col-md-3 volunteer-menu-col">
+							<span class="dark-info"><a onclick="openProfileTab('Medalha', 'Medalha_tab');">Medalhas</a></span>
 						</div>
 						<div class="Trofeu profile_tab_header col-xs-6 col-md-3 volunteer-menu-col active">
 							<span class="dark-info"><a onclick="openProfileTab('Trofeu', 'Trofeu_tab');">Troféus</a></span>
@@ -505,13 +505,13 @@
 					@endforeach
 				</section>
 
-				<section class="Cracha_tab profile_tab_body volunteer-menu-collectibles " style="display: none;">
+				<section class="Medalha_tab profile_tab_body volunteer-menu-collectibles " style="display: none;">
 					<div class="row volunteer-menu-row">
 						@foreach ($medals as $medal)
 						<div class="col-xs-6 col-md-3 volunteer-menu-col-collectibles">
 							<img class="img img-responsive img-collectible" src="/src/imgs/trophies/dedication.PNG" alt="{{ $medal->description}}">
 							<div class="trophy">
-								<span class="trophies capital strong">{{ $medal->medalhas}} crachás</span>
+								<span class="trophies capital strong">{{ $medal->medalhas}} medalhas</span>
 								<br>
 								<span class="trophies short">{{ $medal->name}}</span>
 							</div>
