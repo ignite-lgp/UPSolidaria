@@ -83,7 +83,7 @@
             	@foreach ($orgs as $org)
    				<div class="col-xs-6 col-sm-3">
    					<!-- Imagens das organizações têm que ter exatamente o nome que está guardado na bd -->
-					<img class="img img-responsive org-list-img" src="src/imgs/organizations/{{ $org->name}}">
+					<img class="img img-responsive org-list-img" src="/{{ $org->location}}">
 					<a href="organizacao/{{ $org->name}}">
 					<span class="org-list-title"> {{ $org->name}} </span>
 					</a>
@@ -109,11 +109,11 @@
 		
 		<div class="row org-row visible-xs">
 			<div class="col-xs-6 col-sm-3">
-				<img class="img img-responsive org-list-img" src="src/imgs/organizations/ajudaris.png">
+				<img class="img img-responsive org-list-img" src="/src/imgs/organizations/ajudaris.png">
 				<span class="org-list-title">Ajudaris - Associação de Solidariedade Social</span>
 			</div>
 			<div class="col-xs-6 col-sm-3">
-				<img class="img img-responsive org-list-img" src="src/imgs/organizations/curamais.png">
+				<img class="img img-responsive org-list-img" src="/src/imgs/organizations/curamais.png">
 				<span class="org-list-title">Associação Cura +</span>
 			</div>
 
@@ -121,22 +121,22 @@
 			<div class="clearfix visible-xs-block org-block"></div>
 
 			<div class="col-xs-6 col-sm-3">
-				<img class="img img-responsive org-list-img" src="src/imgs/organizations/afs.png">
+				<img class="img img-responsive org-list-img" src="/src/imgs/organizations/afs.png">
 				<span class="org-list-title">Associação Intercultural AFS</span>
 			</div>
 			<div class="col-xs-6 col-sm-3">
-				<img class="img img-responsive org-list-img" src="src/imgs/organizations/moa.png">
+				<img class="img img-responsive org-list-img" src="/src/imgs/organizations/moa.png">
 				<span class="org-list-title">Fundação MOA de Portugal</span>
 			</div>
         </div>
 		
 		<div class="row org-row visible-xs">
 			<div class="col-xs-6 col-sm-3">
-				<img class="img img-responsive org-list-img" src="src/imgs/organizations/ajudaris.png">
+				<img class="img img-responsive org-list-img" src="/src/imgs/organizations/ajudaris.png">
 				<span class="org-list-title">Ajudaris - Associação de Solidariedade Social</span>
 			</div>
 			<div class="col-xs-6 col-sm-3">
-				<img class="img img-responsive org-list-img" src="src/imgs/organizations/curamais.png">
+				<img class="img img-responsive org-list-img" src="/src/imgs/organizations/curamais.png">
 				<span class="org-list-title">Associação Cura +</span>
 			</div>
 
@@ -144,22 +144,22 @@
 			<div class="clearfix visible-xs-block org-block"></div>
 
 			<div class="col-xs-6 col-sm-3">
-				<img class="img img-responsive org-list-img" src="src/imgs/organizations/afs.png">
+				<img class="img img-responsive org-list-img" src="/src/imgs/organizations/afs.png">
 				<span class="org-list-title">Associação Intercultural AFS</span>
 			</div>
 			<div class="col-xs-6 col-sm-3">
-				<img class="img img-responsive org-list-img" src="src/imgs/organizations/moa.png">
+				<img class="img img-responsive org-list-img" src="/src/imgs/organizations/moa.png">
 				<span class="org-list-title">Fundação MOA de Portugal</span>
 			</div>
         </div>
 		
 		<div class="row org-row visible-xs">
 			<div class="col-xs-6 col-sm-3">
-				<img class="img img-responsive org-list-img" src="src/imgs/organizations/ajudaris.png">
+				<img class="img img-responsive org-list-img" src="/src/imgs/organizations/ajudaris.png">
 				<span class="org-list-title">Ajudaris - Associação de Solidariedade Social</span>
 			</div>
 			<div class="col-xs-6 col-sm-3">
-				<img class="img img-responsive org-list-img" src="src/imgs/organizations/curamais.png">
+				<img class="img img-responsive org-list-img" src="/src/imgs/organizations/curamais.png">
 				<span class="org-list-title">Associação Cura +</span>
 			</div>
 
@@ -167,22 +167,22 @@
 			<div class="clearfix visible-xs-block org-block"></div>
 
 			<div class="col-xs-6 col-sm-3">
-				<img class="img img-responsive org-list-img" src="src/imgs/organizations/afs.png">
+				<img class="img img-responsive org-list-img" src="/src/imgs/organizations/afs.png">
 				<span class="org-list-title">Associação Intercultural AFS</span>
 			</div>
 			<div class="col-xs-6 col-sm-3">
-				<img class="img img-responsive org-list-img" src="src/imgs/organizations/moa.png">
+				<img class="img img-responsive org-list-img" src="/src/imgs/organizations/moa.png">
 				<span class="org-list-title">Fundação MOA de Portugal</span>
 			</div>
         </div>
 		
 		<div class="row org-row visible-xs">
 			<div class="col-xs-6 col-sm-3">
-				<img class="img img-responsive org-list-img" src="src/imgs/organizations/ajudaris.png">
+				<img class="img img-responsive org-list-img" src="/src/imgs/organizations/ajudaris.png">
 				<span class="org-list-title">Ajudaris - Associação de Solidariedade Social</span>
 			</div>
 			<div class="col-xs-6 col-sm-3">
-				<img class="img img-responsive org-list-img" src="src/imgs/organizations/curamais.png">
+				<img class="img img-responsive org-list-img" src="/src/imgs/organizations/curamais.png">
 				<span class="org-list-title">Associação Cura +</span>
 			</div>
 
@@ -190,11 +190,11 @@
 			<div class="clearfix visible-xs-block org-block"></div>
 
 			<div class="col-xs-6 col-sm-3">
-				<img class="img img-responsive org-list-img" src="src/imgs/organizations/afs.png">
+				<img class="img img-responsive org-list-img" src="/src/imgs/organizations/afs.png">
 				<span class="org-list-title">Associação Intercultural AFS</span>
 			</div>
 			<div class="col-xs-6 col-sm-3">
-				<img class="img img-responsive org-list-img" src="src/imgs/organizations/moa.png">
+				<img class="img img-responsive org-list-img" src="/src/imgs/organizations/moa.png">
 				<span class="org-list-title">Fundação MOA de Portugal</span>
 			</div>
          </div>
