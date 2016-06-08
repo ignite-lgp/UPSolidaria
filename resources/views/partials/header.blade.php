@@ -50,9 +50,6 @@
             <li><a href="/noticias">notícias</a></li>
             <li><a href="/contatos">contactos</a></li>
           </ul>
-		  <section class="search hidden-xs">
-			<span id="search-icon" class="glyphicon glyphicon-search"></span>
-		  </section>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
