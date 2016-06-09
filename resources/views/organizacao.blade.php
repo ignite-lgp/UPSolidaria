@@ -36,7 +36,7 @@
 				<span class="sidebar-title">G.A.S. Porto</span>
 				@if ($is_in)
 					{!! Form::open(array('url' => '/organizacao/' . $info->name . '/signin', 'method' => 'POST')) !!}	
-					{!! Form::submit('Juntar se à organização',array('class'=>'btn-auth'))!!}
+					{!! Form::submit('Aderir',array('class'=>'btn-auth'))!!}
 					{!! Form::close() !!}
 				@endif
 				<ul>
@@ -53,7 +53,7 @@
 				<span class="sidebar-title">Grupos</span>
 				<ul>
 					@foreach ($groups as $group)
-					<li><a> {{ $group->name }}</a></li>
+					<li><a href="/organizacao/{{ $info->name }}/grupo/{{ $group->name }}"> {{ $group->name }}</a></li>
 					@endforeach
 				</ul>
 			</section>
@@ -77,7 +77,7 @@
 			</section>
 		
 			<!-- Organization Section -->
-			<section class="main-section organization-section">
+			<section class="organization-section">
 				<h3 class="title">{{ $info->name }}</h3>
 				<img class="img img-responsive org-img" src="../{{ $image_location }}">
 				<section class="info-section">
@@ -93,16 +93,7 @@
 						<p class="big">{{ $info->values }}</p>
 				</section>
 
-				<!-- //////////////////////////// TESTE //////////////////////////////// -->
-				<!-- {{ Form::open(array('url' => '/adicionaVoluntario', 'method' => 'POST'))}}
-    			{{ Form::text('q', '', ['id' =>  'q', 'placeholder' =>  'Nome'])}}
-    			{{ Form::submit('Pesquisar', array('class' => 'button expand')) }}
-				{{ Form::close() }} -->
-
-				{{ Form::open(array('url' => '/adicionaVoluntario', 'method' => 'post'))}}
-        		{{  Form::label('auto', 'Nome: ') }}
-        		{{  Form::text('auto', '', array('id' => 'auto'))}}
-        		{{  Form::close() }}
+				<a href="{{ $info->website }}" target="_blank"><p class="big">{{ $info->website }}</p></a> 
 
       		</section>
 
@@ -207,7 +198,7 @@
 				<span class="sidebar-title">G.A.S. Porto</span>
 				@if ($is_in)
 					{!! Form::open(array('url' => '/organizacao/' . $info->name . '/signin', 'method' => 'POST')) !!}	
-					{!! Form::submit('Juntar se à organização',array('class'=>'btn-auth'))!!}
+					{!! Form::submit('Aderir',array('class'=>'btn-auth'))!!}
 					{!! Form::close() !!}
 				@endif
 				<ul>

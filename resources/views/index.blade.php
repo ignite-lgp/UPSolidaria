@@ -35,10 +35,10 @@
 						<img class="img-responsive" src="/src/imgs/up.jpg">
 					</section>
 					<section class="news-title-section">
-						<h4 class="news-title-l">{{ $noticia->title }}</h4>
+						<a href="/noticia/{{$noticia->title}}"><h4 class="news-title-l">{{ $noticia->title }}</h4></a>
 					</section>
 					<section class="news-text">
-						{{ $noticia->title }}
+						{{ $noticia->description }}
 					</section>
 					<section class="news-view-more">
 						<a class="red-link">Ver mais...</a>
@@ -46,8 +46,7 @@
 				</article>
 			</section>
 			
-			<section class="main-section big-separator">
-			</section>
+			
 			@endforeach
         
 		</section>
