@@ -40,11 +40,11 @@
                 <ul>
                     <li>
                         <i class="glyphicon glyphicon-plus"></i>
-                        <a>Criar organização</a>
+                        <a href="/criar_organizacao">Criar organização</a>
                     </li>
                     <li>
                         <i class="glyphicon glyphicon-paperclip"></i>
-                        <a>Aderir a organização</a>
+                        <a href="/organizacoes">Aderir a organização</a>
                     </li>
                 </ul>
 			</section>
@@ -329,11 +329,11 @@
                 <ul>
                     <li>
                         <i class="glyphicon glyphicon-plus"></i>
-                        <a>Criar organização</a>
+                        <a href="/criar_organizacao">Criar organização</a>
                     </li>
                     <li>
                         <i class="glyphicon glyphicon-paperclip"></i>
-                        <a>Aderir a organização</a>
+                        <a href="/organizacoes">Aderir a organização</a>
                     </li>
                 </ul>
 			</section>
