@@ -47,11 +47,11 @@ Route::get('/criar_organizacao', function () {
         return redirect('/');
     else
         return view('organization/register');
-     
 });
 
-Route::post('/org/register', 'Geral\OrgController@handleRegistration');
+Route::get('/organizacao/{name}/grupo/{group}', 'Geral\GroupController@showGroupPage');
 
+Route::post('/org/register', 'Geral\OrgController@handleRegistration');
 
 Route::get('/organizacao/{name}', 'Geral\OrgController@showOrgPage');
 
@@ -175,3 +175,19 @@ Route::delete('deleteVolunteer/{id}',array('uses' => 'Geral\UserController@delet
 Route::get('/criar_noticia', 'Geral\NewsController@showForm');
 
 
+
+/*
+* Administrador Views
+*/
+
+Route::get('/validar_pedidos', function(){
+    return view('/admin/validar_pedidos'); 
+});
+
+Route::get('/ver_noticias', function(){
+    return view('/admin/ver_noticias'); 
+});
+
+Route::get('/ver_registos', function(){
+    return view('/admin/ver_registos'); 
+});

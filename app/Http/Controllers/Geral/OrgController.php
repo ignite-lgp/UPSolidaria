@@ -13,14 +13,6 @@ use Validator;
 
 class OrgController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | News Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller is responsible for handling org requests.
-    |
-    */
 
     /**
     *
@@ -29,7 +21,7 @@ class OrgController extends Controller
     */
     protected function showOrgPage($organization){
 		
-        $information = DB::select('select op.mission, op.values, op.vision, o.name, o.id, o.image from organization_page op right join organization o on op.organization = o.id where o.name = ?', array($organization));
+        $information = DB::select('select * from organization where name = ?', array($organization));
 		
         $image_location = DB::select('select location from image where id = ?', array($information[0]->image));
         
