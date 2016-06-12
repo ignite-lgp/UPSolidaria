@@ -573,12 +573,19 @@ class Database extends Migration
         //      Testes para log in com org
         ///////////////////////////////////////////
 
+
+        /* Insert image for G.A.S.Porto */
+        DB::table('image')->insert(array('alt' => 'G.A.S.Porto', 'height' => 90, 'width' => 90, 'location' => 'src/imgs/organizations/G.A.S.jpg', 'size' => 900));
+       
         /* Insert G.A.S.Porto organization */
+        //Image id 5
         DB::table('organization')->insert(array('name'=>'G.A.S. Porto', 'password' => '123456'
             ,'email'=>'alcino.jssousa@gmail.com', 'address' => 'Rua'
             ,'confirm_date' => '2016-05-26 22:53:27'
             ,'created_at' => '2016-05-26 22:53:27'
-            , 'updated_at' => '2016-05-26 22:53:27'));
+            ,'updated_at' => '2016-05-26 22:53:27'
+            ,'image' => 5
+            ));
 
 
         //Conta user de org G.A.S.Porto 

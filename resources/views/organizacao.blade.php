@@ -153,7 +153,7 @@
 					</section>
 					<section class="info-section">
 						<h4 class="sidebar-title">Descrição</h4>
-					{!! Form::textarea('descricao', '', ['required' => 'required']); !!}
+					{!! Form::textarea('descricao', ''); !!}
 					</section>
 					<section class="info-section">
 						<h4 class="sidebar-title">Público</h4>
@@ -164,7 +164,6 @@
 					{!! Form::checkbox('aberto', true); !!}
 					</section>
 					{!! Form::hidden('organizacao_id', $info->id); !!}
-
 					{!! Form::submit('Criar'); !!}
                 {!! Form::close() !!}
 					</section>
@@ -177,7 +176,7 @@
     </section>
 
 
-     <script src="/src/js/organization_page.js"></script>
+     <script src="/UPSolidaria/public/src/js/organization_page.js"></script>
      
      
 

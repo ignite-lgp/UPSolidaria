@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Geral;
 
+use App\User;
 use App\Organization;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -191,7 +192,7 @@ class OrgController extends Controller
     */
     protected function addGroup(Request $info){
         $data = $info->all();
-        //print_r($data);
+        print_r($data);
 
         //Insert image reference in database -> reference needed for group
         //Check if image was uploaded
