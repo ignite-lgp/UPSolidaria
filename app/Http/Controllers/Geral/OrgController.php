@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Geral;
 use App\User;
 use App\Organization;
 use App\Http\Controllers\Controller;
-use App\User;
+//use App\User;
 use Illuminate\Http\Request;
 use View;
 use DB;
