@@ -215,7 +215,7 @@
 				<span class="sidebar-title">Grupos</span>
 				<ul>
 					@foreach ($groups as $group)
-					<li><a> {{ $group->name }}</a></li>
+					<li><a href="/organizacao/{{ $info->name }}/grupo/{{ $group->name }}"> {{ $group->name }}</a></li>
 					@endforeach
 				</ul>
 			</section>

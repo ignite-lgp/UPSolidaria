@@ -21,7 +21,7 @@ class GroupController extends Controller
     */
     protected function showGroupPage($organization, $group){
 		
-        $information = DB::select('select * from groups where groups.name = ?', array($group));
+        $information = DB::select('select g.*, o.name as oname from groups g, organization o where g.name = ? and o.id = g.organization', array($group));
 		
         $image_location = DB::select('select location from image where id = ?', array($information[0]->image));
         

@@ -149,7 +149,6 @@ hr {
 .container.mobile-container {
     height: 100%;
     position: relative;
-	overflow: auto;
 }
 
 
