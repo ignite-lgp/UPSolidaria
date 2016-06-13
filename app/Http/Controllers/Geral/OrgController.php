@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Geral;
 use App\User;
 use App\Organization;
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Http\Request;
 use View;
 use DB;
@@ -13,14 +14,6 @@ use Validator;
 
 class OrgController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | News Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller is responsible for handling org requests.
-    |
-    */
 
     /**
     *
@@ -28,10 +21,10 @@ class OrgController extends Controller
     * @return view
     */
     protected function showOrgPage($organization){
-
-        $information = DB::select('select organization_page.mission, organization_page.values, organization_page.vision, organization.name, organization.id, organization.image from organization_page, organization where organization_page.organization = organization.id and organization.name = ?', array($organization));
-
-        $image_location = DB::select('select location from image where image.id = ?', array($information[0]->image));
+		
+        $information = DB::select('select * from organization where name = ?', array($organization));
+		
+        $image_location = DB::select('select location from image where id = ?', array($information[0]->image));
         
         $email = Session::get('email');
         $user = User::whereRaw('email = ?', [$email])->first();
@@ -67,7 +60,7 @@ class OrgController extends Controller
     */
     protected function showOrgs(){
 
-        $orgs =  DB::select('select id, name from organization');
+        $orgs =  DB::select("select o.id, o.name, i.location from organization o, image i where i.id = o.image");
 
         return View('organizacoes')->with('orgs', $orgs);
     }

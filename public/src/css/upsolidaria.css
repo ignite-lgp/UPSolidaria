@@ -9,6 +9,16 @@ body {
     margin-left: 5%;
 }
 
+/***************************** navbar *************************************/
+
+@media only screen and (max-width: 34em) {
+	.collapsing, .in {background-color: #696969;}
+	#container-navbar{padding: 0; margin: 0;}
+	.navbar-header{padding: 0 15px 15px 15px;}
+}
+
+/***************************************************************************/
+
 
 /****************************** SIDEBAR ************************************/
 
@@ -91,6 +101,10 @@ section.sidebar-options > ul {
 .sidebar-categories>a {
     color: #ababab;
     padding-right: 5px;
+}
+
+.sidebar-left-xs .sidebar-categories > a{
+	color: #696969;
 }
 
 

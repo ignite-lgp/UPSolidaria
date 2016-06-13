@@ -37,7 +37,7 @@ class Database extends Migration
             $table->text('vision')->nullable();
             $table->text('values')->nullable();
             $table->timestamp('confirm_date');
-            $table->integer('image')->unsigned()->nullable();
+            $table->integer('image')->unsigned()->default(1);
             $table->foreign('image')->references('id')->on('image');
             $table->timestamps();
             
@@ -94,7 +94,7 @@ class Database extends Migration
 
             $table->text('token');
             
-            $table->integer('image')->unsigned()->nullable();
+            $table->integer('image')->unsigned()->default(2);
             $table->foreign('image')->references('id')->on('image');
 
 
@@ -162,7 +162,7 @@ class Database extends Migration
             $table->string('name');
             $table->integer('organization')->unsigned();
             $table->foreign('organization')->references('id')->on('organization');
-            $table->integer('image')->unsigned()->nullable();;
+            $table->integer('image')->unsigned()->default(1);
             $table->foreign('image')->references('id')->on('image');
             $table->text('description');
             $table->boolean('public');
@@ -190,7 +190,7 @@ class Database extends Migration
             $table->string('name');
             $table->integer('group')->unsigned();
             $table->foreign('group')->references('id')->on('groups');
-            $table->integer('image')->unsigned()->nullable();
+            $table->integer('image')->unsigned()->default(1);
             $table->foreign('image')->references('id')->on('image');
             $table->text('description');
             $table->boolean('public');
@@ -216,7 +216,7 @@ class Database extends Migration
 
         Schema::create('news', function ($table) {
             $table->increments('id');
-            $table->integer('image')->unsigned();
+            $table->integer('image')->unsigned()->default(1);
             $table->foreign('image')->references('id')->on('image');
             $table->text('title');
             $table->text('description');
@@ -231,7 +231,7 @@ class Database extends Migration
             $table->increments('id');
             $table->string('name')->unique();
             $table->text('description');
-            $table->integer('image')->unsigned();
+            $table->integer('image')->unsigned()->default(1);
             $table->foreign('image')->references('id')->on('image');
         });
 
@@ -240,7 +240,7 @@ class Database extends Migration
             $table->increments('id');
             $table->string('name')->unique();
             $table->text('description');
-            $table->integer('image')->unsigned();
+            $table->integer('image')->unsigned()->default(1);
             $table->foreign('image')->references('id')->on('image');
         });
         
@@ -515,6 +515,8 @@ class Database extends Migration
             Insert example data. Remove to final release
         */
         
+        DB::table('image')->insert(array('location'=>'src/imgs/organizations/default.png'));
+        DB::table('image')->insert(array('location'=>'src/imgs/volunteers/default.png'));
         DB::table('image')->insert(array('location'=>'src/imgs/gas_porto.png'));
         DB::table('image')->insert(array('alt' => 'An image', 'height' => 90, 'width' => 90, 'location' => 'src/imgs/voluntariado_atividades.jpg', 'size' => 900));
         DB::table('image')->insert(array('alt' => 'Another image', 'height' => 90, 'width' => 90, 'location' => 'src/imgs/voluntariado_up.jpg', 'size' => 900));
@@ -524,29 +526,29 @@ class Database extends Migration
         'nif' => '000000000', 'token' => 'f2f7c30e91c7c8e7f32c', 'confirm_date' => '2016-05-26 22:53:27', 'country' => 'PT', 'created_at'=>'2016-05-26 22:53:27',
         'updated_at' => '2016-05-26 22:53:27'));
 
-        DB::table('organization')->insert(array('name'=>'G.A.S Porto', 'password' => '12345', 'email'=>'_a@w.com', 'address' => 'Rua', 'confirm_date' => '2016-05-26 22:53:27', 'created_at' => '2016-05-26 22:53:27', 'updated_at' => '2016-05-26 22:53:27', 'image' => '1'));
-        DB::table('organization')->insert(array('name'=>'U.P Solidária', 'password' => '12345', 'email'=>'_p@w.com', 'address' => 'Rua', 'confirm_date' => '2016-05-26 22:53:27', 'created_at' => '2016-05-26 22:53:27', 'updated_at' => '2016-05-26 22:53:27', 'image' => '2'));
+        DB::table('organization')->insert(array('name'=>'G.A.S Porto', 'password' => '12345', 'email'=>'_a@w.com', 'address' => 'Rua', 'confirm_date' => '2016-05-26 22:53:27', 'created_at' => '2016-05-26 22:53:27', 'updated_at' => '2016-05-26 22:53:27', 'image' => '3'));
+        DB::table('organization')->insert(array('name'=>'U.P Solidária', 'password' => '12345', 'email'=>'_p@w.com', 'address' => 'Rua', 'confirm_date' => '2016-05-26 22:53:27', 'created_at' => '2016-05-26 22:53:27', 'updated_at' => '2016-05-26 22:53:27', 'image' => '4'));
 
         DB::table('user_organization')->insert(array('volunteer'=>'1', 'organization' => '1', 'reg_date'=>'2016-05-26 22:53:27', 'leave_date'=>'2017-05-26 22:53:27'));
         DB::table('user_organization')->insert(array('volunteer'=>'1', 'organization' => '2', 'reg_date'=>'2016-05-26 22:53:27'));
 
         DB::table('groups')->insert(array('name'=>'Grupo 1', 'organization' => '1', 'description' => 'Lorep Ipsum', 'public' => 'false', 'open' => 'false', 'active' => 'false', 'created_date' => '2016-05-26 22:53:27'));
 
-        DB::table('activity')->insert(array('name'=>'Atividade 1', 'group' => '1', 'image' => '1', 'description' => 'Lorep Ipsum', 'public' => 'false', 'open' => 'false', 'active' => 'false', 'created_date' => '2016-05-26 22:53:27', 'init_date' => '2016-05-26 22:53:27', 'end_date' => '2016-06-26 22:53:27'));
-        DB::table('activity')->insert(array('name'=>'Atividade 2', 'group' => '1', 'image' => '1', 'description' => 'Lorep Ipsum', 'public' => 'false', 'open' => 'false', 'active' => 'false', 'created_date' => '2016-05-26 22:53:27', 'init_date' => '2016-05-26 22:53:27', 'end_date' => '2016-05-26 22:53:27'));
+        DB::table('activity')->insert(array('name'=>'Atividade 1', 'group' => '1', 'image' => '3', 'description' => 'Lorep Ipsum', 'public' => 'false', 'open' => 'false', 'active' => 'false', 'created_date' => '2016-05-26 22:53:27', 'init_date' => '2016-05-26 22:53:27', 'end_date' => '2016-06-26 22:53:27'));
+        DB::table('activity')->insert(array('name'=>'Atividade 2', 'group' => '1', 'image' => '3', 'description' => 'Lorep Ipsum', 'public' => 'false', 'open' => 'false', 'active' => 'false', 'created_date' => '2016-05-26 22:53:27', 'init_date' => '2016-05-26 22:53:27', 'end_date' => '2016-05-26 22:53:27'));
 
         DB::table('volunteeractivity')->insert(array('volunteer'=>'1','activity'=>'1'));
         DB::table('volunteeractivity')->insert(array('volunteer'=>'1','activity'=>'2'));
 
-        DB::table('medal')->insert(array('name'=>'Testix','description'=>'Quando se testa alguma coisa.','image'=>1));
-        DB::table('medal')->insert(array('name'=>'Patria','description'=>'Palavra que me veio a cabeça.','image'=>1));
-        DB::table('medal')->insert(array('name'=>'FEUP','description'=>'Medalha FEUP','image'=>1));
-        DB::table('medal')->insert(array('name'=>'Capitalista','description'=>'Ganhou imenso dinheiro.','image'=>1));
+        DB::table('medal')->insert(array('name'=>'Testix','description'=>'Quando se testa alguma coisa.','image'=>3));
+        DB::table('medal')->insert(array('name'=>'Patria','description'=>'Palavra que me veio a cabeça.','image'=>3));
+        DB::table('medal')->insert(array('name'=>'FEUP','description'=>'Medalha FEUP','image'=>3));
+        DB::table('medal')->insert(array('name'=>'Capitalista','description'=>'Ganhou imenso dinheiro.','image'=>3));
 
-        DB::table('trophy')->insert(array('name'=>'T_Testix','description'=>'Quando se testa alguma coisa.','image'=>2));
-        DB::table('trophy')->insert(array('name'=>'T_Patria','description'=>'Palavra que me veio a cabeça.','image'=>2));
-        DB::table('trophy')->insert(array('name'=>'T_FEUP','description'=>'Medalha FEUP','image'=>2));
-        DB::table('trophy')->insert(array('name'=>'T_Capitalista','description'=>'Ganhou imenso dinheiro.','image'=>2));
+        DB::table('trophy')->insert(array('name'=>'T_Testix','description'=>'Quando se testa alguma coisa.','image'=>4));
+        DB::table('trophy')->insert(array('name'=>'T_Patria','description'=>'Palavra que me veio a cabeça.','image'=>4));
+        DB::table('trophy')->insert(array('name'=>'T_FEUP','description'=>'Medalha FEUP','image'=>4));
+        DB::table('trophy')->insert(array('name'=>'T_Capitalista','description'=>'Ganhou imenso dinheiro.','image'=>4));
 
 
 
@@ -564,9 +566,9 @@ class Database extends Migration
         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
 
         
-        DB::table('news')->insert(array('image' => 2, 'title' => 'Título 1' , 'description' => $description, 'date' => Carbon\Carbon::now()));
-        DB::table('news')->insert(array('image' => 3, 'title' => 'Título 2' , 'description' => $description, 'date' => Carbon\Carbon::now()));
-        DB::table('news')->insert(array('image' => 4, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 4, 'title' => 'Título 1' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 5, 'title' => 'Título 2' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
 
 
         ///////////////////////////////////////////
