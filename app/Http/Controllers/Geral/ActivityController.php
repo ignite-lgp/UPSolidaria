@@ -20,7 +20,7 @@ class ActivityController extends Controller
     */
     protected function showActivityPage($organization, $activity){
 		
-        $information = DB::select('select a.*, o.name as oname, g.name as gname from groups g, organization o, activity a where a.name = ? and g.id = a.group and o.id = g.organization', array($activity));
+        $information = DB::select('select a.*, o.name as oname, g.name as gname from organization o, activity a left join groups g on g.id = a.group where a.name = ? and o.id = a.organization', array($activity));
 		
         $image_location = DB::select('select location from image where id = ?', array($information[0]->image));
         

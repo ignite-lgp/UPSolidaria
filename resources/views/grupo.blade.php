@@ -33,16 +33,13 @@
 			@endif
 			
 			<!-- Activities -->
-			<section>
+			<section class="sidebar-listing">
                 <span class="sidebar-title">Atividades</span>
-				@foreach ($activities as $activity)
                 <ul>
-                    <li>{{ $activity->name }}</li>
-                    <li><a class="red-link" href="/organizacao/{{$info->oname}}/atividade/{{$activity->name}}">Ver atividade</a></li>
-                </ul>
-                @if($activity != end($activities))<hr>@endif
+				@foreach ($activities as $activity)
+                    <li><a href="/organizacao/{{$info->oname}}/atividade/{{$activity->name}}">{{ $activity->name }}</a></li>
 				@endforeach
-				<br><a class="red-link">Ver mais...</a>
+                </ul>
             </section>
 			
 			@include('partials/auth') 

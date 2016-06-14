@@ -57,6 +57,16 @@
 					@endforeach
 				</ul>
 			</section>
+					
+			<!-- Activities -->
+			<section class="sidebar-listing">
+				<span class="sidebar-title">Atividades</span>
+				<ul>
+					@foreach ($activities as $activity)
+					<li><a href="/organizacao/{{ $info->name }}/atividade/{{ $activity->name }}"> {{ $activity->name }}</a></li>
+					@endforeach
+				</ul>
+			</section>
 			
 			@include('partials/auth') 
 
