@@ -120,12 +120,6 @@ Route::post('/editarInfo', 'Geral\OrgController@editInfo');
 
 Route::post('/adicionarGrupo', 'Geral\OrgController@addGroup');
   
-  
- /*
- *   Autocomplete search Volunteers
- */
- 
-Route::get('/organizacao/search/autocomplete', 'Geral\UserController@autocomplete');
  
  /*
  *   Add Volunteer to org
@@ -193,3 +187,21 @@ Route::get('/ver_noticias', function(){
 Route::get('/ver_registos', function(){
     return view('/admin/ver_registos'); 
 });
+
+
+
+
+//
+// Autocomplete
+//
+
+/*
+* Route test to autcomplete user
+*/
+Route::get('/search', function(){
+    return view('autocomplete_user'); 
+});
+/*
+*   Autocomplete search Users
+*/
+Route::get('/search/autocomplete', 'Geral\UserController@autocomplete');
