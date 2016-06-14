@@ -25,9 +25,13 @@ class OrgController extends Controller
         $information = DB::select('select * from organization where name = ?', array($organization));
 
         $image_location = DB::select('select * from image where alt = ?', array($organization));
-        
-		$activities = DB::select('select a.* from activity a, organization o where o.name = ? and a.organization = o.id and a.group IS NULL ',array($organization));
+
+
+        //Original
+		//$activities = DB::select('select a.* from activity a, organization o where o.name = ? and a.organization = o.id and a.group IS NULL ',array($organization));
 		
+        $activities = DB::select('select a.* from activity a, organization o where o.name = ? and a.group = o.id ',array($organization));
+
         $email = Session::get('email');
         $user = User::whereRaw('email = ?', [$email])->first();
 
@@ -156,7 +160,6 @@ class OrgController extends Controller
         $image = $data['image'];
         $size = $image->getSize();
             if($image->isValid()) {
-
             $destinationPath = 'src/imgs/organizations';
             //Change the name of the img file to org Name
             //Moving the image to img folder

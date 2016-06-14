@@ -65,10 +65,10 @@
       		<!-- Organization Section -->
 			<section class="organization-section">
 				<h3 class="title">{{ $info->name }}</h3>
-				<img class="img img-responsive org-img" src="/src/imgs/capagrupo.png">
+				<img class="img img-responsive org-img" src="/{{ $image_location }}">
 				<section class="info-section">
 						<h4 class="sidebar-title">Missão</h4>
-						<p class="big">{{ $info->description }}</p>
+						<p class="big">{!! $info->description !!}</p>
 				</section>
 				
 
@@ -220,10 +220,10 @@
       		<!-- Organization Section -->
 			<section class="organization-section">
 				<h3 class="title">{{ $info->name }}</h3>
-				<img class="img img-responsive org-img" src="/src/imgs/capagrupo.png">
+				<img class="img img-responsive org-img" src="/{{ $image_location }}">
 				<section class="info-section">
 						<h4 class="sidebar-title">Missão</h4>
-						<p class="big">{{ $info->description }}</p>
+						<p class="big">{!! $info->description !!}</p>
 				</section>
 				
 

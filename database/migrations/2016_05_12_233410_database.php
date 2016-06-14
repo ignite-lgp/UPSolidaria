@@ -534,8 +534,10 @@ class Database extends Migration
 
         DB::table('groups')->insert(array('name'=>'Grupo 1', 'organization' => '1', 'description' => 'Lorep Ipsum', 'public' => 'false', 'open' => 'false', 'active' => 'false', 'created_date' => '2016-05-26 22:53:27'));
 
-        DB::table('activity')->insert(array('name'=>'Atividade 1', 'group' => '1', 'image' => '3', 'description' => 'Lorep Ipsum', 'public' => 'false', 'open' => 'false', 'active' => 'false', 'created_date' => '2016-05-26 22:53:27', 'init_date' => '2016-05-26 22:53:27', 'end_date' => '2016-06-26 22:53:27'));
-        DB::table('activity')->insert(array('name'=>'Atividade 2', 'group' => '1', 'image' => '3', 'description' => 'Lorep Ipsum', 'public' => 'false', 'open' => 'false', 'active' => 'false', 'created_date' => '2016-05-26 22:53:27', 'init_date' => '2016-05-26 22:53:27', 'end_date' => '2016-05-26 22:53:27'));
+
+        // ALTERED GROUP ------------------
+        DB::table('activity')->insert(array('name'=>'Atividade 1', 'group' => '3', 'image' => '3', 'description' => 'Lorep Ipsum', 'public' => 'false', 'open' => 'false', 'active' => 'false', 'created_date' => '2016-05-26 22:53:27', 'init_date' => '2016-05-26 22:53:27', 'end_date' => '2016-06-26 22:53:27'));
+        DB::table('activity')->insert(array('name'=>'Atividade 2', 'group' => '3', 'image' => '3', 'description' => 'Lorep Ipsum', 'public' => 'false', 'open' => 'false', 'active' => 'false', 'created_date' => '2016-05-26 22:53:27', 'init_date' => '2016-05-26 22:53:27', 'end_date' => '2016-05-26 22:53:27'));
 
         DB::table('volunteeractivity')->insert(array('volunteer'=>'1','activity'=>'1'));
         DB::table('volunteeractivity')->insert(array('volunteer'=>'1','activity'=>'2'));
