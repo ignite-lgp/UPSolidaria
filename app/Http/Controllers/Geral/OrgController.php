@@ -26,7 +26,7 @@ class OrgController extends Controller
 		
         $image_location = DB::select('select location from image where id = ?', array($information[0]->image));
         
-		$activities = DB::select('select a.* from activity a, organization o where o.name = ? and a.organization = o.id and a.group IS NULL ',array($organization));
+		//$activities = DB::select('select a.* from activity a, organization o where o.name = ? and a.organization = o.id and a.group IS NULL ',array($organization));
 		
         $email = Session::get('email');
         $user = User::whereRaw('email = ?', [$email])->first();
@@ -49,7 +49,7 @@ class OrgController extends Controller
         return View('organizacao')->with([
                       'info' => $information[0]
                     , 'image_location' => $image_location[0]->location
-					, 'activities' => $activities
+					//, 'activities' => $activities
                     , 'admin' => (is_null($user) || is_null($user->organization)) ? false : true
                     , 'groups' => $groups
                     , 'is_in' => (!is_null($user) && isset($is_user_on_organization) && count($is_user_on_organization)) > 0 ? false : true]);   
@@ -115,9 +115,7 @@ class OrgController extends Controller
                 'phone' => $orgInfo['phone'],
                 'website' => $orgInfo['website'],
                 'facebook' => $orgInfo['facebook'],
-                'mission' => $orgInfo['mission'],
-                'vision' => $orgInfo['vision'],
-                'values' => $orgInfo['values']
+                'description' => $orgInfo['description'],
                // 'token' => bin2hex(random_bytes(10)),
                 ]);
 
@@ -141,9 +139,7 @@ class OrgController extends Controller
         try {
             DB::table('organization_page')
             ->where('organization', $data['organizacao_id'])
-            ->update(['mission' =>  $data['missao']
-                ,'vision' => $data['visao']
-                ,'values' => $data['valores']
+            ->update(['description' =>  $data['description']
                 ]);
             }catch(\Exception $e){
               //Alter to a more intuitive error showing

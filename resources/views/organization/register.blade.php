@@ -63,15 +63,8 @@
 						{!! Form::label('website', 'Website', array()) !!}
 						{!! Form::text('website','',array('class' => 'reg-input')) !!}
 
-						{!! Form::label('mission', 'Missão da Organização', array()) !!}
-						{!! Form::text('mission','', array('class' => 'reg-input')) !!}
-
-						{!! Form::label('vision', 'Visão da Organização', array()) !!}
-						{!! Form::text('vision','', array('class' => 'reg-input')) !!}
-
-						{!! Form::label('values', 'Valores da Organização', array()) !!}
-						{!! Form::text('values','', array('class' => 'reg-input')) !!}
-
+						{!! Form::label('description', 'Descrição da Organização', array()) !!}
+						{!! Form::text('description','', array('class' => 'reg-input')) !!}
 
 						{!! Form::label('phone', 'Contacto Telefónico', array()) !!}
 						{!! Form::text('phone','', array('class' => 'reg-input')) !!}
@@ -146,15 +139,8 @@
 						{!! Form::label('website', 'Website', array()) !!}
 						{!! Form::text('website','',array('class' => 'reg-input')) !!}
 
-						{!! Form::label('mission', 'Missão da Organização', array()) !!}
-						{!! Form::text('mission','', array('class' => 'reg-input')) !!}
-
-						{!! Form::label('vision', 'Visão da Organização', array()) !!}
-						{!! Form::text('vision','', array('class' => 'reg-input')) !!}
-
-						{!! Form::label('values', 'Valores da Organização', array()) !!}
-						{!! Form::text('values','', array('class' => 'reg-input')) !!}
-
+						{!! Form::label('description', 'Descrição da Organização', array()) !!}
+						{!! Form::text('description','', array('class' => 'reg-input')) !!}
 
 						{!! Form::label('phone', 'Contacto Telefónico', array()) !!}
 						{!! Form::text('phone','', array('class' => 'reg-input')) !!}
