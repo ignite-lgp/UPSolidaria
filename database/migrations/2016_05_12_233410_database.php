@@ -577,7 +577,7 @@ class Database extends Migration
 
 
         /* Insert image for G.A.S.Porto */
-        DB::table('image')->insert(array('alt' => 'G.A.S.Porto', 'height' => 90, 'width' => 90, 'location' => 'src/imgs/organizations/G.A.S.jpg', 'size' => 900));
+        DB::table('image')->insert(array('alt' => 'G.A.S. Porto', 'height' => 90, 'width' => 90, 'location' => 'src/imgs/organizations/G.A.S. Porto.jpg', 'size' => 900));
        
         /* Insert G.A.S.Porto organization */
         //Image id 5

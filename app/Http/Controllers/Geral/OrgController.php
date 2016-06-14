@@ -23,13 +23,14 @@ class OrgController extends Controller
     protected function showOrgPage($organization){
 		
         $information = DB::select('select * from organization where name = ?', array($organization));
-		
-        $image_location = DB::select('select location from image where id = ?', array($information[0]->image));
+
+        $image_location = DB::select('select * from image where alt = ?', array($organization));
         
 		$activities = DB::select('select a.* from activity a, organization o where o.name = ? and a.organization = o.id and a.group IS NULL ',array($organization));
 		
         $email = Session::get('email');
         $user = User::whereRaw('email = ?', [$email])->first();
+
 
         //Info on the groups of the org and their images
         $groups =  DB::select(
@@ -45,6 +46,7 @@ class OrgController extends Controller
                 and organization.id = user_organization.organization', array($user->id, $organization));
         }
         
+
         //If user is not logged in shows defaul view
         return View('organizacao')->with([
                       'info' => $information[0]
@@ -134,13 +136,12 @@ class OrgController extends Controller
     protected function editInfo(Request $info){
 
         $data = $info->all();
-        print_r($data);
        
     
         //If not changed, default values will be stored
         try {
-            DB::table('organization_page')
-            ->where('organization', $data['organizacao_id'])
+            DB::table('organization')
+            ->where('id', $data['organizacao_id'])
             ->update(['mission' =>  $data['missao']
                 ,'vision' => $data['visao']
                 ,'values' => $data['valores']
@@ -156,7 +157,7 @@ class OrgController extends Controller
         $size = $image->getSize();
             if($image->isValid()) {
 
-            $destinationPath = '../public/src/imgs/organizations';
+            $destinationPath = 'src/imgs/organizations';
             //Change the name of the img file to org Name
             //Moving the image to img folder
             $image->move($destinationPath, $data['organizacao'].'.jpg');
@@ -188,7 +189,6 @@ class OrgController extends Controller
     */
     protected function addGroup(Request $info){
         $data = $info->all();
-        print_r($data);
 
         //Insert image reference in database -> reference needed for group
         //Check if image was uploaded
@@ -196,14 +196,12 @@ class OrgController extends Controller
           $image = $data['image'];
           $size = $image->getSize();
             if($image->isValid()) {
-
             $destinationPath = 'src/imgs/groups';
             //Change the name of the img file to org Name
             //Moving the image to img folder
             $image->move($destinationPath, $data['nome'].'.jpg');
             //Inserting image reference in database
-            DB::table('image')
-            ->insert(['alt' => $data['nome']
+            DB::table('image')->insert(['alt' => $data['nome']
                 ,'height' => 90
                 ,'width' => 90
                 ,'location' => $destinationPath . '/' . $data['nome'] . '.jpg'
@@ -213,7 +211,6 @@ class OrgController extends Controller
                 //Alter to a more intuitive error showing
                 return View('errors.500');
             }
-
         }
 
 
@@ -233,9 +230,6 @@ class OrgController extends Controller
         $aberto = false;
         if(array_key_exists('aberto', $data)) { $aberto = true; }
 
-        print_r($image_id[0]->id);
-
-
         //Insert group in database
         try {
             DB::table('groups')->insert([
@@ -253,6 +247,12 @@ class OrgController extends Controller
               //Alter to a more intuitive error showing
               return View('errors.500');
         }
+        
+
+
+        $org = DB::select('select * from organization where id = ?', array($data['organizacao_id']));
+        //Redirecting to Org Page
+        return redirect('/organizacao/'.$org[0]->name);
     }
 
     /**

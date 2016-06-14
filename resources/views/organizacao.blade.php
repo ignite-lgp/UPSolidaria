@@ -83,27 +83,27 @@
 				<span>/</span>
 				<h4><a href="/organizacoes">Organizações</a></h4>
 				<span>/</span>
-				<h4><a class="active">{{ $info->name }}</a></h4>
+				<h4><a class="active">{!! $info->name !!}</a></h4>
 			</section>
 		
 			<!-- Organization Section -->
 			<section class="organization-section">
-				<h3 class="title">{{ $info->name }}</h3>
+				<h3 class="title">{!! $info->name !!}</h3>
 				<img class="img img-responsive org-img" src="../{{ $image_location }}">
 				<section class="info-section">
 						<h4 class="sidebar-title">Missão</h4>
-						<p class="big">{{ $info->mission }}</p>
+						<p class="big">{!! $info->mission !!}</p>
 				</section>
 				<section class="info-section">
 						<h4 class="sidebar-title">Visão</h4>
-						<p class="big">{{ $info->vision }}</p>
+						<p class="big">{!! $info->vision !!}</p>
 				</section>
 				<section class="info-section">
 						<h4 class="sidebar-title">Valores</h4>
-						<p class="big">{{ $info->values }}</p>
+						<p class="big">{!! $info->values !!}</p>
 				</section>
 
-				<a href="{{ $info->website }}" target="_blank"><p class="big">{{ $info->website }}</p></a> 
+				<a href="{{ $info->website }}" target="_blank"><p class="big">{!! $info->website !!}</p></a> 
 
       		</section>
 
@@ -119,15 +119,15 @@
 					{!! Form::file('image'); !!} <!-- , $image_location -->
 					<section class="info-section">
 						<h4 class="sidebar-title">Missão</h4>
-					{!! Form::textarea('missao', $info->mission, ['required' => 'required']); !!} <!-- , $info->mission -->
+					{!! Form::textarea('missao', $info->mission); !!} <!-- , $info->mission -->
 					</section>
 					<section class="info-section">
 						<h4 class="sidebar-title">Visão</h4>
-					{!! Form::textarea('visao', $info->vision, ['required' => 'required']); !!} <!-- , $info->vision -->
+					{!! Form::textarea('visao', $info->vision); !!} <!-- , $info->vision -->
 					</section>
 					<section class="info-section">
 						<h4 class="sidebar-title">Valores</h4>
-					{!! Form::textarea('valores', $info->values, ['required' => 'required']); !!} <!-- , $info->values -->
+					{!! Form::textarea('valores', $info->values); !!} <!-- , $info->values -->
 					</section>
 
 					{!! Form::hidden('organizacao', $info->name); !!}
@@ -148,11 +148,11 @@
 					{!! Form::file('image'); !!} 
 					<section class="info-section">
 						<h4 class="sidebar-title">Nome</h4>
-					{!! Form::text('nome', '', ['required' => 'required']); !!}
+					{!! Form::text('nome', ''); !!}
 					</section>
 					<section class="info-section">
 						<h4 class="sidebar-title">Descrição</h4>
-					{!! Form::textarea('descricao', '', ['required' => 'required']); !!}
+					{!! Form::textarea('descricao', ''); !!}
 					</section>
 					<section class="info-section">
 						<h4 class="sidebar-title">Público</h4>
@@ -290,15 +290,15 @@
 					{!! Form::file('image'); !!} <!-- , $image_location -->
 					<section class="info-section">
 						<h4 class="sidebar-title">Missão</h4>
-					{!! Form::textarea('missao', $info->mission, ['required' => 'required']); !!} <!-- , $info->mission -->
+					{!! Form::textarea('missao', $info->mission); !!} <!-- , $info->mission -->
 					</section>
 					<section class="info-section">
 						<h4 class="sidebar-title">Visão</h4>
-					{!! Form::textarea('visao', $info->vision, ['required' => 'required']); !!} <!-- , $info->vision -->
+					{!! Form::textarea('visao', $info->vision); !!} <!-- , $info->vision -->
 					</section>
 					<section class="info-section">
 						<h4 class="sidebar-title">Valores</h4>
-					{!! Form::textarea('valores', $info->values, ['required' => 'required']); !!} <!-- , $info->values -->
+					{!! Form::textarea('valores', $info->values); !!} <!-- , $info->values -->
 					</section>
 
 					{!! Form::hidden('organizacao', $info->name); !!}
@@ -319,7 +319,7 @@
 					{!! Form::file('image'); !!} 
 					<section class="info-section">
 						<h4 class="sidebar-title">Nome</h4>
-					{!! Form::text('nome', '', ['required' => 'required']); !!}
+					{!! Form::text('nome', ''); !!}
 					</section>
 					<section class="info-section">
 						<h4 class="sidebar-title">Descrição</h4>
