@@ -132,7 +132,7 @@ Route::post('/adicionaVoluntario', 'Geral\OrgController@addVolunteer');
 * Admin news list
 */
 
-Route::get('/gerir_noticias', 'Geral\NewsController@showNewsAdmin');
+//Route::get('/gerir_noticias', 'Geral\NewsController@showNewsAdmin');
 
 /*
 * Admin edit news
@@ -180,9 +180,7 @@ Route::get('/validar_pedidos', function(){
     return view('/admin/validar_pedidos'); 
 });
 
-Route::get('/ver_noticias', function(){
-    return view('/admin/ver_noticias'); 
-});
+Route::get('/ver_noticias', 'Geral\NewsController@showNewsAdmin');
 
 Route::get('/ver_registos', function(){
     return view('/admin/ver_registos'); 
