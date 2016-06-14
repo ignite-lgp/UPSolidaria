@@ -49,6 +49,8 @@ Route::get('/criar_organizacao', function () {
         return view('organization/register');
 });
 
+Route::get('/organizacao/{name}/atividade/{activity}', 'Geral\ActivityController@showActivityPage');
+
 Route::get('/organizacao/{name}/grupo/{group}', 'Geral\GroupController@showGroupPage');
 
 Route::post('/org/register', 'Geral\OrgController@handleRegistration');

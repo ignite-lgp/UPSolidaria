@@ -11,22 +11,19 @@ use DB;
 use Session;
 use Validator;
 
-class GroupController extends Controller
+class ActivityController extends Controller
 {
-
-	    /**
+	/**
     *
     * Show a group page 
     * @return view
     */
-    protected function showGroupPage($organization, $group){
+    protected function showActivityPage($organization, $activity){
 		
-        $information = DB::select('select g.*, o.name as oname from groups g, organization o where g.name = ? and o.id = g.organization', array($group));
+        $information = DB::select('select a.*, o.name as oname, g.name as gname from groups g, organization o, activity a where a.name = ? and g.id = a.group and o.id = g.organization', array($activity));
 		
         $image_location = DB::select('select location from image where id = ?', array($information[0]->image));
         
-		$activities = DB::select('select a.* from activity a, groups g where g.name = ? and a.group = g.id ',array($group));
-		
         $email = Session::get('email');
         $user = User::whereRaw('email = ?', [$email])->first();
 
@@ -46,11 +43,12 @@ class GroupController extends Controller
         }
         
         //If user is not logged in shows defaul view
-        return View('grupo')->with([
+        return View('atividade')->with([
                       'info' => $information[0]
                     , 'image_location' => $image_location[0]->location
                     , 'admin' => (is_null($user) || is_null($user->organization)) ? false : true
-					, 'activities' => $activities
+					, 'inGroup' => is_null($information[0]->gname) ? false : true
+					//   , 'activities' => $activities
                     , 'is_in' => (!is_null($user) && isset($is_user_on_organization) && count($is_user_on_organization)) > 0 ? false : true]); 
     }
 }

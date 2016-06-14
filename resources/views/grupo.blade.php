@@ -9,21 +9,21 @@
 		<section class="sidebar-left">
 			
 			<!-- Search sample -->
-			<section class="hidden-xs"> 
+			<section> 
 				<span class="sidebar-title">pesquisar</span>
 				<input class="search-bar-input" type="text" name="activities" placeholder="Pesquisar Organizações" />
 			</section>
 
 			@if ($admin)
 			<!-- Admin section -->
-				<section class="sidebar-listing hidden-xs">
+				<section class="sidebar-listing">
 					<span class="sidebar-title">Administrador</span>
 					<ul>
 						<li><a onclick="changeInfo();">Editar Informações</a></li>
 						<li><a class="manage-volunteers">Gerir Membros do Grupo</a></li>
 					</ul>
 				</section>
-				<section class="sidebar-listing hidden-xs">
+				<section class="sidebar-listing">
 					<span class="sidebar-title">Gerir Atividades</span>
 					<ul>
 						<li><a onclick="addActivity();">Adicionar Atividade</a></li>
@@ -33,31 +33,17 @@
 			@endif
 			
 			<!-- Activities -->
-			<section class="hidden-xs">
+			<section>
                 <span class="sidebar-title">Atividades</span>
+				@foreach ($activities as $activity)
                 <ul>
-                    <li>Ponto Verde Open Inovation</li>
-                    <li><a class="red-link">Concursos | Até: 8 Abril, 2016</a></li>
+                    <li>{{ $activity->name }}</li>
+                    <li><a class="red-link" href="/organizacao/{{$info->oname}}/atividade/{{$activity->name}}">Ver atividade</a></li>
                 </ul>
-                <hr>
-                <ul>
-                    <li>Ciclo de debates: Integração de Portugal na União Europeia | 30anos, 10 debates...</li>
-                    <li><a class="red-link">Eventos | Até: 21 Março, 2016</a></li>
-                </ul>
-                <hr>
-                <ul>
-                    <li>Oportunidades de Financiamento U.Porto | 2016-03-21</li>
-                    <li><a class="red-link">Concursos | Até: 8 Abril, 2016</a></li>
-                </ul>
-                <hr>
-                <ul>
-                    <li>Passatempo | Mostra U.Porto 2016 no Instagram</li>
-                    <li><a class="red-link">Concursos | Até: 20 Março, 2016</a></li>
-                </ul>
-                <br><a class="red-link">Ver mais...</a>
+                @if($activity != end($activities))<hr>@endif
+				@endforeach
+				<br><a class="red-link">Ver mais...</a>
             </section>
-            
-				
 			
 			@include('partials/auth') 
 
@@ -66,13 +52,13 @@
 		
 		
 		<!-- Main Body -->
-		<section class="main-container hidden-xs">
+		<section class="main-container">
 			
 			<!-- Title -->
-			<section class="title-section hidden-xs">
-				<h4><a>U.Porto Voluntariado</a></h4>
+			<section class="title-section">
+				<h4><a href="/">U.Porto Voluntariado</a></h4>
 				<span>/</span>
-				<h4><a>Organizações</a></h4>
+				<h4><a href="/organizacoes">Organizações</a></h4>
 				<span>/</span>
 				<h4><a href="/organizacao/{{ $info->oname }}">{{ $info->oname }}</a></h4>
 				<span>/</span>
@@ -225,9 +211,9 @@
 			
 			<!-- Title -->
 			<section class="title-section">
-				<h4><a>U.Porto Voluntariado</a></h4>
+				<h4><a href="/">U.Porto Voluntariado</a></h4>
 				<span>/</span>
-				<h4><a>Organizações</a></h4>
+				<h4><a href="/organizacoes">Organizações</a></h4>
 				<span>/</span>
 				<h4><a href="/organizacao/{{ $info->oname }}">{{ $info->oname }}</a></h4>
 				<span>/</span>
