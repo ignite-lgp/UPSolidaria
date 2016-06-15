@@ -41,6 +41,16 @@ class ActivityController extends Controller
         }
         
 
+        // Get users in this organization
+        /*
+        $usersInGroup = DB::select('select users.id as userID, organization.id as OrganizationID, not exists (select * from volunteeractivity where volunteer = users.id and activity = activity.id) as isIN 
+            from organization, activity, users, user_organization, volunteeractivity
+            where activity.name = ? and activity.organization = organization.id
+            and user_organization.volunteer = users.id and user_organization.organization = organization.id
+            and user_organization.leave_date is null and volunteeractivity.activity = activity.id;
+            ', array($activity));
+            */
+
         //If user is not logged in shows defaul view
         return View('atividade')->with([
                       'info' => $information[0]
