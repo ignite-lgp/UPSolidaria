@@ -47,7 +47,15 @@ class OrgController extends Controller
                 where user_organization.volunteer = ? and user_organization.organization = organization.id and organization.name = ? 
                 and user_organization.leave_date is null', array($user->id, $organization));
         }
-        
+
+        // Get all organization groups name
+        $groupsName = [];
+        for ($i=0; $i < count($groups); $i++) { 
+
+            $groupsName[$groups[$i]->id] = $groups[$i]->name;
+        }
+
+
         //If user is not logged in shows defaul view
         return View('organizacao')->with([
                       'info' => $information[0]
@@ -55,6 +63,7 @@ class OrgController extends Controller
 					, 'activities' => $activities
                     , 'admin' => (is_null($user) || count($is_user_on_organization) > 0 && !$is_user_on_organization[0]->admin || count($is_user_on_organization) == 0) ? false : true
                     , 'groups' => $groups
+                    , 'groupsForActivities' => $groupsName
                     , 'is_in' => (!is_null($user) && isset($is_user_on_organization) && count($is_user_on_organization)) > 0 ? false : true]);   
     }
 
