@@ -294,5 +294,56 @@ class OrgController extends Controller
             echo fail;
         }
     }
+
+    /**
+    * Add an activity 
+    * @return nothing
+    */
+    protected function addActivity(Request $data){
+        
+        $information = $data->all();
+        //Insert image reference in database -> reference needed for group
+        //Check if image was uploaded
+        if(array_key_exists('image', $information)){
+            $image = $information['image'];
+
+            $size = $image->getSize();
+            if($image->isValid()) {
+
+            $destinationPath = 'src/imgs/activities';
+            //Change the name of the img file to org Name
+            //Moving the image to img folder
+            $image->move($destinationPath, $information['nome'].'.jpg');
+            //Inserting image reference in database
+            DB::table('image')->insert([
+                'alt' => $information['nome']
+                ,'height' => 90
+                ,'width' => 90
+                ,'location' => $destinationPath . '/' . $information['nome'] . '.jpg'
+                ,'size' => $size]);
+            }
+        }
+
+        $last_image_inserted_id = DB::select('select id from image where alt = ?', array($information['nome']));
+
+        $activityToAdd = [
+                'name' => $information['nome'],
+                'group' => $information['grupo'],
+                'description' => $information['descricao'],
+                'public' => isset($information['publico']) && $information['publico'] == '1',
+                'open' => isset($information['aberto']) && $information['aberto'] == '1',
+                'created_date' => date('Y-m-d G:i:s'),
+                'init_date' => $information['dateInit'],
+                'end_date' => $information['dateEnd'],
+                'active' => true
+            ];
+
+        if (count($last_image_inserted_id) > 0 )
+            $activityToAdd = array_merge($activityToAdd, ['image' => $last_image_inserted_id[0]->id]);
+
+        DB::table('activity')->insert($activityToAdd);
+
+        return redirect()->back();
+    }
 }
 

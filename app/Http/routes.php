@@ -121,6 +121,8 @@ Route::post('/editarInfo', 'Geral\OrgController@editInfo');
 Route::post('/adicionarGrupo', 'Geral\OrgController@addGroup');
   
  
+Route::post('/organizacao/adicionarAtividade', 'Geral\OrgController@addActivity');
+
  /*
  *   Add Volunteer to org
  */

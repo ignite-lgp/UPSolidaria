@@ -64,9 +64,9 @@
 			<section class="sidebar-listing">
 				<span class="sidebar-title">Atividades</span>
 				<ul>
-			<!--		@foreach ($activities as $activity) -->
-			<!--		<li><a href="/organizacao/{{ $info->name }}/atividade/{{ $activity->name }}"> {{ $activity->name }}</a></li> -->
-			<!--		@endforeach -->
+					@foreach ($activities as $activity)
+						<li><a href="/organizacao/{{ $info->name }}/atividade/{{ $activity->name }}"> {{ $activity->name }}</a></li>
+					@endforeach
 				</ul>
 			</section>
 			
@@ -120,6 +120,7 @@
 						<h4 class="sidebar-title">Imagem atual</h4>
 					<img class="img img-responsive org-img" src="../{{ $image_location }}">
 					{!! Form::file('image'); !!} <!-- , $image_location -->
+					</section>
 					<section class="info-section">
 						<h4 class="sidebar-title">Missão</h4>
 					{!! Form::textarea('missao', $info->mission); !!} <!-- , $info->mission -->
@@ -138,7 +139,6 @@
 
 					{!! Form::submit('Guardar'); !!}
                 {!! Form::close() !!}
-					</section>
      		</section>
 
      		<!-- Organization Add Group -->
@@ -149,6 +149,7 @@
 					<section class="info-section">
 						<h4 class="sidebar-title">Imagem</h4>
 					{!! Form::file('image'); !!} 
+					</section>
 					<section class="info-section">
 						<h4 class="sidebar-title">Nome</h4>
 					{!! Form::text('nome', ''); !!}
@@ -169,22 +170,28 @@
 
 					{!! Form::submit('Criar'); !!}
                 {!! Form::close() !!}
-					</section>
      		</section>
 
      		<!-- Organization Add Group -->
 			<section class="main-section organization-section-add-activity" style="display: none;">
 				<h3 class="title">Adicionar Atividade</h3>
 
-				{!!  Form::open(array('url' => '/adicionarAtividade', 'method' => 'post', 'files' => 'true')) !!}
+				{!!  Form::open(array('url' => '/organizacao/adicionarAtividade', 'method' => 'post', 'files' => 'true')) !!}
 					<section class="info-section">
 						<h4 class="sidebar-title">Nome</h4>
 					{!! Form::text('nome', ''); !!}
 					</section>
+
+					<section class="info-section">
+						<h4 class="sidebar-title">Imagem</h4>
+					{!! Form::file('image'); !!} 
+					</section>
+					
 					<section class="info-section">
 						<h4 class="sidebar-title">Associar a um grupo</h4>
 					{!! Form::select('grupo', $groupsForActivities); !!}
 					</section>
+
 					<section class="info-section">
 						<h4 class="sidebar-title">Descrição</h4>
 					{!! Form::textarea('descricao', ''); !!}
@@ -203,13 +210,12 @@
 					</section>
 					<section class="info-section">
 						<h4 class="sidebar-title">Aberto</h4>
-					{!! Form::checkbox('aberto', true); !!}
+						{!! Form::checkbox('aberto', true); !!}
 					</section>
 					{!! Form::hidden('organizacao_id', $info->id); !!}
 
 					{!! Form::submit('Criar'); !!}
                 {!! Form::close() !!}
-					</section>
      		</section>
 
 		</section>
