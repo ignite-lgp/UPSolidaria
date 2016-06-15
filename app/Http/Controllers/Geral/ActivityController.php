@@ -36,19 +36,19 @@ class ActivityController extends Controller
 
         // Check if user is already on this organization
         if (count($user) > 0 ){
-            $is_user_on_organization = DB::select('select * from users, organization, user_organization where users.id = ? and  user_organization.volunteer = users.id 
-                and user_organization.leave_date is null
-                and organization.name = ?
-                and organization.id = user_organization.organization', array($user->id, $organization));
+
+            $is_user_on_activity = DB::select('select admin is true as admin from volunteeractivity where activity = ? and volunteer = ?; ', array($information[0]->id, $user->id));
         }
         
+
         //If user is not logged in shows defaul view
         return View('atividade')->with([
                       'info' => $information[0]
                     , 'image_location' => $image_location[0]->location
-                    , 'admin' => (is_null($user) || is_null($user->organization)) ? false : true
+                    , 'admin' => isset($is_user_on_activity) && count($is_user_on_activity) > 0 && $is_user_on_activity[0]->admin
 					, 'inGroup' => is_null($information[0]->gname) ? false : true
 					//   , 'activities' => $activities
-                    , 'is_in' => (!is_null($user) && isset($is_user_on_organization) && count($is_user_on_organization)) > 0 ? false : true]); 
+                    //, 'is_in' => (!is_null($user) && isset($is_user_on_organization) && count($is_user_on_organization)) > 0 ? false : true]); 
+                    ]);
     }
 }

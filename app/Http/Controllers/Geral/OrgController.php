@@ -338,7 +338,16 @@ class OrgController extends Controller
         if (count($last_image_inserted_id) > 0 )
             $activityToAdd = array_merge($activityToAdd, ['image' => $last_image_inserted_id[0]->id]);
 
-        DB::table('activity')->insert($activityToAdd);
+        $id = DB::table('activity')->insertGetId($activityToAdd);
+
+        $email = Session::get('email');
+        $user = User::whereRaw('email = ?', [$email])->first();
+
+        DB::table('volunteeractivity')->insert([
+            'volunteer' => $user->id,
+            'activity' => $id,
+            'admin' => true
+            ]);
 
         return redirect()->back();
     }
