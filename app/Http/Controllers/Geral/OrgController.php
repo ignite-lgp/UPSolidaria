@@ -127,9 +127,7 @@ class OrgController extends Controller
                 'phone' => $orgInfo['phone'],
                 'website' => $orgInfo['website'],
                 'facebook' => $orgInfo['facebook'],
-                'mission' => $orgInfo['mission'],
-                'vision' => $orgInfo['vision'],
-                'values' => $orgInfo['values']
+                'description' => $orgInfo['description']
                // 'token' => bin2hex(random_bytes(10)),
                 ]);
 
@@ -152,10 +150,7 @@ class OrgController extends Controller
         try {
             DB::table('organization')
             ->where('id', $data['organizacao_id'])
-            ->update(['mission' =>  $data['missao']
-                ,'vision' => $data['visao']
-                ,'values' => $data['valores']
-                ]);
+            ->update(['description' =>  $data['description']]);
             }catch(\Exception $e){
               //Alter to a more intuitive error showing
               return View('errors.500');

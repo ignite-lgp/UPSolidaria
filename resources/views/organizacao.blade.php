@@ -94,16 +94,8 @@
 				<h3 class="title">{!! $info->name !!}</h3>
 				<img class="img img-responsive org-img" src="../{{ $image_location }}">
 				<section class="info-section">
-						<h4 class="sidebar-title">Missão</h4>
-						<p class="big">{!! $info->mission !!}</p>
-				</section>
-				<section class="info-section">
-						<h4 class="sidebar-title">Visão</h4>
-						<p class="big">{!! $info->vision !!}</p>
-				</section>
-				<section class="info-section">
-						<h4 class="sidebar-title">Valores</h4>
-						<p class="big">{!! $info->values !!}</p>
+						<h4 class="sidebar-title">Description</h4>
+						<p class="big">{!! $info->description !!}</p>
 				</section>
 
 				<a href="{{ $info->website }}" target="_blank"><p class="big">{!! $info->website !!}</p></a> 
@@ -122,16 +114,8 @@
 					{!! Form::file('image'); !!} <!-- , $image_location -->
 					</section>
 					<section class="info-section">
-						<h4 class="sidebar-title">Missão</h4>
-					{!! Form::textarea('missao', $info->mission); !!} <!-- , $info->mission -->
-					</section>
-					<section class="info-section">
-						<h4 class="sidebar-title">Visão</h4>
-					{!! Form::textarea('visao', $info->vision); !!} <!-- , $info->vision -->
-					</section>
-					<section class="info-section">
-						<h4 class="sidebar-title">Valores</h4>
-					{!! Form::textarea('valores', $info->values); !!} <!-- , $info->values -->
+						<h4 class="sidebar-title">Description</h4>
+					{!! Form::textarea('missao', $info->description); !!} <!-- , $info->description -->
 					</section>
 
 					{!! Form::hidden('organizacao', $info->name); !!}
@@ -302,28 +286,9 @@
 				<h3 class="title">{{ $info->name }}</h3>
 				<img class="img img-responsive org-img" src="../{{ $image_location }}">
 				<section class="info-section">
-						<h4 class="sidebar-title">Missão</h4>
-						<p class="big">{{ $info->mission }}</p>
+						<h4 class="sidebar-title">Description</h4>
+						<p class="big">{{ $info->description }}</p>
 				</section>
-				<section class="info-section">
-						<h4 class="sidebar-title">Visão</h4>
-						<p class="big">{{ $info->vision }}</p>
-				</section>
-				<section class="info-section">
-						<h4 class="sidebar-title">Valores</h4>
-						<p class="big">{{ $info->values }}</p>
-				</section>
-
-				<!-- //////////////////////////// TESTE //////////////////////////////// -->
-				<!-- {{ Form::open(array('url' => '/adicionaVoluntario', 'method' => 'POST'))}}
-    			{{ Form::text('q', '', ['id' =>  'q', 'placeholder' =>  'Nome'])}}
-    			{{ Form::submit('Pesquisar', array('class' => 'button expand')) }}
-				{{ Form::close() }} -->
-
-				{{ Form::open(array('url' => '/adicionaVoluntario', 'method' => 'post'))}}
-        		{{  Form::label('auto', 'Nome: ') }}
-        		{{  Form::text('auto', '', array('id' => 'auto'))}}
-        		{{  Form::close() }}
 
       		</section>
 
@@ -338,16 +303,8 @@
 					<img class="img img-responsive org-img" src="../{{ $image_location }}">
 					{!! Form::file('image'); !!} <!-- , $image_location -->
 					<section class="info-section">
-						<h4 class="sidebar-title">Missão</h4>
-					{!! Form::textarea('missao', $info->mission); !!} <!-- , $info->mission -->
-					</section>
-					<section class="info-section">
-						<h4 class="sidebar-title">Visão</h4>
-					{!! Form::textarea('visao', $info->vision); !!} <!-- , $info->vision -->
-					</section>
-					<section class="info-section">
-						<h4 class="sidebar-title">Valores</h4>
-					{!! Form::textarea('valores', $info->values); !!} <!-- , $info->values -->
+						<h4 class="sidebar-title">Description</h4>
+					{!! Form::textarea('missao', $info->description); !!} <!-- , $info->description -->
 					</section>
 
 					{!! Form::hidden('organizacao', $info->name); !!}
