@@ -9,6 +9,9 @@ use App\User;
 use View;
 use DB;
 use Session;
+use Illuminate\Support\Facades\Input;
+use Validator;
+use Redirect;
 
 class NewsController extends Controller
 {
@@ -111,6 +114,32 @@ class NewsController extends Controller
 			// Just need the form data
 			$newsInfo = $data->all();
 			
+			//Proccess image upload
+			$file = array('image' => Input::file('image'));
+			// setting up rules
+			$rules = array('image' => 'required',); //mimes:jpeg,bmp,png and for max size max:10000
+			// doing the validation, passing post data, rules and the messages
+			$validator = Validator::make($file, $rules);
+			if ($validator->fails()) {
+				// send back to the page with the input data and errors
+				return redirect('/ver_noticias')->withInput()->withErrors($validator);
+			}
+			else {
+				// checking file is valid.
+				if (Input::file('image')->isValid()) {
+					$destinationPath = 'uploads'; // upload path
+					$extension = Input::file('image')->getClientOriginalExtension(); // getting image extension
+					$fileName = rand(11111,99999).'.'.$extension; // renameing image
+					Input::file('image')->move($destinationPath, $fileName); // uploading file to given path
+					// sending back with message
+					Session::flash('success', 'Notícia criada com sucesso'); 
+				}
+				else {
+					// sending back with error message.
+					Session::flash('error', 'uploaded file is not valid');
+					return redirect('/ver_noticias');
+				}
+			
 			DB::table('news')->insert(array(
 				'title' => $newsInfo['title'],
 				'description' => $newsInfo['description']
@@ -121,3 +150,5 @@ class NewsController extends Controller
 		}
 	}
 }
+}
+?>
