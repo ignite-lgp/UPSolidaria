@@ -96,15 +96,12 @@
           </div>
 
           <div class="pagination">
-              <div class="pagination-div"><i class="glyphicon glyphicon-menu-left"></i></div>
-              <div class="pagination-div"><span>1</span></div>
-              <div class="pagination-div"><i class="glyphicon glyphicon-menu-right"></i></div>
+              <div class="pagination-div"><a href="{{ $noticias->previousPageUrl() }}"><i class="glyphicon glyphicon-menu-left"></i></a></div>
+              <div class="pagination-div"><span>{{ $noticias->currentPage() }}</span></div>
+              <div class="pagination-div"><a href="{{ $noticias->nextPageUrl() }}"><i class="glyphicon glyphicon-menu-right"></i></a></div>
+			  <!--{!! $noticias->render() !!}-->
           </div>
-
-          <div class="pagination-range">
-              <div class="pagination-div-range"><span>1-17</span></div>
-          </div>
-        </section>	
+        </section>
 
         <section class="listing-requests">
             @foreach ($noticias as $noticia)
@@ -134,6 +131,7 @@
 				<hr class="rule-request">
 				@endif
 			@endforeach
+			{!! $noticias->render() !!}
         </section>
 
 			</section>

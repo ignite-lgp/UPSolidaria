@@ -64,7 +64,7 @@ class NewsController extends Controller
         }
 		else { //Else, platform admin --> get list for news management
 		
-			$news = DB::select('select * from news');
+			$news = DB::table('news')->paginate(10);
 			return view('/admin/ver_noticias')->with('noticias', $news);        
 		}
         
