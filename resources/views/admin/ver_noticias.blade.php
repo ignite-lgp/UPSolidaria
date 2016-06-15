@@ -116,14 +116,15 @@
                     <span class="small-info-request">|</span>
                     <span class="small-info-request">Visualizar</span>
                     <span class="small-info-request">|</span>
-                    <span class="small-info-request">Eliminar</span>
+					<span class="small-info-request">Eliminar</span>
                 </div>
                 <div class="date-request">
                   <span>{{ $noticia->date }}</span>
                 </div>
                 <div class="trophies-request">
-                    <i class="glyphicon glyphicon-thumbs-up"></i>
-                    <span class="trophies-number">12</span>
+					{{ Form::open(['route' => ['DeleteNews.route', $noticia->id], 'method' => 'delete']) }}
+                    {{ Form::button ('<i class="glyphicon glyphicon-remove"></i>', array('type' => 'submit', 'class' => ''))}}
+					{{ Form::close() }}
                 </div>
                 <div class="person-publication">
                     <span>Comissão de Voluntariado da UP<span>

@@ -1348,3 +1348,13 @@ button.navbar-toggle.collapsed:hover {
 #container-footer > span {
     display: block;
 }
+
+/***************************** Form button fix *************************************/
+
+form button{
+	padding: 0;
+	border: none;
+	background: inherit;
+}
+
+/***************************************************************************/
