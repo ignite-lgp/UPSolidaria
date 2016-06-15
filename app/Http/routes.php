@@ -127,25 +127,6 @@ Route::post('/adicionarGrupo', 'Geral\OrgController@addGroup');
  
 Route::post('/adicionaVoluntario', 'Geral\OrgController@addVolunteer');
 
-
-/*
-* Admin news list
-*/
-
-Route::get('/gerir_noticias', 'Geral\NewsController@showNewsAdmin');
-
-/*
-* Admin edit news
-*/
-
-//Route::post();
-
-/*
-* Admin delete news
-*/
-
-Route::delete('deleteNews/{id}',array('uses' => 'Geral\NewsController@deleteNews', 'as' => 'DeleteNews.route'));
-
 /*
 * Admin volunteers list
 */
@@ -180,9 +161,10 @@ Route::get('/validar_pedidos', function(){
     return view('/admin/validar_pedidos'); 
 });
 
-Route::get('/ver_noticias', function(){
-    return view('/admin/ver_noticias'); 
-});
+//News management
+Route::get('/ver_noticias', 'Geral\NewsController@showNewsAdmin');
+Route::delete('deleteNews/{id}',array('uses' => 'Geral\NewsController@deleteNews', 'as' => 'DeleteNews.route'));
+
 
 Route::get('/ver_registos', function(){
     return view('/admin/ver_registos'); 

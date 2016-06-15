@@ -104,119 +104,36 @@
           <div class="pagination-range">
               <div class="pagination-div-range"><span>1-17</span></div>
           </div>
-        </section>
-
+        </section>	
 
         <section class="listing-requests">
+            @foreach ($noticias as $noticia)
             <article class="listing-request">
                 <div class="select-request"></div>
                 <div class="info-request">
-                    <span class="name-request">Voluntariado atinge números recorde na U.Porto</span>
+                    <span class="name-request">{{ $noticia->title }}</span>
                     <span class="small-info-request">Editar</span>
                     <span class="small-info-request">|</span>
                     <span class="small-info-request">Visualizar</span>
                     <span class="small-info-request">|</span>
-                    <span class="small-info-request">Eliminar</span>
+					<span class="small-info-request">Eliminar</span>
                 </div>
                 <div class="date-request">
-                  <span>02-05-2015</span>
+                  <span>{{ $noticia->date }}</span>
                 </div>
                 <div class="trophies-request">
-                    <i class="glyphicon glyphicon-thumbs-up"></i>
-                    <span class="trophies-number">12</span>
+					{{ Form::open(['route' => ['DeleteNews.route', $noticia->id], 'method' => 'delete']) }}
+                    {{ Form::button ('<i class="glyphicon glyphicon-remove"></i>', array('type' => 'submit', 'class' => 'btndel'))}}
+					{{ Form::close() }}
                 </div>
                 <div class="person-publication">
-                    <span>Jennifer Moleiro<span>
+                    <span>Comissão de Voluntariado da UP<span>
                 </div>
             </article>
-            <hr class="rule-request">
-            <article class="listing-request">
-                <div class="select-request"></div>
-                <div class="info-request">
-                    <span class="name-request">Voluntariado atinge números recorde na U.Porto</span>
-                    <span class="small-info-request">Editar</span>
-                    <span class="small-info-request">|</span>
-                    <span class="small-info-request">Visualizar</span>
-                    <span class="small-info-request">|</span>
-                    <span class="small-info-request">Eliminar</span>
-                </div>
-                <div class="date-request">
-                  <span>02-05-2015</span>
-                </div>
-                <div class="trophies-request">
-                    <i class="glyphicon glyphicon-thumbs-up"></i>
-                    <span class="trophies-number">12</span>
-                </div>
-                <div class="person-publication">
-                    <span>Jennifer Moleiro<span>
-                </div>
-            </article>
-            <hr class="rule-request">
-            <article class="listing-request">
-                <div class="select-request"></div>
-                <div class="info-request">
-                    <span class="name-request">Voluntariado atinge números recorde na U.Porto</span>
-                    <span class="small-info-request">Editar</span>
-                    <span class="small-info-request">|</span>
-                    <span class="small-info-request">Visualizar</span>
-                    <span class="small-info-request">|</span>
-                    <span class="small-info-request">Eliminar</span>
-                </div>
-                <div class="date-request">
-                  <span>02-05-2015</span>
-                </div>
-                <div class="trophies-request">
-                    <i class="glyphicon glyphicon-thumbs-up"></i>
-                    <span class="trophies-number">12</span>
-                </div>
-                <div class="person-publication">
-                    <span>Jennifer Moleiro<span>
-                </div>
-            </article>
-            <hr class="rule-request">
-            <article class="listing-request">
-                <div class="select-request"></div>
-                <div class="info-request">
-                    <span class="name-request">Voluntariado atinge números recorde na U.Porto</span>
-                    <span class="small-info-request">Editar</span>
-                    <span class="small-info-request">|</span>
-                    <span class="small-info-request">Visualizar</span>
-                    <span class="small-info-request">|</span>
-                    <span class="small-info-request">Eliminar</span>
-                </div>
-                <div class="date-request">
-                  <span>02-05-2015</span>
-                </div>
-                <div class="trophies-request">
-                    <i class="glyphicon glyphicon-thumbs-up"></i>
-                    <span class="trophies-number">12</span>
-                </div>
-                <div class="person-publication">
-                    <span>Jennifer Moleiro<span>
-                </div>
-            </article>
-            <hr class="rule-request">
-            <article class="listing-request">
-                <div class="select-request"></div>
-                <div class="info-request">
-                    <span class="name-request">Voluntariado atinge números recorde na U.Porto</span>
-                    <span class="small-info-request">Editar</span>
-                    <span class="small-info-request">|</span>
-                    <span class="small-info-request">Visualizar</span>
-                    <span class="small-info-request">|</span>
-                    <span class="small-info-request">Eliminar</span>
-                </div>
-                <div class="date-request">
-                  <span>02-05-2015</span>
-                </div>
-                <div class="trophies-request">
-                    <i class="glyphicon glyphicon-thumbs-up"></i>
-                    <span class="trophies-number">12</span>
-                </div>
-                <div class="person-publication">
-                    <span>Jennifer Moleiro<span>
-                </div>
-            </article>
+				@if ($noticia != end($noticias))
+				<hr class="rule-request">
+				@endif
+			@endforeach
         </section>
 
 			</section>
