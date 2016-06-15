@@ -149,7 +149,7 @@ Route::delete('deleteNews/{id}',array('uses' => 'Geral\NewsController@deleteNews
 
 //News creation
 Route::get('/criar_noticia', 'Geral\NewsController@showForm');
-Route::post('/cria_noticia_accao', 'Geral\NewsController@createNews');
+Route::post('/createNews', 'Geral\NewsController@createNews');
 
 //Voluntarios registados
 Route::get('/ver_registos', 'Geral\UserController@showVolunteersAdmin');
