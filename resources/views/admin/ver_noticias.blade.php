@@ -123,7 +123,7 @@
                 </div>
                 <div class="trophies-request">
 					{{ Form::open(['route' => ['DeleteNews.route', $noticia->id], 'method' => 'delete']) }}
-                    {{ Form::button ('<i class="glyphicon glyphicon-remove"></i>', array('type' => 'submit', 'class' => ''))}}
+                    {{ Form::button ('<i class="glyphicon glyphicon-remove"></i>', array('type' => 'submit', 'class' => 'btndel'))}}
 					{{ Form::close() }}
                 </div>
                 <div class="person-publication">

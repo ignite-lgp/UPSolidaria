@@ -1349,9 +1349,9 @@ button.navbar-toggle.collapsed:hover {
     display: block;
 }
 
-/***************************** Form button fix *************************************/
+/***************************** Form button delete fix (admin views) ********/
 
-form button{
+form button.btndel{
 	padding: 0;
 	border: none;
 	background: inherit;
