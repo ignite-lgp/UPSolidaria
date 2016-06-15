@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Geral;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use UserController;
 use App\User;
 use View;
@@ -97,10 +98,9 @@ class NewsController extends Controller
 		}
 	}
 	
-	protected function createNews(){
+	protected function createNews(Request $data){
 	
-	$email = Session::get('email');
-        
+		$email = Session::get('email');
 		$user = User::whereRaw('email = ?', [$email])->first();
 
 		//If user is not logged in
@@ -108,9 +108,16 @@ class NewsController extends Controller
             return View('errors/403');
         }
 		else{
-			//insert da imagem e da notícia
+			// Just need the form data
+			$newsInfo = $data->all();
+			
+			DB::table('news')->insert(array(
+				'title' => $newsInfo['title'],
+				'description' => $newsInfo['description']
+			));
+			
+			//voltando à lista das notícias
 			return redirect('/ver_noticias');
 		}
-	
 	}
 }
