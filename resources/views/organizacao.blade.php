@@ -23,9 +23,10 @@
 					</ul>
 				</section>
 				<section class="sidebar-listing">
-					<span class="sidebar-title">Gerir Gruposr</span>
+					<span class="sidebar-title">Gerir Grupos</span>
 					<ul>
 						<li><a onclick="addGroup();">Adicionar Grupo</a></li>
+						<li><a onclick="addActivity()">Adicionar Atividades</a></li>
 						<li><a class="manage-volunteers">Gerir Voluntários</a></li>
 					</ul>
 				</section>
@@ -155,6 +156,46 @@
 					</section>
      		</section>
 
+     		<!-- Organization Add Group -->
+			<section class="main-section organization-section-add-activity" style="display: none;">
+				<h3 class="title">Adicionar Atividade</h3>
+
+				{!!  Form::open(array('url' => '/adicionarAtividade', 'method' => 'post', 'files' => 'true')) !!}
+					<section class="info-section">
+						<h4 class="sidebar-title">Nome</h4>
+					{!! Form::text('nome', ''); !!}
+					</section>
+					<section class="info-section">
+						<h4 class="sidebar-title">Associar a um grupo</h4>
+					{!! Form::select('grupo', $groupsForActivities); !!}
+					</section>
+					<section class="info-section">
+						<h4 class="sidebar-title">Descrição</h4>
+					{!! Form::textarea('descricao', ''); !!}
+					</section>
+					<section class="info-section">
+						<h4 class="sidebar-title">Data de Inicio</h4>
+					{!! Form::date('dateInit', \Carbon\Carbon::now()) !!}
+					</section>
+					<section class="info-section">
+						<h4 class="sidebar-title">Data de Fim</h4>
+					{!! Form::date('dateEnd', \Carbon\Carbon::now()) !!}
+					</section>
+					<section class="info-section">
+						<h4 class="sidebar-title">Público</h4>
+					{!! Form::checkbox('publico', true); !!}
+					</section>
+					<section class="info-section">
+						<h4 class="sidebar-title">Aberto</h4>
+					{!! Form::checkbox('aberto', true); !!}
+					</section>
+					{!! Form::hidden('organizacao_id', $info->id); !!}
+
+					{!! Form::submit('Criar'); !!}
+                {!! Form::close() !!}
+					</section>
+     		</section>
+
 		</section>
 	
 	</div>
@@ -181,7 +222,7 @@
 					</ul>
 				</section>
 				<section class="sidebar-listing">
-					<span class="sidebar-title">Gerir Gruposr</span>
+					<span class="sidebar-title">Gerir Grupos</span>
 					<ul>
 						<li><a onclick="addGroup();">Adicionar Grupo</a></li>
 						<li><a class="manage-volunteers">Gerir Voluntários</a></li>
@@ -269,7 +310,7 @@
      		</section>
 
      		<!-- Organization Add Group -->
-			<section class="main-section organization-section-add-group" style="display: none;">
+			<section class="main-section organization-section-add-activity" style="display: none;">
 				<h3 class="title">Adicionar Grupo</h3>
 
 				{!!  Form::open(array('url' => '/adicionarGrupo', 'method' => 'post', 'files' => 'true')) !!}
