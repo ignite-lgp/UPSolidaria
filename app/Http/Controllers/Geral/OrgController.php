@@ -24,8 +24,8 @@ class OrgController extends Controller
 		
         $information = DB::select('select * from organization where name = ?', array($organization));
 
-        $image_location = DB::select('select * from image where alt = ?', array($organization));
-
+       // $image_location = DB::select('select * from image where alt = ?', array($organization));
+        $image = DB::select('select * from image where image.id = ?', array($information[0]->image));
         //Original
 		//$activities = DB::select('select a.* from activity a, organization o where o.name = ? and a.organization = o.id and a.group IS NULL ',array($organization));
 		
@@ -60,7 +60,8 @@ class OrgController extends Controller
         //If user is not logged in shows defaul view
         return View('organizacao')->with([
                       'info' => $information[0]
-                    , 'image_location' => count($image_location) > 0 ? $image_location[0]->location : '#'
+                    //, 'image_location' => count($image_location) > 0 ? $image_location[0]->location : '#'
+                    , 'image_location' => $image[0]->location
 					, 'activities' => $activities
                     , 'admin' => (is_null($user) || count($is_user_on_organization) > 0 && !$is_user_on_organization[0]->admin || count($is_user_on_organization) == 0) ? false : true
                     , 'groups' => $groups

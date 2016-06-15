@@ -93,7 +93,8 @@
 			<section class="main-section volunteer-basic-info">
                 <div class="row volunteer-row">
                     <div class="col-md-3 col-sm-6">
-                        <img class="img img-responsive volunteer-img" src="/src/imgs/volunteers/stevejobs.jpg">
+                        
+                        <img class="img img-responsive volunteer-img" src="/src/imgs/volunteers/alcino.jpg">
                     </div>
                     
                     <div class="col-md-8 col-sm-6">
@@ -106,7 +107,7 @@
                         
                         <div class="volunteer-info">
                             <span>Estatuto:</span> 
-                            <span>--->Docente<---</span>
+                            <span>--->Estudante<---</span>
                         </div>
                         
                         <div class="volunteer-info">

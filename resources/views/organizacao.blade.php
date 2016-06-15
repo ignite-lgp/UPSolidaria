@@ -34,7 +34,7 @@
 			
 			<!-- Options -->
 			<section class="sidebar-listing">
-				<span class="sidebar-title">G.A.S. Porto</span>
+				<span class="sidebar-title">{!! $info->name !!}</span>
 				@if ($is_in)
 					{!! Form::open(array('url' => '/organizacao/' . $info->name . '/signin', 'method' => 'POST')) !!}	
 					{!! Form::submit('Aderir',array('class'=>'btn-auth'))!!}
@@ -92,7 +92,7 @@
 			<!-- Organization Section -->
 			<section class="organization-section">
 				<h3 class="title">{!! $info->name !!}</h3>
-				<img class="img img-responsive org-img" src="../{{ $image_location }}">
+				<img class="img img-responsive org-img" src="/{{ $image_location }}">
 				<section class="info-section">
 						<h4 class="sidebar-title">Description</h4>
 						<p class="big">{!! $info->description !!}</p>

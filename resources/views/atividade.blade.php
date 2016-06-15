@@ -82,7 +82,7 @@
 			</section>
 			
 			<section class="main-section">
-				<h4>Localização temportal</h4>
+				<h4>Localização temporal</h4>
 				<p>Início: {{ $info-> init_date}}</p>
 				<p>Fim: {{ $info-> end_date}}</p>
 			</section>
