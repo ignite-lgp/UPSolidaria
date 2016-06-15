@@ -72,7 +72,8 @@
                 <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" id="order-by" aria-labelledby="dropdownMenu1">
-
+				<li><a href="#">Data - mais recente para o mais antigo</a></li>
+                <li><a href="#">Data - mais antigo para o mais recente</a></li>
             </ul>
           </div>
 
@@ -84,8 +85,9 @@
               <i class="glyphicon glyphicon-trash"></i>
           </div>
 
-          <div class="dropdown dropdown-menus-right" id="menu-right">
-            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">10
+          <!--<div class="dropdown dropdown-menus-right" id="menu-right">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">{{ $noticias->perPage() }}
+
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" id="order-by" aria-labelledby="dropdownMenu1">
@@ -93,14 +95,19 @@
                 <li><a href="#">25</a></li>
                 <li><a href="#">50</a></li>
             </ul>
-          </div>
+          </div>-->
 
           <div class="pagination">
-              <div class="pagination-div"><a href="{{ $noticias->previousPageUrl() }}"><i class="glyphicon glyphicon-menu-left"></i></a></div>
+              <a href="{{ $noticias->previousPageUrl() }}"><div class="pagination-div"><i class="glyphicon glyphicon-menu-left"></i></div></a>
               <div class="pagination-div"><span>{{ $noticias->currentPage() }}</span></div>
-              <div class="pagination-div"><a href="{{ $noticias->nextPageUrl() }}"><i class="glyphicon glyphicon-menu-right"></i></a></div>
+              <a href="{{ $noticias->nextPageUrl() }}"><div class="pagination-div"><i class="glyphicon glyphicon-menu-right"></i></div></a>
 			  <!--{!! $noticias->render() !!}-->
           </div>
+		  
+		  <div class="pagination-range">		
+              <div class="pagination-div-range"><span>{{ $noticias->currentPage() }}-{{ $noticias->lastPage() }}</span></div>		
+          </div>
+		  
         </section>
 
         <section class="listing-requests">
@@ -109,11 +116,11 @@
                 <div class="select-request"></div>
                 <div class="info-request">
                     <span class="name-request">{{ $noticia->title }}</span>
-                    <span class="small-info-request">Editar</span>
-                    <span class="small-info-request">|</span>
-                    <span class="small-info-request">Visualizar</span>
-                    <span class="small-info-request">|</span>
-					<span class="small-info-request">Eliminar</span>
+                    <!--<span class="small-info-request">Editar</span>
+                    <span class="small-info-request">|</span>-->
+                    <span class="small-info-request"><a href ="/noticia/{{ $noticia->title }}">Visualizar</a></span>
+                    <!--<span class="small-info-request">|</span>
+					<span class="small-info-request">Eliminar</span>-->
                 </div>
                 <div class="date-request">
                   <span>{{ $noticia->date }}</span>
@@ -127,11 +134,10 @@
                     <span>Comissão de Voluntariado da UP<span>
                 </div>
             </article>
-				@if ($noticia != end($noticias))
+				@if ($noticia->id != $noticias->lastItem())
 				<hr class="rule-request">
 				@endif
 			@endforeach
-			{!! $noticias->render() !!}
         </section>
 
 			</section>
