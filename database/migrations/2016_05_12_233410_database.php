@@ -209,7 +209,7 @@ class Database extends Migration
             $table->foreign('volunteer')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('activity')->references('id')->on('activity');
             $table->boolean('admin')->default(false);
-            $table->integer('hours');
+            $table->integer('hours')->default(0);
 
             $table->primary(['volunteer', 'activity']);
             
