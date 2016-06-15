@@ -29,7 +29,7 @@ class OrgController extends Controller
         //Original
 		//$activities = DB::select('select a.* from activity a, organization o where o.name = ? and a.organization = o.id and a.group IS NULL ',array($organization));
 		
-        $activities = DB::select('select a.* from activity a, organization o where o.name = ? and a.group = o.id ',array($organization));
+        $activities = DB::select('select a.* from activity a, organization o where o.name = ? and a.organization = o.id and a.group IS NULL',array($organization));
 
         $email = Session::get('email');
         $user = User::whereRaw('email = ?', [$email])->first();
