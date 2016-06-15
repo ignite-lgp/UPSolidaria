@@ -26,7 +26,6 @@ class OrgController extends Controller
 
         $image_location = DB::select('select * from image where alt = ?', array($organization));
 
-
         //Original
 		//$activities = DB::select('select a.* from activity a, organization o where o.name = ? and a.organization = o.id and a.group IS NULL ',array($organization));
 		
@@ -44,19 +43,17 @@ class OrgController extends Controller
 
         // Check if user is already on this organization
         if (count($user) > 0 ){
-            $is_user_on_organization = DB::select('select * from users, organization, user_organization where users.id = ? and  user_organization.volunteer = users.id 
-                and user_organization.leave_date is null
-                and organization.name = ?
-                and organization.id = user_organization.organization', array($user->id, $organization));
+            $is_user_on_organization = DB::select('select user_organization.admin is true as admin from user_organization, organization
+                where user_organization.volunteer = ? and user_organization.organization = organization.id and organization.name = ? 
+                and user_organization.leave_date is null', array($user->id, $organization));
         }
         
-
         //If user is not logged in shows defaul view
         return View('organizacao')->with([
                       'info' => $information[0]
-                    , 'image_location' => $image_location[0]->location
+                    , 'image_location' => count($image_location) > 0 ? $image_location[0]->location : '#'
 					, 'activities' => $activities
-                    , 'admin' => (is_null($user) || is_null($user->organization)) ? false : true
+                    , 'admin' => (is_null($user) || count($is_user_on_organization) > 0 && !$is_user_on_organization[0]->admin || count($is_user_on_organization) == 0) ? false : true
                     , 'groups' => $groups
                     , 'is_in' => (!is_null($user) && isset($is_user_on_organization) && count($is_user_on_organization)) > 0 ? false : true]);   
     }
