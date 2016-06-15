@@ -129,20 +129,11 @@ Route::post('/organizacao/adicionarAtividade', 'Geral\OrgController@addActivity'
  
 Route::post('/adicionaVoluntario', 'Geral\OrgController@addVolunteer');
 
-
 /*
 * Admin delete volunteer
 */
 
 Route::delete('deleteVolunteer/{id}',array('uses' => 'Geral\UserController@deleteVolunteer', 'as' => 'DeleteVolunteer.route'));
-
-/*
-*
-*/
-
-Route::get('/criar_noticia', 'Geral\NewsController@showForm');
-
-
 
 /*
 * Administrador Views
@@ -155,6 +146,10 @@ Route::get('/validar_pedidos', function(){
 //News management
 Route::get('/ver_noticias', 'Geral\NewsController@showNewsAdmin');
 Route::delete('deleteNews/{id}',array('uses' => 'Geral\NewsController@deleteNews', 'as' => 'DeleteNews.route'));
+
+//News creation
+Route::get('/criar_noticia', 'Geral\NewsController@showForm');
+Route::post('/cria_noticia_accao', 'Geral\NewsController@createNews');
 
 //Voluntarios registados
 Route::get('/ver_registos', 'Geral\UserController@showVolunteersAdmin');

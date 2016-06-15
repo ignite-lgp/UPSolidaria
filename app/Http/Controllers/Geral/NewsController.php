@@ -96,4 +96,21 @@ class NewsController extends Controller
 			return View('/criar_noticia');
 		}
 	}
+	
+	protected function createNews(){
+	
+	$email = Session::get('email');
+        
+		$user = User::whereRaw('email = ?', [$email])->first();
+
+		//If user is not logged in
+        if(is_null($user) || $user->admin == 0) {
+            return View('errors/403');
+        }
+		else{
+			//insert da imagem e da notícia
+			return redirect('/ver_noticias');
+		}
+	
+	}
 }

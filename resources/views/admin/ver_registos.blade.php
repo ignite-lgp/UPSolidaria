@@ -119,7 +119,7 @@
                     <span>G.A.S. Porto<span>
                 </div>-->
             </article>
-			@if ($voluntario != $)
+			@if ($)
 			<hr class="rule-request">
 			@endif
 			@endforeach
