@@ -66,16 +66,16 @@
             </ul>
           </div>
 
-          <div class="dropdown dropdown-menus-left lefting-div">
+          <!--<div class="dropdown dropdown-menus-left lefting-div">
             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
     <i class="glyphicon glyphicon-bookmark"></i>
                 <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" id="order-by" aria-labelledby="dropdownMenu1">
-				<li><a href="#">Data - mais recente para o mais antigo</a></li>
+				<li><a href="/noticias/ver_noticias">Data - mais recente para o mais antigo</a></li>
                 <li><a href="#">Data - mais antigo para o mais recente</a></li>
             </ul>
-          </div>
+          </div>-->
 
           <div class="publish">
               <span>Publicar</span>
@@ -141,7 +141,6 @@
         </section>
 
 			</section>
-
 
 	</div>
 

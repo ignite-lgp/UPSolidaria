@@ -64,10 +64,9 @@ class NewsController extends Controller
         }
 		else { //Else, platform admin --> get list for news management
 		
-			$news = DB::table('news')->paginate(15);
+			$news = DB::table('news')->orderBy('date', 'desc')->paginate(10);
 			return view('/admin/ver_noticias')->with('noticias', $news);        
 		}
-        
     }
 	
 	protected function deleteNews($id){

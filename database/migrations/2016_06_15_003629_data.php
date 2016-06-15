@@ -556,6 +556,24 @@ class Data extends Migration
             , 'organization' => 3 //referencia à org gasporto
             , 'admin' => false]);
 
+		//Volunteers list just because
+		
+		DB::table('users')->insert(['name' => 'Miguel'
+            , 'email' => 'm@m.m'
+            , 'password' => bcrypt('123456')
+            , 'nif' => '444444444'
+            , 'token' => bin2hex(random_bytes(10))
+            , 'country' => 'PT'
+            , 'admin' => false
+			, 'confirm_date' => '2016-05-26 22:53:27']);
+			
+		DB::table('users')->insert(['name' => 'Admin'
+            , 'email' => 'admin@admin.admin'
+            , 'password' => bcrypt('123456')
+            , 'nif' => '555555555'
+            , 'token' => bin2hex(random_bytes(10))
+            , 'country' => 'PT'
+            , 'admin' => true]);
     }
 
     /**
