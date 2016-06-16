@@ -145,8 +145,8 @@ class OrgController extends Controller
     protected function editInfo(Request $info){
 
         $data = $info->all();
+
        
-    
         //If not changed, default values will be stored
         try {
             DB::table('organization')
@@ -159,13 +159,31 @@ class OrgController extends Controller
         
         
         if(array_key_exists('image', $data)){
+
+        //Check if record of image already in db
+        $org_image = DB::table('image')->where('alt', $data['organizacao']);
+
         $image = $data['image'];
         $size = $image->getSize();
+        print_r($size);
             if($image->isValid()) {
             $destinationPath = 'src/imgs/organizations';
             //Change the name of the img file to org Name
             //Moving the image to img folder
             $image->move($destinationPath, $data['organizacao'].'.jpg');
+
+
+            //If doesnt exists -> inserts
+            if(is_null($org_image)){
+            //Inserting image reference in database
+            DB::table('image')->insert(array('alt' => $data['organizacao']
+                ,'height' => 90
+                ,'width' => 90
+                ,'location' => $destinationPath . '/' . $data['organizacao'] . '.jpg'
+                ,'size' => $size));
+            }
+            //If exists -> update
+            else {
             //Inserting image reference in database
             DB::table('image')
             ->where('alt', $data['organizacao'])
@@ -175,11 +193,11 @@ class OrgController extends Controller
                 ,'location' => $destinationPath . '/' . $data['organizacao'] . '.jpg'
                 ,'size' => $size));
             }
+            }
              else {
                 //Alter to a more intuitive error showing
                 return View('errors.500');
             }
-
         }
     
 

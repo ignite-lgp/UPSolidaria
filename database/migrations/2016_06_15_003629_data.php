@@ -296,7 +296,7 @@ class Data extends Migration
         DB::table('organization')->insert(array('name'=>'U.P Solidária', 'password' => '12345', 'email'=>'_p@w.com', 'address' => 'Rua', 'confirm_date' => '2016-05-26 22:53:27', 'created_at' => '2016-05-26 22:53:27', 'updated_at' => '2016-05-26 22:53:27', 'image' => '4'));
 
         DB::table('user_organization')->insert(array('volunteer'=>'1', 'organization' => '1', 'reg_date'=>'2016-05-26 22:53:27', 'leave_date'=>'2017-05-26 22:53:27'));
-        DB::table('user_organization')->insert(array('volunteer'=>'1', 'organization' => '2', 'reg_date'=>'2016-05-26 22:53:27'));
+        //DB::table('user_organization')->insert(array('volunteer'=>'1', 'organization' => '2', 'reg_date'=>'2016-05-26 22:53:27'));
 
         DB::table('groups')->insert(array('name'=>'Grupo 1', 'organization' => '1', 'description' => 'Lorep Ipsum', 'public' => 'false', 'open' => 'false', 'active' => 'false', 'created_date' => '2016-05-26 22:53:27'));
 
@@ -394,6 +394,13 @@ class Data extends Migration
             , 'country' => 'PT'
             , 'organization' => 3 //referencia à org gasporto
             , 'admin' => false]);
+
+
+
+        /*
+        * Adding user alcino.jssousa@gmail.com as admin of G.A.S.Porto
+        */ 
+        DB::table('user_organization')->insert(array('volunteer'=>'2', 'organization' => '3', 'reg_date'=>'2016-05-26 22:53:27', 'admin' => true));
 
     }
 

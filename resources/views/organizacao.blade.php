@@ -94,7 +94,7 @@
 				<h3 class="title">{!! $info->name !!}</h3>
 				<img class="img img-responsive org-img" src="../{{ $image_location }}">
 				<section class="info-section">
-						<h4 class="sidebar-title">Description</h4>
+						<h4 class="sidebar-title">Descrição</h4>
 						<p class="big">{!! $info->description !!}</p>
 				</section>
 
@@ -114,8 +114,8 @@
 					{!! Form::file('image'); !!} <!-- , $image_location -->
 					</section>
 					<section class="info-section">
-						<h4 class="sidebar-title">Description</h4>
-					{!! Form::textarea('missao', $info->description); !!} <!-- , $info->description -->
+						<h4 class="sidebar-title">Descrição</h4>
+					{!! Form::textarea('description', $info->description); !!} <!-- , $info->description -->
 					</section>
 
 					{!! Form::hidden('organizacao', $info->name); !!}
@@ -286,7 +286,7 @@
 				<h3 class="title">{{ $info->name }}</h3>
 				<img class="img img-responsive org-img" src="../{{ $image_location }}">
 				<section class="info-section">
-						<h4 class="sidebar-title">Description</h4>
+						<h4 class="sidebar-title">Descrição</h4>
 						<p class="big">{{ $info->description }}</p>
 				</section>
 
@@ -303,8 +303,8 @@
 					<img class="img img-responsive org-img" src="../{{ $image_location }}">
 					{!! Form::file('image'); !!} <!-- , $image_location -->
 					<section class="info-section">
-						<h4 class="sidebar-title">Description</h4>
-					{!! Form::textarea('missao', $info->description); !!} <!-- , $info->description -->
+						<h4 class="sidebar-title">Descrição</h4>
+					{!! Form::textarea('description', $info->description); !!} <!-- , $info->description -->
 					</section>
 
 					{!! Form::hidden('organizacao', $info->name); !!}
