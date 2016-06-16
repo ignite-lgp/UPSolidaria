@@ -328,14 +328,43 @@
 			</section>
 		
 			<!-- Organization Section -->
-			<section class="main-section organization-section">
-				<h3 class="title">{{ $info->name }}</h3>
-				<img class="img img-responsive org-img" src="../{{ $image_location }}">
+			<section class="organization-section">
+				<h3 class="title">{!! $info->name !!}</h3>
+				<img class="img img-responsive org-img" src="/{{ $image_location }}">
 				<section class="info-section">
-						<h4 class="sidebar-title">Descrição</h4>
-						<p class="big">{{ $info->description }}</p>
+						<p class="big">{!! $info->description !!}</p>
 				</section>
 
+				<h4 class="title">Contatos</h4>
+            	
+            	@if( $info->address != NULL)
+				<section class="info-section contacts">
+					<h5 class="strong">Morada:</h5>
+					<p>{!! $info->address !!}</p>   
+				</section>
+				@endif
+
+				@if( $info->phone != NULL)
+				<section class="info-section contacts">
+					<h5 class="strong">Telefone:</h5>
+					<p>{!! $info->phone !!}</p>
+				</section>
+				@endif
+
+				@if( $info->email != NULL)
+				<section class="info-section contacts">
+                    <h5 class="strong">E-mail:</h5>
+                    <p>voluntariado.up@reit.up.pt</p>
+				</section>
+				@endif
+
+				 @if( $info->website != NULL)
+				<section class="info-section contacts">
+                    <h5 class="strong">Website:</h5>
+                    <a href="{{ $info->website }}" target="_blank"><p>{!! $info->website !!}</p></a> 
+				</section>
+				@endif
+				
       		</section>
 
 
