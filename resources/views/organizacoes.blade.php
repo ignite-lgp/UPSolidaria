@@ -14,14 +14,6 @@
 				<input class="search-bar-input" type="text" name="activities" placeholder="Pesquisar Organizações" />
 			</section>
 			
-            <!-- Categories -->
-			<section class="sidebar-categories">
-				<span class="sidebar-title">categorias</span>
-				@foreach ($orgs as $org)
-					<a>{{ $org->name }}</a>
-                @endforeach
-			</section>
-            
 			<!-- Interests -->
 			<section class="sidebar-listing">
 				<span class="sidebar-title">Áreas de Interesse</span>

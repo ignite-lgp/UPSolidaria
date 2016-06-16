@@ -14,7 +14,7 @@
             <section class="sidebar-categories">
                 <span class="sidebar-title">categorias</span>
                 @foreach ($orgs as $org) 
-                <a href="./organizacao/{{ $org->name }}">{{ $org->name }}</a>
+                <a href="/organizacao/{{ $org->name }}">{{ $org->name }}</a>
                  @endforeach
             </section>
             
