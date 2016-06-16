@@ -144,10 +144,8 @@ class OrgController extends Controller
     *   @return view
     */
     protected function editInfo(Request $info){
-
         $data = $info->all();
 
-       
         //If not changed, default values will be stored
         try {
             DB::table('organization')
@@ -158,7 +156,6 @@ class OrgController extends Controller
               return View('errors.500');
         }
         
-        
         if(array_key_exists('image', $data)){
 
         //Check if record of image already in db
@@ -166,45 +163,56 @@ class OrgController extends Controller
 
         $image = $data['image'];
         $size = $image->getSize();
-        print_r($size);
-            if($image->isValid()) {
+        if($image->isValid()) {
             $destinationPath = 'src/imgs/organizations';
             //Change the name of the img file to org Name
             //Moving the image to img folder
             $image->move($destinationPath, $data['organizacao'].'.jpg');
 
-
-            //If doesnt exists -> inserts
+            //Id of the image to ad to the organization table
+            $image_id = DB::select('select id from image where alt = ?', array($data['organizacao']));
+           
+           
+            //If doesnt exist -> insert
             if(is_null($org_image)){
-            //Inserting image reference in database
-            DB::table('image')->insert(array('alt' => $data['organizacao']
-                ,'height' => 90
-                ,'width' => 90
-                ,'location' => $destinationPath . '/' . $data['organizacao'] . '.jpg'
-                ,'size' => $size));
+                //Inserting image reference in database
+                DB::table('image')->insert(array('alt' => $data['organizacao']
+                    ,'height' => 90
+                    ,'width' => 90
+                    ,'location' => $destinationPath . '/' . $data['organizacao'] . '.jpg'
+                    ,'size' => $size));
+                
+                
+                //update id of image in org table
+                DB::table('organization')
+                    ->where('name', $data['organizacao'])
+                    ->update(['image' => $image_id[0]->id]);
             }
-            //If exists -> update
-            else {
-            //Inserting image reference in database
-            DB::table('image')
-            ->where('alt', $data['organizacao'])
-            ->update(array('alt' => $data['organizacao']
-                ,'height' => 90
-                ,'width' => 90
-                ,'location' => $destinationPath . '/' . $data['organizacao'] . '.jpg'
-                ,'size' => $size));
-            }
-            }
-             else {
-                //Alter to a more intuitive error showing
-                return View('errors.500');
-            }
+            else{
+                DB::table('organization')
+                    ->where('name', $data['organizacao'])
+                    ->update(['image' => $image_id[0]->id]);
+            } 
         }
-    
+        else {
+            //Image not valid
+             //Alter to a more intuitive error showing
+                return View('errors.500');
+        }
+    }
+    //image not loaded
+    else{
 
         //Redirecting to Org Page
-        return redirect('/organizacao/'.$data['organizacao']);
+         return redirect('/organizacao/'.$data['organizacao']);
+    }
+    
+        
 
+        //Redirecting to Org Page
+         return redirect('/organizacao/'.$data['organizacao']);
+        
+       
     }
 
     /**
