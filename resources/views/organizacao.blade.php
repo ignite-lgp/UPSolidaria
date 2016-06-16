@@ -27,7 +27,12 @@
 					<ul>
 						<li><a onclick="addGroup();">Adicionar Grupo</a></li>
 						<li><a onclick="addActivity()">Adicionar Atividades</a></li>
-						<li><a class="manage-volunteers">Gerir Voluntários</a></li>
+					</ul>
+				</section>
+				<section class="sidebar-listing">
+					<span class="sidebar-title">Gerir Voluntários</span>
+					<ul>
+						<li><a onclick="addVolunteers();">Adicionar Voluntários a Organização </a></li>
 					</ul>
 				</section>
 			@endif
@@ -156,7 +161,7 @@
                 {!! Form::close() !!}
      		</section>
 
-     		<!-- Organization Add Group -->
+     		<!-- Organization Add Activity -->
 			<section class="main-section organization-section-add-activity" style="display: none;">
 				<h3 class="title">Adicionar Atividade</h3>
 
@@ -196,10 +201,21 @@
 						<h4 class="sidebar-title">Aberto</h4>
 						{!! Form::checkbox('aberto', true); !!}
 					</section>
-					{!! Form::hidden('organizacao_id', $info->id); !!}
+					{!! Form::hidden('organizacao_id', $info->id) !!}
 
 					{!! Form::submit('Criar'); !!}
                 {!! Form::close() !!}
+     		</section>
+
+     		<!-- Add Volunteers to Organization -->
+			<section class="main-section organization-section-add-volunteer" style="display: none;">
+				<h3 class="title">Adicionar Voluntários</h3>
+				{{ Form::open(array('url' => '/adicionaVoluntario', 'method' => 'post'))}}
+					{{  Form::label('user_nome', 'Nome: ') }}
+					{{  Form::text('user_nome', '', array('id' => 'user_nome'))}}
+					{{ Form::hidden('organizacao_id', $info->id, array('id' => 'organizacao_id')) }}
+				{{ Form::close() }}
+				
      		</section>
 
 		</section>
@@ -231,7 +247,10 @@
 					<span class="sidebar-title">Gerir Grupos</span>
 					<ul>
 						<li><a onclick="addGroup();">Adicionar Grupo</a></li>
-						<li><a class="manage-volunteers">Gerir Voluntários</a></li>
+					</ul>
+					<span class="sidebar-title">Gerir Voluntários</span>
+					<ul>
+						<li><a onclick="addVolunteers();">Adicionar Voluntários a Organização </a></li>
 					</ul>
 				</section>
 			@endif

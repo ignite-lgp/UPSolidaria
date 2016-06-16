@@ -123,11 +123,7 @@ Route::post('/adicionarGrupo', 'Geral\OrgController@addGroup');
  
 Route::post('/organizacao/adicionarAtividade', 'Geral\OrgController@addActivity');
 
- /*
- *   Add Volunteer to org
- */
  
-Route::post('/adicionaVoluntario', 'Geral\OrgController@addVolunteer');
 
 /*
 * Admin delete volunteer
@@ -159,12 +155,20 @@ Route::get('/ver_registos', 'Geral\UserController@showVolunteersAdmin');
 //
 
 /*
+/*
 * Route test to autcomplete user
-*/
 Route::get('/search', function(){
     return view('autocomplete_user'); 
 });
+*/
+
 /*
 *   Autocomplete search Users
 */
 Route::get('/search/autocomplete', 'Geral\UserController@autocomplete');
+
+/*
+ *   Add Volunteer to org
+ */
+ 
+Route::post('/adicionaVoluntario', 'Geral\OrgController@addVolunteer');

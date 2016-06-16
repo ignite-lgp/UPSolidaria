@@ -292,30 +292,23 @@ class OrgController extends Controller
     * Add volunteer to group 
     * @return view
     */
-    protected function addVolunteer($organization){
+    protected function addVolunteer(Request $data){
+        $info = $data->all();
+
+        print_r($info);
+        //Get user 
+        $user = DB::select('select * from users where name = ?', [$info['user_nome']]);
         
-
-        // Get user that did the request
-        $email = Session::get('email');
-        $user = User::whereRaw('email = ?', [$email])->first();
-
-        // Get organization id
-        $organizationID = DB::select('select organization.id from organization where organization.name = ?', 
-            array($organization))[0]->id;
-
-        if (count($user) > 0){
-
-            DB::table('user_organization')->insert(
+        $org = DB::select('select * from organization where id = ?', array($info['organizacao_id']));
+        
+        DB::table('user_organization')->insert(
                 [
-                    'volunteer' => $user->id,
-                    'organization' => $organizationID,
+                    'volunteer' => $user[0]->id,
+                    'organization' => $info['organizacao_id'],
                     'reg_date' => date('Y-m-d G:i:s')
                 ]);
 
-            return redirect('organizacao/' . $organization);
-        } else {
-            echo fail;
-        }
+        return redirect('organizacao/' . $org[0]->name); 
     }
 
     /**
