@@ -178,10 +178,10 @@ class UserController extends Controller
         if(is_null($user) || $user->admin == 0) {
             return View('errors/403');
         }
-		else { //Else, platform admin --> get list for volunteers management
+		else { //Else, platform admin --> get list for volunteers management where users.organization is null and users.admin = 0
 		
-			$information = DB::select('select users.name, users.confirm_date, users.id from users where users.organization is null and users.admin = 0');
-			return View('gerir_voluntarios')->with('voluntarios', $information);
+			$information = DB::table('users')->where('admin', '=', 0)->whereNull('organization')->paginate(10);
+			return View('admin/ver_registos')->with('voluntarios', $information);
         }
 	}
 	

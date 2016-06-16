@@ -12,7 +12,7 @@ class Data extends Migration
      */
     public function up()
     {
-                // Country Inserts 
+        // Country Inserts 
 
         DB::table('country')->insert(array('code'=>'AF','country'=>'Afghanistan'));
         DB::table('country')->insert(array('code'=>'AL','country'=>'Albania'));
@@ -284,16 +284,74 @@ class Data extends Migration
         DB::table('image')->insert(array('location'=>'src/imgs/organizations/default.png'));
         DB::table('image')->insert(array('location'=>'src/imgs/volunteers/default.png'));
         DB::table('image')->insert(array('location'=>'src/imgs/gas_porto.png'));
+
         DB::table('image')->insert(array('alt' => 'An image', 'height' => 90, 'width' => 90, 'location' => 'src/imgs/voluntariado_atividades.jpg', 'size' => 900));
         DB::table('image')->insert(array('alt' => 'Another image', 'height' => 90, 'width' => 90, 'location' => 'src/imgs/voluntariado_up.jpg', 'size' => 900));
         DB::table('image')->insert(array('alt' => 'Yet another image', 'height' => 90, 'width' => 90, 'location' => 'src/imgs/voluntariado3.jpg', 'size' => 900));
+
+        DB::table('image')->insert(array('location'=>'src/imgs/organizations/ajudaris.png'));
+        DB::table('image')->insert(array('location'=>'src/imgs/organizations/bancoalimentar.png'));
+        DB::table('image')->insert(array('location'=>'src/imgs/organizations/cdup.png'));
+        DB::table('image')->insert(array('location'=>'src/imgs/organizations/curamais.png'));
+        DB::table('image')->insert(array('location'=>'src/imgs/organizations/fepsolidaria.jpg'));
+        DB::table('image')->insert(array('location'=>'src/imgs/organizations/moa.png'));
+         DB::table('image')->insert(array('location'=>'src/imgs/volunteers/alcino.jpg'));
 
         DB::table('users')->insert(array('name'=>'Tiago', 'email' => 'tiago@email.com','password' =>'$2y$10$5UCl9QPQJshKIjgrJgqMz.6dZ/feyUqdLUZ7F5wbEW.jnrk21nnpm',
         'nif' => '000000000', 'token' => 'f2f7c30e91c7c8e7f32c', 'confirm_date' => '2016-05-26 22:53:27', 'country' => 'PT', 'created_at'=>'2016-05-26 22:53:27',
         'updated_at' => '2016-05-26 22:53:27'));
 
-        DB::table('organization')->insert(array('name'=>'G.A.S Porto', 'password' => '12345', 'email'=>'_a@w.com', 'address' => 'Rua', 'confirm_date' => '2016-05-26 22:53:27', 'created_at' => '2016-05-26 22:53:27', 'updated_at' => '2016-05-26 22:53:27', 'image' => '3'));
-        DB::table('organization')->insert(array('name'=>'U.P Solidária', 'password' => '12345', 'email'=>'_p@w.com', 'address' => 'Rua', 'confirm_date' => '2016-05-26 22:53:27', 'created_at' => '2016-05-26 22:53:27', 'updated_at' => '2016-05-26 22:53:27', 'image' => '4'));
+        /**
+         * INSERT ORGANIZATIONS
+         */
+        DB::table('organization')->insert(array('name'=>'Ajudaris', 'password' => '12345', 'email'=>'geral@ajudaris.org', 'address' => 'Rua Dr. Roberto Frias s/n, 4200-465 Porto', 'confirm_date' => '2016-05-26 22:53:27', 'created_at' => '2016-05-26 22:53:27', 'updated_at' => '2016-05-26 22:53:27', 'image' => 7));
+
+        DB::table('organization')->insert(array('name'=>'Fep Solidária', 'password' => '12345', 'email'=>'solidaria@aefep.pt', 'address' => 'Rua Dr. Roberto Frias s/n, 4200-465 Porto', 'website' => 'http://aefep.pt/category/fep-solidaria-2/', 'confirm_date' => '2016-05-26 22:53:27', 'created_at' => '2016-05-26 22:53:27', 'updated_at' => '2016-05-26 22:53:27', 'image' => 11));
+
+        DB::table('organization')->insert(array('name'=>'G.A.S. Porto', 'password' => '123456'
+            ,'email'=>'alcino.jssousa@gmail.com', 'address' => 'Rua Dr. Roberto Frias s/n, 4200-465 Porto'
+            , 'website' => 'http://www.gasporto.pt/'
+            ,'confirm_date' => '2016-05-26 22:53:27'
+            ,'created_at' => '2016-05-26 22:53:27'
+            ,'updated_at' => '2016-05-26 22:53:27'
+            ,'image' => 5
+            ));
+
+        DB::table('organization')->insert(array('name'=>'Banco Alimentar', 'password' => '123456'
+            ,'email'=>'ba.federacao@bancoalimentar.pt', 'address' => 'Rua Dr. Roberto Frias s/n, 4200-465 Porto'
+            ,'confirm_date' => '2016-05-26 22:53:27'
+            ,'created_at' => '2016-05-26 22:53:27'
+            ,'updated_at' => '2016-05-26 22:53:27'
+            ,'image' => 8
+            ));
+
+        DB::table('organization')->insert(array('name'=>'Cdup', 'password' => '123456'
+            ,'email'=>'geral@cdup.up.pt', 'address' => 'Rua Dr. Roberto Frias s/n, 4200-465 Porto'
+            , 'website' => 'http://aefep.pt/category/fep-solidaria-2/'
+            ,'confirm_date' => '2016-05-26 22:53:27'
+            ,'created_at' => '2016-05-26 22:53:27'
+            ,'updated_at' => '2016-05-26 22:53:27'
+            ,'image' => 9
+            ));
+
+        DB::table('organization')->insert(array('name'=>'Curamais', 'password' => '123456'
+            ,'email'=>'geral@curamais.com', 'address' => 'Rua Mouzinho da Silveira, 234/6/8 Porto'
+            , 'website' => 'http://www.curamais.com/'
+            ,'confirm_date' => '2016-05-26 22:53:27'
+            ,'created_at' => '2016-05-26 22:53:27'
+            ,'updated_at' => '2016-05-26 22:53:27'
+            ,'image' => 10
+            ));
+
+        DB::table('organization')->insert(array('name'=>'Moa', 'password' => '123456'
+            ,'email'=>'geral@moa.com', 'address' => 'Rua Mouzinho da Silveira, 234/6/8 Porto'
+            , 'website' => 'http://www.moa.com/'
+            ,'confirm_date' => '2016-05-26 22:53:27'
+            ,'created_at' => '2016-05-26 22:53:27'
+            ,'updated_at' => '2016-05-26 22:53:27'
+            ,'image' => 12
+            ));
+
 
         DB::table('user_organization')->insert(array('volunteer'=>'1', 'organization' => '1', 'reg_date'=>'2016-05-26 22:53:27', 'leave_date'=>'2017-05-26 22:53:27'));
         //DB::table('user_organization')->insert(array('volunteer'=>'1', 'organization' => '2', 'reg_date'=>'2016-05-26 22:53:27'));
@@ -335,6 +393,120 @@ class Data extends Migration
         DB::table('news')->insert(array('image' => 4, 'title' => 'Título 1' , 'description' => $description, 'date' => Carbon\Carbon::now()));
         DB::table('news')->insert(array('image' => 5, 'title' => 'Título 2' , 'description' => $description, 'date' => Carbon\Carbon::now()));
         DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+		DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+		DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+		DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+
+
 
 
         ///////////////////////////////////////////
@@ -345,17 +517,6 @@ class Data extends Migration
         /* Insert image for G.A.S.Porto */
         DB::table('image')->insert(array('alt' => 'G.A.S.Porto', 'height' => 90, 'width' => 90, 'location' => 'src/imgs/organizations/G.A.S.jpg', 'size' => 900));
        
-        /* Insert G.A.S.Porto organization */
-        //Image id 5
-        DB::table('organization')->insert(array('name'=>'G.A.S. Porto', 'password' => '123456'
-            ,'email'=>'alcino.jssousa@gmail.com', 'address' => 'Rua'
-            ,'confirm_date' => '2016-05-26 22:53:27'
-            ,'created_at' => '2016-05-26 22:53:27'
-            ,'updated_at' => '2016-05-26 22:53:27'
-            ,'image' => 5
-            ));
-
-
         //Conta user de org G.A.S.Porto 
         DB::table('users')->insert(['name' => 'G.A.S.Porto'
             , 'email' => 'alcino.jssousa@gmail.com'
@@ -397,11 +558,31 @@ class Data extends Migration
 
 
 
+
         /*
         * Adding user alcino.jssousa@gmail.com as admin of G.A.S.Porto
         */ 
         DB::table('user_organization')->insert(array('volunteer'=>'2', 'organization' => '3', 'reg_date'=>'2016-05-26 22:53:27', 'admin' => true));
 
+
+		//Volunteers list just because
+		
+		DB::table('users')->insert(['name' => 'Miguel'
+            , 'email' => 'm@m.m'
+            , 'password' => bcrypt('123456')
+            , 'nif' => '444444444'
+            , 'token' => bin2hex(random_bytes(10))
+            , 'country' => 'PT'
+            , 'admin' => false
+			, 'confirm_date' => '2016-05-26 22:53:27']);
+			
+		DB::table('users')->insert(['name' => 'Admin'
+            , 'email' => 'admin@admin.admin'
+            , 'password' => bcrypt('123456')
+            , 'nif' => '555555555'
+            , 'token' => bin2hex(random_bytes(10))
+            , 'country' => 'PT'
+            , 'admin' => true]);
     }
 
     /**

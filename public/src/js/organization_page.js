@@ -1,5 +1,5 @@
 function changeInfo() {
-    var x, y;
+    var x, y, z;
     // Hide original contents
     x = document.getElementsByClassName("organization-section");
     y = document.getElementsByClassName("organization-section-add-group");
@@ -22,7 +22,7 @@ function changeInfo() {
 }
 
 function addGroup() {
-    var x, y;
+    var x, y, z;
     // Hide original contents
     x = document.getElementsByClassName("organization-section");
     y = document.getElementsByClassName("organization-section-change-info");
@@ -44,7 +44,7 @@ function addGroup() {
 }
 
 function addActivity() {
-    var x, y;
+    var x, y, z;
     // Hide original contents
     x = document.getElementsByClassName("organization-section");
     y = document.getElementsByClassName("organization-section-add-group");

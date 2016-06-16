@@ -4,18 +4,13 @@
 
 	<section class="news-section">
 		<section class="news-header">
-			{!! Form::open(
-			array(
-			'route' => 'admin.products.store', 
-			'class' => 'form', 
-			'novalidate' => 'novalidate', 
-			'files' => true)) !!}
-
-			<textarea form="createNews">Easy! You should check out MoxieManager!</textarea>
-			<input type="file" name="picture" accept="image/*">
-			<button type="submit">Criar Notícia</button>
+			{!! Form::open(array('url' => '/createNews', 'method' => 'POST', 'files'=>true)) !!}
+				{!! Form::text('title')!!}
+				{!! Form::textarea('description','Escreva aqui o corpo da notícia', array('class' => 'auth-input', 'placeholder' => 'Escreva aqui o corpo da notícia')) !!}
+				{!! Form::file('image') !!}
+				{!! Form::submit('Criar noticia',array('class'=>'btn-auth'))!!}
+            {!! Form::close() !!}
 	</section>
-
 </body>
 
 @stop

@@ -130,30 +130,10 @@ Route::post('/organizacao/adicionarAtividade', 'Geral\OrgController@addActivity'
 Route::post('/adicionaVoluntario', 'Geral\OrgController@addVolunteer');
 
 /*
-* Admin volunteers list
-*/
-
-Route::get('/gerir_voluntarios', 'Geral\UserController@showVolunteersAdmin');
-
-/*
-* Admin edit volunteer
-*/
-
-//Route::post();
-
-/*
 * Admin delete volunteer
 */
 
 Route::delete('deleteVolunteer/{id}',array('uses' => 'Geral\UserController@deleteVolunteer', 'as' => 'DeleteVolunteer.route'));
-
-/*
-*
-*/
-
-Route::get('/criar_noticia', 'Geral\NewsController@showForm');
-
-
 
 /*
 * Administrador Views
@@ -167,13 +147,12 @@ Route::get('/validar_pedidos', function(){
 Route::get('/ver_noticias', 'Geral\NewsController@showNewsAdmin');
 Route::delete('deleteNews/{id}',array('uses' => 'Geral\NewsController@deleteNews', 'as' => 'DeleteNews.route'));
 
+//News creation
+Route::get('/criar_noticia', 'Geral\NewsController@showForm');
+Route::post('/createNews', 'Geral\NewsController@createNews');
 
-Route::get('/ver_registos', function(){
-    return view('/admin/ver_registos'); 
-});
-
-
-
+//Voluntarios registados
+Route::get('/ver_registos', 'Geral\UserController@showVolunteersAdmin');
 
 //
 // Autocomplete

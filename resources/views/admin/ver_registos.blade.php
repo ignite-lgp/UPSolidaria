@@ -79,7 +79,7 @@
             </ul>
           </div>
 
-          <div class="dropdown dropdown-menus-right" id="menu-right">
+          <!--<div class="dropdown dropdown-menus-right" id="menu-right">
             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">10
               <span class="caret"></span>
             </button>
@@ -88,110 +88,43 @@
                 <li><a href="#">25</a></li>
                 <li><a href="#">50</a></li>
             </ul>
-          </div>
+          </div>-->
 
           <div class="pagination">
-              <div class="pagination-div"><i class="glyphicon glyphicon-menu-left"></i></div>
-              <div class="pagination-div"><span>1</span></div>
-              <div class="pagination-div"><i class="glyphicon glyphicon-menu-right"></i></div>
+              <a href="{{ $voluntarios->previousPageUrl() }}"><div class="pagination-div"><i class="glyphicon glyphicon-menu-left"></i></div></a>
+              <div class="pagination-div"><span>{{ $voluntarios->currentPage() }}</span></div>
+              <a href="{{ $voluntarios->nextPageUrl() }}"><div class="pagination-div"><i class="glyphicon glyphicon-menu-right"></i></div></a>
           </div>
 
           <div class="pagination-range">
-              <div class="pagination-div-range"><span>1-72</span></div>
+              <div class="pagination-div-range"><span>{{ $voluntarios->currentPage() }}-{{ $voluntarios->lastPage() }}</span></div>
           </div>
         </section>
 
-
         <section class="listing-requests">
+			@foreach ($voluntarios as $voluntario)
             <article class="listing-request">
                 <div class="info-request">
-                    <span class="name-request">Pedro Machado</span>
-                    <span class="small-info-request">Visualizar perfil</span>
+                    <span class="name-request">{{ $voluntario->name }}</span>
+                    <a href="#"><span class="small-info-request">Visualizar perfil</span></a>
                 </div>
                 <div class="date-request">
-                  <span>desde 20-11-2015</span>
+                  <span>Desde {{ $voluntario->confirm_date }}</span>
                 </div>
                 <div class="trophies-request">
                     <i class="glyphicon glyphicon-king"></i>
                     <span class="trophies-number">12</span>
                 </div>
-                <div class="organization-request">
+                <!--<div class="organization-request">
                     <span>G.A.S. Porto<span>
-                </div>
+                </div>-->
             </article>
-            <hr class="rule-request">
-            <article class="listing-request">
-                <div class="info-request">
-                    <span class="name-request">Rui Costa</span>
-                    <span class="small-info-request">Visualizar perfil</span>
-                </div>
-                <div class="date-request">
-                  <span>desde 20-11-2015</span>
-                </div>
-                <div class="trophies-request">
-                    <i class="glyphicon glyphicon-king"></i>
-                    <span class="trophies-number">12</span>
-                </div>
-                <div class="organization-request">
-                    <span>U.Dream<span>
-                </div>
-            </article>
-            <hr class="rule-request">
-            <article class="listing-request">
-                <div class="info-request">
-                    <span class="name-request">Gonçalo Cabral</span>
-                    <span class="small-info-request">Visualizar perfil</span>
-                </div>
-                <div class="date-request">
-                  <span>desde 20-11-2015</span>
-                </div>
-                <div class="trophies-request">
-                    <i class="glyphicon glyphicon-king"></i>
-                    <span class="trophies-number">12</span>
-                </div>
-                <div class="organization-request">
-                    <span>Banco Alimentar<span>
-                </div>
-            </article>
-            <hr class="rule-request">
-            <article class="listing-request">
-                <div class="info-request">
-                    <span class="name-request">Tomás Pedrosa</span>
-                    <span class="small-info-request">Visualizar perfil</span>
-                </div>
-                <div class="date-request">
-                  <span>desde 20-11-2015</span>
-                </div>
-                <div class="trophies-request">
-                    <i class="glyphicon glyphicon-king"></i>
-                    <span class="trophies-number">12</span>
-                </div>
-                <div class="organization-request">
-                    <span>Mundo a Sorrir<span>
-                </div>
-            </article>
-            <hr class="rule-request">
-            <article class="listing-request">
-                <div class="info-request">
-                    <span class="name-request">Leonor Ferreira</span>
-                    <span class="small-info-request">Visualizar dados</span>
-                </div>
-                <div class="date-request">
-                  <span>desde 20-11-2015</span>
-                </div>
-                <div class="trophies-request">
-                    <i class="glyphicon glyphicon-king"></i>
-                    <span class="trophies-number">12</span>
-                </div>
-                <div class="organization-request">
-                    <span>G.A.S. Porto<span>
-                </div>
-            </article>
+			@if ($)
+			<hr class="rule-request">
+			@endif
+			@endforeach
         </section>
-
-			</section>
-
-
+		</section>
 	</div>
 
 	<section class="container" id="main-container-xs">
