@@ -378,7 +378,7 @@
 					<img class="img img-responsive org-img" src="../{{ $image_location }}">
 					{!! Form::file('image'); !!} <!-- , $image_location -->
 					<section class="info-section">
-						<h4 class="sidebar-title">Descrição</h4>
+						<h4 class="sidebar-title">Descrição da Organização</h4>
 					{!! Form::textarea('description', $info->description); !!} <!-- , $info->description -->
 					</section>
 

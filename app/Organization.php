@@ -14,7 +14,7 @@ class Organization extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','confirmarPassword','address','phone', 'website','facebook','mission','vision','values'
+        'name', 'email', 'password','confirmarPassword','address','phone', 'website','facebook','description'
     ];
 
     /**
