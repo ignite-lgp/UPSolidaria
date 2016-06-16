@@ -127,12 +127,12 @@ class NewsController extends Controller
 			else {
 				// checking file is valid.
 				if (Input::file('image')->isValid()) {
-					$destinationPath = 'uploads'; // upload path
+					$destinationPath = 'newsimages'; // upload path
 					$extension = Input::file('image')->getClientOriginalExtension(); // getting image extension
-					$fileName = rand(11111,99999).'.'.$extension; // renameing image
+					$fileName = rand(11111,99999).'.'.$extension; // renaming image
 					Input::file('image')->move($destinationPath, $fileName); // uploading file to given path
-					// sending back with message
-					Session::flash('success', 'Notícia criada com sucesso'); 
+                    //sending back with message
+					Session::flash('success', 'Notícia criada com sucesso');
 				}
 				else {
 					// sending back with error message.
@@ -140,10 +140,20 @@ class NewsController extends Controller
 					return redirect('/ver_noticias');
 				}
 			
-			DB::table('news')->insert(array(
-				'title' => $newsInfo['title'],
-				'description' => $newsInfo['description']
-			));
+			DB::transaction(function() use ($newsInfo, $destinationPath, $fileName)
+			{
+				$lastInsertId = DB::table('image')->insertGetId(array(
+												'alt' => $newsInfo['title'], 
+												'height' => 90, 
+												'width' => 90, 
+												'location' => $destinationPath . '/' . $fileName, 
+												'size' => 900));	
+				DB::table('news')->insert(array(
+					'title' => $newsInfo['title'],
+					'description' => $newsInfo['description'],
+					'image' => (int) $lastInsertId
+				));
+			});
 			
 			//voltando à lista das notícias
 			return redirect('/ver_noticias');
