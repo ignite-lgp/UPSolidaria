@@ -36,10 +36,11 @@ class NewsController extends Controller
             IMPORTANT : ALL ORGANIZATIONS NAME MUST BE UPPER CASE
         */
         $information = DB::select('select news.* from news where news.title = ?', array($title));
+         $organizations = DB::select('select name from organization');
 
         //print_r($information);
 
-        return View('noticia')->with('noticia', $information[0]);
+        return View('noticia')->with('noticia', $information[0])->with('orgs',$organizations);
     }
 
     protected function showAllNews(){
@@ -51,10 +52,11 @@ class NewsController extends Controller
         //$organization = strtoupper($organization);
 
         $news = DB::select('select * from news');
+        $organizations = DB::select('select name from organization');
 
         //print_r($news);
 
-        return View('lista_noticias')->with('noticias', $news);
+        return View('lista_noticias')->with('noticias', $news)->with('orgs',$organizations);
     }
 	
 	protected function showNewsAdmin(){

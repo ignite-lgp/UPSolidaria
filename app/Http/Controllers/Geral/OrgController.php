@@ -78,8 +78,9 @@ class OrgController extends Controller
     protected function showOrgs(){
 
         $orgs =  DB::select("select o.id, o.name, i.location from organization o, image i where i.id = o.image");
+        $interests =  DB::select("select * from interest");
 
-        return View('organizacoes')->with('orgs', $orgs);
+        return View('organizacoes')->with('orgs', $orgs)->with('interests',$interests);
     }
 
 

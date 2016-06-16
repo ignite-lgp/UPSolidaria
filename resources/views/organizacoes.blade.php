@@ -26,38 +26,12 @@
 			<section class="sidebar-listing">
 				<span class="sidebar-title">Áreas de Interesse</span>
 				<ul>
-					<li><a>Ambiente</a></li>
-					<li><a>Cidadania e Direitos</a></li>
-                    <li><a>Ciência</a></li>
-                    <li><a>Computadores e Tecnologia</a></li>
-                    <li><a>Cultura e Artes</a></li>
-                    <li><a>Desporto e Lazer</a></li>
-                    <li><a>Educação</a></li>
-                    <li><a>Desporto e Lazer</a></li>
-                    <li><a>Engenharia</a></li>
-                    <li><a>Inovação e Empreendedorismo</a></li>
-                    <li><a>Saúde</a></li>
-					<li><a>Solidariedade Social</a></li>
+					@foreach ($interests as $interest)
+					<li><a>{{ $interest->interest }}</a></li>
+					@endforeach
 				</ul>
 			</section>
-            
-            <!-- Interests -->
-			<section class="sidebar-listing">
-				<span class="sidebar-title">Público Alvo</span>
-				<ul>
-					<li><a>Animais</a></li>
-					<li><a>CPLP</a></li>
-                    <li><a>Crianças</a></li>
-                    <li><a>Deficientes</a></li>
-                    <li><a>Desempregados</a></li>
-                    <li><a>Doentes</a></li>
-                    <li><a>Estudantes</a></li>
-                    <li><a>Idosos</a></li>
-                    <li><a>Jovens</a></li>
-                    <li><a>Mães</a></li>
-                    <li><a>Sem-abrigo</a></li>
-				</ul>
-			</section>
+           
 			
 			@include('partials/auth') 		
 			
