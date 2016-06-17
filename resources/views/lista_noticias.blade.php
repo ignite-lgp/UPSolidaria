@@ -89,7 +89,7 @@
                 <section class="news-group-longer">
                      <article class="news-longer">
                         <section class="news-img">
-                            <img class="img-responsive" src="/src/imgs/voluntariado_up.jpg">
+                            <img class="img-responsive" src="../{{ $noticia->title }}">
                         </section>
                         <section class="news-text">
                         {{ $noticia->description }}

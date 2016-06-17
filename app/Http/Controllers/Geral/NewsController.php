@@ -50,9 +50,9 @@ class NewsController extends Controller
         
         //$organization = strtoupper($organization);
 
-        $news = DB::select('select * from news');
+        $news = DB::select('select a.id, a.image, a.title, a.description, a.date, a.created_at, a.updated_at, b.id, b.alt, b.height, b.width, b.location, b.size from news as a, image as b where b.id = a.image');
 
-        //print_r($news);
+ 
 
         return View('lista_noticias')->with('noticias', $news);
     }
