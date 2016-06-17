@@ -67,7 +67,7 @@
                 <section class="news-group-longer">
                      <article class="news-longer">
                         <section class="news-img">
-                            <img class="img-responsive" src="../{{ $noticia->location }}">
+                            <img class="img-responsive" src="../{{ $noticia->image['location'] }}">
                         </section>
                         <section class="news-text">
                         {{ $noticia->description }}
