@@ -36,7 +36,6 @@
                     <li>Despacho Reitoral</li>
 					<li><a class="red-link">Descarregar</a></li>
                 </ul>
-				<hr>
 			</section>
 			
 			@include('partials/auth') 

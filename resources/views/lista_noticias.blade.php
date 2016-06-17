@@ -13,31 +13,9 @@
             
             <section class="sidebar-categories">
                 <span class="sidebar-title">categorias</span>
-                <a>AJUDARIS</a>
-                <a>Cura+</a>
-                <a>S. C. Cruz IPSS</a>
-                <a>MIACIS</a>
-                <a>G.A.S. Porto</a>
-                <a>U.Dream</a>
-                <a>MOA de Portugal</a>
-                <a class="active">Banco Alimentar</a>
-                <a>Intercultura-AFS</a>
-                <a>G.A.S Africa</a>
-                <a>MOVE</a>
-                <a>MHNC-UP</a>
-                <a>Leigos para o desenvolvimento</a>
-                <a>Câmara Municipal do Porto</a>
-                <a>Vo.U</a>
-                <a>Casa Museu Abel Salazar</a>
-                <a>CDUP</a>
-                <a>Mundo a Sorrir</a>
-                <a>NASA</a>
-                <a>Free Hugs</a>
-                <a>Cidade Mais+</a>
-                <a>FAP no Bairro</a>
-                <a>UCC Boavista</a>
-                <a>MIDAS</a>
-                <a>Casa Ronald McDonald do Porto</a>
+                @foreach ($orgs as $org) 
+                <a href="./organizacao/{{ $org->name }}">{{ $org->name }}</a>
+                 @endforeach
             </section>
             
             <section>
@@ -89,7 +67,7 @@
                 <section class="news-group-longer">
                      <article class="news-longer">
                         <section class="news-img">
-                            <img class="img-responsive" src="../{{ $noticia->title }}">
+                            <img class="img-responsive" src="../{{ $noticia->image['location'] }}">
                         </section>
                         <section class="news-text">
                         {{ $noticia->description }}
@@ -118,7 +96,48 @@
                 </section>
             </section>
             @endforeach
-            
+
+			<!-- Noticia Aqui -->
+			<section class="main-section news-container">
+				@foreach ($noticias as $noticia)   
+				<section class="main-section news-section">
+					<section class="news-header">
+						<a href="/noticia/{{$noticia->title}}"><h3 class="news-header-title">{{ $noticia->title }}</h3></a>
+						<section class="news-authors-date">
+							<span class="news-authors">{{ $noticia->title }}</span>
+							<span class="news-date">{{ $noticia->date }}</span>
+						</section>
+					</section>
+					<section class="news-longer">
+						<div>
+							<section class="news-img">
+								<a href="/noticia/{{ $noticia->title }}">
+									<img class="img-responsive" src="/{{ $noticia->location }}">
+								</a>
+							</section>
+							<section class="news-text">
+								{!! $noticia->description !!}
+							</section>
+						</div>
+					</section>
+				</section>
+				<section class="news-view-more">
+					<a href="/noticia/{{ $noticia->title }}">Ver mais...</a>
+				</section>
+				<section class="news-social-networks">
+					<span class="news-social-networks-span">Partilhar:</span>
+					<ul class="social-networks">
+						<li><a><img src="/src/imgs/fb_logo.png"></a></li>
+						<li><a><img src="/src/imgs/twitter_logo.png"></a></li>
+						<li><a><img src="/src/imgs/google_plus_logo.svg"></a></li>
+						<li><a><img src="/src/imgs/linkedin_logo.png"></a></li>
+					</ul>
+				</section>
+				@if ($noticia != end($noticias)) <hr>@endif
+				@endforeach
+			</section>
+		</section>
+>>>>>>> origin/master
     </div>
     
     <div class="container mobile-container visible-xs">
@@ -189,55 +208,52 @@
         
         <section class="container">
 		
-            <section class="title-section hidden-xs">
+            <section class="title-section">
                 <h4><a href="/">U.Porto Voluntariado</a></h3>
                 <span>/</span>
                 <h4><a class="active">Notícias</a></h4>
             </section>
            
-           <!-- Noticia Aqui -->
-            @foreach ($noticias as $noticia)       
-            <section class="main-section news-section">
-                <section class="news-header">
-                    <a href="/noticia/{{$noticia->title}}"><h3 class="news-header-title">{{ $noticia->title }}</h3></a>
-                    <section class="news-authors-date">
-                        <span class="news-authors">{{ $noticia->title }}</span>
-                        <span class="news-date">{{ $noticia->date }}</span>
-                    </section>
-                </section>
-                <section class="news-group-longer">
-                     <article class="news-longer">
-                        <section class="news-img">
-                            <img class="img-responsive" src="/src/imgs/voluntariado_up.jpg">
-                        </section>
-                        <section class="news-text">
-                        {{ $noticia->description }}
-                        </section>
-                        <section class="news-view-more">
-                            <a href="./noticia/{{ $noticia->title }}">
-                            Ver mais...
-                            </a>
-                        
-                        </section>
-
-                        <br><br>
-                        <section class="news-social-networks">
-                            <span class="news-social-networks-span">Partilhar:</span>
-                            <ul class="social-networks">
-                                <li><a><img src="/src/imgs/fb_logo.png"></a></li>
-                                <li><a><img src="/src/imgs/twitter_logo.png"></a></li>
-                                <li><a><img src="/src/imgs/google_plus_logo.svg"></a></li>
-                                <li><a><img src="/src/imgs/linkedin_logo.png"></a></li>
-                            </ul>
-                        </section>
-
-                        <hr>
-
-                     </article>
-                </section>
-            </section>
-            @endforeach
-            
+			<!-- Noticia Aqui -->
+			<section class="main-section news-container">
+				@foreach ($noticias as $noticia)   
+				<section class="main-section news-section">
+					<section class="news-header">
+						<a href="/noticia/{{$noticia->title}}"><h3 class="news-header-title">{{ $noticia->title }}</h3></a>
+						<section class="news-authors-date">
+							<span class="news-authors">{{ $noticia->title }}</span>
+							<span class="news-date">{{ $noticia->date }}</span>
+						</section>
+					</section>
+					<section class="news-longer">
+						<div>
+							<section class="news-img">
+								<a href="/noticia/{{ $noticia->title }}">
+									<img class="img-responsive" src="/{{ $noticia->location }}">
+								</a>
+							</section>
+							<section class="news-text">
+								{!! $noticia->description !!}
+							</section>
+						</div>
+					</section>
+				</section>
+				<section class="news-view-more">
+					<a href="/noticia/{{ $noticia->title }}">Ver mais...</a>
+				</section>
+				<section class="news-social-networks">
+					<span class="news-social-networks-span">Partilhar:</span>
+					<ul class="social-networks">
+						<li><a><img src="/src/imgs/fb_logo.png"></a></li>
+						<li><a><img src="/src/imgs/twitter_logo.png"></a></li>
+						<li><a><img src="/src/imgs/google_plus_logo.svg"></a></li>
+						<li><a><img src="/src/imgs/linkedin_logo.png"></a></li>
+					</ul>
+				</section>
+				@if ($noticia != end($noticias)) <hr>@endif
+				@endforeach
+			</section>
+		</section>
     </div>
     
 @stop

@@ -63,15 +63,10 @@
 						{!! Form::label('website', 'Website', array()) !!}
 						{!! Form::text('website','',array('class' => 'reg-input')) !!}
 
-						{!! Form::label('mission', 'Missão da Organização', array()) !!}
-						{!! Form::text('mission','', array('class' => 'reg-input')) !!}
-
-						{!! Form::label('vision', 'Visão da Organização', array()) !!}
-						{!! Form::text('vision','', array('class' => 'reg-input')) !!}
-
-						{!! Form::label('values', 'Valores da Organização', array()) !!}
-						{!! Form::text('values','', array('class' => 'reg-input')) !!}
-
+						<section class="info-section">
+						<h3 class="sidebar-title">Descrição da Organização</h3>
+						{!! Form::textarea('description', ''); !!} 
+						</section>
 
 						{!! Form::label('phone', 'Contacto Telefónico', array()) !!}
 						{!! Form::text('phone','', array('class' => 'reg-input')) !!}

@@ -11,7 +11,7 @@ body {
 
 /***************************** navbar *************************************/
 
-@media only screen and (max-width: 34em) {
+@media only screen and (max-width: 768px) {
 	.collapsing, .in {background-color: #696969;}
 	#container-navbar{padding: 0; margin: 0;}
 	.navbar-header{padding: 0 15px 15px 15px;}
@@ -163,6 +163,27 @@ hr {
 }
 
 
+.org-row {
+	display: table;
+}
+
+.org-row [class*="col-"] {
+    display: table-cell;
+    vertical-align: top;
+	padding: 30px;
+	height: 200px;
+}
+
+.org-row [class*="col-"] span {
+	position: absolute;
+	left:0;
+	right:0;
+	padding-left:auto;
+	padding-right:auto;
+	bottom: 25px;
+}
+
+
 /* Title */
 
 .title-section {
@@ -222,8 +243,12 @@ hr {
     margin-top: 50px;
 }
 
+.news-view-more{
+	margin-top: 20px;
+}
+
 .news-social-networks {
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .news-social-networks-span {
@@ -235,11 +260,23 @@ hr {
     list-style: none;
 }
 
+.news-container {
+	display: table;
+	height: 100%;
+}
+
+.news-container > hr{
+	margin-bottom: 60px;
+}
+
 .news-section {
-    margin-top: 40px;
+    display: table-row;
+	margin-bottom: 40px;
+	height: 100%;
 }
 
 .news-header-title {
+	margin-top: 0px;
     font-weight: 900;
 }
 
@@ -273,6 +310,7 @@ hr {
 
 /* GERAL? */
 
+
 .main-section {
     margin-bottom: 60px;
     font-weight: 600;
@@ -297,6 +335,18 @@ hr {
     margin-top: 150px;
     margin-bottom: 100px;
 }
+
+
+/* CRIAR NOTICIA */
+.create-new-field {
+    margin-bottom: 60px;
+    font-weight: 600;
+}
+
+.create-new-field > h4 {
+    font-weight: 600;
+}
+
 
 
 /* LOGIN */
@@ -781,8 +831,9 @@ p.big {
 
 /* CONTACTS */
 
-.contacts > p {
+.contacts > p, .contacts > a, .info-section > p {
     margin: 0;
+	font-weight: 500;
 }
 
 .contacts-section {
@@ -1039,7 +1090,7 @@ p.big {
 
 /* LINKS */
 
-a {
+a, a:link, a:visited, a:active {
     color: inherit;
     text-decoration: none;
 }

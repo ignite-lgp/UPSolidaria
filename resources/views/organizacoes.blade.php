@@ -14,50 +14,16 @@
 				<input class="search-bar-input" type="text" name="activities" placeholder="Pesquisar Organizações" />
 			</section>
 			
-            <!-- Categories -->
-			<section class="sidebar-categories">
-				<span class="sidebar-title">categorias</span>
-				@foreach ($orgs as $org)
-					<a>{{ $org->name }}</a>
-                @endforeach
-			</section>
-            
 			<!-- Interests -->
 			<section class="sidebar-listing">
 				<span class="sidebar-title">Áreas de Interesse</span>
 				<ul>
-					<li><a>Ambiente</a></li>
-					<li><a>Cidadania e Direitos</a></li>
-                    <li><a>Ciência</a></li>
-                    <li><a>Computadores e Tecnologia</a></li>
-                    <li><a>Cultura e Artes</a></li>
-                    <li><a>Desporto e Lazer</a></li>
-                    <li><a>Educação</a></li>
-                    <li><a>Desporto e Lazer</a></li>
-                    <li><a>Engenharia</a></li>
-                    <li><a>Inovação e Empreendedorismo</a></li>
-                    <li><a>Saúde</a></li>
-					<li><a>Solidariedade Social</a></li>
+					@foreach ($interests as $interest)
+					<li><a>{{ $interest->interest }}</a></li>
+					@endforeach
 				</ul>
 			</section>
-            
-            <!-- Interests -->
-			<section class="sidebar-listing">
-				<span class="sidebar-title">Público Alvo</span>
-				<ul>
-					<li><a>Animais</a></li>
-					<li><a>CPLP</a></li>
-                    <li><a>Crianças</a></li>
-                    <li><a>Deficientes</a></li>
-                    <li><a>Desempregados</a></li>
-                    <li><a>Doentes</a></li>
-                    <li><a>Estudantes</a></li>
-                    <li><a>Idosos</a></li>
-                    <li><a>Jovens</a></li>
-                    <li><a>Mães</a></li>
-                    <li><a>Sem-abrigo</a></li>
-				</ul>
-			</section>
+           
 			
 			@include('partials/auth') 		
 			
@@ -81,12 +47,12 @@
             
 			<div class="row org-row">
             	@foreach ($orgs as $org)
-   				<div class="col-xs-6 col-sm-3">
-					<a href="organizacao/{{ $org->name}}">
-					<img class="img img-responsive org-list-img" src="/{{ $org->location}}">
-					<span class="org-list-title"> {{ $org->name}} </span>
-					</a>
-				</div>
+				<a href="organizacao/{{ $org->name}}">
+					<div class="col-xs-6 col-sm-3">
+						<img class="img img-responsive org-list-img" src="/{{ $org->location}}">
+						<span class="org-list-title"> {{ $org->name}} </span>
+					</div>
+				</a>
 				@endforeach
 			</div>
 		</section>
@@ -172,12 +138,12 @@
             
 			<div class="row org-row">
             	@foreach ($orgs as $org)
-   				<div class="col-xs-6 col-sm-3">
-					<a href="organizacao/{{ $org->name}}">
+   				<a href="organizacao/{{ $org->name}}">
+					<div class="col-xs-6 col-sm-3">
 						<img class="img img-responsive org-list-img" src="/{{ $org->location}}">
 						<span class="org-list-title"> {{ $org->name}} </span>
-					</a>
-				</div>
+					</div>
+				</a>
 				@endforeach
 			</div>
 		</section>
