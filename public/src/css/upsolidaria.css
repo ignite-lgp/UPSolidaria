@@ -55,6 +55,23 @@ body {
     font-size: 14px;
 }
 
+/* BUTTON TO SLIDE TO TOP */
+#top-link-block>a{
+	background-color: #CCC;
+	border-color: #BBB;
+	color: black;
+}
+#top-link-block.affix-top {
+    position: absolute; /* allows it to "slide" up into view */
+    bottom: -82px;
+    right: 10px;
+}
+#top-link-block.affix {
+    position: fixed; /* keeps it on the bottom once in view */
+    bottom: 18px;
+    right: 10px;
+}
+
 
 /* Lists */
 

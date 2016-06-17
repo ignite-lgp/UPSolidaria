@@ -1,14 +1,21 @@
 
 
-      <footer id="footer">
-          <hr class="invisible"> 
-          <section class="container" id="container-footer">
-              <span class="hidden-xs">Copyright 2016 &copy Universidade do Porto | Termos e Condições | Acessibilidade</span>
-              <span class="hidden-xs">Última atualização: 2016-04-03 Página gerada em: 2016-04-03</span>
-			  <hr class="visible-xs">
-              <span class="visible-xs">Copyright 2016 &copy UP Solidária</span>
-          </section>
-      </footer>
+	<!-- child of the body tag -->
+	<span id="top-link-block" data-spy="affix" data-offset-top="100">
+		<a href="#top" class="btn" onclick="$('html,body').animate({scrollTop:0},'slow');return false;">
+			<i class="glyphicon glyphicon-chevron-up"></i> Para Cima
+		</a>
+	</span><!-- /top-link-block -->
+	
+	<footer id="footer">
+		<hr class="invisible"> 
+		<section class="container" id="container-footer">
+			<span class="hidden-xs">Copyright 2016 &copy Universidade do Porto | Termos e Condições | Acessibilidade</span>
+			<span class="hidden-xs">Última atualização: 2016-04-03 Página gerada em: 2016-04-03</span>
+			<hr class="visible-xs">
+			<span class="visible-xs">Copyright 2016 &copy UP Solidária</span>
+		</section>
+	</footer>
 	  
 	<?php
 		echo
@@ -28,7 +35,7 @@
 					y.className = y.className.replace(\"main-container\", \"container\");
 				}
 			}
-		}
+		};
 		</script>";
 	?>
 
