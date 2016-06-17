@@ -385,7 +385,7 @@
 						{!! Form::file('image'); !!} <!-- , $image_location -->
 					</section>
 					<section class="create-new-field">
-						<h4>Descrição</h4>
+						<h4>Descrição da Organização</h4>
 						{!! Form::textarea('description', $info->description); !!} <!-- , $info->description -->
 					</section>
 
