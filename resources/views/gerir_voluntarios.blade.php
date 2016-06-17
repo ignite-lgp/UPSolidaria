@@ -1,5 +1,9 @@
 @extends('master')
 
+@section('title')
+	<title>Gerir Voluntários</title>
+@stop
+
 @section('main_content')
 
             @foreach ($voluntarios as $voluntario)       

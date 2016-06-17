@@ -35,8 +35,8 @@ class NewsController extends Controller
         /*
             IMPORTANT : ALL ORGANIZATIONS NAME MUST BE UPPER CASE
         */
-        $information = DB::select('select news.* from news where news.title = ?', array($title));
-         $organizations = DB::select('select name from organization');
+        $information = DB::select('select n.*, i.location from news n, image i where n.title = ? and n.image=i.id', array($title));
+        $organizations = DB::select('select name from organization');
 
         //print_r($information);
 
@@ -51,8 +51,7 @@ class NewsController extends Controller
         
         //$organization = strtoupper($organization);
 
-
-        $news = DB::select('select a.id, b.location, a.title, a.description, a.date, a.created_at, a.updated_at, b.id, b.alt, b.height, b.width, b.location, b.size from news as a, image as b where b.id = a.image');
+        $news = DB::select('select n.*, i.location from news n, image i where n.image=i.id order by id desc');
         $organizations = DB::select('select name from organization');
 
         return View('lista_noticias')->with('noticias', $news)->with('orgs',$organizations);
@@ -132,7 +131,7 @@ class NewsController extends Controller
 					$extension = Input::file('image')->getClientOriginalExtension(); // getting image extension
 					$fileName = rand(11111,99999).'.'.$extension; // renaming image
 					Input::file('image')->move($destinationPath, $fileName); // uploading file to given path
-                    //sending back with message
+					//sending back with message
 					Session::flash('success', 'Notícia criada com sucesso');
 				}
 				else {
@@ -141,25 +140,25 @@ class NewsController extends Controller
 					return redirect('/ver_noticias');
 				}
 			
-			DB::transaction(function() use ($newsInfo, $destinationPath, $fileName)
-			{
-				$lastInsertId = DB::table('image')->insertGetId(array(
-												'alt' => $newsInfo['title'], 
-												'height' => 90, 
-												'width' => 90, 
-												'location' => $destinationPath . '/' . $fileName, 
-												'size' => 900));	
-				DB::table('news')->insert(array(
-					'title' => $newsInfo['title'],
-					'description' => $newsInfo['description'],
-					'image' => (int) $lastInsertId
-				));
-			});
-			
-			//voltando à lista das notícias
-			return redirect('/ver_noticias');
+				DB::transaction(function() use ($newsInfo, $destinationPath, $fileName)
+				{
+					$lastInsertId = DB::table('image')->insertGetId(array(
+													'alt' => $newsInfo['title'], 
+													'height' => 90, 
+													'width' => 90, 
+													'location' => $destinationPath . '/' . $fileName, 
+													'size' => 900));	
+					DB::table('news')->insert(array(
+						'title' => $newsInfo['title'],
+						'description' => $newsInfo['description'],
+						'image' => (int) $lastInsertId
+					));
+				});
+				
+				//voltando à lista das notícias
+				return redirect('/ver_noticias');
+			}
 		}
 	}
-}
 }
 ?>

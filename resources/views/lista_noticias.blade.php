@@ -1,5 +1,13 @@
 @extends('master')
 
+@section('title')
+	<title>Notícias</title>
+@stop
+
+@section('tab_selector')
+	<script type="text/javascript">updateHeader('noticias');</script>
+@stop
+
 @section('main_content')
 
     <div class="container hidden-xs" id="container-left">
@@ -53,50 +61,7 @@
                 <span>/</span>
                 <h4><a class="active">Notícias</a></h4>
             </section>
-           
-           <!-- Noticia Aqui -->
-            @foreach ($noticias as $noticia)       
-            <section class="main-section news-section">
-                <section class="news-header">
-                    <a href="/noticia/{{$noticia->title}}"><h3 class="news-header-title">{{ $noticia->title }}</h3></a>
-                    <section class="news-authors-date">
-                        <span class="news-authors">{{ $noticia->title }}</span>
-                        <span class="news-date">{{ $noticia->date }}</span>
-                    </section>
-                </section>
-                <section class="news-group-longer">
-                     <article class="news-longer">
-                        <section class="news-img">
-                            <img class="img-responsive" src="../{{ $noticia->image['location'] }}">
-                        </section>
-                        <section class="news-text">
-                        {{ $noticia->description }}
-                        </section>
-                        <section class="news-view-more">
-                            <a href="./noticia/{{ $noticia->title }}">
-                            Ver mais...
-                            </a>
-                        
-                        </section>
-
-                        <br><br>
-                        <section class="news-social-networks">
-                            <span class="news-social-networks-span">Partilhar:</span>
-                            <ul class="social-networks">
-                                <li><a><img src="/src/imgs/fb_logo.png"></a></li>
-                                <li><a><img src="/src/imgs/twitter_logo.png"></a></li>
-                                <li><a><img src="/src/imgs/google_plus_logo.svg"></a></li>
-                                <li><a><img src="/src/imgs/linkedin_logo.png"></a></li>
-                            </ul>
-                        </section>
-
-                        <hr>
-
-                     </article>
-                </section>
-            </section>
-            @endforeach
-
+			
 			<!-- Noticia Aqui -->
 			<section class="main-section news-container">
 				@foreach ($noticias as $noticia)   
@@ -137,7 +102,6 @@
 				@endforeach
 			</section>
 		</section>
->>>>>>> origin/master
     </div>
     
     <div class="container mobile-container visible-xs">

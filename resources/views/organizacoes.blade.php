@@ -1,5 +1,13 @@
 @extends('master')
 
+@section('title')
+	<title>Organizações</title>
+@stop
+
+@section('tab_selector')
+	<script type="text/javascript">updateHeader('organizacoes');</script>
+@stop
+
 @section('main_content')
 	
 	<!-- Body -->

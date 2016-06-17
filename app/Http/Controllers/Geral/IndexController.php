@@ -21,7 +21,7 @@ class IndexController extends Controller
         /*
             IMPORTANT : ALL ORGANIZATIONS NAME MUST BE UPPER CASE
         */
-        $news = DB::select('select * from news');
+        $news = DB::select('select n.*, i.location from news n, image i where n.image=i.id order by id desc limit 10');
         $organizations = DB::select('select name from organization');
 
         //print_r($information);

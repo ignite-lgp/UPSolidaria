@@ -1,5 +1,13 @@
 @extends('master')
 
+@section('title')
+	<title>Organização {{ $info->name }}</title>
+@stop
+
+@section('tab_selector')
+	<script type="text/javascript">updateHeader('organizacoes');</script>
+@stop
+
 @section('main_content')
 
 	<!-- Body -->

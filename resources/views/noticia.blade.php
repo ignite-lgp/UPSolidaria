@@ -1,5 +1,13 @@
 @extends('master')
 
+@section('title')
+	<title>Notícia {{$noticia->title}}</title>
+@stop
+
+@section('tab_selector')
+	<script type="text/javascript">updateHeader('noticias');</script>
+@stop
+
 @section('main_content')
 
     <div class="container hidden-xs" id="container-left">
@@ -48,43 +56,45 @@
         
         <section class="main-container">
 		
-            <section class="title-section">
-                <h4><a href="/">U.Porto Voluntariado</a></h3>
-                <span>/</span>
-                <h4><a href="/noticias">Notícias</a></h4>
-                <span>/</span>
-                <h4><a class="active">{{ $noticia->title }}</a></h4>
-            </section>
-            
-            <section class="news-section">
-                <section class="news-header">
-                    <h3 class="news-header-title">{{ $noticia->title }}</h3>
-                    <section class="news-authors-date">
-                        <span class="news-authors">{{ $noticia->title }}</span>
-                        <span class="news-date">{{ $noticia->date }}</span>
-                    </section>
-                </section>
-                <section class="news-group-longer">
-                     <article class="news-longer">
-                        <section class="news-img">
-                            <img class="img-responsive" src="/src/imgs/voluntariado_up.jpg">
-                        </section>
-                        <section class="news-text">
-                        {{ $noticia->description }}
-                        </section>
-                        <section class="news-social-networks">
-                            <span class="news-social-networks-span">Partilhar:</span>
-                            <ul class="social-networks">
-                                <li><a><img src="/src/imgs/fb_logo.png"></a></li>
-                                <li><a><img src="/src/imgs/twitter_logo.png"></a></li>
-                                <li><a><img src="/src/imgs/google_plus_logo.svg"></a></li>
-                                <li><a><img src="/src/imgs/linkedin_logo.png"></a></li>
-                            </ul>
-                        </section>
-                     </article>
-                </section>
-            </section>
-            
+			<section class="title-section">
+				<h4><a href="/">U.Porto Voluntariado</a></h3>
+				<span>/</span>
+				<h4><a href="/noticias">Notícias</a></h4>
+				<span>/</span>
+				<h4><a class="active">{{ $noticia->title }}</a></h4>
+			</section>
+			
+			<section class="main-section news-container">
+				<section class="main-section news-section">
+					<section class="news-header">
+						<h3 class="news-header-title">{{ $noticia->title }}</h3>
+						<section class="news-authors-date">
+							<span class="news-authors">{{ $noticia->title }}</span>
+							<span class="news-date">{{ $noticia->date }}</span>
+						</section>
+					</section>
+					<section class="news-longer">
+						<div>
+							<section class="news-img">
+								<img class="img-responsive" src="/{{ $noticia->location }}">
+							</section>
+							<section class="news-text">
+								{!! $noticia->description !!}
+							</section>
+						</div>
+					</section>
+				</section>
+				<section class="news-social-networks">
+					<span class="news-social-networks-span">Partilhar:</span>
+					<ul class="social-networks">
+						<li><a><img src="/src/imgs/fb_logo.png"></a></li>
+						<li><a><img src="/src/imgs/twitter_logo.png"></a></li>
+						<li><a><img src="/src/imgs/google_plus_logo.svg"></a></li>
+						<li><a><img src="/src/imgs/linkedin_logo.png"></a></li>
+					</ul>
+				</section>
+			</section>
+		</section>
     </div>
     
     <div class="container mobile-container visible-xs">
@@ -155,43 +165,45 @@
         
         <section class="container">
 		
-            <section class="title-section">
-                <h4><a href="/">U.Porto Voluntariado</a></h3>
-                <span>/</span>
-                <h4><a href="/noticias">Notícias</a></h4>
-                <span>/</span>
-                <h4><a class="active">{{ $noticia->title }}</a></h4>
-            </section>
-            
-            <section class="news-section">
-                <section class="news-header">
-                    <h3 class="news-header-title">{{ $noticia->title }}</h3>
-                    <section class="news-authors-date">
-                        <span class="news-authors">{{ $noticia->title }}</span>
-                        <span class="news-date">{{ $noticia->date }}</span>
-                    </section>
-                </section>
-                <section class="news-group-longer">
-                     <article class="news-longer">
-                        <section class="news-img">
-                            <img class="img-responsive" src="/src/imgs/voluntariado_up.jpg">
-                        </section>
-                        <section class="news-text">
-                        {{ $noticia->description }}
-                        </section>
-                        <section class="news-social-networks">
-                            <span class="news-social-networks-span">Partilhar:</span>
-                            <ul class="social-networks">
-                                <li><a><img src="/src/imgs/fb_logo.png"></a></li>
-                                <li><a><img src="/src/imgs/twitter_logo.png"></a></li>
-                                <li><a><img src="/src/imgs/google_plus_logo.svg"></a></li>
-                                <li><a><img src="/src/imgs/linkedin_logo.png"></a></li>
-                            </ul>
-                        </section>
-                     </article>
-                </section>
-            </section>
-            
+			<section class="title-section">
+				<h4><a href="/">U.Porto Voluntariado</a></h3>
+				<span>/</span>
+				<h4><a href="/noticias">Notícias</a></h4>
+				<span>/</span>
+				<h4><a class="active">{{ $noticia->title }}</a></h4>
+			</section>
+			
+			<section class="main-section news-container">
+				<section class="main-section news-section">
+					<section class="news-header">
+						<h3 class="news-header-title">{{ $noticia->title }}</h3>
+						<section class="news-authors-date">
+							<span class="news-authors">{{ $noticia->title }}</span>
+							<span class="news-date">{{ $noticia->date }}</span>
+						</section>
+					</section>
+					<section class="news-longer">
+						<div>
+							<section class="news-img">
+								<img class="img-responsive" src="/{{ $noticia->location }}">
+							</section>
+							<section class="news-text">
+								{!! $noticia->description !!}
+							</section>
+						</div>
+					</section>
+				</section>
+				<section class="news-social-networks">
+					<span class="news-social-networks-span">Partilhar:</span>
+					<ul class="social-networks">
+						<li><a><img src="/src/imgs/fb_logo.png"></a></li>
+						<li><a><img src="/src/imgs/twitter_logo.png"></a></li>
+						<li><a><img src="/src/imgs/google_plus_logo.svg"></a></li>
+						<li><a><img src="/src/imgs/linkedin_logo.png"></a></li>
+					</ul>
+				</section>
+			</section>
+		</section>
     </div>
-    
+	
 @stop

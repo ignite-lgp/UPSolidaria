@@ -1,5 +1,13 @@
 @extends('master')
 
+@section('title')
+	<title>Registar Organização</title>
+@stop
+
+@section('tab_selector')
+	<script type="text/javascript">updateHeader('organizacao');</script>
+@stop
+
 @section('main_content')
 
 	    @if (count($errors) > 0)

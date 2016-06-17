@@ -1,5 +1,13 @@
 @extends('master')
 
+@section('title')
+	<title>Atividades</title>
+@stop
+
+@section('tab_selector')
+	<script type="text/javascript">updateHeader('atividades');</script>
+@stop
+
 @section('main_content')
 	
 	<!-- Body -->

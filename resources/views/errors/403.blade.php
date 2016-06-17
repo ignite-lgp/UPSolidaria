@@ -19,6 +19,10 @@
                 font-weight: 100;
                 font-family: 'Lato';
             }
+			
+			a{
+				font-weight: 600;
+			}
 
             .container {
                 text-align: center;
@@ -41,7 +45,9 @@
         <div class="container">
             <div class="content">
                 <div class="title">You need to login.</div>
-                <a href="/auth">LOGIN </a>
+				<a href="/">Return to Homepage</a>
+				<br><br>
+                <a href="/auth">LOGIN</a>
             </div>
         </div>
     </body>

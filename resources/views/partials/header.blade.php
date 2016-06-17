@@ -44,11 +44,11 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav navigation-options">
-            <li><a href="/quemsomos">quem somos</a></li>
-            <li><a href="/organizacoes">organizações</a></li>
-            <li><a href="/atividades">atividades</a></li>
-            <li><a href="/noticias">notícias</a></li>
-            <li><a href="/contatos">contactos</a></li>
+            <li id="hd_quem_somos"><a href="/quemsomos">quem somos</a></li>
+            <li id="hd_organizacoes"><a href="/organizacoes">organizações</a></li>
+            <li id="hd_atividades"><a href="/atividades">atividades</a></li>
+            <li id="hd_noticias"><a href="/noticias">notícias</a></li>
+            <li id="hd_contactos"><a href="/contatos">contactos</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

@@ -1,5 +1,9 @@
 @extends('master')
 
+@section('title')
+	<title>Registo/Autenticação</title>
+@stop
+
 @section('main_content')
 
 	    @if (count($errors) > 0)

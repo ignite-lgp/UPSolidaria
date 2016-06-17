@@ -1,5 +1,9 @@
 @extends('master')
 
+@section('title')
+	<title>Gerir Notícias</title>
+@stop
+
 @section('main_content')
 
             @foreach ($noticias as $noticia)       
