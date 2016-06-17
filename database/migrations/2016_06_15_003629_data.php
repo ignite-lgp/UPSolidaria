@@ -389,13 +389,22 @@ class Data extends Migration
         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
 
-        
-        DB::table('news')->insert(array('image' => 4, 'title' => 'Título 1' , 'description' => $description, 'date' => Carbon\Carbon::now()));
-        DB::table('news')->insert(array('image' => 5, 'title' => 'Título 2' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        /*
+        * Images for news
+        */
+        DB::table('image')->insert(array('location'=>'src/imgs/news/1.jpg'));
+        DB::table('image')->insert(array('location'=>'src/imgs/news/2.jpg'));
+        DB::table('image')->insert(array('location'=>'src/imgs/news/3.jpg'));
+        /*
+        * News
+        */
+        DB::table('news')->insert(array('image' => 14, 'title' => 'Título 1' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 15, 'title' => 'Título 2' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+        DB::table('news')->insert(array('image' => 16, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
+		/*
         DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
 		DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
 		DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
-		DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
         DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
         DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
         DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
@@ -505,7 +514,7 @@ class Data extends Migration
         DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
         DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
         DB::table('news')->insert(array('image' => 6, 'title' => 'Título 3' , 'description' => $description, 'date' => Carbon\Carbon::now()));
-
+        */
 
 
 
