@@ -1,5 +1,13 @@
 @extends('master')
 
+@section('title')
+	<title>Notícias</title>
+@stop
+
+@section('tab_selector')
+	<script type="text/javascript">updateHeader('noticias');</script>
+@stop
+
 @section('main_content')
 
     <div class="container hidden-xs" id="container-left">

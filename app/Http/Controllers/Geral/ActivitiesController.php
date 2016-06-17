@@ -30,12 +30,12 @@ class ActivitiesController extends Controller
 
         //User not logged in. It shows the default page
         if ($session_email == 'default'){
-            return View('atividades');
+            return View('errors/403');
         } else {
         //User logged in shows the list of activities 
         // the user is responsible for and the ones
         // from the organization he is in plus the public activities.
-        return redirect('/');
+        return View('atividades');
       }
     }
 

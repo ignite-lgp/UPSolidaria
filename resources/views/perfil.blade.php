@@ -1,5 +1,9 @@
 @extends('master')
 
+@section('title')
+	<title>{{ $profile->name }}</title>
+@stop
+
 @section('main_content')
 
 	<!-- Body -->

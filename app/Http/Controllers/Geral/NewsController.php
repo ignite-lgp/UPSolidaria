@@ -35,8 +35,8 @@ class NewsController extends Controller
         /*
             IMPORTANT : ALL ORGANIZATIONS NAME MUST BE UPPER CASE
         */
-        $information = DB::select('select news.* from news where news.title = ?', array($title));
-         $organizations = DB::select('select name from organization');
+        $information = DB::select('select n.*, i.location from news n, image i where n.title = ? and n.image=i.id', array($title));
+        $organizations = DB::select('select name from organization');
 
         //print_r($information);
 
@@ -51,7 +51,7 @@ class NewsController extends Controller
         
         //$organization = strtoupper($organization);
 
-        $news = DB::select('select n.*, i.location from news n, image i where n.image=i.id');
+        $news = DB::select('select n.*, i.location from news n, image i where n.image=i.id order by id desc');
         $organizations = DB::select('select name from organization');
 
         //print_r($news);

@@ -1,5 +1,9 @@
 @extends('master')
 
+@section('title')
+	<title>Criar Notícia</title>
+@stop
+
 @section('main_content')
 
 	<!-- Body -->

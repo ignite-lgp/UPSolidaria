@@ -173,7 +173,7 @@ class AuthController extends Controller
                 //var_dump($org->name);
                 return redirect('/organizacao/'. $org->name);
         } else {
-            echo 'Fail';
+            return redirect('/');
         }
       }
 

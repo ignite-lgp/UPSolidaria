@@ -1,5 +1,9 @@
 @extends('master')
 
+@section('title')
+	<title>UP Solidária</title>
+@stop
+
 @section('main_content')
 
     <div class="container hidden-xs" id="container-left">
@@ -28,7 +32,7 @@
 				<h2>Bem-vindos à plataforma de Voluntariado da UP!</h2>
 			</section>
 			
-			@foreach ($noticias as $noticia)  
+			<!--@foreach ($noticias as $noticia)  
 			<section class="main-section news-group">
 				<article class="news">
 					<section class="news-img">
@@ -45,9 +49,29 @@
 					</section>
 				</article>
 			</section>
-			
-			
-			@endforeach
+
+			@endforeach-->
+			<section class="main-section news-container">
+				@foreach ($noticias as $noticia)   
+				<section class="main-section news-section">
+					<h3 class="news-header-title">{{ $noticia->title }}</h3>
+					<section class="news-longer">
+						<div>
+							<section class="news-img">
+								<img class="img-responsive" src="/{{ $noticia->location }}">
+							</section>
+							<section class="news-text">
+								{!! $noticia->description !!}
+							</section>
+						</div>
+					</section>
+				</section>
+				<section class="news-view-more">
+					<a href="/noticia/{{ $noticia->title }}">Ver mais...</a>
+				</section>
+				@if ($noticia != end($noticias)) <hr>@endif
+				@endforeach
+			</section>
         
 		</section>
 
@@ -81,24 +105,45 @@
 			</section>
 			
 			@foreach ($noticias as $noticia)  
+			<!--@foreach ($noticias as $noticia)  
 			<section class="main-section news-group">
 				<article class="news">
 					<section class="news-img">
 						<img class="img-responsive" src="/src/imgs/up.jpg">
 					</section>
 					<section class="news-title-section">
-						<h4 class="news-title-l">{{ $noticia->title }}</h4>
+						<a href="/noticia/{{$noticia->title}}"><h4 class="news-title-l">{{ $noticia->title }}</h4></a>
 					</section>
 					<section class="news-text">
-						{{ $noticia->title }}
+						{{ $noticia->description }}
 					</section>
 					<section class="news-view-more">
 						<a class="red-link">Ver mais...</a>
 					</section>
 				</article>
 			</section>
-			
-			<section class="main-section big-separator">
+
+			@endforeach-->
+			<section class="main-section news-container">
+				@foreach ($noticias as $noticia)   
+				<section class="main-section news-section">
+					<h3 class="news-header-title">{{ $noticia->title }}</h3>
+					<section class="news-longer">
+						<div>
+							<section class="news-img">
+								<img class="img-responsive" src="/{{ $noticia->location }}">
+							</section>
+							<section class="news-text">
+								{!! $noticia->description !!}
+							</section>
+						</div>
+					</section>
+				</section>
+				<section class="news-view-more">
+					<a href="/noticia/{{ $noticia->title }}">Ver mais...</a>
+				</section>
+				@if ($noticia != end($noticias)) <hr>@endif
+				@endforeach
 			</section>
 			@endforeach
         
