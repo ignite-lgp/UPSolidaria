@@ -22,8 +22,8 @@
             <section class="sidebar-categories">
                 <span class="sidebar-title">categorias</span>
                 @foreach ($orgs as $org) 
-                <a href="./organizacao/{{ $org->name }}">{{ $org->name }}</a>
-                 @endforeach
+					<a href="./organizacao/{{ $org->name }}">{{ $org->name }}</a>
+                @endforeach
             </section>
             
             <section>
@@ -115,31 +115,9 @@
             
             <section class="sidebar-categories">
                 <span class="sidebar-title">categorias</span>
-                <a>AJUDARIS</a>
-                <a>Cura+</a>
-                <a>S. C. Cruz IPSS</a>
-                <a>MIACIS</a>
-                <a>G.A.S. Porto</a>
-                <a>U.Dream</a>
-                <a>MOA de Portugal</a>
-                <a class="active">Banco Alimentar</a>
-                <a>Intercultura-AFS</a>
-                <a>G.A.S Africa</a>
-                <a>MOVE</a>
-                <a>MHNC-UP</a>
-                <a>Leigos para o desenvolvimento</a>
-                <a>Câmara Municipal do Porto</a>
-                <a>Vo.U</a>
-                <a>Casa Museu Abel Salazar</a>
-                <a>CDUP</a>
-                <a>Mundo a Sorrir</a>
-                <a>NASA</a>
-                <a>Free Hugs</a>
-                <a>Cidade Mais+</a>
-                <a>FAP no Bairro</a>
-                <a>UCC Boavista</a>
-                <a>MIDAS</a>
-                <a>Casa Ronald McDonald do Porto</a>
+                @foreach ($orgs as $org) 
+					<a href="./organizacao/{{ $org->name }}">{{ $org->name }}</a>
+                @endforeach
             </section>
             
             <section>
