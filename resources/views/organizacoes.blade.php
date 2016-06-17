@@ -47,12 +47,12 @@
             
 			<div class="row org-row">
             	@foreach ($orgs as $org)
-   				<div class="col-xs-6 col-sm-3">
-					<a href="organizacao/{{ $org->name}}">
-					<img class="img img-responsive org-list-img" src="/{{ $org->location}}">
-					<span class="org-list-title"> {{ $org->name}} </span>
-					</a>
-				</div>
+				<a href="organizacao/{{ $org->name}}">
+					<div class="col-xs-6 col-sm-3">
+						<img class="img img-responsive org-list-img" src="/{{ $org->location}}">
+						<span class="org-list-title"> {{ $org->name}} </span>
+					</div>
+				</a>
 				@endforeach
 			</div>
 		</section>
@@ -138,12 +138,12 @@
             
 			<div class="row org-row">
             	@foreach ($orgs as $org)
-   				<div class="col-xs-6 col-sm-3">
-					<a href="organizacao/{{ $org->name}}">
+   				<a href="organizacao/{{ $org->name}}">
+					<div class="col-xs-6 col-sm-3">
 						<img class="img img-responsive org-list-img" src="/{{ $org->location}}">
 						<span class="org-list-title"> {{ $org->name}} </span>
-					</a>
-				</div>
+					</div>
+				</a>
 				@endforeach
 			</div>
 		</section>

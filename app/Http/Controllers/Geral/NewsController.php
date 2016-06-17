@@ -51,7 +51,7 @@ class NewsController extends Controller
         
         //$organization = strtoupper($organization);
 
-        $news = DB::select('select * from news');
+        $news = DB::select('select n.*, i.location from news n, image i where n.image=i.id');
         $organizations = DB::select('select name from organization');
 
         //print_r($news);
