@@ -78,7 +78,7 @@
             </ul>
           </div>
 
-          <div class="dropdown dropdown-menus-right" id="menu-right">
+          <!--<div class="dropdown dropdown-menus-right" id="menu-right">
             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">10
               <span class="caret"></span>
             </button>
@@ -87,95 +87,40 @@
                 <li><a href="#">25</a></li>
                 <li><a href="#">50</a></li>
             </ul>
-          </div>
+          </div>-->
 
           <div class="pagination">
               <div class="pagination-div"><i class="glyphicon glyphicon-menu-left"></i></div>
-              <div class="pagination-div"><span>1</span></div>
+              <div class="pagination-div"><span>{{ $voluntarios->currentPage() }}</span></div>
               <div class="pagination-div"><i class="glyphicon glyphicon-menu-right"></i></div>
           </div>
 
           <div class="pagination-range">
-              <div class="pagination-div-range"><span>1-3</span></div>
+              <div class="pagination-div-range"><span>{{ $voluntarios->currentPage() }}-{{ $voluntarios->lastPage() }}</span></div>
           </div>
         </section>
 
 
         <section class="listing-requests">
+			@foreach ($voluntarios as $voluntario)
             <article class="listing-request">
                 <div class="info-request">
-                    <span class="name-request">Pedro Machado</span>
+                    <span class="name-request">{{ $voluntario->name }}</span>
                     <span class="small-info-request">Visualizar dados</span>
                 </div>
-                <div class="reject-request">
-                    <i class="glyphicon glyphicon-remove-circle red-remove"></i>
-                    <span>Rejeitar</span>
+                <div class="trophies-request">
+					{{ Form::open(['route' => ['AcceptVolunteer.route', $voluntario->id], 'method' => 'post']) }}
+                    {{ Form::button ('<i class="glyphicon glyphicon-ok"></i>', array('type' => 'submit', 'class' => 'btndel'))}}
+					{{ Form::close() }}
                 </div>
-                <div class="validate-request">
-                  <i class="glyphicon glyphicon-ok-circle green-ok"></i>
-                  <span>Validar</span>
+                <div class="trophies-request">
+					{{ Form::open(['route' => ['DeleteVolunteer.route', $voluntario->id], 'method' => 'delete']) }}
+                    {{ Form::button ('<i class="glyphicon glyphicon-remove"></i>', array('type' => 'submit', 'class' => 'btndel'))}}
+					{{ Form::close() }}
                 </div>
             </article>
             <hr class="rule-request">
-            <article class="listing-request">
-                <div class="info-request">
-                    <span class="name-request">Rui Costa</span>
-                    <span class="small-info-request">Visualizar dados</span>
-                </div>
-                <div class="reject-request">
-                    <i class="glyphicon glyphicon-remove-circle red-remove"></i>
-                    <span>Rejeitar</span>
-                </div>
-                <div class="validate-request">
-                  <i class="glyphicon glyphicon-ok-circle green-ok"></i>
-                  <span>Validar</span>
-                </div>
-            </article>
-            <hr class="rule-request">
-            <article class="listing-request">
-                <div class="info-request">
-                    <span class="name-request">Gonçalo Cabral</span>
-                    <span class="small-info-request">Visualizar dados</span>
-                </div>
-                <div class="reject-request">
-                    <i class="glyphicon glyphicon-remove-circle red-remove"></i>
-                    <span>Rejeitar</span>
-                </div>
-                <div class="validate-request">
-                  <i class="glyphicon glyphicon-ok-circle green-ok"></i>
-                  <span>Validar</span>
-                </div>
-            </article>
-            <hr class="rule-request">
-            <article class="listing-request">
-                <div class="info-request">
-                    <span class="name-request">Tomás Pedrosa</span>
-                    <span class="small-info-request">Visualizar dados</span>
-                </div>
-                <div class="reject-request">
-                    <i class="glyphicon glyphicon-remove-circle red-remove"></i>
-                    <span>Rejeitar</span>
-                </div>
-                <div class="validate-request">
-                  <i class="glyphicon glyphicon-ok-circle green-ok"></i>
-                  <span>Validar</span>
-                </div>
-            </article>
-            <hr class="rule-request">
-            <article class="listing-request">
-                <div class="info-request">
-                    <span class="name-request">Leonor Ferreira</span>
-                    <span class="small-info-request">Visualizar dados</span>
-                </div>
-                <div class="reject-request">
-                    <i class="glyphicon glyphicon-remove-circle red-remove"></i>
-                    <span>Rejeitar</span>
-                </div>
-                <div class="validate-request">
-                  <i class="glyphicon glyphicon-ok-circle green-ok"></i>
-                  <span>Validar</span>
-                </div>
-            </article>
+			@endforeach
         </section>
 
 			</section>

@@ -556,9 +556,6 @@ class Data extends Migration
             , 'organization' => 3 //referencia à org gasporto
             , 'admin' => false]);
 
-
-
-
         /*
         * Adding user alcino.jssousa@gmail.com as admin of G.A.S.Porto
         */ 
@@ -575,6 +572,14 @@ class Data extends Migration
             , 'country' => 'PT'
             , 'admin' => false
 			, 'confirm_date' => '2016-05-26 22:53:27']);
+			
+		DB::table('users')->insert(['name' => 'Joao'
+            , 'email' => 'j@j.t'
+            , 'password' => bcrypt('123456')
+            , 'nif' => '444444445'
+            , 'token' => bin2hex(random_bytes(10))
+            , 'country' => 'PT'
+            , 'admin' => false]);
 			
 		DB::table('users')->insert(['name' => 'Admin'
             , 'email' => 'admin@admin.admin'

@@ -108,20 +108,19 @@
                     <span class="name-request">{{ $voluntario->name }}</span>
                     <a href="#"><span class="small-info-request">Visualizar perfil</span></a>
                 </div>
-                <div class="date-request">
-                  <span>Desde {{ $voluntario->confirm_date }}</span>
-                </div>
                 <div class="trophies-request">
-                    <i class="glyphicon glyphicon-king"></i>
-                    <span class="trophies-number">12</span>
+					{{ Form::open(['route' => ['DeleteVolunteer.route', $voluntario->id], 'method' => 'delete']) }}
+                    {{ Form::button ('<i class="glyphicon glyphicon-remove"></i>', array('type' => 'submit', 'class' => 'btndel'))}}
+					{{ Form::close() }}
+                </div>
+				<div class="date-request">
+                  <span>Desde {{ $voluntario->confirm_date }}</span>
                 </div>
                 <!--<div class="organization-request">
                     <span>G.A.S. Porto<span>
                 </div>-->
             </article>
-			@if ($)
 			<hr class="rule-request">
-			@endif
 			@endforeach
         </section>
 		</section>
