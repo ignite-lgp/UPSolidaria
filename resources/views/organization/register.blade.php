@@ -10,7 +10,7 @@
 
 @section('main_content')
 
-	@if (count($errors) > 0)
+	    @if (count($errors) > 0)
     <div class="alert alert-danger">
         <ul>
             @foreach ($errors->all() as $error)
@@ -53,7 +53,7 @@
 			<section class="main-section login-register">
 					<h2>Registe a sua Organização</h2>
 					<section class="not-centered">
-						{!! Form::open(array('url' => '/org/register', 'method' => 'POST')) !!}
+						{!! Form::open(array('url' => '/org/register', 'method' => 'POST', 'files' => 'true')) !!}
 						{!! Form::label('name', 'Nome da Organização', array('class' => 'required')) !!}
 						{!! Form::text('name','', array('class' => 'reg-input')) !!}
 
@@ -105,7 +105,7 @@
 		<section class="sidebar-left sidebar-left-xs" style="display: none;">
 			
 			<!-- Options sample -->
-			<section class="sidebar-options">
+			<section class="sidebar-options hidden-xs">
 				<span class="sidebar-title">Opções</span>
 				<ul>
 					<li><a>Autenticação por Federação</a></li>
@@ -131,7 +131,7 @@
 			<section class="main-section login-register">
 					<h2>Registe a sua Organização</h2>
 					<section class="not-centered">
-						{!! Form::open(array('url' => '/org/register', 'method' => 'POST')) !!}
+						{!! Form::open(array('url' => '/org/register', 'method' => 'POST'), 'files' => 'true') !!}
 						{!! Form::label('name', 'Nome da Organização', array('class' => 'required')) !!}
 						{!! Form::text('name','', array('class' => 'reg-input')) !!}
 

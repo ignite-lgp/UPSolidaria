@@ -40,7 +40,10 @@ class UserController extends Controller
         } else {
 
             // Retrieve the general information of certain user
-            $information = DB::select('select users.id, users.name, users.email, users.localidade, country.country, users.created_at, users.private_email, users.points, users.available from users, country where users.country = country.code and users.email = ?', array($session_email));
+            $information = DB::select('select users.id, users.name, users.email, users.localidade, users.image, country.country, users.created_at, users.private_email, users.points, users.available from users, country where users.country = country.code and users.email = ?', array($session_email));
+
+            // Retrieve image from user
+            $image = DB::select('select * from image where image.id = ?', array($information[0]->image));
 
             // Get all organizations in which user is in
             $organizations = DB::select('select organization.name, user_organization.reg_date, user_organization.leave_date, image.location as image from user_organization, organization, image where user_organization.organization = organization.id and image.id = organization.image and volunteer = ?', array($information[0]->id));
@@ -106,6 +109,7 @@ class UserController extends Controller
             $information[0]->current_points = $levelInformation[2];
 
             return View('perfil')->with('profile',$information[0])->with('organizations', $organizations)
+                ->with('image_location', $image[0]->location)
                 ->with('medals', $medals)
                 ->with('trofeus', $trophies)
                 ->with('actividades', $organized_activities);
@@ -185,22 +189,22 @@ class UserController extends Controller
 			return View('admin/ver_registos')->with('voluntarios', $information);
         }
 	}
-	
-	public function showOrgsAdmin(){
-	
-		$email = Session::get('email');
+
+    public function showOrgsAdmin(){
+    
+        $email = Session::get('email');
         $user = User::whereRaw('email = ?', [$email])->first();
 
-		//If user is not logged in
+        //If user is not logged in
         if(is_null($user) || $user->admin == 0) {
             return View('errors/403');
         }
-		else { //Else, platform admin --> get list for volunteers management where users.organization is null and users.admin = 0
-		
-			$information = DB::table('users')->where('admin', '=', 0)->whereNotNull('organization')->whereNotNull('confirm_date')->paginate(10);
-			return View('admin/ver_oregistos')->with('orgs', $information);
+        else { //Else, platform admin --> get list for volunteers management where users.organization is null and users.admin = 0
+        
+            $information = DB::table('users')->where('admin', '=', 0)->whereNotNull('organization')->whereNotNull('confirm_date')->paginate(10);
+            return View('admin/ver_oregistos')->with('orgs', $information);
         }
-	}
+    }
 	
 	public function showValidateAdmin(){
 	
@@ -212,8 +216,8 @@ class UserController extends Controller
             return View('errors/403');
         }
 		else { //Else, platform admin --> get list for volunteers management where users.organization is null and users.admin = 0
-		
-			$information = DB::table('users')->where('admin', '=', 0)->whereNull('confirm_date')->paginate(10);
+		    
+            $information = DB::table('users')->where('admin', '=', 0)->whereNull('confirm_date')->paginate(10);
 			return View('admin/validar_pedidos')->with('voluntarios', $information);
         }
 	}

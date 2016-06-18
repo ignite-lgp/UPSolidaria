@@ -85,9 +85,12 @@
 			<section class="main-section login-register">
 					<h2>Registe os seus dados</h2>
 					<section class="not-centered">
-						{!! Form::open(array('url' => '/auth/register', 'method' => 'POST')) !!}
+						{!! Form::open(array('url' => '/auth/register', 'method' => 'POST', 'files' => 'true')) !!}
 						{!! Form::label('nome', 'Nome completo', array('class' => 'required')) !!}
 						{!! Form::text('nome','', array('class' => 'reg-input')) !!}
+						{!! Form::label('image', 'Foto de Perfil') !!}
+						{!! Form::file('image') !!} 
+						<br/><br/>
 						{!! Form::label('numero_identificacao', 'Número do documento de identificação', array('class' => 'required')) !!}
 						{!! Form::text('numero_identificacao','', array('class' => 'reg-input')) !!}
 						{!! Form::label('email', 'E-mail eletrónico', array('class' => 'required')) !!}
@@ -105,8 +108,7 @@
 						{!! Form::text('localidade','',array('class' => 'reg-input')) !!}
 						{!! Form::label('data_nascimento', 'Data de nascimento', array('class' => 'required')) !!}
 						{!! Form::date('data_nascimento','',array('class' => 'reg-input')) !!}
-						{!! Form::label('carta_conducao', 'Carta de condução') !!}
-						{!! Form::checkbox('carta_conducao', 'value',false,array('class' => 'reg-aligned')) !!}
+			
 							<ul class="reg-buttons">
 								<li><input type="reset" name="reset_form" value="Limpar registo" /></li>
 								<li>{!! Form::submit('Finalizar') !!}</li>
@@ -185,7 +187,7 @@
 			<section class="main-section login-register">
 					<h2>Registe os seus dados</h2>
 					<section class="not-centered">
-						{!! Form::open(array('url' => '/auth/register', 'method' => 'POST')) !!}
+						{!! Form::open(array('url' => '/auth/register', 'method' => 'POST', 'files' => 'true')) !!}
 						{!! Form::label('nome', 'Nome completo', array('class' => 'required')) !!}
 						{!! Form::text('nome','', array('class' => 'reg-input')) !!}
 						{!! Form::label('numero_identificacao', 'Número do documento de identificação', array('class' => 'required')) !!}
@@ -209,7 +211,7 @@
 			</section>
 		</section>
 		<!-- END of Main Body-->
-	</div>
+	</div> 
 	<!-- END of Mobile Body-->
 	
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Organization;
 use Countries;
 use View;
 use Validator;
@@ -96,31 +97,64 @@ class AuthController extends Controller
                           ->withInput();
           } else {
 
-      $_temp = User::create([
-                'name' => $userInfo['nome'],
-                'nif' => $userInfo['numero_identificacao'],
-                'localidade' => $userInfo['localidade'],
-                'email' => $userInfo['email'],
-                'password' => bcrypt($userInfo['password']),
-                'country' => $userInfo['nacionalidade'],
-                'token' => bin2hex(random_bytes(10)),
-                'admin' => false,
-                'birthdate' => $userInfo['data_nascimento'],
-                'carta_conducao' => $userInfo['carta_conducao'] == 'false' ? false : true,
-                ]);
+        //Insert image reference in database -> reference needed for group
+        //Check if image was uploaded
+        if(array_key_exists('image', $userInfo)){
+          $image = $userInfo['image'];
+          $size = $image->getSize();
+            if($image->isValid()) {
+            $destinationPath = 'src/imgs/volunteers';
+            //Change the name of the img file to volunteer email
+            //Moving the image to img folder
+            $image->move($destinationPath, $userInfo['email'].'.jpg');
+            //Inserting image reference in database
+            DB::table('image')->insert(['alt' => $userInfo['email']
+                ,'height' => 90
+                ,'width' => 90
+                ,'location' => $destinationPath . '/' . $userInfo['email'] . '.jpg'
+                ,'size' => $size]);
+            }
+             else {
+                //Alter to a more intuitive error showing
+                return View('errors.500');
+            }
+        }
 
-            $url = env('APP_URL') . '/auth/confirm/token=' . $_temp['original']['token'] . '&email=' . $userInfo['email'];
 
-            Mail::send('email.welcome',['link' => $url], function ($message) use ($userInfo) {
+        $current_time = \Carbon\Carbon::now()->toDateTimeString();
+        try {
+          $image_id = DB::select('select id from image where alt= ?', array($userInfo['email']));
+          //print_r($image_id);
+            }catch(\Exception $e){
+              //Alter to a more intuitive error showing
+              return View('errors.500');
+        }
 
-                $message->from(env('MAIL_USERNAME'), 'Bem vindo à UPSolidária');
+          $_temp = User::create([
+                    'name' => $userInfo['nome'],
+                    'nif' => $userInfo['numero_identificacao'],
+                    'localidade' => $userInfo['localidade'],
+                    'email' => $userInfo['email'],
+                   'password' => bcrypt($userInfo['password']),
+                    'country' => $userInfo['nacionalidade'],
+                    'token' => bin2hex(random_bytes(10)),
+                    'admin' => false,
+                    'birthdate' => $userInfo['data_nascimento'],
+                    'image' => $image_id[0]->id
+                    ]);
 
-                $message->to($userInfo['email'])->subject('Obrigado por se juntar à UPSolidária');
+                $url = env('APP_URL') . '/auth/confirm/token=' . $_temp['original']['token'] . '&email=' . $userInfo['email'];
 
-            });
+                Mail::send('email.welcome',['link' => $url], function ($message) use ($userInfo) {
 
-            return redirect($this->redirectTo);
-    }
+                    $message->from(env('MAIL_USERNAME'), 'Bem vindo à UPSolidária');
+
+                    $message->to($userInfo['email'])->subject('Obrigado por se juntar à UPSolidária');
+
+                });
+
+                return redirect($this->redirectTo); 
+        }
       }
 
 

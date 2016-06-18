@@ -34,12 +34,11 @@
             <!-- My Organizations -->
 			<section class="sidebar-listing">
 				<span class="sidebar-title">As Minhas Organizações</span>
-				<ul>
-					<li><a>G.A.S. Porto</a></li>
-					<li><a>Banco Alimentar</a></li>					
-					<li><a>VO.U. Associação de Voluntariado Universitário</a></li>
-                    <li><a>Free Hugs</a></li>
-				</ul>
+					@foreach ($organizations as $org)	
+					<ul>			
+					<li><a href="/organizacao/{{$org->name}}">{{ $org->name }}</a></li>
+					</ul>
+                    @endforeach
                 <br>
                 <ul>
                     <li>
@@ -98,7 +97,7 @@
                 <div class="row volunteer-row">
                     <div class="col-md-3 col-sm-6">
                         
-                        <img class="img img-responsive volunteer-img" src="/src/imgs/volunteers/alcino.jpg">
+                        <img class="img img-responsive volunteer-img" src="/{{ $image_location }}">
                     </div>
                     
                     <div class="col-md-8 col-sm-6">
@@ -325,10 +324,9 @@
 			<section class="sidebar-listing">
 				<span class="sidebar-title">As Minhas Organizações</span>
 				<ul>
-					<li><a>G.A.S. Porto</a></li>
-					<li><a>Banco Alimentar</a></li>					
-					<li><a>VO.U. Associação de Voluntariado Universitário</a></li>
-                    <li><a>Free Hugs</a></li>
+					@foreach ($organizations as $org)				
+					<li><a href="/organizacao/{{$org->name}}" class="red-link block">{{ $org->name }}</a></li>
+                    @endforeach
 				</ul>
                 <br>
                 <ul>
