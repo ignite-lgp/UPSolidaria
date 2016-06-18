@@ -382,7 +382,7 @@
 			<section class="main-section volunteer-basic-info">
 				<div class="row volunteer-row-xs">
 					<div class="col-xs-6 col-md-3">
-						<img class="img img-responsive" src="/src/imgs/volunteers/stevejobs.jpg">
+						<img class="img img-responsive volunteer-img" src="/{{ $image_location }}">
 					</div>
 					
 					<div class="col-md-8">
