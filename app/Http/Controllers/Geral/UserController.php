@@ -186,6 +186,22 @@ class UserController extends Controller
         }
 	}
 	
+	public function showOrgsAdmin(){
+	
+		$email = Session::get('email');
+        $user = User::whereRaw('email = ?', [$email])->first();
+
+		//If user is not logged in
+        if(is_null($user) || $user->admin == 0) {
+            return View('errors/403');
+        }
+		else { //Else, platform admin --> get list for volunteers management where users.organization is null and users.admin = 0
+		
+			$information = DB::table('users')->where('admin', '=', 0)->whereNotNull('organization')->whereNotNull('confirm_date')->paginate(10);
+			return View('admin/ver_oregistos')->with('orgs', $information);
+        }
+	}
+	
 	public function showValidateAdmin(){
 	
 		$email = Session::get('email');
@@ -197,7 +213,7 @@ class UserController extends Controller
         }
 		else { //Else, platform admin --> get list for volunteers management where users.organization is null and users.admin = 0
 		
-			$information = DB::table('users')->where('admin', '=', 0)->whereNull('organization')->whereNull('confirm_date')->paginate(10);
+			$information = DB::table('users')->where('admin', '=', 0)->whereNull('confirm_date')->paginate(10);
 			return View('admin/validar_pedidos')->with('voluntarios', $information);
         }
 	}

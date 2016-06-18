@@ -60,6 +60,12 @@ body {
 	background-color: #CCC;
 	border-color: #BBB;
 	color: black;
+	-webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+#top-link-block>a:hover{
+	background-color: #999;
+	border-color: #888;
 }
 #top-link-block.affix-top {
     position: absolute; /* allows it to "slide" up into view */
@@ -1044,11 +1050,6 @@ p.big {
     color: #adadad;
 }
 
-.small-info-request:hover {
-    color: #be1e2d;
-    cursor: pointer;
-}
-
 .validate-request {
     display: table;
     float: right;
@@ -1078,10 +1079,22 @@ p.big {
 }
 
 .trophies-request {
-    background-color: #e6e7e9;
     padding: 5px;
-    border: 1px solid #adadad;
-    color: #6c6d70;
+}
+
+.trophies-request > form > button  {
+	border: 1px solid #BBB;
+}
+
+.trophies-request > form > .glyphicon {
+	-webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+.trophies-request > form > .glyphicon-remove:hover {
+	background-color: #f44336;
+}
+.trophies-request > form > .glyphicon-ok:hover {
+	background-color: #4CAF50;
 }
 
 .trophies-number {

@@ -139,6 +139,9 @@ Route::post('/createNews', 'Geral\NewsController@createNews');
 Route::get('/ver_registos', 'Geral\UserController@showVolunteersAdmin');
 Route::delete('deleteVolunteer/{id}',array('uses' => 'Geral\UserController@deleteVolunteer', 'as' => 'DeleteVolunteer.route'));
 
+//Organizações registadas
+Route::get('/ver_oregistos', 'Geral\UserController@showOrgsAdmin');
+
 //Por validar
 Route::get('/validar_pedidos', 'Geral\UserController@showValidateAdmin');
 Route::post('validateVolunteer/{id}',array('uses' => 'Geral\UserController@validateVolunteer', 'as' => 'AcceptVolunteer.route'));

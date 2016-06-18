@@ -10,7 +10,7 @@
 
 @section('main_content')
 
-	    @if (count($errors) > 0)
+	@if (count($errors) > 0)
     <div class="alert alert-danger">
         <ul>
             @foreach ($errors->all() as $error)
@@ -105,7 +105,7 @@
 		<section class="sidebar-left sidebar-left-xs" style="display: none;">
 			
 			<!-- Options sample -->
-			<section class="sidebar-options hidden-xs">
+			<section class="sidebar-options">
 				<span class="sidebar-title">Opções</span>
 				<ul>
 					<li><a>Autenticação por Federação</a></li>
